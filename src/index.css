@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Vercel/Railway Design System - Ultra Professional */
+
+/* Import professional fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* ============================================
+       PALETA MODERNA ESTILO APPLE (LIGHT ONLY)
+       Monocromático mejorado con acento azul suave
+       ============================================ */
+
+    /* Fondos */
+    --background: 0 0% 100%;
+    /* Blanco puro */
+    --foreground: 0 0% 10%;
+    /* Gris muy oscuro, casi negro, más suave */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    /* Primary: Azul estilo Apple #007AFF */
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Gris muy claro mejorado */
+    --secondary: 210 20% 96%;
+    /* Ligero tinte azulado muy sutil */
+    --secondary-foreground: 222 47% 11%;
+
+    /* Accent: Azul suave para elementos secundarios */
+    --accent: 210 100% 96%;
+    --accent-foreground: 210 100% 45%;
+
+    /* Tertiary: Gris medio mejorado */
+    --tertiary: 210 20% 96%;
+    --tertiary-foreground: 215 16% 47%;
+
+    /* Muted: Gris suave mejorado */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Destructive: Rojo suave estilo Apple */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 100% 50%;
+
+    /* Estados */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 10%;
+
+    /* Gradientes Modernos con acento azul */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%), hsl(210 100% 45%));
+    --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 100% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(210 100% 96%), hsl(210 100% 98%));
+    --gradient-surface: hsl(210 100% 99%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 100% 99%));
+
+    /* Sombras - Más suaves y naturales */
+    --shadow-minimal: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+    --shadow-focus: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(210 100% 50% / 0.2);
+    --shadow-elevation: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
+
+    /* Bordes redondeados sutiles */
+    --radius: 0.75rem;
+    /* 12px */
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Removed .dark block entirely */
+
+  /* ============================================
+     PREMIUM VISUAL STYLES
+     ============================================ */
+
+  /* Glassmorphism Effects */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(210 100% 45%), hsl(210 100% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv03";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: transparent;
+    /* For AnimatedBackground visibility */
+  }
+
+  /* Monospace for data/code */
+  code,
+  kbd,
+  pre,
+  .font-mono {
+    font-family: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  }
+}
+
+@layer utilities {
+
+  /* Simplified utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animation Delays */
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4000ms;
+  }
+}
+
+/* Main Snowflake Indicator specific animation */
+#snowdev-indicator {
+  filter: drop-shadow(0 0 15px rgba(100, 200, 255, 0.8));
+  animation: float-Snowflake 3s ease-in-out infinite;
+}
+
+@keyframes float-Snowflake {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(10px) rotate(10deg);
+  }
+}

@@ -1,0 +1,717 @@
+// EXERCICIS PER CURS - 4t ESO
+// Adaptats per nivell de dificultat segons el curs
+// 4A = Més difícil (vocabulari avançat, especialitzat)
+// 4E = Més fàcil (vocabulari bàsic, quotidià)
+
+export interface CourseExercise {
+  id: string;
+  type: 'multiple_choice' | 'fill_blank' | 'dictation' | 'matching' | 'transformation';
+  question: string;
+  options?: string[];
+  correctAnswer: string | string[];
+  explanation: string;
+  difficulty: 1 | 2 | 3 | 4 | 5;
+  course: '4A' | '4B' | '4C' | '4D' | '4E';
+}
+
+export interface CourseSection {
+  id: string;
+  title: string;
+  description: string;
+  category: 'ortografia' | 'gramàtica' | 'lectura' | 'escriptura' | 'vocabulari';
+  course: '4A' | '4B' | '4C' | '4D' | '4E';
+  exercises: CourseExercise[];
+}
+
+// =====================================================
+// CURS 4A - NIVELL AVANÇAT (COMBINAT C1)
+// =====================================================
+
+export const COURSE_4A_EXERCISES: CourseSection[] = [
+  {
+    id: '4a_separacio_sil·labes',
+    title: 'Separació de síl·labes (C1)',
+    description: 'Exercicis complets de separació de síl·labes (Nivell C1)',
+    category: 'ortografia',
+    course: '4A',
+    exercises: []
+  },
+  {
+    id: '4a_diftongs',
+    title: 'Diftongs (C1)',
+    description: 'Identificació de diftongs (Nivell C1)',
+    category: 'ortografia',
+    course: '4A',
+    exercises: []
+  },
+  {
+    id: '4a_accentuacio',
+    title: 'Accentuació (C1)',
+    description: 'Exercicis d\'accentuació (Nivell C1)',
+    category: 'ortografia',
+    course: '4A',
+    exercises: []
+  },
+  {
+    id: '4a_diacritics',
+    title: 'Accents diacrítics (C1)',
+    description: 'Exercicis d\'accents diacrítics (Nivell C1)',
+    category: 'ortografia',
+    course: '4A',
+    exercises: []
+  },
+  {
+    id: '4a_dieresi',
+    title: 'Dièresi (C1)',
+    description: 'Exercicis de dièresi (Nivell C1)',
+    category: 'ortografia',
+    course: '4A',
+    exercises: []
+  }
+];
+
+// =====================================================
+// CURS 4B - BUIT (Merged into 4A)
+// =====================================================
+
+export const COURSE_4B_EXERCISES: CourseSection[] = [];
+
+// =====================================================
+// CURS 4C - NIVELL MITJÀ (COMBINAT B2)
+// =====================================================
+
+export const COURSE_4C_EXERCISES: CourseSection[] = [
+  {
+    id: '4c_apostrofacio',
+    title: 'Apostrofació (B2)',
+    description: '✏️ Domina l\'apòstrof! Articles EL/LA, excepcions i contraccions. 63 exercicis interactius.',
+    category: 'ortografia',
+    course: '4C',
+    exercises: [
+      // Bloc 1: L'article LA davant I / U / HI / HU
+      { id: '4c_apo_1', type: 'multiple_choice', question: '⚖️ Completa: "___ és un dret fonamental."', options: ['La igualtat', 'L\'igualtat'], correctAnswer: 'La igualtat', explanation: 'La i inicial és àtona (la força està en -tat). No s\'apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_2', type: 'multiple_choice', question: '🇮🇳 Completa: "Visc a ___."', options: ['l\'Índia', 'la Índia'], correctAnswer: 'l\'Índia', explanation: 'La Í inicial és tònica (porta la força i accent). S\'apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_3', type: 'multiple_choice', question: '🙏 Completa: "___ és una virtut."', options: ['L\'humilitat', 'La humilitat'], correctAnswer: 'La humilitat', explanation: 'Humilitat comença per hu àtona (força en -tat). No s\'apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_4', type: 'multiple_choice', question: '💅 Completa: "Es va trencar ___."', options: ['l\'ungla', 'la ungla'], correctAnswer: 'l\'ungla', explanation: 'La u és tònica (força en un-). S\'apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_5', type: 'multiple_choice', question: '🌈 Completa: "___ perfecta no existeix."', options: ['L\'utopia', 'La utopia'], correctAnswer: 'La utopia', explanation: 'Utopia comença per u àtona (força en -pi-). No s\'apostrofa.', difficulty: 2, course: '4C' },
+      // Bloc 2: Masculí vs Femení
+      { id: '4c_apo_6', type: 'multiple_choice', question: '❌ Quina forma és INCORRECTA?', options: ['L\'home', 'L\'himne', 'El hospital'], correctAnswer: 'El hospital', explanation: 'Ha de ser l\'hospital (masculí davant H muda s\'apostrofa sempre).', difficulty: 3, course: '4C' },
+      { id: '4c_apo_7', type: 'multiple_choice', question: '🏢 Completa: "Estudiarem ___ de l\'empresa."', options: ['la imatge', 'l\'imatge'], correctAnswer: 'la imatge', explanation: 'Imatge és femení i comença per i àtona. No s\'apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_8', type: 'multiple_choice', question: '🗣️ Completa: "M\'agrada molt ___."', options: ['l\'idioma', 'el idioma'], correctAnswer: 'l\'idioma', explanation: 'Idioma és masculí. L\'article masculí s\'apostrofa sempre davant vocal.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_9', type: 'multiple_choice', question: '🔧 Com s\'escriu "El uso" en català?', options: ['L\'ús', 'El ús'], correctAnswer: 'L\'ús', explanation: 'Masculí davant vocal = s\'apostrofa sempre.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_10', type: 'multiple_choice', question: '💪 Completa: "Té ___ molt fort."', options: ['l\'instint', 'el instint'], correctAnswer: 'l\'instint', explanation: 'Masculí davant vocal = s\'apostrofa sempre.', difficulty: 2, course: '4C' },
+      // Bloc 3: Excepcions (Lletres, Hores, Semiconsonants)
+      { id: '4c_apo_11', type: 'multiple_choice', question: '🔤 Completa: "La paraula comença amb ___."', options: ['la a', 'l\'a'], correctAnswer: 'la a', explanation: 'Els noms de les lletres no s\'apostrofen.', difficulty: 3, course: '4C' },
+      { id: '4c_apo_12', type: 'multiple_choice', question: '🥛 Com s\'escriu "el yogur" en català?', options: ['l\'iogurt', 'el iogurt'], correctAnswer: 'el iogurt', explanation: 'La i de iogurt fa de consonant (diftong). No s\'apostrofa.', difficulty: 3, course: '4C' },
+      { id: '4c_apo_13', type: 'multiple_choice', question: '🕐 Completa: "Arribaré a ___."', options: ['la una', 'l\'una'], correctAnswer: 'la una', explanation: 'Excepció: l\'hora "una" no s\'apostrofa.', difficulty: 3, course: '4C' },
+      { id: '4c_apo_14', type: 'multiple_choice', question: '📏 Com s\'escriu "la yarda" en català?', options: ['la iarda', 'l\'iarda'], correctAnswer: 'la iarda', explanation: 'La i de iarda fa de consonant (semiconsonant).', difficulty: 3, course: '4C' },
+      { id: '4c_apo_15', type: 'multiple_choice', question: '✍️ Completa: "Escriu ___."', options: ['la ema', 'l\'ema'], correctAnswer: 'la ema', explanation: 'Nom de lletra. No s\'apostrofa.', difficulty: 3, course: '4C' },
+      // Bloc 4: Contraccions vs Apostrofació (Al/Del/Pel/Cal)
+      { id: '4c_apo_16', type: 'multiple_choice', question: '🏨 Completa: "Anem ___ hotel."', options: ['a l\'', 'al'], correctAnswer: 'a l\'', explanation: 'Hotel comença per H, requereix apòstrof. Es trenca la contracció al -> a l\'.', difficulty: 3, course: '4C' },
+      { id: '4c_apo_17', type: 'multiple_choice', question: '👨‍⚕️ Completa: "Vinc ___ metge."', options: ['del', 'de l\''], correctAnswer: 'del', explanation: 'Metge comença per consonant, mantenim la contracció.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_18', type: 'multiple_choice', question: '🚶 Completa: "Passegem ___."', options: ['per l\'avinguda', 'pel avinguda'], correctAnswer: 'per l\'avinguda', explanation: 'Avinguda comença per vocal, trenquem pel -> per l\'.', difficulty: 3, course: '4C' },
+      { id: '4c_apo_19', type: 'multiple_choice', question: '🏠 Completa: "Aquest cap de setmana vaig a ___ Andreu."', options: ['Ca n\'', 'Can'], correctAnswer: 'Ca n\'', explanation: 'Andreu comença per vocal, apostrofem la partícula en (Can = Ca + En).', difficulty: 4, course: '4C' },
+      { id: '4c_apo_20', type: 'multiple_choice', question: '❌ Quina forma és INCORRECTA?', options: ['Del edifici', 'De l\'edifici', 'De la casa'], correctAnswer: 'Del edifici', explanation: 'Hauria de ser de l\'edifici (es trenca la contracció davant vocal).', difficulty: 3, course: '4C' },
+      // --- BLOC 5: L'article EL (Masculí) ---
+      { id: '4c_apo_21', type: 'multiple_choice', question: '👤 Completa: "Ha vingut ___."', options: ['el home', 'l\'home'], correctAnswer: 'l\'home', explanation: 'Masculí davant H = apostrofa sempre.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_22', type: 'multiple_choice', question: '📄 Completa: "Llegeix ___."', options: ['l\'informe', 'el informe'], correctAnswer: 'l\'informe', explanation: 'Masculí davant vocal = apostrofa sempre.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_23', type: 'multiple_choice', question: '☝️ Completa: "És ___ que tinc."', options: ['el únic', 'l\'únic'], correctAnswer: 'l\'únic', explanation: 'Masculí davant U = apostrofa sempre.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_24', type: 'multiple_choice', question: '🗣️ Completa: "Parla ___."', options: ['l\'idioma', 'el idioma'], correctAnswer: 'l\'idioma', explanation: 'Masculí davant I = apostrofa (encara que sigui àtona).', difficulty: 2, course: '4C' },
+      { id: '4c_apo_25', type: 'multiple_choice', question: '✍️ Completa: "Presenta ___."', options: ['el escrit', 'l\'escrit'], correctAnswer: 'l\'escrit', explanation: 'Masculí davant E = apostrofa sempre.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_26', type: 'multiple_choice', question: '💨 Completa: "Pren ___."', options: ['l\'aire', 'el aire'], correctAnswer: 'l\'aire', explanation: 'Masculí davant A = apostrofa sempre.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_27', type: 'multiple_choice', question: '🏥 Completa: "Va cap a ___."', options: ['l\'hospital', 'el hospital'], correctAnswer: 'l\'hospital', explanation: 'Masculí davant H = apostrofa sempre.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_28', type: 'multiple_choice', question: '👴 Completa: "És ___ del nen."', options: ['el avi', 'l\'avi'], correctAnswer: 'l\'avi', explanation: 'Masculí davant A = apostrofa sempre.', difficulty: 1, course: '4C' },
+      // --- BLOC 6: L'article LA (Femení) ---
+      { id: '4c_apo_29', type: 'multiple_choice', question: '🎓 Completa: "Vaig a ___."', options: ['l\'universitat', 'la universitat'], correctAnswer: 'la universitat', explanation: 'Femení + U àtona = NO apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_30', type: 'multiple_choice', question: '💅 Completa: "Em fa mal ___."', options: ['la ungla', 'l\'ungla'], correctAnswer: 'l\'ungla', explanation: 'Femení + U tònica = SÍ apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_31', type: 'multiple_choice', question: 'ℹ️ Completa: "Vull tota ___."', options: ['la informació', 'l\'informació'], correctAnswer: 'la informació', explanation: 'Femení + I àtona = NO apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_32', type: 'multiple_choice', question: '🇮🇳 Completa: "Viatge a ___."', options: ['la Índia', 'l\'Índia'], correctAnswer: 'l\'Índia', explanation: 'Femení + Í tònica = SÍ apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_33', type: 'multiple_choice', question: '📚 Completa: "M\'agrada ___."', options: ['l\'història', 'la història'], correctAnswer: 'la història', explanation: 'Femení + Hi àtona = NO apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_34', type: 'multiple_choice', question: '🏝️ Completa: "Viu a ___."', options: ['la illa', 'l\'illa'], correctAnswer: 'l\'illa', explanation: 'Femení + I tònica = SÍ apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_35', type: 'multiple_choice', question: '🌍 Completa: "Patrimoni de ___."', options: ['l\'humanitat', 'la humanitat'], correctAnswer: 'la humanitat', explanation: 'Femení + Hu àtona = NO apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_36', type: 'multiple_choice', question: '🌀 Completa: "Gira ___."', options: ['la hèlix', 'l\'hèlix'], correctAnswer: 'l\'hèlix', explanation: 'Femení + Hè tònica = SÍ apostrofa.', difficulty: 3, course: '4C' },
+      { id: '4c_apo_37', type: 'multiple_choice', question: '🖼️ Completa: "Mira ___."', options: ['l\'imatge', 'la imatge'], correctAnswer: 'la imatge', explanation: 'Femení + I àtona = NO apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_38', type: 'multiple_choice', question: '🏭 Completa: "Treballa a ___."', options: ['l\'indústria', 'la indústria'], correctAnswer: 'la indústria', explanation: 'Femení + I àtona = NO apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_39', type: 'multiple_choice', question: '⏰ Completa: "És ___ de marxar."', options: ['la hora', 'l\'hora'], correctAnswer: 'l\'hora', explanation: 'Femení + O tònica = SÍ apostrofa.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_40', type: 'multiple_choice', question: '🤝 Completa: "Valoro ___."', options: ['la amistat', 'l\'amistat'], correctAnswer: 'l\'amistat', explanation: 'Femení + A = SÍ apostrofa (regla normal).', difficulty: 1, course: '4C' },
+      // --- BLOC 7: Excepcions (Semiconsonants, Lletres, Hora) ---
+      { id: '4c_apo_41', type: 'multiple_choice', question: '🥛 Completa: "Menja ___."', options: ['l\'iogurt', 'el iogurt'], correctAnswer: 'el iogurt', explanation: 'I consonàntica = NO apostrofa.', difficulty: 3, course: '4C' },
+      { id: '4c_apo_42', type: 'multiple_choice', question: '🧘 Completa: "Faig ___."', options: ['l\'ioga', 'el ioga'], correctAnswer: 'el ioga', explanation: 'I consonàntica = NO apostrofa.', difficulty: 3, course: '4C' },
+      { id: '4c_apo_43', type: 'multiple_choice', question: '🕐 Completa: "Vindré a ___."', options: ['l\'una', 'la una'], correctAnswer: 'la una', explanation: 'Excepció horària: "la una".', difficulty: 2, course: '4C' },
+      { id: '4c_apo_44', type: 'multiple_choice', question: '🔤 Completa: "La paraula comença amb ___."', options: ['l\'a', 'la a'], correctAnswer: 'la a', explanation: 'Nom de lletra = NO apostrofa.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_45', type: 'multiple_choice', question: '💊 Completa: "Tinctura ___."', options: ['d\'iode', 'de iode'], correctAnswer: 'de iode', explanation: 'I consonàntica = NO apostrofa.', difficulty: 3, course: '4C' },
+      { id: '4c_apo_46', type: 'multiple_choice', question: '👵 Completa: "Estimo ___."', options: ['l\'iaia', 'la iaia'], correctAnswer: 'la iaia', explanation: 'Diftong creixent (ia) = NO apostrofa.', difficulty: 3, course: '4C' },
+      { id: '4c_apo_47', type: 'multiple_choice', question: '🦘 Completa: "He vist ___."', options: ['l\'uombat', 'el uombat'], correctAnswer: 'el uombat', explanation: 'U consonàntica = NO apostrofa.', difficulty: 3, course: '4C' },
+      // --- BLOC 8: Preposició DE ---
+      { id: '4c_apo_48', type: 'multiple_choice', question: '👥 Completa: "Grup ___."', options: ['de amics', 'd\'amics'], correctAnswer: 'd\'amics', explanation: 'DE + vocal = apostrofa sempre.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_49', type: 'multiple_choice', question: '📖 Completa: "Llibre ___."', options: ['de història', 'd\'història'], correctAnswer: 'd\'història', explanation: 'DE + H = apostrofa sempre.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_50', type: 'multiple_choice', question: '⏰ Completa: "Arribaré ___."', options: ['de hora', 'd\'hora'], correctAnswer: 'd\'hora', explanation: 'DE + H = apostrofa sempre.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_51', type: 'multiple_choice', question: '🎓 Completa: "Company ___."', options: ['de universitat', 'd\'universitat'], correctAnswer: 'd\'universitat', explanation: 'DE NO té excepció de U àtona. Apostrofa sempre.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_52', type: 'multiple_choice', question: '🌍 Completa: "___ ets?"', options: ['De on', 'D\'on'], correctAnswer: 'D\'on', explanation: 'DE + vocal = apostrofa sempre.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_53', type: 'multiple_choice', question: '💬 Completa: "Parla ___."', options: ['de aquesta', 'd\'aquesta'], correctAnswer: 'd\'aquesta', explanation: 'DE + A = apostrofa sempre.', difficulty: 1, course: '4C' },
+      // --- BLOC 9: Contraccions vs Apostrofació ---
+      { id: '4c_apo_54', type: 'multiple_choice', question: '👤 Completa: "Ho he dit ___."', options: ['al amic', 'a l\'amic'], correctAnswer: 'a l\'amic', explanation: 'AL es trenca davant vocal.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_55', type: 'multiple_choice', question: '📕 Completa: "És la portada ___."', options: ['del llibre', 'de l\'llibre'], correctAnswer: 'del llibre', explanation: 'DEL es manté davant consonant.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_56', type: 'multiple_choice', question: '🏨 Completa: "Surto ___."', options: ['del hotel', 'de l\'hotel'], correctAnswer: 'de l\'hotel', explanation: 'DEL es trenca davant H.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_57', type: 'multiple_choice', question: '🛤️ Completa: "Ves ___."', options: ['pel camí', 'per l\'camí'], correctAnswer: 'pel camí', explanation: 'PEL es manté davant consonant.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_58', type: 'multiple_choice', question: '🛣️ Completa: "Condueix ___."', options: ['pel autopista', 'per l\'autopista'], correctAnswer: 'per l\'autopista', explanation: 'PEL es trenca davant vocal.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_59', type: 'multiple_choice', question: '🏠 Completa: "Vaig a ___."', options: ['Cal Andreu', 'Ca l\'Andreu'], correctAnswer: 'Ca l\'Andreu', explanation: 'CAL es trenca davant vocal.', difficulty: 3, course: '4C' },
+      { id: '4c_apo_60', type: 'multiple_choice', question: '👨‍⚕️ Completa: "Visita ___."', options: ['al metge', 'a l\'metge'], correctAnswer: 'al metge', explanation: 'AL es manté davant consonant.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_61', type: 'multiple_choice', question: '🏥 Completa: "Ingrés ___."', options: ['al hospital', 'a l\'hospital'], correctAnswer: 'a l\'hospital', explanation: 'AL es trenca davant H.', difficulty: 2, course: '4C' },
+      { id: '4c_apo_62', type: 'multiple_choice', question: '🔄 Completa: "Ho has fet ___."', options: ['del revés', 'de l\'revés'], correctAnswer: 'del revés', explanation: 'DEL es manté davant consonant.', difficulty: 1, course: '4C' },
+      { id: '4c_apo_63', type: 'multiple_choice', question: '👻 Completa: "Surt ___."', options: ['del ànima', 'de l\'ànima'], correctAnswer: 'de l\'ànima', explanation: 'DEL es trenca davant vocal.', difficulty: 2, course: '4C' }
+    ]
+  },
+  {
+    id: '4c_separacio_sil·labes',
+    title: 'Separació de síl·labes (B2)',
+    description: 'Exercicis complets de separació de síl·labes (Nivell B2)',
+    category: 'ortografia',
+    course: '4C',
+    exercises: []
+  },
+  {
+    id: '4c_diftongs',
+    title: 'Diftongs (B2)',
+    description: '🔊 Diftong o hiat? Creixent o decreixent? 70 exercicis de separació sil·làbica i paranys.',
+    category: 'ortografia',
+    course: '4C',
+    exercises: [
+      // --- BLOC 1: Diftong o Hiat? (Identificació Bàsica) ---
+      { id: '4c_dif_1', type: 'multiple_choice', question: '💨 "Aire" conté...', options: ['Diftong (ai)', 'Hiat'], correctAnswer: 'Diftong (ai)', explanation: 'ai = diftong (dues vocals juntes en una síl·laba).', difficulty: 1, course: '4C' },
+      { id: '4c_dif_2', type: 'multiple_choice', question: '🎭 "Teatre" conté...', options: ['Diftong', 'Hiat (e-a)'], correctAnswer: 'Hiat (e-a)', explanation: 'Dues vocals fortes (e-a) = hiat (te-a-tre).', difficulty: 1, course: '4C' },
+      { id: '4c_dif_3', type: 'multiple_choice', question: '🍳 "Cuina" conté...', options: ['Diftong (ui)', 'Hiat'], correctAnswer: 'Diftong (ui)', explanation: 'ui = diftong decreixent.', difficulty: 1, course: '4C' },
+      { id: '4c_dif_4', type: 'multiple_choice', question: '🐕 "Cua" (rabo) conté...', options: ['Diftong', 'Hiat (u-a)'], correctAnswer: 'Hiat (u-a)', explanation: 'u-a = hiat (cu-a).', difficulty: 2, course: '4C' },
+      { id: '4c_dif_5', type: 'multiple_choice', question: '👑 "Reina" conté...', options: ['Diftong (ei)', 'Hiat'], correctAnswer: 'Diftong (ei)', explanation: 'ei = diftong decreixent.', difficulty: 1, course: '4C' },
+      { id: '4c_dif_6', type: 'multiple_choice', question: '👩 "Maria" conté...', options: ['Diftong', 'Hiat (i-a)'], correctAnswer: 'Hiat (i-a)', explanation: 'i-a final = hiat (Ma-ri-a).', difficulty: 2, course: '4C' },
+      { id: '4c_dif_7', type: 'multiple_choice', question: '👤 "Joan" conté...', options: ['Diftong', 'Hiat (o-a)'], correctAnswer: 'Hiat (o-a)', explanation: 'o-a = hiat (Jo-an).', difficulty: 2, course: '4C' },
+      { id: '4c_dif_8', type: 'multiple_choice', question: '📅 "Avui" conté...', options: ['Diftong (ui)', 'Hiat'], correctAnswer: 'Diftong (ui)', explanation: 'ui = diftong decreixent.', difficulty: 1, course: '4C' },
+      { id: '4c_dif_9', type: 'multiple_choice', question: '📚 "Història" al final conté...', options: ['Diftong final', 'Hiat final (i-a)'], correctAnswer: 'Hiat final (i-a)', explanation: 'i-a final àton = hiat (his-tò-ri-a).', difficulty: 2, course: '4C' },
+      { id: '4c_dif_10', type: 'multiple_choice', question: '4️⃣ "Quatre" conté...', options: ['Diftong (ua)', 'Hiat'], correctAnswer: 'Diftong (ua)', explanation: 'qua = diftong creixent.', difficulty: 1, course: '4C' },
+      { id: '4c_dif_11', type: 'multiple_choice', question: '🍇 "Raïm" conté...', options: ['Diftong', 'Hiat (a-ï)'], correctAnswer: 'Hiat (a-ï)', explanation: 'La dièresi marca hiat (ra-ïm).', difficulty: 2, course: '4C' },
+      { id: '4c_dif_12', type: 'multiple_choice', question: '🦶 "Peu" conté...', options: ['Diftong (eu)', 'Hiat'], correctAnswer: 'Diftong (eu)', explanation: 'eu = diftong decreixent.', difficulty: 1, course: '4C' },
+      { id: '4c_dif_13', type: 'multiple_choice', question: '🔬 "Ciència" al final conté...', options: ['Diftong final', 'Hiat final (i-a)'], correctAnswer: 'Hiat final (i-a)', explanation: 'i-a = hiat (ci-èn-ci-a).', difficulty: 2, course: '4C' },
+      { id: '4c_dif_14', type: 'multiple_choice', question: '💧 "Aigua" conté...', options: ['Diftong (ua)', 'Hiat'], correctAnswer: 'Diftong (ua)', explanation: 'gua = diftong creixent.', difficulty: 1, course: '4C' },
+      { id: '4c_dif_15', type: 'multiple_choice', question: '🌍 "País" conté...', options: ['Diftong', 'Hiat (a-í)'], correctAnswer: 'Hiat (a-í)', explanation: 'L\'accent trenca el diftong (pa-ís).', difficulty: 2, course: '4C' },
+      { id: '4c_dif_16', type: 'multiple_choice', question: '🦁 "Lleó" conté...', options: ['Diftong', 'Hiat (e-ó)'], correctAnswer: 'Hiat (e-ó)', explanation: 'e-ó = hiat (lle-ó).', difficulty: 2, course: '4C' },
+      { id: '4c_dif_17', type: 'multiple_choice', question: '🌫️ "Boira" conté...', options: ['Diftong (oi)', 'Hiat'], correctAnswer: 'Diftong (oi)', explanation: 'oi = diftong decreixent.', difficulty: 1, course: '4C' },
+      { id: '4c_dif_18', type: 'multiple_choice', question: '🎬 "Acció" conté...', options: ['Diftong', 'Hiat (i-ó)'], correctAnswer: 'Hiat (i-ó)', explanation: 'i-ó = hiat (ac-ci-ó).', difficulty: 2, course: '4C' },
+      { id: '4c_dif_19', type: 'multiple_choice', question: '🏞️ "Riu" conté...', options: ['Diftong (iu)', 'Hiat'], correctAnswer: 'Diftong (iu)', explanation: 'iu = diftong decreixent.', difficulty: 1, course: '4C' },
+      { id: '4c_dif_20', type: 'multiple_choice', question: '🏠 "Veí" conté...', options: ['Diftong', 'Hiat (e-í)'], correctAnswer: 'Hiat (e-í)', explanation: 'L\'accent trenca el diftong (ve-í).', difficulty: 2, course: '4C' },
+      // --- BLOC 2: Creixent o Decreixent? ---
+      { id: '4c_dif_21', type: 'multiple_choice', question: '💼 "Feina" - el diftong ei és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Decreixent', explanation: 'ei = vocal forta + feble = decreixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_22', type: 'multiple_choice', question: '🧤 "Guant" - el diftong ua és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Creixent', explanation: 'gua = g + u + vocal = creixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_23', type: 'multiple_choice', question: '🏛️ "Palau" - el diftong au és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Decreixent', explanation: 'au = vocal forta + feble = decreixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_24', type: 'multiple_choice', question: '❓ "Qüestió" - el diftong üe és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Creixent', explanation: 'qüe = q + ü + vocal = creixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_25', type: 'multiple_choice', question: '🚶 "Mou" - el diftong ou és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Decreixent', explanation: 'ou = vocal forta + feble = decreixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_26', type: 'multiple_choice', question: '🥛 "Iogurt" - el diftong io és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Creixent', explanation: 'io a l\'inici = creixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_27', type: 'multiple_choice', question: '🍳 "Cuina" - el diftong ui és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Decreixent', explanation: 'ui = feble + feble amb tònica a la primera = decreixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_28', type: 'multiple_choice', question: '8️⃣ "Vuit" - el diftong ui és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Decreixent', explanation: 'ui = decreixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_29', type: 'multiple_choice', question: '🐧 "Pingüí" - el diftong üi és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Creixent', explanation: 'güi = g + ü + vocal = creixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_30', type: 'multiple_choice', question: '👦 "Noi" - el diftong oi és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Decreixent', explanation: 'oi = vocal forta + feble = decreixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_31', type: 'multiple_choice', question: '💰 "Quota" - el diftong uo és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Creixent', explanation: 'quo = q + u + vocal = creixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_32', type: 'multiple_choice', question: '💊 "Remei" - el diftong ei és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Decreixent', explanation: 'ei = decreixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_33', type: 'multiple_choice', question: '🌍 "Llengua" - el diftong ua és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Creixent', explanation: 'gua = creixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_34', type: 'multiple_choice', question: '🏠 "Viu" - el diftong iu és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Decreixent', explanation: 'iu = decreixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_35', type: 'multiple_choice', question: '⭐ "Qualitat" - el diftong ua és...', options: ['Creixent', 'Decreixent'], correctAnswer: 'Creixent', explanation: 'qua = creixent.', difficulty: 2, course: '4C' },
+      // --- BLOC 3: Separació de Síl·labes ---
+      { id: '4c_dif_36', type: 'multiple_choice', question: '📚 Com se separa "Història"?', options: ['his-tò-ria', 'his-tò-ri-a'], correctAnswer: 'his-tò-ri-a', explanation: 'ia final àton = hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_37', type: 'multiple_choice', question: '🔬 Com se separa "Ciència"?', options: ['ci-èn-ci-a', 'cièn-ci-a'], correctAnswer: 'ci-èn-ci-a', explanation: 'ie és hiat, ia també.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_38', type: 'multiple_choice', question: '👑 Com se separa "Reina"?', options: ['re-i-na', 'rei-na'], correctAnswer: 'rei-na', explanation: 'ei = diftong (no se separa).', difficulty: 2, course: '4C' },
+      { id: '4c_dif_39', type: 'multiple_choice', question: '🎭 Com se separa "Teatre"?', options: ['tea-tre', 'te-a-tre'], correctAnswer: 'te-a-tre', explanation: 'Dues vocals fortes = hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_40', type: 'multiple_choice', question: '🌊 Com se separa "Oceà"?', options: ['o-ceà', 'o-ce-à'], correctAnswer: 'o-ce-à', explanation: 'e-à = hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_41', type: 'multiple_choice', question: '📋 Com se separa "Pauta"?', options: ['pau-ta', 'pa-u-ta'], correctAnswer: 'pau-ta', explanation: 'au = diftong.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_42', type: 'multiple_choice', question: '🍇 Com se separa "Raïm"?', options: ['raïm', 'ra-ïm'], correctAnswer: 'ra-ïm', explanation: 'Dièresi trenca diftong.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_43', type: 'multiple_choice', question: '🌸 Com se separa "Jardineria"?', options: ['jar-di-ne-ri-a', 'jar-di-ne-ria'], correctAnswer: 'jar-di-ne-ri-a', explanation: 'ia final = hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_44', type: 'multiple_choice', question: '🐣 Com se separa "Pasqua"?', options: ['pas-qu-a', 'pas-qua'], correctAnswer: 'pas-qua', explanation: 'qua = una sola síl·laba.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_45', type: 'multiple_choice', question: '👩 Com se separa "Eulàlia"?', options: ['Eu-là-li-a', 'E-u-là-li-a'], correctAnswer: 'Eu-là-li-a', explanation: 'Eu = diftong, ia = hiat.', difficulty: 3, course: '4C' },
+      { id: '4c_dif_46', type: 'multiple_choice', question: '🚶 Com se separa "Creuar"?', options: ['cre-uar', 'creu-ar'], correctAnswer: 'cre-uar', explanation: 'u entre vocals = diftong creixent amb la següent.', difficulty: 3, course: '4C' },
+      { id: '4c_dif_47', type: 'multiple_choice', question: '👧 Com se separa "Noia"?', options: ['noi-a', 'no-ia'], correctAnswer: 'no-ia', explanation: 'i entre vocals = diftong creixent amb la següent.', difficulty: 3, course: '4C' },
+      { id: '4c_dif_48', type: 'multiple_choice', question: '🎬 Com se separa "Acció"?', options: ['ac-ció', 'ac-ci-ó'], correctAnswer: 'ac-ci-ó', explanation: 'i-ó tònic = hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_49', type: 'multiple_choice', question: '🔄 Com se separa "Freqüent"?', options: ['fre-qüent', 'fre-qü-ent'], correctAnswer: 'fre-qüent', explanation: 'qüe = diftong.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_50', type: 'multiple_choice', question: '🦸 Com se separa "Heroi"?', options: ['he-roi', 'he-ro-i'], correctAnswer: 'he-roi', explanation: 'oi final = diftong.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_51', type: 'multiple_choice', question: '🦸‍♀️ Com se separa "Heroïna"?', options: ['he-roi-na', 'he-ro-ï-na'], correctAnswer: 'he-ro-ï-na', explanation: 'Dièresi marca hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_52', type: 'multiple_choice', question: '⚙️ Com se separa "Màquia"?', options: ['mà-qui-a', 'mà-quia'], correctAnswer: 'mà-qui-a', explanation: 'u muda, ia = hiat.', difficulty: 3, course: '4C' },
+      { id: '4c_dif_53', type: 'multiple_choice', question: '🌍 Com se separa "Llengües"?', options: ['llen-gü-es', 'llen-gües'], correctAnswer: 'llen-gües', explanation: 'güe = diftong.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_54', type: 'multiple_choice', question: '💦 Com se separa "Suor"?', options: ['su-or', 'suor'], correctAnswer: 'su-or', explanation: 'u-o no fan diftong.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_55', type: 'multiple_choice', question: '👩 Com se separa "Veïna"?', options: ['ve-ï-na', 'veï-na'], correctAnswer: 've-ï-na', explanation: 'Dièresi = hiat.', difficulty: 2, course: '4C' },
+      // --- BLOC 4: Comptar síl·labes ---
+      { id: '4c_dif_56', type: 'multiple_choice', question: '✈️ Quantes síl·labes té "Aeronàutica"?', options: ['5 (a-e-ro-nàu-ti-ca)', '6'], correctAnswer: '5 (a-e-ro-nàu-ti-ca)', explanation: 'nàu = diftong.', difficulty: 3, course: '4C' },
+      { id: '4c_dif_57', type: 'multiple_choice', question: '🥛 Quantes síl·labes té "Iogurt"?', options: ['3 (i-o-gurt)', '2 (io-gurt)'], correctAnswer: '2 (io-gurt)', explanation: 'io inicial = creixent.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_58', type: 'multiple_choice', question: '🎹 Quantes síl·labes té "Pianos"?', options: ['2 (pia-nos)', '3 (pi-a-nos)'], correctAnswer: '3 (pi-a-nos)', explanation: 'ia = hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_59', type: 'multiple_choice', question: '👶 Quantes síl·labes té "Mainada"?', options: ['4 (ma-i-na-da)', '3 (mai-na-da)'], correctAnswer: '3 (mai-na-da)', explanation: 'ai = diftong.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_60', type: 'multiple_choice', question: '🏜️ Quantes síl·labes té "Oasi"?', options: ['2 (oa-si)', '3 (o-a-si)'], correctAnswer: '3 (o-a-si)', explanation: 'o-a = hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_61', type: 'multiple_choice', question: '📝 Quantes síl·labes té "Traducció"?', options: ['3 (tra-duc-ció)', '4 (tra-duc-ci-ó)'], correctAnswer: '4 (tra-duc-ci-ó)', explanation: 'i-ó = hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_62', type: 'multiple_choice', question: '🇪🇺 Quantes síl·labes té "Europeu"?', options: ['4 (e-u-ro-peu)', '3 (eu-ro-peu)'], correctAnswer: '3 (eu-ro-peu)', explanation: 'eu inicial i final = diftongs.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_63', type: 'multiple_choice', question: '📏 Quantes síl·labes té "Línia"?', options: ['2 (lí-nia)', '3 (lí-ni-a)'], correctAnswer: '3 (lí-ni-a)', explanation: 'ia = hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_64', type: 'multiple_choice', question: '👨‍👩‍👧 Quantes síl·labes té "Família"?', options: ['3 (fa-mí-lia)', '4 (fa-mí-li-a)'], correctAnswer: '4 (fa-mí-li-a)', explanation: 'ia = hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_65', type: 'multiple_choice', question: '🐣 Quantes síl·labes té "Pasqües"?', options: ['3 (pas-qü-es)', '2 (pas-qües)'], correctAnswer: '2 (pas-qües)', explanation: 'qües = diftong.', difficulty: 2, course: '4C' },
+      // --- BLOC 5: Paranys i Excepcions ---
+      { id: '4c_dif_66', type: 'multiple_choice', question: '👩 "Tia" (parent) conté...', options: ['Diftong (tia)', 'Hiat (ti-a)'], correctAnswer: 'Hiat (ti-a)', explanation: 'i-a = hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_67', type: 'multiple_choice', question: '📅 "Dia" conté...', options: ['Diftong', 'Hiat (di-a)'], correctAnswer: 'Hiat (di-a)', explanation: 'i-a = hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_dif_68', type: 'multiple_choice', question: '🗺️ "Guia" (de guiar) conté...', options: ['Diftong (guia)', 'Hiat (gui-a)'], correctAnswer: 'Hiat (gui-a)', explanation: 'u muda, i tònica, ia = hiat.', difficulty: 3, course: '4C' },
+      { id: '4c_dif_69', type: 'multiple_choice', question: '🎸 "Guitarra" té diftong ui?', options: ['Sí, té diftong ui', 'No, la u és muda'], correctAnswer: 'No, la u és muda', explanation: 'La u és muda davant i (sense dièresi).', difficulty: 3, course: '4C' },
+      { id: '4c_dif_70', type: 'multiple_choice', question: '🐧 "Pingüí" té diftong?', options: ['Sí (üi)', 'No'], correctAnswer: 'Sí (üi)', explanation: 'La dièresi activa la U = diftong creixent.', difficulty: 3, course: '4C' }
+    ]
+  },
+  {
+    id: '4c_accentuacio',
+    title: 'Accentuació (B2)',
+    description: '🎯 Regles generals, vocals obertes/tancades i excepcions. 78 exercicis per dominar l\'accent!',
+    category: 'ortografia',
+    course: '4C',
+    exercises: [
+      // --- BLOC 1: Regles Generals (Agudes, Planes, Esdrúixoles) ---
+      { id: '4c_acc_1', type: 'multiple_choice', question: 'Quina porta accent?', options: ['Dema', 'Demà'], correctAnswer: 'Demà', explanation: 'Aguda acabada en vocal.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_2', type: 'multiple_choice', question: 'Quina porta accent?', options: ['Mòbil', 'Mobil'], correctAnswer: 'Mòbil', explanation: 'Plana no acabada en cap terminació prohibida.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_3', type: 'multiple_choice', question: 'Tria la correcta:', options: ['Musica', 'Música'], correctAnswer: 'Música', explanation: 'Totes les esdrúixoles s\'accentuen.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_4', type: 'multiple_choice', question: 'Quina és correcta?', options: ['Autobús', 'Autobus'], correctAnswer: 'Autobús', explanation: 'Aguda acabada en -us.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_5', type: 'multiple_choice', question: 'Quina NO porta accent?', options: ['Orígen', 'Origen'], correctAnswer: 'Origen', explanation: 'Plana acabada en -en no s\'accentua.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_6', type: 'multiple_choice', question: 'Com s\'escriu el plural d\'examen?', options: ['Exàmens', 'Examens'], correctAnswer: 'Exàmens', explanation: 'Plana acabada en -ns sí s\'accentua.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_7', type: 'multiple_choice', question: 'Porta accent "Remei"?', options: ['Sí, Remèi', 'No, Remei'], correctAnswer: 'No, Remei', explanation: 'Aguda acabada en diftong no s\'accentua.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_8', type: 'multiple_choice', question: 'Com s\'escriu?', options: ['Veïna', 'Veina'], correctAnswer: 'Veïna', explanation: 'La i és tònica i no forma diftong (dièresi).', difficulty: 2, course: '4C' },
+      { id: '4c_acc_9', type: 'multiple_choice', question: 'Tria la correcta:', options: ['Problema', 'Problèma'], correctAnswer: 'Problema', explanation: 'Plana acabada en vocal no s\'accentua.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_10', type: 'multiple_choice', question: 'S\'accentua "cantar"?', options: ['Sí', 'No'], correctAnswer: 'No', explanation: 'Aguda acabada en R, no s\'accentua.', difficulty: 1, course: '4C' },
+      // --- BLOC 2: Vocals Obertes (à, è, ò) vs Tancades (é, ó) ---
+      { id: '4c_acc_11', type: 'multiple_choice', question: '☕ Vull un...', options: ['Cafè', 'Café'], correctAnswer: 'Cafè', explanation: 'La majoria d\'agudes tenen E oberta.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_12', type: 'multiple_choice', question: '🤝 Jo...', options: ['Tambè', 'També'], correctAnswer: 'També', explanation: 'Excepció: compostos de bé són tancats.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_13', type: 'multiple_choice', question: '📅 Demà...', options: ['Aniré', 'Anirè'], correctAnswer: 'Aniré', explanation: 'Tots els futurs en 1a persona porten accent tancat.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_14', type: 'multiple_choice', question: '👆 No vull...', options: ['Aixó', 'Això'], correctAnswer: 'Això', explanation: 'Excepció O oberta: això, allò, però.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_15', type: 'multiple_choice', question: '🚚 Tria la correcta:', options: ['Camió', 'Camiò'], correctAnswer: 'Camió', explanation: 'La majoria d\'agudes en O són tancades.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_16', type: 'multiple_choice', question: '⛪ Tria la correcta:', options: ['Església', 'Esglesia'], correctAnswer: 'Església', explanation: 'Esdrúixola amb E tancada.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_17', type: 'multiple_choice', question: '🦌 Un animal...', options: ['Cérvol', 'Cèrvol'], correctAnswer: 'Cérvol', explanation: 'Excepció E tancada.', difficulty: 3, course: '4C' },
+      { id: '4c_acc_18', type: 'multiple_choice', question: '🤢 Em fa mal l\'...', options: ['Estòmac', 'Estómac'], correctAnswer: 'Estómac', explanation: 'Excepció O tancada.', difficulty: 3, course: '4C' },
+      { id: '4c_acc_19', type: 'multiple_choice', question: '⚡ Com s\'accentua?', options: ['Fàcilment', 'Facilment'], correctAnswer: 'Fàcilment', explanation: 'Manté l\'accent de fàcil.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_20', type: 'multiple_choice', question: '🅰️ L\'accent de la A és...', options: ['Sempre obert (à)', 'A vegades tancat (á)'], correctAnswer: 'Sempre obert (à)', explanation: 'La A només té accent obert en català.', difficulty: 1, course: '4C' },
+      // --- BLOC 3: Accents Diacrítics (Llista normativa) ---
+      { id: '4c_acc_21', type: 'multiple_choice', question: '🏠 Completa: "El ___ és rústic."', options: ['Sol', 'Sòl'], correctAnswer: 'Sòl', explanation: 'Sòl = terreny.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_22', type: 'multiple_choice', question: '🌍 Completa: "Tot el ___ ho sap."', options: ['Món', 'Mon'], correctAnswer: 'Món', explanation: 'Món = planeta.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_23', type: 'multiple_choice', question: '💰 Completa: "Té molts ___."', options: ['Béns', 'Bens'], correctAnswer: 'Béns', explanation: 'Béns = riqueses.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_24', type: 'multiple_choice', question: '🧠 Completa: "Jo no en ___ res."', options: ['Se', 'Sé'], correctAnswer: 'Sé', explanation: 'Sé = verb saber.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_25', type: 'multiple_choice', question: '🏃 Completa: "En Joan ___ pressa."', options: ['Té', 'Te'], correctAnswer: 'Té', explanation: 'Té = verb tenir.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_26', type: 'multiple_choice', question: '⚠️ S\'accentua "dona" (verb donar)?', options: ['Sí (Dóna)', 'No (Dona)'], correctAnswer: 'No (Dona)', explanation: 'Normativa 2016: ja no porta accent diacrític.', difficulty: 3, course: '4C' },
+      { id: '4c_acc_27', type: 'multiple_choice', question: '👶 Completa: "És el meu ___." (Nieto)', options: ['Net', 'Nét'], correctAnswer: 'Net', explanation: 'Normativa 2016: ja no porta accent.', difficulty: 3, course: '4C' },
+      { id: '4c_acc_28', type: 'multiple_choice', question: '⚡ Completa: "Adoraven el ___ Zeus."', options: ['Deu', 'Déu'], correctAnswer: 'Déu', explanation: 'Déu = divinitat.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_29', type: 'multiple_choice', question: '✅ Completa: "Ha dit que ___."', options: ['Si', 'Sí'], correctAnswer: 'Sí', explanation: 'Sí = afirmació.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_30', type: 'multiple_choice', question: '💇 Com s\'escriu "A contrapelo"?', options: ['A contrapel', 'A contrapèl'], correctAnswer: 'A contrapel', explanation: 'Els derivats com contrapel perden l\'accent (excepte pèl-roig).', difficulty: 3, course: '4C' },
+      // --- BLOC 4: Excepcions i Trampes ---
+      { id: '4c_acc_31', type: 'multiple_choice', question: '🔮 Tria la correcta:', options: ['Misteri', 'Mistèri'], correctAnswer: 'Misteri', explanation: 'Plana acabada en vocal no s\'accentua.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_32', type: 'multiple_choice', question: '🛒 "Comprar-lo" porta accent?', options: ['Sí (Compràr-lo)', 'No (Comprar-lo)'], correctAnswer: 'No (Comprar-lo)', explanation: 'Els pronoms febles no alteren l\'accentuació del verb.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_33', type: 'multiple_choice', question: '🚀 Com s\'accentua?', options: ['Ciencia-ficció', 'Ciència-ficció'], correctAnswer: 'Ciència-ficció', explanation: 'Cada part del compost manté el seu accent.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_34', type: 'multiple_choice', question: '❓ Completa: "No sé ___ vol."', options: ['Què', 'Que'], correctAnswer: 'Què', explanation: 'Pronom tònic/interrogatiu.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_35', type: 'multiple_choice', question: '⚽ "Futbol" porta accent?', options: ['Futbol', 'Futbòl'], correctAnswer: 'Futbol', explanation: 'És aguda acabada en -l, no s\'accentua.', difficulty: 2, course: '4C' },
+      // --- BLOC 5: Vocals "E" (Oberta è vs Tancada é) ---
+      { id: '4c_acc_36', type: 'multiple_choice', question: '🎯 Completa: "Demà ___ amb tu."', options: ['parlarè', 'parlaré'], correctAnswer: 'parlaré', explanation: 'Tots els futurs porten accent tancat (é).', difficulty: 2, course: '4C' },
+      { id: '4c_acc_37', type: 'multiple_choice', question: '☕ Vull un...', options: ['cafè', 'café'], correctAnswer: 'cafè', explanation: 'La majoria d\'agudes tenen E oberta (è).', difficulty: 1, course: '4C' },
+      { id: '4c_acc_38', type: 'multiple_choice', question: '🤝 Jo ___ vinc.', options: ['també', 'tambè'], correctAnswer: 'també', explanation: 'Compost de bé = accent tancat.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_39', type: 'multiple_choice', question: '🦌 He vist un...', options: ['cèrvol', 'cérvol'], correctAnswer: 'cérvol', explanation: 'Excepció: plana amb E tancada.', difficulty: 3, course: '4C' },
+      { id: '4c_acc_40', type: 'multiple_choice', question: '⛪ L\'___ romànica.', options: ['esglèsia', 'església'], correctAnswer: 'església', explanation: 'Excepció: esdrúixola amb E tancada.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_41', type: 'multiple_choice', question: '☝️ ___ vull això.', options: ['Només', 'Nomès'], correctAnswer: 'Només', explanation: 'Derivat de "més" = tancat.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_42', type: 'multiple_choice', question: '📈 Quin ___ més gran!', options: ['progrés', 'progrès'], correctAnswer: 'progrés', explanation: 'Plural en -essos = accent tancat.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_43', type: 'multiple_choice', question: '🏛️ El ___ dels Diputats.', options: ['Congrés', 'Congrès'], correctAnswer: 'Congrés', explanation: 'Llistat al PDF com a tancat.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_44', type: 'multiple_choice', question: '🤔 Què ___ fer?', options: ['pretèn', 'pretén'], correctAnswer: 'pretén', explanation: 'Verbs en -tén = tancat.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_45', type: 'multiple_choice', question: '💡 ___ el llum.', options: ['Encén', 'Encèn'], correctAnswer: 'Encén', explanation: 'Verbs en -cén = tancat.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_46', type: 'multiple_choice', question: '💰 He demanat un...', options: ['préstec', 'prèstec'], correctAnswer: 'préstec', explanation: 'Excepció: plana tancada.', difficulty: 3, course: '4C' },
+      { id: '4c_acc_47', type: 'multiple_choice', question: '👩 El nom propi és...', options: ['Mercè', 'Mercé'], correctAnswer: 'Mercè', explanation: 'Nom propi, regla general E oberta.', difficulty: 2, course: '4C' },
+      // --- BLOC 6: Vocals "O" (Oberta ò vs Tancada ó) ---
+      { id: '4c_acc_48', type: 'multiple_choice', question: '👆 Què és ___?', options: ['això', 'aixó'], correctAnswer: 'això', explanation: 'Excepció: O oberta.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_49', type: 'multiple_choice', question: '⚠️ Vindria, ___ no puc.', options: ['però', 'peró'], correctAnswer: 'però', explanation: 'Excepció: O oberta.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_50', type: 'multiple_choice', question: '🚚 Un ___ gran.', options: ['camió', 'camiò'], correctAnswer: 'camió', explanation: 'Regla general agudes: O tancada.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_51', type: 'multiple_choice', question: '🤢 Mal d\'...', options: ['estómac', 'estòmac'], correctAnswer: 'estómac', explanation: 'Excepció: plana tancada.', difficulty: 3, course: '4C' },
+      { id: '4c_acc_52', type: 'multiple_choice', question: '🧪 La ___ magistral.', options: ['fórmula', 'fòrmula'], correctAnswer: 'fórmula', explanation: 'Excepció: esdrúixola tancada.', difficulty: 3, course: '4C' },
+      { id: '4c_acc_53', type: 'multiple_choice', question: '💥 Olor de...', options: ['pòlvora', 'pólvora'], correctAnswer: 'pólvora', explanation: 'Excepció: esdrúixola tancada.', difficulty: 3, course: '4C' },
+      { id: '4c_acc_54', type: 'multiple_choice', question: '🍚 Una paella d\'...', options: ['arròs', 'arrós'], correctAnswer: 'arròs', explanation: 'Aguda acabada en -òs: oberta.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_55', type: 'multiple_choice', question: '📱 Tinc el ___ apagat.', options: ['mòbil', 'móbil'], correctAnswer: 'mòbil', explanation: 'Plana: regla general O oberta.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_56', type: 'multiple_choice', question: '📚 M\'agrada la...', options: ['història', 'história'], correctAnswer: 'història', explanation: 'Esdrúixola: regla general O oberta.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_57', type: 'multiple_choice', question: '🏃 Sortir a...', options: ['córrer', 'còrrer'], correctAnswer: 'córrer', explanation: 'Excepció: plana tancada.', difficulty: 3, course: '4C' },
+      { id: '4c_acc_58', type: 'multiple_choice', question: '🛶 Passeig en...', options: ['góndola', 'gòndola'], correctAnswer: 'góndola', explanation: 'Excepció: esdrúixola tancada.', difficulty: 3, course: '4C' },
+      { id: '4c_acc_59', type: 'multiple_choice', question: '🎪 La ___ de la fira.', options: ['tómbola', 'tòmbola'], correctAnswer: 'tómbola', explanation: 'Excepció: esdrúixola tancada.', difficulty: 3, course: '4C' },
+      // --- BLOC 7: Regles Generals i Paranys ---
+      { id: '4c_acc_60', type: 'multiple_choice', question: '📝 Quina és correcta?', options: ['L\'exàmen', 'L\'examen'], correctAnswer: 'L\'examen', explanation: 'Plana acabada en -en: no s\'accentua.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_61', type: 'multiple_choice', question: '🌍 Porta accent "Origen"?', options: ['Origen', 'Orígen'], correctAnswer: 'Origen', explanation: 'Plana acabada en -en.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_62', type: 'multiple_choice', question: '⚡ Com s\'escriu l\'adverbi?', options: ['Fàcilment', 'Facilment'], correctAnswer: 'Fàcilment', explanation: 'Manté l\'accent de fàcil.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_63', type: 'multiple_choice', question: '🏎️ Com s\'escriu l\'adverbi?', options: ['Ràpidament', 'Rapidament'], correctAnswer: 'Ràpidament', explanation: 'Manté l\'accent de ràpida.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_64', type: 'multiple_choice', question: '😊 Porta accent "Feliçment"?', options: ['Feliçment', 'Feliçmént'], correctAnswer: 'Feliçment', explanation: 'Feliç no en porta, l\'adverbi tampoc.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_65', type: 'multiple_choice', question: '📄 Porta accent "Textos"?', options: ['Tèxtos', 'Textos'], correctAnswer: 'Textos', explanation: 'Plana acabada en -os: no s\'accentua.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_66', type: 'multiple_choice', question: '🏐 Jugar a...', options: ['vòlei', 'volei'], correctAnswer: 'vòlei', explanation: 'Plana acabada en diftong: s\'accentua.', difficulty: 3, course: '4C' },
+      { id: '4c_acc_67', type: 'multiple_choice', question: '🏒 Pal d\'...', options: ['hoquei', 'hòquei'], correctAnswer: 'hòquei', explanation: 'Plana acabada en diftong: s\'accentua.', difficulty: 3, course: '4C' },
+      { id: '4c_acc_68', type: 'multiple_choice', question: '💊 No hi ha...', options: ['remèi', 'remei'], correctAnswer: 'remei', explanation: 'Aguda acabada en diftong: no s\'accentua.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_69', type: 'multiple_choice', question: '👤 Es diu...', options: ['Lluís', 'Lluis'], correctAnswer: 'Lluís', explanation: 'Aguda acabada en -is, hiat trencat.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_70', type: 'multiple_choice', question: '🌍 El meu...', options: ['pais', 'país'], correctAnswer: 'país', explanation: 'Aguda acabada en -is, marca hiat.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_71', type: 'multiple_choice', question: '🏠 El ___ del cinquè.', options: ['veí', 'vei'], correctAnswer: 'veí', explanation: 'Aguda acabada en vocal, hiat.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_72', type: 'multiple_choice', question: '📺 La sèrie...', options: ['continuarà', 'continuara'], correctAnswer: 'continuarà', explanation: 'Futur, aguda en vocal.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_73', type: 'multiple_choice', question: '🔧 Una ___ nova.', options: ['màquina', 'maquina'], correctAnswer: 'màquina', explanation: 'Esdrúixola, accent obert en A.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_74', type: 'multiple_choice', question: '🎵 Escoltar...', options: ['música', 'musica'], correctAnswer: 'música', explanation: 'Esdrúixola.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_75', type: 'multiple_choice', question: '🔬 La ___ ficció.', options: ['ciència', 'ciéncia'], correctAnswer: 'ciència', explanation: 'Esdrúixola, E oberta.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_76', type: 'multiple_choice', question: '📖 Obre la...', options: ['pàgina', 'página'], correctAnswer: 'pàgina', explanation: 'Accent de la A sempre obert.', difficulty: 1, course: '4C' },
+      { id: '4c_acc_77', type: 'multiple_choice', question: '🛍️ Bossa de...', options: ['plàstic', 'plástic'], correctAnswer: 'plàstic', explanation: 'Plana no acabada en terminació prohibida.', difficulty: 2, course: '4C' },
+      { id: '4c_acc_78', type: 'multiple_choice', question: '🟡 Color ___.', options: ['gròc', 'groc'], correctAnswer: 'groc', explanation: 'Aguda acabada en C: no s\'accentua.', difficulty: 1, course: '4C' }
+    ]
+  },
+  {
+    id: '4c_diacritics',
+    title: 'Accents diacrítics (B2)',
+    description: '🔤 Bé/be, déu/deu, sòl/sol... Aprova els diacrítics! 73 exercicis amb normativa 2016.',
+    category: 'ortografia',
+    course: '4C',
+    exercises: [
+      // --- BLOC 1: Bàsics (Rellenar el hueco) ---
+      { id: '4c_dia_1', type: 'multiple_choice', question: '👍 Completa: "El projecte avança molt ___."', options: ['be', 'bé'], correctAnswer: 'bé', explanation: 'Bé = bien (adverbi). Be = xai/lletra B.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_2', type: 'multiple_choice', question: '⚡ Completa: "Visiten el temple del ___ Apol·lo."', options: ['deu', 'déu'], correctAnswer: 'déu', explanation: 'Déu = divinitat. Deu = número 10 o font.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_3', type: 'multiple_choice', question: '🏛️ Completa: "Aquest edifici ___ molt antic."', options: ['es', 'és'], correctAnswer: 'és', explanation: 'És = verb ser. Es = pronom.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_4', type: 'multiple_choice', question: '✋ Completa: "M\'he fet mal a la ___ esquerra."', options: ['ma', 'mà'], correctAnswer: 'mà', explanation: 'Mà = part del cos. Ma = possessiu àton arcaic.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_5', type: 'multiple_choice', question: '➕ Completa: "No vull sentir ni una paraula ___."', options: ['més', 'mes'], correctAnswer: 'més', explanation: 'Més = quantitat. Mes = calendari.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_6', type: 'multiple_choice', question: '🌍 Completa: "És el millor advocat del ___."', options: ['mon', 'món'], correctAnswer: 'món', explanation: 'Món = world. Mon = el meu (arcaic).', difficulty: 1, course: '4C' },
+      { id: '4c_dia_7', type: 'multiple_choice', question: '💇 Completa: "Té el ___ arrissat."', options: ['pel', 'pèl'], correctAnswer: 'pèl', explanation: 'Pèl = cabell. Pel = per + el.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_8', type: 'multiple_choice', question: '❓ Completa: "No entenc ___ vols dir."', options: ['què', 'que'], correctAnswer: 'què', explanation: 'Què = interrogatiu/tònic. Que = àton.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_9', type: 'multiple_choice', question: '🧠 Completa: "Ja ___ que és difícil."', options: ['se', 'sé'], correctAnswer: 'sé', explanation: 'Sé = verb saber. Se = pronom.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_10', type: 'multiple_choice', question: '✅ Completa: "Va respondre que ___, que vindria."', options: ['si', 'sí'], correctAnswer: 'sí', explanation: 'Sí = afirmació. Si = condicional.', difficulty: 1, course: '4C' },
+      // --- BLOC 2: Distincions fines ---
+      { id: '4c_dia_11', type: 'multiple_choice', question: '🏠 Com s\'escriu "suelo" (paviment) en català?', options: ['Sol', 'Sòl'], correctAnswer: 'Sòl', explanation: 'Sòl = paviment. Sol = astre/estar sol.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_12', type: 'multiple_choice', question: '😴 Completa: "Tinc molta ___." (ganes de dormir)', options: ['són', 'son'], correctAnswer: 'son', explanation: 'Son = ganes de dormir. Són = ells són.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_13', type: 'multiple_choice', question: '🍵 Completa: "Vols prendre un ___?" (infusió)', options: ['té', 'te'], correctAnswer: 'te', explanation: 'Te = infusió. Té = verb tenir.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_14', type: 'multiple_choice', question: '👥 Completa: "___ espero a la sortida."', options: ['Ús', 'Us'], correctAnswer: 'Us', explanation: 'Us = pronom "os". Ús = utilització.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_15', type: 'multiple_choice', question: '🤝 Completa: "Faig tractes amb ___." (pronom fort)', options: ['vós', 'vos'], correctAnswer: 'vós', explanation: 'Vós = pronom tònic/fort. Vos = àton.', difficulty: 3, course: '4C' },
+      // --- BLOC 3: Caça l'intrús (Normativa 2016) ---
+      { id: '4c_dia_16', type: 'multiple_choice', question: '⚠️ Quina paraula està MAL escrita (li sobra l\'accent)?', options: ['Dóna', 'Més', 'Sòl'], correctAnswer: 'Dóna', explanation: 'Normativa 2016: ara s\'escriu "dona" sempre (dona=mujer/verbo dar).', difficulty: 3, course: '4C' },
+      { id: '4c_dia_17', type: 'multiple_choice', question: '⚠️ Quina paraula està MAL escrita (li sobra l\'accent)?', options: ['Nét', 'Déu', 'Mà'], correctAnswer: 'Nét', explanation: 'Normativa 2016: ara s\'escriu "net" sempre (net=nieto/limpio).', difficulty: 3, course: '4C' },
+      { id: '4c_dia_18', type: 'multiple_choice', question: '🔗 Quina paraula composta manté l\'accent diacrític?', options: ['Adeu', 'Pèl-roig'], correctAnswer: 'Pèl-roig', explanation: 'Pèl-roig manté l\'accent de pèl. Adeu ja no s\'accentua.', difficulty: 3, course: '4C' },
+      // --- BLOC 4: Context i frases completes ---
+      { id: '4c_dia_19', type: 'multiple_choice', question: '☕ Quina frase és correcta?', options: ['La Maria té te', 'La Maria te té'], correctAnswer: 'La Maria té te', explanation: 'Té (verb tenir) + te (infusió).', difficulty: 3, course: '4C' },
+      { id: '4c_dia_20', type: 'multiple_choice', question: '⚖️ Completa: "El jutge ha dictaminat que els ___ són públics."', options: ['béns', 'bens'], correctAnswer: 'béns', explanation: 'Béns = propietats. Bens = xais (plural de be).', difficulty: 3, course: '4C' },
+      // --- BLOC 5: Més exercicis variats ---
+      { id: '4c_dia_21', type: 'multiple_choice', question: '🔍 Troba l\'ERROR: "Aquest mes necessito mes diners."', options: ['mes (primer)', 'mes (segon)', 'necessito'], correctAnswer: 'mes (segon)', explanation: 'El segon hauria de ser "més" (quantitat).', difficulty: 2, course: '4C' },
+      { id: '4c_dia_22', type: 'multiple_choice', question: '🐻 Què significa "OS" (sense accent)?', options: ['Animal (oso)', 'Utilització'], correctAnswer: 'Animal (oso)', explanation: 'Os = animal (segons normativa 2016 ja no porta accent). Ús = utilització.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_23', type: 'multiple_choice', question: '📖 Quina definició és correcta?', options: ['Bé = Ovella / Be = Bé', 'Bé = Bé / Be = Ovella'], correctAnswer: 'Bé = Bé / Be = Ovella', explanation: 'Bé = adverbi/propietat. Be = xai/lletra.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_24', type: 'multiple_choice', question: '🎯 Identifica l\'INTRÚS: quina paraula NO porta MAI accent diacrític?', options: ['Món', 'Mà', 'Foc', 'Ús'], correctAnswer: 'Foc', explanation: 'Foc mai porta accent diacrític.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_25', type: 'multiple_choice', question: '🔑 Completa: "No ___ on he deixat les claus."', options: ['se', 'sé'], correctAnswer: 'sé', explanation: 'Sé = verb saber.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_26', type: 'multiple_choice', question: '🌧️ Completa: "___ plou, no vindré."', options: ['Si', 'Sí'], correctAnswer: 'Si', explanation: 'Si = condicional. Sí = afirmació.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_27', type: 'multiple_choice', question: '🔍 Troba l\'ERROR: "M\'ha pres el pel."', options: ['M\'ha', 'pres', 'pel'], correctAnswer: 'pel', explanation: 'Hauria de ser "pèl" (cabell).', difficulty: 2, course: '4C' },
+      { id: '4c_dia_28', type: 'multiple_choice', question: '🔧 Com es tradueix "el uso" en català?', options: ['L\'ús', 'L\'us'], correctAnswer: 'L\'ús', explanation: 'Ús = utilització (amb accent).', difficulty: 2, course: '4C' },
+      { id: '4c_dia_29', type: 'multiple_choice', question: '☀️ Completa: "El ___ sempre surt per l\'est."', options: ['sol', 'sòl'], correctAnswer: 'sol', explanation: 'Sol = astre. Sòl = paviment.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_30', type: 'multiple_choice', question: '🌍 Completa: "Quin ___ més bonic!"', options: ['mon', 'món'], correctAnswer: 'món', explanation: 'Món = world.', difficulty: 1, course: '4C' },
+      // --- BLOC 6: Frases noves ---
+      { id: '4c_dia_31', type: 'multiple_choice', question: 'Tria la forma correcta: "El xai també es diu ___."', options: ['bé', 'be'], correctAnswer: 'be', explanation: 'Be = animal (xai).', difficulty: 1, course: '4C' },
+      { id: '4c_dia_32', type: 'multiple_choice', question: 'Tria la forma correcta: "No hi ha ningú que tingui el do de la ubiqüitat, només ___."', options: ['Déu', 'Deu'], correctAnswer: 'Déu', explanation: 'Déu = divinitat.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_33', type: 'multiple_choice', question: 'Tria la forma correcta: "Aquest noi ___ molt alt."', options: ['es', 'és'], correctAnswer: 'és', explanation: 'És = verb ser.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_34', type: 'multiple_choice', question: 'Tria la forma correcta: "Tinc la ___ freda."', options: ['ma', 'mà'], correctAnswer: 'mà', explanation: 'Mà = part del cos.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_35', type: 'multiple_choice', question: 'Tria la forma correcta: "Vull ___ sucre al cafè."', options: ['més', 'mes'], correctAnswer: 'més', explanation: 'Més = quantitat.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_36', type: 'multiple_choice', question: 'Tria la forma correcta: "Has viatjat per tot el ___?"', options: ['món', 'mon'], correctAnswer: 'món', explanation: 'Món = planeta.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_37', type: 'multiple_choice', question: 'Tria la forma correcta: "Aquest gos té el ___ molt suau."', options: ['pel', 'pèl'], correctAnswer: 'pèl', explanation: 'Pèl = cabell/vellositat.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_38', type: 'multiple_choice', question: 'Tria la forma correcta: "El llibre ___ llegeixes és interessant."', options: ['què', 'que'], correctAnswer: 'que', explanation: 'Que = relatiu àton.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_39', type: 'multiple_choice', question: 'Tria la forma correcta: "Ja ___ la resposta."', options: ['se', 'sé'], correctAnswer: 'sé', explanation: 'Sé = verb saber.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_40', type: 'multiple_choice', question: 'Tria la forma correcta: "___, vindré a la festa."', options: ['Si', 'Sí'], correctAnswer: 'Sí', explanation: 'Sí = afirmació.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_41', type: 'multiple_choice', question: 'Tria la forma correcta: "El ___ agrícola s\'ha de protegir."', options: ['sol', 'sòl'], correctAnswer: 'sòl', explanation: 'Sòl = terreny.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_42', type: 'multiple_choice', question: 'Tria la forma correcta: "Aquestes sabates ___ noves."', options: ['són', 'son'], correctAnswer: 'són', explanation: 'Són = verb ser.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_43', type: 'multiple_choice', question: 'Tria la forma correcta: "La Maria ___ dos germans."', options: ['té', 'te'], correctAnswer: 'té', explanation: 'Té = verb tenir.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_44', type: 'multiple_choice', question: 'Tria la forma correcta: "Fes un bon ___ de les instal·lacions."', options: ['ús', 'us'], correctAnswer: 'ús', explanation: 'Ús = substantiu (utilització).', difficulty: 2, course: '4C' },
+      { id: '4c_dia_45', type: 'multiple_choice', question: 'Tria la forma correcta: "___ sou el responsable."', options: ['Vós', 'Vos'], correctAnswer: 'Vós', explanation: 'Vós = pronom fort.', difficulty: 2, course: '4C' },
+      // --- BLOC 7: Definicions ---
+      { id: '4c_dia_46', type: 'multiple_choice', question: 'Quina paraula significa "Riquesa o patrimoni"?', options: ['Bé', 'Be'], correctAnswer: 'Bé', explanation: 'Bé = riquesa. Be = xai.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_47', type: 'multiple_choice', question: 'Quina paraula significa "Font d\'aigua"?', options: ['Déu', 'Deu'], correctAnswer: 'Deu', explanation: 'Deu = font. Déu = divinitat.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_48', type: 'multiple_choice', question: 'Quina paraula significa "Pronom reflexiu (es renta)"?', options: ['És', 'Es'], correctAnswer: 'Es', explanation: 'Es = pronom. És = verb ser.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_49', type: 'multiple_choice', question: 'Quina paraula significa "Possessiu àton (ma tia)"?', options: ['Ma', 'Mà'], correctAnswer: 'Ma', explanation: 'Ma = possessiu. Mà = part del cos.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_50', type: 'multiple_choice', question: 'Quina paraula significa "Període de 30 dies"?', options: ['Més', 'Mes'], correctAnswer: 'Mes', explanation: 'Mes = calendari. Més = quantitat.', difficulty: 1, course: '4C' },
+      { id: '4c_dia_51', type: 'multiple_choice', question: 'Quina paraula significa "Possessiu àton (mon pare)"?', options: ['Món', 'Mon'], correctAnswer: 'Mon', explanation: 'Mon = possessiu arcaic. Món = planeta.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_52', type: 'multiple_choice', question: 'Quina paraula és "Contracció de PER + EL"?', options: ['Pèl', 'Pel'], correctAnswer: 'Pel', explanation: 'Pel = per + el. Pèl = cabell.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_53', type: 'multiple_choice', question: 'Quina paraula significa "Pronom interrogatiu tònic"?', options: ['Què', 'Que'], correctAnswer: 'Què', explanation: 'Què = tònic. Que = àton.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_54', type: 'multiple_choice', question: 'Quina paraula significa "Pronom reflexiu (se n\'ha anat)"?', options: ['Sé', 'Se'], correctAnswer: 'Se', explanation: 'Se = pronom. Sé = verb saber.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_55', type: 'multiple_choice', question: 'Quina paraula significa "Nota musical o conjunció condicional"?', options: ['Sí', 'Si'], correctAnswer: 'Si', explanation: 'Si = nota/condicional. Sí = afirmació.', difficulty: 2, course: '4C' },
+      // --- BLOC 8: Plurals i Derivats ---
+      { id: '4c_dia_56', type: 'multiple_choice', question: 'Tria la forma correcta: "Té molts ___ immobles."', options: ['béns', 'bens'], correctAnswer: 'béns', explanation: 'Béns = riqueses. Bens = xais.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_57', type: 'multiple_choice', question: 'Tria la forma correcta: "Els grecs tenien molts ___."', options: ['déus', 'deus'], correctAnswer: 'déus', explanation: 'Déus = plural de déu (divinitat).', difficulty: 2, course: '4C' },
+      { id: '4c_dia_58', type: 'multiple_choice', question: 'Tria la forma correcta: "Tinc al·lèrgia als ___ de gat."', options: ['pèls', 'pels'], correctAnswer: 'pèls', explanation: 'Pèls = plural de pèl (cabell).', difficulty: 2, course: '4C' },
+      { id: '4c_dia_59', type: 'multiple_choice', question: 'Tria la forma correcta: "Els ___ volcànics són fèrtils."', options: ['sols', 'sòls'], correctAnswer: 'sòls', explanation: 'Sòls = plural de sòl (terreny).', difficulty: 2, course: '4C' },
+      { id: '4c_dia_60', type: 'multiple_choice', question: 'Tria la forma correcta: "El \'no\' ja el tens, ara busca els ___."', options: ['sís', 'sis'], correctAnswer: 'sís', explanation: 'Sís = plural de sí (afirmació).', difficulty: 3, course: '4C' },
+      { id: '4c_dia_61', type: 'multiple_choice', question: '"Adeu" porta accent?', options: ['Adéu', 'Adeu'], correctAnswer: 'Adeu', explanation: 'Normativa 2016: ja no s\'accentua.', difficulty: 3, course: '4C' },
+      { id: '4c_dia_62', type: 'multiple_choice', question: '"Adeu-siau" porta accent?', options: ['Adéu-siau', 'Adeu-siau'], correctAnswer: 'Adeu-siau', explanation: 'Compost d\'adeu, sense accent.', difficulty: 3, course: '4C' },
+      { id: '4c_dia_63', type: 'multiple_choice', question: '"Entresol" porta accent a \'sol\'?', options: ['Entresòl', 'Entresol'], correctAnswer: 'Entresol', explanation: 'Derivat sense guionet, perd l\'accent.', difficulty: 3, course: '4C' },
+      { id: '4c_dia_64', type: 'multiple_choice', question: '"Subsol" porta accent?', options: ['Subsòl', 'Subsol'], correctAnswer: 'Subsol', explanation: 'Derivat sense guionet, perd l\'accent.', difficulty: 3, course: '4C' },
+      { id: '4c_dia_65', type: 'multiple_choice', question: '"Pèl-roig" porta accent?', options: ['Pel-roig', 'Pèl-roig'], correctAnswer: 'Pèl-roig', explanation: 'Amb guionet manté l\'accent.', difficulty: 3, course: '4C' },
+      // --- BLOC 9: Normativa Nova (Paranys) ---
+      { id: '4c_dia_66', type: 'multiple_choice', question: 'Tria la forma correcta: "La ___ treballa a l\'oficina."', options: ['dóna', 'dona'], correctAnswer: 'dona', explanation: 'Dona (mujer) ja no porta accent.', difficulty: 3, course: '4C' },
+      { id: '4c_dia_67', type: 'multiple_choice', question: 'Tria la forma correcta: "Em ___ un llibre." (verb donar)', options: ['dóna', 'dona'], correctAnswer: 'dona', explanation: 'Verb donar ja no porta accent.', difficulty: 3, course: '4C' },
+      { id: '4c_dia_68', type: 'multiple_choice', question: 'Tria la forma correcta: "El seu ___ es diu Pau." (nieto)', options: ['nét', 'net'], correctAnswer: 'net', explanation: 'Net (nieto) ja no porta accent.', difficulty: 3, course: '4C' },
+      { id: '4c_dia_69', type: 'multiple_choice', question: 'Tria la forma correcta: "El terra està molt ___." (limpio)', options: ['nét', 'net'], correctAnswer: 'net', explanation: 'Net (limpio) ja no porta accent.', difficulty: 2, course: '4C' },
+      { id: '4c_dia_70', type: 'multiple_choice', question: 'Tria la forma correcta: "Cafè ___." (molido)', options: ['Mòlt', 'Molt'], correctAnswer: 'Molt', explanation: 'Molt (molido) ja no porta accent diacrític.', difficulty: 3, course: '4C' },
+      { id: '4c_dia_71', type: 'multiple_choice', question: 'Tria la forma correcta: "L\'___ polar."', options: ['Ós', 'Os'], correctAnswer: 'Os', explanation: 'Os (animal) ja no porta accent.', difficulty: 3, course: '4C' },
+      { id: '4c_dia_72', type: 'multiple_choice', question: 'Tria la forma correcta: "Una ___ de vi." (recipient)', options: ['Bóta', 'Bota'], correctAnswer: 'Bota', explanation: 'Bota (recipient) ja no porta accent.', difficulty: 3, course: '4C' },
+      { id: '4c_dia_73', type: 'multiple_choice', question: 'Tria la forma correcta: "Tota la ___ de TV."', options: ['Sèrie', 'Sèria'], correctAnswer: 'Sèrie', explanation: 'Sèrie és substantiu (mai ha portat diacrític).', difficulty: 2, course: '4C' }
+    ]
+  },
+  {
+    id: '4c_dieresi',
+    title: 'Dièresi (B2)',
+    description: '🔣 Güe/güi, aïllar, agraït... Domina la dièresi! 69 exercicis amb verbs i excepcions.',
+    category: 'ortografia',
+    course: '4C',
+    exercises: [
+      // --- BLOC 1: La U sonora (Güe/Güi/Qüe/Qüi) ---
+      { id: '4c_dier_1', type: 'multiple_choice', question: '🌍 Completa: "Parla moltes ___."', options: ['llengues', 'llengües'], correctAnswer: 'llengües', explanation: 'Davant de E/I, la U sona = dièresi.', difficulty: 1, course: '4C' },
+      { id: '4c_dier_2', type: 'multiple_choice', question: '💧 Completa: "Un got d\'___."', options: ['aigüa', 'aigua'], correctAnswer: 'aigua', explanation: 'Davant de A/O mai porta dièresi.', difficulty: 1, course: '4C' },
+      { id: '4c_dier_3', type: 'multiple_choice', question: '❓ Completa: "És una ___ de temps."', options: ['qüestió', 'questió'], correctAnswer: 'qüestió', explanation: 'La U sona davant E = dièresi.', difficulty: 1, course: '4C' },
+      { id: '4c_dier_4', type: 'multiple_choice', question: '🐣 Completa: "Farem mones per ___."', options: ['Pasques', 'Pasqües'], correctAnswer: 'Pasqües', explanation: 'La U sona davant E = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_5', type: 'multiple_choice', question: '4️⃣ Completa: "Té ___ anys."', options: ['qüatre', 'quatre'], correctAnswer: 'quatre', explanation: 'Davant de A mai porta dièresi.', difficulty: 1, course: '4C' },
+      { id: '4c_dier_6', type: 'multiple_choice', question: '🐧 Completa: "L\'hàbitat del ___."', options: ['pingüí', 'pinguí'], correctAnswer: 'pingüí', explanation: 'La U sona davant I = dièresi.', difficulty: 1, course: '4C' },
+      { id: '4c_dier_7', type: 'multiple_choice', question: '☔ Completa: "Agafa el ___."', options: ['paraigüa', 'paraigua'], correctAnswer: 'paraigua', explanation: 'Davant de A mai porta dièresi.', difficulty: 1, course: '4C' },
+      { id: '4c_dier_8', type: 'multiple_choice', question: '🔄 Completa: "És un error ___."', options: ['freqüent', 'frequent'], correctAnswer: 'freqüent', explanation: 'La U sona davant E = dièresi.', difficulty: 1, course: '4C' },
+      { id: '4c_dier_9', type: 'multiple_choice', question: '♨️ Completa: "___ termals."', options: ['Aigues', 'Aigües'], correctAnswer: 'Aigües', explanation: 'La U sona davant E = dièresi.', difficulty: 1, course: '4C' },
+      { id: '4c_dier_10', type: 'multiple_choice', question: '💰 Completa: "Pagar la ___."', options: ['qüota', 'quota'], correctAnswer: 'quota', explanation: 'Davant de O mai porta dièresi.', difficulty: 1, course: '4C' },
+      { id: '4c_dier_11', type: 'multiple_choice', question: '💊 Completa: "Posa\'t l\'___."', options: ['unguent', 'ungüent'], correctAnswer: 'ungüent', explanation: 'La U sona davant E = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_12', type: 'multiple_choice', question: '🧤 Completa: "He perdut un ___."', options: ['güant', 'guant'], correctAnswer: 'guant', explanation: 'Davant de A mai porta dièresi.', difficulty: 1, course: '4C' },
+      { id: '4c_dier_13', type: 'multiple_choice', question: '👮 Completa: "Han detingut el ___."', options: ['delinqüent', 'delinquent'], correctAnswer: 'delinqüent', explanation: 'La U sona davant E = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_14', type: 'multiple_choice', question: '📚 Completa: "Edició ___."', options: ['bilingüe', 'bilingue'], correctAnswer: 'bilingüe', explanation: 'La U sona davant E = dièresi.', difficulty: 1, course: '4C' },
+      { id: '4c_dier_15', type: 'multiple_choice', question: '📐 Completa: "Línies ___."', options: ['obliqües', 'obliques'], correctAnswer: 'obliqües', explanation: 'La U sona davant E = dièresi.', difficulty: 2, course: '4C' },
+      // --- BLOC 2: Trencar el Diftong (I/U entre vocals) ---
+      { id: '4c_dier_16', type: 'multiple_choice', question: '👩 Completa: "La meva ___ és molt amable."', options: ['veina', 'veïna'], correctAnswer: 'veïna', explanation: 'Trenca el diftong ei = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_17', type: 'multiple_choice', question: '🍇 Completa: "Un gotim de ___."', options: ['raïm', 'raim'], correctAnswer: 'raïm', explanation: 'Trenca el diftong ai = dièresi.', difficulty: 1, course: '4C' },
+      { id: '4c_dier_18', type: 'multiple_choice', question: '🌍 Completa: "Els ___ catalans."', options: ['paisos', 'països'], correctAnswer: 'països', explanation: 'País porta accent, però el plural és pla acabat en -s = dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_19', type: 'multiple_choice', question: '🧦 Completa: "S\'ha posat el ___."', options: ['peüc', 'peuc'], correctAnswer: 'peüc', explanation: 'Trenca el diftong eu = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_20', type: 'multiple_choice', question: '🌞 Completa: "Animal d\'hàbits ___."', options: ['diürn', 'diurn'], correctAnswer: 'diürn', explanation: 'Trenca el diftong iu = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_21', type: 'multiple_choice', question: '👀 Completa: "Mirar de ___."', options: ['reull', 'reüll'], correctAnswer: 'reüll', explanation: 'Trenca el diftong eu = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_22', type: 'multiple_choice', question: '👂 Completa: "Té molt bona ___."', options: ['oida', 'oïda'], correctAnswer: 'oïda', explanation: 'Trenca el diftong oi = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_23', type: 'multiple_choice', question: '👩 Completa: "La tia ___."', options: ['Lluïsa', 'Lluisa'], correctAnswer: 'Lluïsa', explanation: 'Trenca el diftong ui = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_24', type: 'multiple_choice', question: '🇨🇭 Completa: "Viatge a ___."', options: ['Suissa', 'Suïssa'], correctAnswer: 'Suïssa', explanation: 'Trenca el diftong ui = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_25', type: 'multiple_choice', question: '🦸 Completa: "L\'___ de la novel·la."', options: ['heroina', 'heroïna'], correctAnswer: 'heroïna', explanation: 'Trenca el diftong oi = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_26', type: 'multiple_choice', question: '⚠️ Completa: "Tràfic de ___."', options: ['cocaïna', 'cocaina'], correctAnswer: 'cocaïna', explanation: 'Trenca el diftong ai = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_27', type: 'multiple_choice', question: '🗡️ Completa: "Ets un ___."', options: ['traïdor', 'traidor'], correctAnswer: 'traïdor', explanation: 'Derivat de trair = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_28', type: 'multiple_choice', question: '🏠 Completa: "Cal ___ la finestra."', options: ['aïllar', 'aillar'], correctAnswer: 'aïllar', explanation: 'Trenca el diftong ai = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_29', type: 'multiple_choice', question: '🇺🇦 Completa: "La guerra d\'___."', options: ['Ucraïna', 'Ucraina'], correctAnswer: 'Ucraïna', explanation: 'Trenca el diftong ai = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_30', type: 'multiple_choice', question: '👑 Completa: "El rei ___."', options: ['Saül', 'Saul'], correctAnswer: 'Saül', explanation: 'Trenca el diftong au = dièresi.', difficulty: 2, course: '4C' },
+      // --- BLOC 3: Verbs acabats en Vocal + IR (3a Conjugació) ---
+      { id: '4c_dier_31', type: 'multiple_choice', question: '🙏 Participi: "Estic molt ___."', options: ['agraït', 'agrait'], correctAnswer: 'agraït', explanation: 'Participi de verbs en -ir = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_32', type: 'multiple_choice', question: '📋 Infinitiu: "Heu d\'___ les normes."', options: ['obeïr', 'obeir'], correctAnswer: 'obeir', explanation: 'Infinitiu MAI porta dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_33', type: 'multiple_choice', question: '🚗 Imperfet: "Ell ___ molt malament."', options: ['conduia', 'conduïa'], correctAnswer: 'conduïa', explanation: 'Imperfet de verbs en -ir = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_34', type: 'multiple_choice', question: '📝 Gerundi: "Estic ___ el text."', options: ['traduint', 'traduïnt'], correctAnswer: 'traduint', explanation: 'Gerundi MAI porta dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_35', type: 'multiple_choice', question: '🔮 Futur: "Demà ___ la velocitat."', options: ['reduiré', 'reduïré'], correctAnswer: 'reduiré', explanation: 'Futur MAI porta dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_36', type: 'multiple_choice', question: '✨ Participi: "Ha ___ molt el vestit."', options: ['lluït', 'lluit'], correctAnswer: 'lluït', explanation: 'Participi = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_37', type: 'multiple_choice', question: '😍 Imperfet: "El paisatge em ___."', options: ['seduïa', 'seduia'], correctAnswer: 'seduïa', explanation: 'Imperfet = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_38', type: 'multiple_choice', question: '💼 Condicional: "Això ___ beneficis."', options: ['produiria', 'produïria'], correctAnswer: 'produiria', explanation: 'Condicional MAI porta dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_39', type: 'multiple_choice', question: '🚗 Present (nosaltres): "Nosaltres ___ el cotxe."', options: ['conduim', 'conduïm'], correctAnswer: 'conduïm', explanation: 'Present 1a/2a plural = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_40', type: 'multiple_choice', question: '📖 Present (vosaltres): "Vosaltres ___ el llibre."', options: ['traduïu', 'traduiu'], correctAnswer: 'traduïu', explanation: 'Present 2a plural = dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_41', type: 'multiple_choice', question: '😡 Infinitiu: "No vull ___ ningú."', options: ['maleir', 'maleïr'], correctAnswer: 'maleir', explanation: 'Infinitiu MAI porta dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_42', type: 'multiple_choice', question: '🙏 Gerundi: "Va marxar ___ l\'ajuda."', options: ['agraint', 'agraïnt'], correctAnswer: 'agraint', explanation: 'Gerundi MAI porta dièresi.', difficulty: 3, course: '4C' },
+      // --- BLOC 4: Subjuntiu de verbs acabats en Vocal + AR (1a Conjugació) ---
+      { id: '4c_dier_43', type: 'multiple_choice', question: '🔄 Subjuntiu (jo): "Vol que jo ___ de lloc."', options: ['canviï', 'canvii'], correctAnswer: 'canviï', explanation: 'Subjuntiu de verbs en -iar = dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_44', type: 'multiple_choice', question: '📚 Subjuntiu (ell): "És necessari que ell ___."', options: ['estudiï', 'estudii'], correctAnswer: 'estudiï', explanation: 'Subjuntiu de verbs en -iar = dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_45', type: 'multiple_choice', question: '💦 Subjuntiu (tu): "No vull que ___ tant."', options: ['suïs', 'suis'], correctAnswer: 'suïs', explanation: 'Subjuntiu de verbs en -uar = dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_46', type: 'multiple_choice', question: '🎯 Subjuntiu (ells): "Deixa que ells ___."', options: ['triin', 'triïn'], correctAnswer: 'triïn', explanation: 'Subjuntiu de verbs en -iar = dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_47', type: 'multiple_choice', question: '➡️ Subjuntiu (jo): "Cal que ___ treballant."', options: ['continuï', 'continui'], correctAnswer: 'continuï', explanation: 'Subjuntiu de verbs en -uar = dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_48', type: 'multiple_choice', question: '📋 Subjuntiu (tu): "Prohibit que ___ a l\'examen."', options: ['copïis', 'copiïs'], correctAnswer: 'copiïs', explanation: 'Subjuntiu de verbs en -iar = dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_49', type: 'multiple_choice', question: '😠 Subjuntiu (ell): "No crec que m\'___."', options: ['odiï', 'odii'], correctAnswer: 'odiï', explanation: 'Subjuntiu de verbs en -iar = dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_50', type: 'multiple_choice', question: '🎬 Subjuntiu (ells): "Volen que els actors ___."', options: ['actuïn', 'actuin'], correctAnswer: 'actuïn', explanation: 'Subjuntiu de verbs en -uar = dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_51', type: 'multiple_choice', question: '🤔 Subjuntiu (jo): "M\'ho he de ___."', options: ['rumiï', 'rumii'], correctAnswer: 'rumiï', explanation: 'Subjuntiu de verbs en -iar = dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_52', type: 'multiple_choice', question: '🖼️ Subjuntiu (tu): "Volen que ___ la foto."', options: ['ampliïs', 'amplïis'], correctAnswer: 'ampliïs', explanation: 'Subjuntiu de verbs en -iar = dièresi.', difficulty: 3, course: '4C' },
+      // --- BLOC 5: Accent vs Dièresi ---
+      { id: '4c_dier_53', type: 'multiple_choice', question: '🌍 Singular: "El meu ___."', options: ['país', 'païs'], correctAnswer: 'país', explanation: 'Aguda acabada en -s = accent. No cal dièresi.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_54', type: 'multiple_choice', question: '🌍 Plural: "Molts ___."', options: ['països', 'paisos'], correctAnswer: 'països', explanation: 'Plana acabada en -s = no pot dur accent. Dièresi obligatòria.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_55', type: 'multiple_choice', question: '👤 Singular: "Hola, ___."', options: ['veí', 'veï'], correctAnswer: 'veí', explanation: 'Aguda acabada en vocal = accent.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_56', type: 'multiple_choice', question: '👥 Plural: "Hola, ___."', options: ['veïns', 'veíns'], correctAnswer: 'veïns', explanation: 'Aguda acabada en -ns = no accent. Dièresi obligatòria.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_57', type: 'multiple_choice', question: '👤 Nom propi: "En ___."', options: ['Lluís', 'Lluïs'], correctAnswer: 'Lluís', explanation: 'Aguda = accent (guanya sobre dièresi).', difficulty: 2, course: '4C' },
+      { id: '4c_dier_58', type: 'multiple_choice', question: '⌚ Adjectiu: "Rellotge ___."', options: ['suís', 'suïs'], correctAnswer: 'suís', explanation: 'Aguda = accent.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_59', type: 'multiple_choice', question: '🙏 Imperfet: "Ell ___ el gest."', options: ['agraïa', 'agraía'], correctAnswer: 'agraïa', explanation: 'Plana acabada en vocal = no accent. Dièresi obligatòria.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_60', type: 'multiple_choice', question: '😊 Imperfet: "Ell ___ de la vida."', options: ['fruia', 'fruïa'], correctAnswer: 'fruïa', explanation: 'Imperfet de verb en -ir = dièresi.', difficulty: 2, course: '4C' },
+      // --- BLOC 6: Excepcions Cultes i Sufixos (Nivell Expert) ---
+      { id: '4c_dier_61', type: 'multiple_choice', question: '🤳 Completa: "Té molt ___."', options: ['egoisme', 'egoïsme'], correctAnswer: 'egoisme', explanation: 'Sufix -isme MAI porta dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_62', type: 'multiple_choice', question: '❤️ Completa: "És una persona ___."', options: ['altruïsta', 'altruista'], correctAnswer: 'altruista', explanation: 'Sufix -ista MAI porta dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_63', type: 'multiple_choice', question: '🇪🇺 Completa: "Parlament ___."', options: ['europeu', 'europeü'], correctAnswer: 'europeu', explanation: 'Diftong decreixent normal, no es trenca.', difficulty: 2, course: '4C' },
+      { id: '4c_dier_64', type: 'multiple_choice', question: '👤 Completa: "El nom ___."', options: ['Màrius', 'Màriüs'], correctAnswer: 'Màrius', explanation: 'Llatins en -us no porten dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_65', type: 'multiple_choice', question: '🎹 Completa: "Tocar l\'___."', options: ['harmònium', 'harmòniüm'], correctAnswer: 'harmònium', explanation: 'Llatins en -um no porten dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_66', type: 'multiple_choice', question: '💨 Completa: "Un gas és un ___."', options: ['fluid', 'fluïd'], correctAnswer: 'fluid', explanation: 'Excepció: fluid no porta dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_67', type: 'multiple_choice', question: '🎟️ Completa: "Entrada ___."', options: ['gratuït', 'gratuit'], correctAnswer: 'gratuït', explanation: 'Excepció: gratuït SÍ porta dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_68', type: 'multiple_choice', question: '💥 Completa: "Un xoc ___."', options: ['fortuït', 'fortuit'], correctAnswer: 'fortuït', explanation: 'Excepció: fortuït SÍ porta dièresi.', difficulty: 3, course: '4C' },
+      { id: '4c_dier_69', type: 'multiple_choice', question: '🤝 Completa: "Vaig ___ amb ell."', options: ['coïncidir', 'coincidir'], correctAnswer: 'coincidir', explanation: 'Prefix co- + verb = no porta dièresi.', difficulty: 3, course: '4C' }
+    ]
+  },
+  {
+    id: '4c_conjuncions',
+    title: 'Conjuncions (B2)',
+    description: '🔗 Doncs/perquè, si no/sinó, que/què... Domina les conjuncions! 68 exercicis amb trampes del B2.',
+    category: 'gramàtica',
+    course: '4C',
+    exercises: [
+      // --- BLOC 1: Doncs vs Ja que / Perquè ---
+      { id: '4c_conj_1', type: 'multiple_choice', question: '🌧️ Completa: "Plou? ___ agafaré el paraigua."', options: ['Doncs', 'Perquè'], correctAnswer: 'Doncs', explanation: 'Doncs = conseqüència (per tant). Perquè = causa.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_2', type: 'multiple_choice', question: '💼 Completa: "No vindré ___ tinc feina."', options: ['doncs', 'perquè'], correctAnswer: 'perquè', explanation: 'Perquè/ja que = causa. Doncs no pot introduir causa.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_3', type: 'multiple_choice', question: '😴 Completa: "Estàs cansat? ___ seu una estona."', options: ['Perquè', 'Doncs'], correctAnswer: 'Doncs', explanation: 'Doncs = conseqüència. Pots substituir per "per tant".', difficulty: 2, course: '4C' },
+      { id: '4c_conj_4', type: 'multiple_choice', question: '❌ Troba l\'ERROR: "Ho he fet doncs m\'ho has demanat."', options: ['Correcte', 'Incorrecte: ha de ser perquè'], correctAnswer: 'Incorrecte: ha de ser perquè', explanation: 'Doncs NO pot indicar causa. Cal usar perquè/ja que.', difficulty: 3, course: '4C' },
+      { id: '4c_conj_5', type: 'multiple_choice', question: '🍽️ Completa: "Tinc gana; ___ menjaré alguna cosa."', options: ['doncs', 'perquè'], correctAnswer: 'doncs', explanation: 'Doncs = conseqüència.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_6', type: 'multiple_choice', question: '❄️ Completa: "No sortirem ___ fa fred."', options: ['doncs', 'ja que'], correctAnswer: 'ja que', explanation: 'Ja que = causa (perquè). Doncs no funciona aquí.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_7', type: 'multiple_choice', question: '⏰ Completa: "Ha arribat tard ___ s\'ha adormit."', options: ['doncs', 'perquè'], correctAnswer: 'perquè', explanation: 'Perquè = causa.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_8', type: 'multiple_choice', question: '📚 Completa: "Vols aprovar? ___ estudia més."', options: ['Doncs', 'Ja que'], correctAnswer: 'Doncs', explanation: 'Doncs = conseqüència/consell.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_9', type: 'multiple_choice', question: '❌ Troba l\'ERROR: "No et truco doncs no tinc saldo."', options: ['Correcte', 'Incorrecte: ha de ser perquè'], correctAnswer: 'Incorrecte: ha de ser perquè', explanation: 'Doncs NO indica causa. Cal perquè/ja que.', difficulty: 3, course: '4C' },
+      { id: '4c_conj_10', type: 'multiple_choice', question: '🚗 Completa: "Ja ho tens tot? ___ marxem."', options: ['Doncs', 'Perquè'], correctAnswer: 'Doncs', explanation: 'Doncs = conseqüència.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_11', type: 'multiple_choice', question: '⚖️ Completa: "El jutge ha arribat, ___ podem començar."', options: ['per tant / doncs', 'perquè'], correctAnswer: 'per tant / doncs', explanation: 'Per tant/doncs = conseqüència.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_12', type: 'multiple_choice', question: '🚙 Completa: "No puc conduir ___ no tinc carnet."', options: ['doncs', 'perquè'], correctAnswer: 'perquè', explanation: 'Perquè = causa.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_13', type: 'multiple_choice', question: '🍽️ Completa: "No t\'agrada? ___ no t\'ho mengis."', options: ['Doncs', 'Perquè'], correctAnswer: 'Doncs', explanation: 'Doncs = conseqüència.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_14', type: 'multiple_choice', question: '❤️ Completa: "Ho faig ___ m\'agrada."', options: ['doncs', 'perquè'], correctAnswer: 'perquè', explanation: 'Perquè = causa.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_15', type: 'multiple_choice', question: '🕗 Completa: "Són les vuit, ___ he de marxar."', options: ['doncs', 'perquè'], correctAnswer: 'doncs', explanation: 'Doncs = conseqüència.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_16', type: 'multiple_choice', question: '❌ Troba l\'ERROR: "Vinc doncs em necessites."', options: ['Correcte', 'Incorrecte: ha de ser perquè'], correctAnswer: 'Incorrecte: ha de ser perquè', explanation: 'Doncs NO indica causa.', difficulty: 3, course: '4C' },
+      { id: '4c_conj_17', type: 'multiple_choice', question: '🚂 Completa: "Hi ha vaga, ___ no hi haurà trens."', options: ['doncs', 'perquè'], correctAnswer: 'doncs', explanation: 'Doncs = conseqüència.', difficulty: 2, course: '4C' },
+      // --- BLOC 2: Perquè / Per què / Per a què ---
+      { id: '4c_conj_18', type: 'multiple_choice', question: '🤔 Completa: "No sé ___ no m\'escoltes."', options: ['perquè', 'per què'], correctAnswer: 'per què', explanation: 'Per què (separat) = per quin motiu (interrogatiu).', difficulty: 2, course: '4C' },
+      { id: '4c_conj_19', type: 'multiple_choice', question: '😊 Completa: "Ho faig ___ siguis feliç."', options: ['perquè', 'per a què'], correctAnswer: 'perquè', explanation: 'Perquè (junt) = perquè + subjuntiu = finalitat.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_20', type: 'multiple_choice', question: '🔘 Completa: "___ serveix aquest botó?"', options: ['Per a què', 'Perquè'], correctAnswer: 'Per a què', explanation: 'Per a què = amb quina finalitat (pregunta).', difficulty: 2, course: '4C' },
+      { id: '4c_conj_21', type: 'multiple_choice', question: '💭 Completa: "M\'ha explicat el ___ de la seva decisió."', options: ['perquè', 'per què'], correctAnswer: 'perquè', explanation: 'El perquè = substantiu (el motiu).', difficulty: 3, course: '4C' },
+      { id: '4c_conj_22', type: 'multiple_choice', question: '❌ Troba l\'ERROR: "Vinc per a què em donis el llibre."', options: ['Correcte', 'Incorrecte: ha de ser perquè'], correctAnswer: 'Incorrecte: ha de ser perquè', explanation: 'En afirmatives, la conjunció final és perquè, mai per a què.', difficulty: 3, course: '4C' },
+      { id: '4c_conj_23', type: 'multiple_choice', question: '😂 Completa: "___ rius?"', options: ['Per què', 'Perquè'], correctAnswer: 'Per què', explanation: 'Per què = interrogatiu (per quin motiu).', difficulty: 1, course: '4C' },
+      { id: '4c_conj_24', type: 'multiple_choice', question: '⚖️ Completa: "Estudia ___ vol ser jutge."', options: ['per a què', 'perquè'], correctAnswer: 'perquè', explanation: 'Perquè = causa.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_25', type: 'multiple_choice', question: '❓ Completa: "No entenc el ___ de tot plegat."', options: ['perquè', 'per què'], correctAnswer: 'perquè', explanation: 'El perquè = substantiu.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_26', type: 'multiple_choice', question: '📞 Completa: "Et truca ___ l\'ajudis."', options: ['perquè', 'per a què'], correctAnswer: 'perquè', explanation: 'Perquè + subjuntiu = finalitat.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_27', type: 'multiple_choice', question: '🤨 Completa: "___ ho necessites?"', options: ['Per què', 'Perquè'], correctAnswer: 'Per què', explanation: 'Per què = interrogatiu.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_28', type: 'multiple_choice', question: '❌ Troba l\'ERROR: "T\'ho dic per a què ho sàpigues."', options: ['Correcte', 'Incorrecte: ha de ser perquè'], correctAnswer: 'Incorrecte: ha de ser perquè', explanation: 'Conjunció final = perquè, no per a què.', difficulty: 3, course: '4C' },
+      { id: '4c_conj_29', type: 'multiple_choice', question: '😠 Completa: "Digue\'m ___ estàs enfadat."', options: ['per què', 'perquè'], correctAnswer: 'per què', explanation: 'Interrogativa indirecta = per què.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_30', type: 'multiple_choice', question: '👨‍👩‍👧‍👦 Completa: "Treballa ___ els seus fills tinguin de tot."', options: ['perquè', 'per a què'], correctAnswer: 'perquè', explanation: 'Perquè + subjuntiu = finalitat.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_31', type: 'multiple_choice', question: '🔧 Completa: "No sé ___ serveix."', options: ['per a què', 'perquè'], correctAnswer: 'per a què', explanation: 'Per a què = pregunta sobre finalitat.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_32', type: 'multiple_choice', question: '📰 Completa: "Vull saber els ___ de la crisi."', options: ['perquès', 'per quès'], correctAnswer: 'perquès', explanation: 'Els perquès = plural del substantiu.', difficulty: 3, course: '4C' },
+      { id: '4c_conj_33', type: 'multiple_choice', question: '🏃 Completa: "Corro ___ tinc pressa."', options: ['perquè', 'per què'], correctAnswer: 'perquè', explanation: 'Perquè = causa.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_34', type: 'multiple_choice', question: '🔪 Completa: "___ fas servir aquest ganivet?" (finalitat)', options: ['Per a què', 'Per què'], correctAnswer: 'Per a què', explanation: 'Per a què = amb quina finalitat.', difficulty: 2, course: '4C' },
+      // --- BLOC 3: Si no vs Sinó ---
+      { id: '4c_conj_35', type: 'multiple_choice', question: '☕ Completa: "No vull te ___ cafè."', options: ['si no', 'sinó'], correctAnswer: 'sinó', explanation: 'Sinó = adversativa (no això, sinó allò).', difficulty: 1, course: '4C' },
+      { id: '4c_conj_36', type: 'multiple_choice', question: '📖 Completa: "Estudia, ___ suspendràs."', options: ['si no', 'sinó'], correctAnswer: 'si no', explanation: 'Si no = condició negativa.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_37', type: 'multiple_choice', question: '💃 Completa: "No només canta, ___ que també balla."', options: ['si no', 'sinó'], correctAnswer: 'sinó', explanation: 'Sinó que = adversativa.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_38', type: 'multiple_choice', question: '❌ Troba l\'ERROR: "Ves-hi, sinó s\'enfadarà."', options: ['Correcte', 'Incorrecte: ha de ser si no'], correctAnswer: 'Incorrecte: ha de ser si no', explanation: 'Si no = condició (si no hi vas...).', difficulty: 3, course: '4C' },
+      { id: '4c_conj_39', type: 'multiple_choice', question: '⚫ Completa: "No és blanc, ___ negre."', options: ['si no', 'sinó'], correctAnswer: 'sinó', explanation: 'Sinó = adversativa.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_40', type: 'multiple_choice', question: '📱 Completa: "___ pots venir, avisa\'m."', options: ['Si no', 'Sinó'], correctAnswer: 'Si no', explanation: 'Si no = condició.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_41', type: 'multiple_choice', question: '🚗 Completa: "No ha vingut en tren, ___ en cotxe."', options: ['sinó', 'si no'], correctAnswer: 'sinó', explanation: 'Sinó = adversativa.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_42', type: 'multiple_choice', question: '🚌 Completa: "Corre, ___ perdràs el bus."', options: ['si no', 'sinó'], correctAnswer: 'si no', explanation: 'Si no = condició.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_43', type: 'multiple_choice', question: '🙋 Completa: "No és culpa teva, ___ meva."', options: ['si no', 'sinó'], correctAnswer: 'sinó', explanation: 'Sinó = adversativa.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_44', type: 'multiple_choice', question: '📝 Completa: "___ ho entens, t\'ho explico."', options: ['Sinó', 'Si no'], correctAnswer: 'Si no', explanation: 'Si no = condició.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_45', type: 'multiple_choice', question: '🧠 Completa: "No tan sols és guapa, ___ que és llesta."', options: ['si no', 'sinó'], correctAnswer: 'sinó', explanation: 'Sinó que = adversativa.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_46', type: 'multiple_choice', question: '⏳ Completa: "Acaba-ho aviat; ___, tindrem problemes."', options: ['si no', 'sinó'], correctAnswer: 'si no', explanation: 'Si no = condició.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_47', type: 'multiple_choice', question: '❌ Troba l\'ERROR: "No vull aigua si no vi."', options: ['Correcte', 'Incorrecte: ha de ser sinó'], correctAnswer: 'Incorrecte: ha de ser sinó', explanation: 'Sinó = adversativa (no X, sinó Y).', difficulty: 3, course: '4C' },
+      { id: '4c_conj_48', type: 'multiple_choice', question: '🏖️ Completa: "___ plou, anirem a la platja."', options: ['Si no', 'Sinó'], correctAnswer: 'Si no', explanation: 'Si no = condició.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_49', type: 'multiple_choice', question: '👨‍⚖️ Completa: "No era advocat ___ procurador."', options: ['si no', 'sinó'], correctAnswer: 'sinó', explanation: 'Sinó = adversativa.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_50', type: 'multiple_choice', question: '🍲 Completa: "Menja, ___ et refredaràs."', options: ['si no', 'sinó'], correctAnswer: 'si no', explanation: 'Si no = condició.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_51', type: 'multiple_choice', question: '👨‍💼 Completa: "No ens va rebre el director, ___ el secretari."', options: ['si no', 'sinó'], correctAnswer: 'sinó', explanation: 'Sinó = adversativa.', difficulty: 1, course: '4C' },
+      // --- BLOC 4: Que vs Què ---
+      { id: '4c_conj_52', type: 'multiple_choice', question: '📖 Completa: "El llibre ___ llegeixes."', options: ['què', 'que'], correctAnswer: 'que', explanation: 'Que = relatiu àton (sense preposició).', difficulty: 1, course: '4C' },
+      { id: '4c_conj_53', type: 'multiple_choice', question: '❓ Completa: "___ vols?"', options: ['Que', 'Què'], correctAnswer: 'Què', explanation: 'Què = interrogatiu (tònic).', difficulty: 1, course: '4C' },
+      { id: '4c_conj_54', type: 'multiple_choice', question: '✏️ Completa: "Amb ___ escrius?"', options: ['que', 'què'], correctAnswer: 'què', explanation: 'Preposició + què = tònic.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_55', type: 'multiple_choice', question: '📢 Completa: "Digue\'m ___ ha passat."', options: ['que', 'què'], correctAnswer: 'què', explanation: 'Interrogativa indirecta = què.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_56', type: 'multiple_choice', question: '⏳ Completa: "Espero ___ vingueu."', options: ['què', 'que'], correctAnswer: 'que', explanation: 'Que = conjunció.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_57', type: 'multiple_choice', question: '❌ Troba l\'ERROR: "Què bonic!"', options: ['Correcte', 'Incorrecte: ha de ser Que'], correctAnswer: 'Incorrecte: ha de ser Que', explanation: 'Exclamatiu d\'èmfasi = Que (àton).', difficulty: 3, course: '4C' },
+      { id: '4c_conj_58', type: 'multiple_choice', question: '💬 Completa: "El tema de ___ parlem."', options: ['que', 'què'], correctAnswer: 'què', explanation: 'Preposició de + què = tònic.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_59', type: 'multiple_choice', question: '🗣️ Completa: "___ dius?"', options: ['Que', 'Què'], correctAnswer: 'Què', explanation: 'Què = interrogatiu.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_60', type: 'multiple_choice', question: '🌧️ Completa: "Sembla ___ plourà."', options: ['què', 'que'], correctAnswer: 'que', explanation: 'Que = conjunció.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_61', type: 'multiple_choice', question: '😤 Completa: "No té de ___ queixar-se."', options: ['que', 'què'], correctAnswer: 'què', explanation: 'Preposició de + què = tònic.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_62', type: 'multiple_choice', question: '👤 Completa: "L\'home ___ va venir ahir."', options: ['què', 'que'], correctAnswer: 'que', explanation: 'Que = relatiu subjecte (àton).', difficulty: 1, course: '4C' },
+      { id: '4c_conj_63', type: 'multiple_choice', question: '🗨️ Completa: "___ t\'ha dit?"', options: ['Que', 'Què'], correctAnswer: 'Què', explanation: 'Què = interrogatiu.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_64', type: 'multiple_choice', question: '✅ Completa: "Crec ___ tens raó."', options: ['què', 'que'], correctAnswer: 'que', explanation: 'Que = conjunció.', difficulty: 1, course: '4C' },
+      { id: '4c_conj_65', type: 'multiple_choice', question: '🤷 Completa: "El motiu per ___ ho va fer."', options: ['que', 'què'], correctAnswer: 'què', explanation: 'Per què = preposició + què.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_66', type: 'multiple_choice', question: '🍽️ Completa: "___ vols sopar?" (pregunta sobre menjar)', options: ['Que', 'Què'], correctAnswer: 'Què', explanation: 'Què = interrogatiu (quina cosa).', difficulty: 2, course: '4C' },
+      { id: '4c_conj_67', type: 'multiple_choice', question: '📋 Completa: "Les coses a ___ em refereixo."', options: ['que', 'què'], correctAnswer: 'què', explanation: 'Preposició a + què = tònic.', difficulty: 2, course: '4C' },
+      { id: '4c_conj_68', type: 'multiple_choice', question: '😟 Completa: "___ li passa?"', options: ['Que', 'Què'], correctAnswer: 'Què', explanation: 'Què = interrogatiu.', difficulty: 1, course: '4C' }
+    ]
+  }
+];
+
+// =====================================================
+// CURS 4D - BUIT (Merged into 4C)
+// =====================================================
+
+export const COURSE_4D_EXERCISES: CourseSection[] = [];
+
+// =====================================================
+// CURS 4E - BUIT (Merged into 4C)
+// =====================================================
+
+export const COURSE_4E_EXERCISES: CourseSection[] = [];
+
+// =====================================================
+// FUNCIONS AUXILIARS
+// =====================================================
+
+// Funció helper per obtenir exercicis per curs
+export const getExercisesByCourse = (course: '4A' | '4B' | '4C' | '4D' | '4E' | 'B2' | 'C1' | string): CourseSection[] => {
+  let sections: CourseSection[] = [];
+
+  switch (course) {
+    case 'C1':
+      sections = COURSE_4A_EXERCISES;
+      break;
+    case 'B2':
+      sections = COURSE_4C_EXERCISES;
+      break;
+    case '4A':
+      sections = COURSE_4A_EXERCISES;
+      break;
+    case '4B':
+      sections = COURSE_4B_EXERCISES;
+      break;
+    case '4C':
+      sections = COURSE_4C_EXERCISES;
+      break;
+    case '4D':
+      sections = COURSE_4D_EXERCISES;
+      break;
+    case '4E':
+      sections = COURSE_4E_EXERCISES;
+      break;
+    default:
+      return [];
+  }
+
+  // Afegir nous exercicis
+  try {
+    const { ALL_NEW_EXERCISES } = require('./newExercises');
+    // For B2/C1, we need to filter new exercises that match the sub-levels
+    if (course === 'C1') {
+      const newA = ALL_NEW_EXERCISES.filter((s: CourseSection) => s.course === '4A');
+      const newB = ALL_NEW_EXERCISES.filter((s: CourseSection) => s.course === '4B');
+      return [...sections, ...newA, ...newB];
+    }
+    if (course === 'B2') {
+      const newC = ALL_NEW_EXERCISES.filter((s: CourseSection) => s.course === '4C');
+      const newD = ALL_NEW_EXERCISES.filter((s: CourseSection) => s.course === '4D');
+      const newE = ALL_NEW_EXERCISES.filter((s: CourseSection) => s.course === '4E');
+      return [...sections, ...newC, ...newD, ...newE];
+    }
+
+    const newExercisesForCourse = ALL_NEW_EXERCISES.filter((s: CourseSection) => s.course === course);
+    return [...sections, ...newExercisesForCourse];
+  } catch {
+    return sections;
+  }
+};
+
+// Funció per obtenir tots els exercicis
+export const getAllCourseExercises = (): CourseSection[] => {
+  return [
+    ...COURSE_4A_EXERCISES,
+    ...COURSE_4B_EXERCISES,
+    ...COURSE_4C_EXERCISES,
+    ...COURSE_4D_EXERCISES,
+    ...COURSE_4E_EXERCISES
+  ];
+};
+
+// Funció per obtenir exercicis filtrats per categoria i curs
+export const getExercisesByCourseAndCategory = (
+  course: '4A' | '4B' | '4C' | '4D' | '4E',
+  category: string
+): CourseSection[] => {
+  const courseExercises = getExercisesByCourse(course);
+  return courseExercises.filter(section => section.category === category);
+};
+
+// Funció per obtenir el total d'exercicis per curs
+export const getExerciseCountByCourse = (course: '4A' | '4B' | '4C' | '4D' | '4E'): number => {
+  const sections = getExercisesByCourse(course);
+  return sections.reduce((total, section) => total + section.exercises.length, 0);
+};
+
+// Reexportem els exercicis de tipus test
+export {
+  getMultipleChoiceExercisesByCourse,
+  getAllMultipleChoiceExercises,
+  COURSE_4A_MULTIPLE_CHOICE,
+  COURSE_4B_MULTIPLE_CHOICE,
+  COURSE_4C_MULTIPLE_CHOICE,
+  COURSE_4D_MULTIPLE_CHOICE,
+  COURSE_4E_MULTIPLE_CHOICE
+} from './multipleChoiceExercises';
+
+// NOUS EXERCICIS ADDICIONALS
+export { ALL_NEW_EXERCISES } from './newExercises';
+
