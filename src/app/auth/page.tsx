@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
 import { User, GraduationCap, LogIn, UserPlus } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export default function Auth() {
     const [email, setEmail] = useState("");
@@ -212,8 +213,11 @@ export default function Auth() {
         }
     };
 
+
+
     return (
         <div className="min-h-screen flex items-center justify-center p-4 bg-slate-50 relative overflow-hidden">
+            <ThemeToggle />
             {/* Background Ambience - Blue Tones */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-full bg-slate-50"></div>

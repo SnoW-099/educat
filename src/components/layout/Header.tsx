@@ -10,6 +10,7 @@ import { UserProfile } from "@/hooks/useAuth";
 import { LogOut, BookOpen, Home, User, Settings, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 interface HeaderProps {
   user?: UserProfile;
@@ -47,7 +48,7 @@ export const Header = ({ user, onLogout, onNavigateToAuth }: HeaderProps) => {
               <span className="font-bold text-xl text-foreground tracking-tight">EduCat</span>
               <ChevronDown className={`h-3 w-3 text-foreground transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`} />
             </button>
-            
+
             {/* Dropdown Menu */}
             {isMenuOpen && (
               <div className="absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-xl border border-white/20 rounded-lg shadow-2xl z-[9999] animate-in fade-in-0 slide-in-from-top-2 duration-200">
@@ -67,7 +68,7 @@ export const Header = ({ user, onLogout, onNavigateToAuth }: HeaderProps) => {
                       <div className="text-xs text-slate-500">Anar a la pàgina d'inici</div>
                     </div>
                   </button>
-                  
+
                   {/* Menú Estudiante */}
                   <button
                     onClick={() => {
@@ -82,7 +83,7 @@ export const Header = ({ user, onLogout, onNavigateToAuth }: HeaderProps) => {
                       <div className="text-xs text-slate-500">Tauler d'estudiant</div>
                     </div>
                   </button>
-                  
+
                   {/* Ajustes de Cuenta */}
                   <button
                     onClick={() => {
@@ -131,6 +132,7 @@ export const Header = ({ user, onLogout, onNavigateToAuth }: HeaderProps) => {
                 <p className="text-xs text-muted-foreground mt-1 capitalize">{user.role}</p>
               </div>
             </div>
+            <ThemeToggle className="static h-10 w-10 bg-transparent border border-transparent hover:bg-white/10 hover:border-white/20 backdrop-blur-sm shadow-none" />
             {onLogout && (
               <Button
                 variant="ghost"
