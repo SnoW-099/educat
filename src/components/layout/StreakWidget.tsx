@@ -140,21 +140,6 @@ export const StreakWidget = ({ userId }: StreakWidgetProps) => {
                     </div>
                 </div>
 
-                {/* Progress bar for streak milestones */}
-                {streak > 0 && (
-                    <div className="space-y-2">
-                        <div className="flex justify-between text-xs text-slate-500">
-                            <span>Pròxim milestone</span>
-                            <span>{getNextMilestone(streak)} dies</span>
-                        </div>
-                        <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
-                            <div
-                                className="h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full transition-all duration-500"
-                                style={{ width: `${getMilestoneProgress(streak)}%` }}
-                            />
-                        </div>
-                    </div>
-                )}
 
                 {/* Stats row */}
                 {longestStreak > 0 && (
@@ -175,30 +160,3 @@ export const StreakWidget = ({ userId }: StreakWidgetProps) => {
     );
 };
 
-// Helper functions
-function getNextMilestone(currentStreak: number): number {
-    const milestones = [3, 7, 14, 30, 50, 100, 365];
-    for (const m of milestones) {
-        if (currentStreak < m) return m;
-    }
-    return Math.ceil(currentStreak / 100) * 100 + 100;
-}
-
-function getMilestoneProgress(currentStreak: number): number {
-    const milestones = [0, 3, 7, 14, 30, 50, 100, 365];
-    let prevMilestone = 0;
-    let nextMilestone = 3;
-
-    for (let i = 1; i < milestones.length; i++) {
-        if (currentStreak < milestones[i]) {
-            prevMilestone = milestones[i - 1];
-            nextMilestone = milestones[i];
-            break;
-        }
-        prevMilestone = milestones[i];
-        nextMilestone = milestones[i + 1] || milestones[i] + 100;
-    }
-
-    const progress = ((currentStreak - prevMilestone) / (nextMilestone - prevMilestone)) * 100;
-    return Math.min(100, Math.max(0, progress));
-}

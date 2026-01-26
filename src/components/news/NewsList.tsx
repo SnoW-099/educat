@@ -182,7 +182,7 @@ export const NewsList = () => {
               {sources.map((source, sourceIdx) => (
                 <Card 
                   key={source.name}
-                  className="hover:shadow-xl transition-all duration-300 group border-l-4"
+                  className="hover:shadow-xl transition-all duration-300 group border-l-4 bg-white dark:bg-white text-slate-900 dark:text-slate-900 dark:hover:bg-white"
                   style={{ 
                     borderLeftColor: `hsl(var(--primary))`
                   }}
@@ -195,14 +195,14 @@ export const NewsList = () => {
                       </span>
                       <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-all duration-200" />
                     </CardTitle>
-                    <CardDescription className="text-sm mt-2 line-clamp-2">
+                    <CardDescription className="text-sm mt-2 line-clamp-2 text-slate-500 dark:text-slate-500">
                       {source.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Button 
                       variant="outline" 
-                      className="w-full group/btn hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+                      className="w-full group/btn hover:bg-primary hover:text-primary-foreground transition-all duration-200 bg-white dark:bg-white text-slate-900 dark:text-slate-900 border-slate-200 dark:border-slate-200"
                       onClick={() => window.open(source.url, '_blank')}
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />

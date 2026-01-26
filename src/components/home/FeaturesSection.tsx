@@ -41,10 +41,10 @@ export const FeaturesSection = () => {
         <span className="inline-block px-5 py-2 bg-blue-600 text-white text-sm font-bold mb-6 rounded-full shadow-lg shadow-blue-500/20">
           Funcionalitats Clau
         </span>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-slate-900 tracking-tight leading-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-foreground tracking-tight leading-10">
           Tot el que necessites <br />per ser un expert en català
         </h2>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto font-medium">
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-medium">
           Una plataforma dissenyada per maximitzar el teu potencial educatiu.
         </p>
       </div>

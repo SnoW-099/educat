@@ -70,13 +70,13 @@ export const CTASection = () => {
           </div>
 
           <div className="space-y-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground tracking-tight leading-tight">
               {hasSession ? 
                 `Benvingut de nou, ${profile?.name || 'Estudiant'}!` : 
                 'Comença la teva aventura amb el català'
               }
             </h2>
-            <p className="text-xl sm:text-2xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
               {hasSession ? 
                 'Continua el teu aprenentatge de català on ho vas deixar' :
                 'Uneix-te a estudiants que ja estan aprenent català de forma divertida i efectiva'

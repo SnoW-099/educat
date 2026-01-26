@@ -135,15 +135,15 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
               </span>
               Aprenentatge actiu
             </div>
-            <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-800">
+            <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-foreground">
               {getGreeting()}, <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">{user.name}</span>
             </h1>
           </div>
           <div className="text-right hidden sm:block">
-            <p className="text-sm font-medium text-slate-500">{new Date().toLocaleDateString('ca-ES', { weekday: 'long', day: 'numeric', month: 'long' })}</p>
+            <p className="text-sm font-medium text-muted-foreground">{new Date().toLocaleDateString('ca-ES', { weekday: 'long', day: 'numeric', month: 'long' })}</p>
           </div>
         </div>
-        <p className="text-lg text-slate-500 max-w-2xl leading-relaxed">
+        <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
           Prepara't per dominar el català. Avui és un gran dia per aprendre alguna cosa nova.
         </p>
       </div>

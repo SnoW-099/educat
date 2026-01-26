@@ -34,7 +34,7 @@ export const StudentStatistics = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Card className="group relative overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 cursor-pointer h-full flex flex-col justify-between">
+        <Card className="group relative overflow-hidden border border-slate-200 bg-white dark:bg-white shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-white transition-all duration-300 cursor-pointer h-full flex flex-col justify-between">
           <CardHeader className="pb-2">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">

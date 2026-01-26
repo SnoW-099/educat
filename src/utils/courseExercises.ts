@@ -1,3 +1,4 @@
+import { ALL_NEW_EXERCISES } from './newExercises';
 // EXERCICIS PER CURS - 4t ESO
 // Adaptats per nivell de dificultat segons el curs
 // 4A = Més difícil (vocabulari avançat, especialitzat)
@@ -647,7 +648,6 @@ export const getExercisesByCourse = (course: '4A' | '4B' | '4C' | '4D' | '4E' | 
 
   // Afegir nous exercicis
   try {
-    const { ALL_NEW_EXERCISES } = require('./newExercises');
     // For B2/C1, we need to filter new exercises that match the sub-levels
     if (course === 'C1') {
       const newA = ALL_NEW_EXERCISES.filter((s: CourseSection) => s.course === '4A');
@@ -706,5 +706,5 @@ export {
 } from './multipleChoiceExercises';
 
 // NOUS EXERCICIS ADDICIONALS
-export { ALL_NEW_EXERCISES } from './newExercises';
+export { ALL_NEW_EXERCISES };
 

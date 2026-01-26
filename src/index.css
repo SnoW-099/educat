@@ -93,7 +93,84 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* Removed .dark block entirely */
+  .dark {
+    /* ============================================
+       PALETA MODO OSCURO ESTILO APPLE
+       ============================================ */
+
+    /* Fondos */
+    --background: 0 0% 3.9%;
+    /* Gris muy oscuro, casi negro */
+    --foreground: 0 0% 98%;
+    /* Blanco puro */
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary: Azul estilo Apple #007AFF */
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Gris oscuro mejorado */
+    --secondary: 210 20% 8%;
+    --secondary-foreground: 222 47% 89%;
+
+    /* Accent: Azul oscuro para elementos secundarios */
+    --accent: 210 100% 8%;
+    --accent-foreground: 210 100% 55%;
+
+    /* Tertiary: Gris medio oscuro */
+    --tertiary: 210 20% 12%;
+    --tertiary-foreground: 215 16% 83%;
+
+    /* Muted: Gris oscuro suave */
+    --muted: 210 40% 3.9%;
+    --muted-foreground: 215.4 16.3% 83.9%;
+
+    /* Destructive: Rojo oscuro */
+    --destructive: 0 62% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 214.3 31.8% 12.9%;
+    --input: 214.3 31.8% 12.9%;
+    --ring: 210 100% 50%;
+
+    /* Estados */
+    --success: 142 71% 55%;
+    --success-foreground: 0 0% 10%;
+
+    --warning: 38 92% 60%;
+    --warning-foreground: 0 0% 10%;
+
+    /* Gradientes Modernos para modo oscuro */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%), hsl(210 100% 45%));
+    --gradient-card: linear-gradient(180deg, rgba(10, 10, 10, 0.8), rgba(20, 20, 20, 0.4));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 3.9%) 0%, hsl(210 100% 8%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(210 100% 8%), hsl(210 100% 12%));
+    --gradient-surface: hsl(210 100% 6%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 3.9%), hsl(210 100% 6%));
+
+    /* Sombras - Más intensas para modo oscuro */
+    --shadow-minimal: 0 1px 2px 0 rgb(0 0 0 / 0.25);
+    --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.25), 0 2px 4px -2px rgb(0 0 0 / 0.25);
+    --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+    --shadow-focus: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(210 100% 50% / 0.3);
+    --shadow-elevation: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 3.9%;
+    --sidebar-foreground: 240 5.3% 83.9%;
+    --sidebar-primary: 240 5.9% 90%;
+    --sidebar-primary-foreground: 0 0% 3.9%;
+    --sidebar-accent: 240 4.8% 8.9%;
+    --sidebar-accent-foreground: 240 5.9% 90%;
+    --sidebar-border: 220 13% 12.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
 
   /* ============================================
      PREMIUM VISUAL STYLES
@@ -106,6 +183,12 @@
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+  }
+
+  .dark .glass-card {
+    background: rgba(10, 10, 10, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   }
 
   /* Gradient Text */

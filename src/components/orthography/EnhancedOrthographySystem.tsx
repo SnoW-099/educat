@@ -198,7 +198,7 @@ export const EnhancedOrthographySystem = ({
   };
 
   const getCategoryBadgeStyle = (category: string) => {
-    return 'bg-secondary text-secondary-foreground border-border';
+    return 'bg-slate-100 text-slate-700 border-slate-200';
   };
 
   if (showExamModels) {
@@ -253,8 +253,8 @@ export const EnhancedOrthographySystem = ({
       <div className="flex flex-col items-center justify-center py-16 animate-in fade-in duration-500">
         {/* Header with subtle animation */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-800 mb-3">Quin nivell vols practicar?</h2>
-          <p className="text-slate-500 text-lg">Tria el teu nivell per començar</p>
+          <h2 className="text-3xl font-bold text-foreground mb-3">Quin nivell vols practicar?</h2>
+          <p className="text-muted-foreground text-lg">Tria el teu nivell per començar</p>
         </div>
 
         {/* Cards with animations */}
@@ -262,7 +262,7 @@ export const EnhancedOrthographySystem = ({
 
           {/* B2 Card */}
           <Card
-            className="cursor-pointer bg-white border-2 border-slate-100 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 transition-all duration-300 ease-out group"
+            className="cursor-pointer bg-white dark:bg-white border-2 border-slate-100 dark:border-slate-100 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 transition-all duration-300 ease-out group dark:hover:bg-white"
             onClick={() => setCourseFilter('B2')}
           >
             <CardContent className="p-8 text-center">
@@ -279,7 +279,7 @@ export const EnhancedOrthographySystem = ({
 
           {/* C1 Card */}
           <Card
-            className="cursor-pointer bg-white border-2 border-slate-100 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 transition-all duration-300 ease-out group"
+            className="cursor-pointer bg-white dark:bg-white border-2 border-slate-100 dark:border-slate-100 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 transition-all duration-300 ease-out group dark:hover:bg-white"
             onClick={() => setCourseFilter('C1')}
           >
             <CardContent className="p-8 text-center">
@@ -385,7 +385,7 @@ export const EnhancedOrthographySystem = ({
             return (
               <Card
                 key={section.id}
-                className="group card-premium cursor-pointer animate-scale-in glow-on-hover"
+                className="group card-premium cursor-pointer animate-scale-in glow-on-hover text-slate-900 dark:text-slate-900 bg-white dark:bg-white hover:bg-white dark:hover:bg-white"
                 onClick={() => setSelectedSection(section)}
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
@@ -402,7 +402,7 @@ export const EnhancedOrthographySystem = ({
                     </Badge>
                   </div>
 
-                  <CardDescription className="text-sm leading-relaxed line-clamp-2">
+                  <CardDescription className="text-sm leading-relaxed line-clamp-2 text-slate-500 dark:text-slate-500">
                     {section.description}
                   </CardDescription>
                 </CardHeader>
@@ -410,11 +410,11 @@ export const EnhancedOrthographySystem = ({
                 <CardContent>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground font-medium">
+                      <span className="text-slate-500 dark:text-slate-500 font-medium">
                         {section.exercises.length} exercicis
                       </span>
                       {completedCount > 0 && (
-                        <span className="text-success font-bold flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold flex items-center gap-1.5">
                           <CheckCircle className="h-4 w-4" />
                           {completedCount}/{section.exercises.length}
                         </span>
@@ -423,21 +423,21 @@ export const EnhancedOrthographySystem = ({
 
                     {progressPercentage > 0 && (
                       <div className="space-y-2">
-                        <div className="h-2.5 bg-secondary rounded-full overflow-hidden">
+                        <div className="h-2.5 bg-slate-200 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-foreground transition-all duration-500"
+                            className="h-full bg-slate-900 transition-all duration-500"
                             style={{ width: `${progressPercentage}%` }}
                           />
                         </div>
                         <div className="flex justify-between items-center text-xs">
-                          <span className="text-muted-foreground font-medium">Progrés</span>
+                          <span className="text-slate-500 dark:text-slate-500 font-medium">Progrés</span>
                           <span className="font-bold">{progressPercentage}%</span>
                         </div>
                       </div>
                     )}
 
                     {progressPercentage === 100 && (
-                      <div className="flex items-center justify-center gap-2 text-success text-sm font-bold p-3 bg-success/10 rounded-lg border border-success/20">
+                      <div className="flex items-center justify-center gap-2 text-emerald-700 text-sm font-bold p-3 bg-emerald-50 rounded-lg border border-emerald-200">
                         <Trophy className="h-5 w-5" />
                         <span>Completat!</span>
                       </div>

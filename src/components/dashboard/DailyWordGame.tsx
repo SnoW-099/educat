@@ -158,7 +158,7 @@ export const DailyWordGame = () => {
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-                <Card className={`group relative overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg h-full border ${isCompleted ? 'border-amber-200 bg-amber-50/50' : 'border-slate-200 hover:border-blue-300'}`}>
+                <Card className="group relative overflow-hidden border border-slate-200 bg-white dark:bg-white shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-white transition-all duration-300 cursor-pointer h-full flex flex-col justify-between">
                     {/* Background Gradient */}
                     <div className={`absolute inset-0 transition-colors ${isCompleted ? 'bg-gradient-to-br from-amber-50 to-orange-50/50' : 'bg-gradient-to-br from-slate-50 to-white group-hover:from-blue-50/50 group-hover:to-white'}`} />
 
@@ -221,7 +221,7 @@ export const DailyWordGame = () => {
                             {currentGuess && (
                                 <button
                                     onClick={handleDelete}
-                                    className="absolute right-0 p-2 text-slate-300 hover:text-red-400 transition-colors"
+                                    className="absolute right-0 p-2 text-red-600 hover:text-red-700 transition-colors bg-white rounded-md shadow-md border border-red-300"
                                 >
                                     <Delete className="w-6 h-6" />
                                 </button>

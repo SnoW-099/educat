@@ -1,4 +1,4 @@
-﻿import { CourseExercise, CourseSection } from './courseExercises';
+﻿import type { CourseExercise, CourseSection } from './courseExercises';
 
 // =========================================================================================
 // CONSOLIDATED EXERCISES FOR B2 (4C, 4D, 4E) AND C1 (4A, 4B)

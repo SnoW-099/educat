@@ -117,17 +117,17 @@ export const HeroSection = () => {
         </div>
 
         {/* Hero Title - UPDATED TEXT */}
-        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-slate-900 mb-8 animate-scale-in max-w-5xl leading-[1.1] drop-shadow-sm">
+        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-foreground mb-8 animate-scale-in max-w-5xl leading-[1.1] drop-shadow-sm">
           Domina el Català <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 drop-shadow-sm">fàcilment.</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-primary drop-shadow-sm">fàcilment.</span>
         </h1>
 
         {/* Subtitle */}
         {/* Subtitle - Typewriter Effect */}
         <div className="h-16 mb-12 flex items-center justify-center">
-          <p className="text-xl sm:text-2xl text-slate-600 font-medium">
-            <span className="text-slate-900 font-bold">{typewriterText}</span>
-            <span className="animate-pulse text-blue-600">|</span>
+          <p className="text-xl sm:text-2xl text-muted-foreground font-medium">
+            <span className="text-foreground font-bold">{typewriterText}</span>
+            <span className="animate-pulse text-primary">|</span>
           </p>
         </div>
 
@@ -159,7 +159,7 @@ export const HeroSection = () => {
           <Button
             variant="outline"
             size="lg"
-            className="h-14 px-10 text-lg border-2 border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 bg-white/50 backdrop-blur-sm rounded-full transition-all font-semibold"
+            className="h-14 px-10 text-lg border-2 border-slate-200 text-slate-900 hover:bg-slate-50 hover:border-slate-300 bg-white rounded-full transition-all font-semibold"
           >
             Saber-ne més
           </Button>
@@ -170,10 +170,10 @@ export const HeroSection = () => {
 
           {/* Card 1: Exercise UI Mockup */}
           <div className="p-6 rounded-3xl bg-white border border-slate-100 shadow-xl shadow-blue-100/50 hover:shadow-2xl hover:shadow-blue-200 hover:-translate-y-1 transition-all overflow-hidden relative group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                   <Hash className="w-5 h-5" />
                 </div>
                 <div>
@@ -187,7 +187,7 @@ export const HeroSection = () => {
                   Com es diu "Hello" en català?
                 </div>
                 <div className="grid grid-cols-2 gap-2">
-                  <div className="p-2 border border-blue-200 bg-blue-50 text-blue-700 rounded-lg text-xs font-bold text-center">Hola</div>
+                  <div className="p-2 border border-primary bg-primary/10 text-primary rounded-lg text-xs font-bold text-center">Hola</div>
                   <div className="p-2 border border-slate-100 bg-white text-slate-500 rounded-lg text-xs text-center">Adéu</div>
                 </div>
               </div>

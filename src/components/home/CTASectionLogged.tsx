@@ -49,10 +49,10 @@ export const CTASectionLogged = () => {
           </div>
 
           <div className="space-y-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground tracking-tight leading-tight">
               Benvingut de nou, {profile?.name || 'Estudiant'}!
             </h2>
-            <p className="text-xl sm:text-2xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
               Continua el teu aprenentatge de català on ho vas deixar
             </p>
           </div>
