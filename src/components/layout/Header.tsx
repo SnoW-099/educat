@@ -10,7 +10,7 @@ import { UserProfile } from "@/hooks/useAuth";
 import { LogOut, BookOpen, Home, User, Settings, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { ModeToggle } from "@/components/mode-toggle";
 
 interface HeaderProps {
   user?: UserProfile;
@@ -132,7 +132,8 @@ export const Header = ({ user, onLogout, onNavigateToAuth }: HeaderProps) => {
                 <p className="text-xs text-muted-foreground mt-1 capitalize">{user.role}</p>
               </div>
             </div>
-            <ThemeToggle className="static h-10 w-10 bg-transparent text-foreground hover:bg-white/20 transition-colors" />
+
+            <ModeToggle className="static h-10 w-10 text-foreground hover:bg-white/20 backdrop-blur-sm" />
             {onLogout && (
               <Button
                 variant="ghost"
