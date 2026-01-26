@@ -32,7 +32,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       <Button
         variant="ghost"
         size="sm"
-        className={`z-50 h-12 w-12 p-0 rounded-lg bg-transparent shadow-none hover:bg-transparent border-0 ${className || "fixed top-4 right-4"}`}
+        className={`z-[9999] h-12 w-12 p-0 rounded-lg bg-transparent shadow-none hover:bg-transparent border-0 ${className || "fixed top-4 right-4"}`}
       >
         <div className="h-5 w-5 animate-pulse bg-gray-300 rounded" />
       </Button>
@@ -48,7 +48,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       variant="ghost"
       size="sm"
       onClick={toggleTheme}
-      className={`z-50 h-12 w-12 p-0 rounded-lg bg-transparent shadow-none hover:bg-transparent border-0 ${className || "fixed top-4 right-4"}`}
+      className={`z-[9999] h-12 w-12 p-0 rounded-lg bg-transparent shadow-none hover:bg-transparent border-0 ${className || "fixed top-4 right-4"}`}
       aria-label="Toggle theme"
     >
       {resolvedTheme === 'light' ? (

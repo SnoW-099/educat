@@ -132,7 +132,7 @@ export const Header = ({ user, onLogout, onNavigateToAuth }: HeaderProps) => {
                 <p className="text-xs text-muted-foreground mt-1 capitalize">{user.role}</p>
               </div>
             </div>
-            <ThemeToggle className="static h-10 w-10 bg-transparent border border-transparent hover:bg-white/10 hover:border-white/20 backdrop-blur-sm shadow-none" />
+            <ThemeToggle className="static h-10 w-10 bg-transparent text-foreground hover:bg-white/20 transition-colors" />
             {onLogout && (
               <Button
                 variant="ghost"
