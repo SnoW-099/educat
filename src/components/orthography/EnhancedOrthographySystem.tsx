@@ -270,7 +270,7 @@ export const EnhancedOrthographySystem = ({
                 <BookOpen className="w-8 h-8 text-blue-600" />
               </div>
               <h3 className="text-3xl font-bold text-slate-800 mb-2">B2</h3>
-              <p className="text-slate-500 mb-6">420+ exercicis</p>
+              <p className="text-slate-500 mb-6">780+ exercicis</p>
               <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-200">
                 Començar
               </Button>
@@ -397,9 +397,6 @@ export const EnhancedOrthographySystem = ({
                   </div>
 
                   <div className="flex gap-2 flex-wrap">
-                    <Badge variant="outline" className="bg-primary/10 border-primary/20 font-bold">
-                      {section.course}
-                    </Badge>
                     <Badge variant="outline" className={getCategoryBadgeStyle(section.category)}>
                       {getCategoryLabel(section.category)}
                     </Badge>

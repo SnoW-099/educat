@@ -2,8 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, Trophy, Target, MessageCircle, Users, Newspaper, Zap, TrendingUp } from "lucide-react";
-import { XPRanking } from "@/components/ranking/XPRanking";
-import { GlobalXPRanking } from "@/components/ranking/GlobalXPRanking";
+
 import { EnhancedOrthographySystem } from "@/components/orthography/EnhancedOrthographySystem";
 import { StudentStatistics } from "@/components/dashboard/StudentStatistics";
 import { CatalanTheory } from "@/components/theory/CatalanTheory";
@@ -184,9 +183,9 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
               >
                 {/* Liquid Glass Sliding Pill with Blue Line */}
                 <div
-                  className="absolute top-1 bottom-1 left-1 w-[calc((100%-8px)/5)] rounded-full bg-blue-50/50 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] z-0 flex flex-col justify-end"
+                  className="absolute top-1 bottom-1 left-1 w-[calc((100%-8px)/3)] rounded-full bg-blue-50/50 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] z-0 flex flex-col justify-end"
                   style={{
-                    transform: `translateX(${["orthography", "theory", "news", "ranking", "chat"].indexOf(activeTab) * 100
+                    transform: `translateX(${["orthography", "theory", "news"].indexOf(activeTab) * 100
                       }%)`,
                   }}
                 >
@@ -198,8 +197,6 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
                   { id: 'orthography', label: 'Exercicis', icon: BookOpen },
                   { id: 'theory', label: 'Teoria', icon: Newspaper },
                   { id: 'news', label: 'Notícies', icon: Zap },
-                  { id: 'ranking', label: 'Classificació', icon: Trophy },
-                  { id: 'chat', label: 'Xat', icon: MessageCircle },
                 ].map((tab) => (
                   <TabsTrigger
                     key={tab.id}
@@ -267,65 +264,9 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
                 <NewsList />
               </TabsContent>
 
-              <TabsContent
-                value="ranking"
-                className={cn(
-                  "space-y-4 mt-6",
-                  activeTab === "ranking" && !isPanelAnimating && "animate-in fade-in-0 slide-in-from-top-4 duration-400"
-                )}
-              >
-                {studentClass ? (
-                  <div className="grid gap-6 lg:grid-cols-2">
-                    <XPRanking
-                      classId={studentClass.id}
-                      currentUserId={user.user_id}
-                    />
-                    <GlobalXPRanking
-                      currentUserId={user.user_id}
-                    />
-                  </div>
-                ) : (
-                  <Card className="glass-card">
-                    <CardHeader>
-                      <CardTitle>Classificació XP</CardTitle>
-                      <CardDescription>
-                        No estàs inscrit a cap classe
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-center text-muted-foreground py-8">
-                        <Trophy className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                        <p>Necessites estar inscrit a una classe per veure la classificació</p>
-                        <p className="text-sm mt-2">Contacta amb el teu professor per obtenir un codi de classe</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
-              </TabsContent>
 
-              <TabsContent
-                value="chat"
-                className={cn(
-                  "space-y-4 mt-6",
-                  activeTab === "chat" && !isPanelAnimating && "animate-in fade-in-0 slide-in-from-top-4 duration-400"
-                )}
-              >
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle>Xat</CardTitle>
-                    <CardDescription>
-                      Funcionalitat temporalment deshabilitada
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="text-center text-muted-foreground py-8">
-                      <MessageCircle className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                      <p>El xat està temporalment inactiu</p>
-                      <p className="text-sm mt-2">Estem treballant per millorar aquesta funcionalitat</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
+
+
             </div>
           </div>
         </Tabs>

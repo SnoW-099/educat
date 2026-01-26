@@ -162,14 +162,7 @@ export const COURSE_4C_EXERCISES: CourseSection[] = [
       { id: '4c_apo_63', type: 'multiple_choice', question: '👻 Completa: "Surt ___."', options: ['del ànima', 'de l\'ànima'], correctAnswer: 'de l\'ànima', explanation: 'DEL es trenca davant vocal.', difficulty: 2, course: '4C' }
     ]
   },
-  {
-    id: '4c_separacio_sil·labes',
-    title: 'Separació de síl·labes (B2)',
-    description: 'Exercicis complets de separació de síl·labes (Nivell B2)',
-    category: 'ortografia',
-    course: '4C',
-    exercises: []
-  },
+
   {
     id: '4c_diftongs',
     title: 'Diftongs (B2)',
