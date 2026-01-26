@@ -9,7 +9,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../index.css";
 
 export const metadata = {
-    title: "Hola Connect",
+    title: "Edu-cat",
     description: "Connect with teachers and students",
 };
 
