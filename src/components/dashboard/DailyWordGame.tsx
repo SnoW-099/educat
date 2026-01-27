@@ -8,10 +8,43 @@ import { BAD_WORDS } from '@/utils/profanityList';
 
 // Data source for the game
 const WORD_LIST = [
-    { letters: ['A', 'L', 'G', 'R', 'I', 'M', 'E'], center: 'A', words: ['ALGRIMA', 'LLAGRIMA', 'AMIGA', 'MAGIA', 'AIRE', 'MAR', 'IRA', 'AMB', 'AMIC'] },
-    { letters: ['E', 'S', 'T', 'U', 'D', 'I', 'O'], center: 'E', words: ['ESTUDI', 'DIES', 'ESTIU', 'USE', 'SEU', 'DUE'] },
-    { letters: ['P', 'O', 'R', 'T', 'A', 'L', 'S'], center: 'O', words: ['PORTAL', 'SOL', 'SORT', 'PORTA', 'TOP', 'POT'] },
-    { letters: ['C', 'A', 'T', 'A', 'L', 'A', 'N'], center: 'A', words: ['CATALAN', 'CANT', 'TANC', 'ALA', 'ANA', 'CAT'] }
+    {
+        letters: ['A', 'E', 'I', 'L', 'N', 'R', 'S'],
+        center: 'A',
+        words: [
+            'AIRE',
+            'ARENA',
+            'ARENES',
+            'ARENAL',
+            'ANAR',
+            'ANIS',
+            'ANISA',
+            'ANELL',
+            'ALA',
+            'ALES',
+            'ALENAR',
+            'ALINEAR',
+            'ALINEA',
+            'SAL',
+            'SALA',
+            'SALES',
+            'SALINA',
+            'SALINES',
+            'SALARI',
+            'SALARIS',
+            'SERENA',
+            'SERENAR',
+            'SERRA',
+            'REINA',
+            'REINES',
+            'REINAR',
+            'RERA',
+            'REAL',
+            'SENAR',
+            'RENAL',
+            'LAR'
+        ]
+    }
 ];
 
 export const DailyWordGame = () => {
@@ -130,7 +163,7 @@ export const DailyWordGame = () => {
         setIsVerifying(true);
         await new Promise(resolve => setTimeout(resolve, 300)); // Faster feel
 
-        const isValid = gameData.words.includes(guess) || (guess.length > 3 && gameData.words.includes(guess));
+        const isValid = gameData.words.includes(guess);
 
         if (isValid) {
             const newFound = [...foundWords, guess];
@@ -146,7 +179,7 @@ export const DailyWordGame = () => {
                 toast({ title: "🏆 Enhorabona!", description: "Has completat el joc d'avui!", className: "bg-yellow-50 border-yellow-200" });
             }
         } else {
-            toast({ title: "Incorrecte", description: "No apareix al diccionari.", variant: "destructive" });
+            toast({ title: "Incorrecte", description: "No està a la llista de paraules comunes.", variant: "destructive" });
             setCurrentGuess('');
         }
         setIsVerifying(false);
@@ -193,7 +226,7 @@ export const DailyWordGame = () => {
                         {isCompleted ? (
                             <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/60 border border-amber-200/50 rounded-full shadow-sm">
                                 <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                                <span className="text-xs font-bold text-amber-700">Racha: {paraulogicStreak} dies</span>
+                                <span className="text-xs font-bold text-amber-700">Ratxa: {paraulogicStreak} dies</span>
                             </div>
                         ) : (
                             <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
