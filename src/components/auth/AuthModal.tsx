@@ -4,9 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { GraduationCap, Users, Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { validatePassword, validateEmail, validateName } from "@/utils/validation";
 
@@ -18,14 +17,12 @@ interface AuthModalProps {
 
 export const AuthModal = ({ isOpen, onClose, onSuccess }: AuthModalProps) => {
   const [isLogin, setIsLogin] = useState(true);
-  const [role, setRole] = useState<'professor' | 'student'>('student');
   const [showPassword, setShowPassword] = useState(false);
   const [passwordErrors, setPasswordErrors] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    password: '',
-    classCode: ''
+    password: ''
   });
   const { toast } = useToast();
 
@@ -87,8 +84,7 @@ export const AuthModal = ({ isOpen, onClose, onSuccess }: AuthModalProps) => {
             emailRedirectTo: 'https://edu-cat.vercel.app/',
             data: {
               name: formData.name,
-              role: role,
-              class_code: role === 'student' ? formData.classCode : undefined
+              role: 'student'
             }
           }
         });
@@ -169,8 +165,7 @@ export const AuthModal = ({ isOpen, onClose, onSuccess }: AuthModalProps) => {
     setFormData({
       name: '',
       email: '',
-      password: '',
-      classCode: ''
+      password: ''
     });
     setPasswordErrors([]);
   };
@@ -195,29 +190,6 @@ export const AuthModal = ({ isOpen, onClose, onSuccess }: AuthModalProps) => {
           </TabsList>
 
           <form onSubmit={handleSubmit} className="space-y-4 mt-4">
-            {!isLogin && (
-              <div className="grid grid-cols-2 gap-4">
-                <Card 
-                  className={`cursor-pointer transition-all ${role === 'professor' ? 'ring-2 ring-primary' : ''}`}
-                  onClick={() => setRole('professor')}
-                >
-                  <CardContent className="flex flex-col items-center p-4">
-                    <GraduationCap className="h-8 w-8 text-primary mb-2" />
-                    <span className="text-sm font-medium">Professor</span>
-                  </CardContent>
-                </Card>
-                <Card 
-                  className={`cursor-pointer transition-all ${role === 'student' ? 'ring-2 ring-primary' : ''}`}
-                  onClick={() => setRole('student')}
-                >
-                  <CardContent className="flex flex-col items-center p-4">
-                    <Users className="h-8 w-8 text-primary mb-2" />
-                    <span className="text-sm font-medium">Estudiant</span>
-                  </CardContent>
-                </Card>
-              </div>
-            )}
-
             {!isLogin && (
               <div className="space-y-2">
                 <Label htmlFor="name">Nom complet</Label>
@@ -286,21 +258,6 @@ export const AuthModal = ({ isOpen, onClose, onSuccess }: AuthModalProps) => {
                 </div>
               )}
             </div>
-
-            {!isLogin && role === 'student' && (
-              <div className="space-y-2">
-                <Label htmlFor="classCode">Codi de classe (opcional)</Label>
-                <Input
-                  id="classCode"
-                  value={formData.classCode}
-                  onChange={(e) => setFormData({...formData, classCode: e.target.value})}
-                  placeholder="ex. ABC1234"
-                />
-                <p className="text-xs text-muted-foreground">
-                  Pots registrar-te sense codi i afegir-te a una classe més tard
-                </p>
-              </div>
-            )}
 
             <Button type="submit" className="w-full">
               {isLogin ? 'Iniciar sessió' : 'Registrar-se'}
