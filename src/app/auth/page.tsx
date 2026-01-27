@@ -217,196 +217,224 @@ export default function Auth() {
 
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 bg-slate-50 relative overflow-hidden">
-
-            {/* Background Ambience - Blue Tones */}
+        <div className="min-h-screen flex items-center justify-center p-4 bg-background relative overflow-hidden selection:bg-blue-500/30">
+            {/* Ultra-Premium Animated Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 left-0 w-full h-full bg-slate-50"></div>
-                <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-blue-400/20 rounded-full blur-[120px] animate-blob"></div>
-                <div className="absolute top-[20%] -right-[10%] w-[40%] h-[60%] bg-indigo-400/20 rounded-full blur-[120px] animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-[10%] left-[20%] w-[60%] h-[40%] bg-sky-400/20 rounded-full blur-[120px] animate-blob animation-delay-4000"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-background dark:bg-slate-950"></div>
+
+                {/* Moving Mesh Gradients */}
+                <div className="absolute -top-[10%] -left-[10%] w-[70%] h-[70%] bg-blue-600/20 dark:bg-blue-600/15 rounded-full blur-[120px] animate-blob mix-blend-multiply dark:mix-blend-soft-light transition-all duration-1000"></div>
+                <div className="absolute top-[20%] -right-[10%] w-[60%] h-[80%] bg-indigo-500/20 dark:bg-indigo-500/15 rounded-full blur-[120px] animate-blob animation-delay-2000 mix-blend-multiply dark:mix-blend-soft-light transition-all duration-1000"></div>
+                <div className="absolute -bottom-[20%] left-[10%] w-[80%] h-[60%] bg-sky-400/20 dark:bg-sky-400/15 rounded-full blur-[120px] animate-blob animation-delay-4000 mix-blend-multiply dark:mix-blend-soft-light transition-all duration-1000"></div>
+
+                {/* Accent blobs for more depth */}
+                <div className="absolute top-[40%] left-[30%] w-[30%] h-[30%] bg-purple-500/10 dark:bg-purple-600/10 rounded-full blur-[100px] animate-pulse transition-all duration-1000"></div>
             </div>
 
-            {/* Main Card Container - Centered & Larger */}
-            <div className="w-full max-w-5xl bg-white rounded-[2rem] shadow-2xl overflow-hidden grid lg:grid-cols-5 relative z-10 min-h-[600px] border border-slate-100">
+            {/* Glassmorphism Main Container */}
+            <div className="w-full max-w-5xl md:min-h-[700px] flex flex-col lg:flex-row relative z-10 transition-all duration-500 ease-in-out rounded-[3rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)]">
 
-                {/* Visual Side (Left - 2cols) - Pure Blue/Indigo Theme */}
-                <div className="hidden lg:flex lg:col-span-2 bg-gradient-to-br from-indigo-600 to-blue-700 text-white flex-col justify-between p-12 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150"></div>
-
-                    {/* Decorative Circles */}
-                    <div className="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-                    <div className="absolute bottom-10 left-10 w-40 h-40 bg-blue-400/20 rounded-full blur-3xl"></div>
+                {/* Left Side: Premium Brand Experience */}
+                <div className="hidden lg:flex lg:w-2/5 bg-gradient-to-br from-indigo-700 via-blue-600 to-blue-800 text-white flex-col justify-between p-12 relative overflow-hidden rounded-l-[2.5rem] shadow-[-20px_0_50px_-15px_rgba(37,99,235,0.2)]">
+                    {/* Interior Decorative Patterns */}
+                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_2px_2px,white_1px,transparent_0)] bg-[length:24px_24px]"></div>
+                    <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+                    <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl"></div>
 
                     <div className="relative z-10">
-                        <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8 border border-white/30 shadow-lg">
-                            <span className="text-3xl font-bold tracking-tighter">Ec</span>
+                        <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-xl mb-12 group hover:bg-white/15 transition-all">
+                            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform">
+                                <span className="text-blue-700 font-bold text-xl tracking-tighter">E</span>
+                            </div>
+                            <span className="font-bold text-lg tracking-tight">EduCat</span>
                         </div>
-                        <h2 className="text-4xl font-bold leading-tight mb-4 text-white">
-                            Benvingut a la nova era educativa.
-                        </h2>
-                        <p className="text-blue-100 text-lg leading-relaxed font-light">
-                            EduCat transforma la manera d'aprendre català amb tecnologia adaptativa i disseny premium.
-                        </p>
+
+                        <div className="space-y-6">
+                            <h2 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-white">
+                                Allibera el teu <span className="text-blue-200">potencial</span> educatiu.
+                            </h2>
+                            <p className="text-blue-50/80 text-xl leading-relaxed font-medium">
+                                Uneix-te a la plataforma líder per aprendre català amb IA i gamificació.
+                            </p>
+                        </div>
                     </div>
 
-                    <div className="relative z-10 space-y-4">
-                        <div className="flex items-center gap-4 text-sm font-medium text-blue-100 bg-white/10 p-3 rounded-xl border border-white/10 backdrop-blur-sm">
-                            <div className="p-2 bg-white/20 rounded-lg">
-                                <GraduationCap className="w-5 h-5 text-white" />
+                    <div className="relative z-10 space-y-4 pt-12">
+                        {[
+                            { icon: GraduationCap, label: "IA Adaptativa", sub: "Aprendre al teu ritme" },
+                            { icon: User, label: "Comunitat Viva", sub: "+5.000 estudiants" }
+                        ].map((item, idx) => (
+                            <div key={idx} className="flex items-center gap-4 bg-white/5 backdrop-blur-sm p-4 rounded-2xl border border-white/10 hover:bg-white/10 transition-all cursor-default group">
+                                <div className="p-2.5 bg-blue-500/30 rounded-xl group-hover:scale-110 transition-transform">
+                                    <item.icon className="w-5 h-5 text-white" />
+                                </div>
+                                <div>
+                                    <div className="text-sm font-bold">{item.label}</div>
+                                    <div className="text-xs text-blue-100/60 font-medium">{item.sub}</div>
+                                </div>
                             </div>
-                            <span>Aprenentatge 100% Personalitzat</span>
-                        </div>
+                        ))}
                     </div>
                 </div>
 
-                {/* Form Side (Right - 3cols) */}
-                <div className="lg:col-span-3 p-8 lg:p-12 flex flex-col justify-center bg-white">
-                    <div className="max-w-md mx-auto w-full space-y-8">
+                {/* Right Side: Interactive Form with True Glassmorphism */}
+                <div className="flex-1 p-8 lg:p-14 flex flex-col justify-center bg-white/70 dark:bg-slate-900/80 backdrop-blur-2xl border-none">
+                    <div className="max-w-md mx-auto w-full space-y-10">
 
-                        <div className="text-center lg:text-left space-y-2">
-                            <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Començar l'aventura</h1>
-                            <p className="text-slate-500">Accedeix al teu espai personal en segons.</p>
+                        <div className="text-center lg:text-left space-y-3">
+                            <h1 className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                                {isResetMode ? "Recuperar" : "Hola de nou"}
+                            </h1>
+                            <p className="text-slate-500 dark:text-slate-400 font-medium">
+                                {isResetMode ? "Escriu el teu correu per restablir-ho." : "Accedeix al teu centre d'aprenentatge."}
+                            </p>
                         </div>
 
                         {!isResetMode ? (
                             <Tabs defaultValue="signin" className="w-full">
-                                <TabsList className="grid w-full grid-cols-2 mb-8 bg-slate-50 p-1 rounded-xl border border-slate-100">
-                                    <TabsTrigger value="signin" className="rounded-lg font-medium text-sm data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all py-2.5">
-                                        Iniciar sessió
-                                    </TabsTrigger>
-                                    <TabsTrigger value="signup" className="rounded-lg font-medium text-sm data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all py-2.5">
-                                        Registrar-se
-                                    </TabsTrigger>
-                                </TabsList>
+                                <div className="bg-slate-200/40 dark:bg-slate-800/60 p-1 rounded-full mb-10 flex backdrop-blur-md">
+                                    <TabsList className="grid w-full grid-cols-2 bg-transparent border-none p-0 h-auto gap-0">
+                                        <TabsTrigger
+                                            value="signin"
+                                            className="rounded-full font-bold text-sm border-none data-[state=active]:bg-white dark:data-[state=active]:bg-slate-700 data-[state=active]:text-blue-600 dark:data-[state=active]:text-blue-400 data-[state=active]:shadow-lg transition-all py-3 px-4 h-full m-0"
+                                        >
+                                            Entrar
+                                        </TabsTrigger>
+                                        <TabsTrigger
+                                            value="signup"
+                                            className="rounded-full font-bold text-sm border-none data-[state=active]:bg-white dark:data-[state=active]:bg-slate-700 data-[state=active]:text-blue-600 dark:data-[state=active]:text-blue-400 data-[state=active]:shadow-lg transition-all py-3 px-4 h-full m-0"
+                                        >
+                                            Crear compte
+                                        </TabsTrigger>
+                                    </TabsList>
+                                </div>
 
                                 {/* Sign In Form */}
-                                <TabsContent value="signin" className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
-                                    <form onSubmit={(e) => { e.preventDefault(); handleEmailSignIn(); }} className="space-y-5">
-                                        <div className="space-y-2">
-                                            <Label className="text-slate-700 font-semibold text-sm">Correu electrònic</Label>
-                                            <div className="relative">
-                                                <Input
-                                                    type="email"
-                                                    value={email}
-                                                    onChange={(e) => setEmail(e.target.value)}
-                                                    className="h-12 pl-4 bg-slate-50 border-slate-200 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-xl"
-                                                    placeholder="hola@exemple.com"
-                                                />
-                                            </div>
+                                <TabsContent value="signin" className="space-y-8 animate-in fade-in slide-in-from-bottom-2 duration-500">
+                                    <form onSubmit={(e) => { e.preventDefault(); handleEmailSignIn(); }} className="space-y-6">
+                                        <div className="space-y-3">
+                                            <Label className="text-slate-700 dark:text-slate-300 font-bold text-sm ml-1">Email</Label>
+                                            <Input
+                                                type="email"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                                className="h-14 px-6 bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700/50 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-full text-lg"
+                                                placeholder="nom@correu.com"
+                                            />
                                         </div>
-                                        <div className="space-y-2">
-                                            <div className="flex justify-between items-center">
-                                                <Label className="text-slate-700 font-semibold text-sm">Contrasenya</Label>
-                                                <span
+                                        <div className="space-y-3">
+                                            <div className="flex justify-between items-center px-1">
+                                                <Label className="text-slate-700 dark:text-slate-300 font-bold text-sm">Contrasenya</Label>
+                                                <button
+                                                    type="button"
                                                     onClick={() => setIsResetMode(true)}
-                                                    className="text-xs text-blue-600 font-semibold hover:underline cursor-pointer"
+                                                    className="text-xs text-blue-600 dark:text-blue-400 font-bold hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
                                                 >
-                                                    Has oblidat?
-                                                </span>
+                                                    M'he oblidat
+                                                </button>
                                             </div>
                                             <Input
                                                 type="password"
                                                 value={password}
                                                 onChange={(e) => setPassword(e.target.value)}
-                                                className="h-12 pl-4 bg-slate-50 border-slate-200 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-xl"
+                                                className="h-14 px-6 bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700/50 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-full text-lg"
                                                 placeholder="••••••••"
                                             />
                                         </div>
                                         <Button
                                             type="submit"
-                                            className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-200 font-bold text-base transition-all rounded-xl active:scale-[0.98] mt-2"
+                                            className="w-full h-14 bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 text-white shadow-[0_10px_20px_-5px_rgba(37,99,235,0.4)] dark:shadow-[0_10px_20px_-5px_rgba(37,99,235,0.2)] font-extrabold text-lg transition-all rounded-full active:scale-[0.97]"
                                             disabled={loading}
                                         >
-                                            {loading ? <span className="animate-pulse">Autenticant...</span> : "Accedir al compte"}
+                                            {loading ? <span className="animate-pulse">Verificant...</span> : "Entrar ara"}
                                         </Button>
                                     </form>
                                 </TabsContent>
 
                                 {/* Sign Up Form */}
-                                <TabsContent value="signup" className="space-y-5 animate-in fade-in slide-in-from-right-4 duration-300">
-                                    <form onSubmit={(e) => { e.preventDefault(); handleEmailSignUp(); }} className="space-y-4">
-                                        <div className="space-y-2">
-                                            <Label className="text-slate-700 font-semibold text-sm">Nom complet</Label>
+                                <TabsContent value="signup" className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-500">
+                                    <form onSubmit={(e) => { e.preventDefault(); handleEmailSignUp(); }} className="space-y-5">
+                                        <div className="space-y-3">
+                                            <Label className="text-slate-700 dark:text-slate-300 font-bold text-sm ml-1">Nom complet</Label>
                                             <Input
                                                 value={name}
                                                 onChange={(e) => setName(e.target.value)}
-                                                className="h-12 bg-slate-50 border-slate-200 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-xl"
+                                                className="h-13 bg-white/50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-700/50 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-2xl"
                                                 placeholder="El teu nom"
                                             />
                                         </div>
-                                        <div className="grid grid-cols-2 gap-3">
-                                            <div
-                                                onClick={() => setRole('student')}
-                                                className={`cursor-pointer border-2 rounded-xl p-3 flex flex-col items-center justify-center gap-2 transition-all duration-200 ${role === 'student' ? 'bg-blue-50 border-blue-500 text-blue-700' : 'bg-white border-slate-100 hover:border-slate-200 text-slate-500'}`}
-                                            >
-                                                <User className={`h-6 w-6 ${role === 'student' ? 'text-blue-600' : 'text-slate-400'}`} />
-                                                <span className="text-sm font-bold">Estudiant</span>
-                                            </div>
-                                            <div
-                                                onClick={() => setRole('professor')}
-                                                className={`cursor-pointer border-2 rounded-xl p-3 flex flex-col items-center justify-center gap-2 transition-all duration-200 ${role === 'professor' ? 'bg-blue-50 border-blue-500 text-blue-700' : 'bg-white border-slate-100 hover:border-slate-200 text-slate-500'}`}
-                                            >
-                                                <GraduationCap className={`h-6 w-6 ${role === 'professor' ? 'text-blue-600' : 'text-slate-400'}`} />
-                                                <span className="text-sm font-bold">Professor</span>
-                                            </div>
+
+                                        <div className="bg-slate-200/40 dark:bg-slate-800/60 p-1 rounded-full flex backdrop-blur-md">
+                                            {[
+                                                { id: 'student', label: 'Sóc Estudiant', icon: User },
+                                                { id: 'professor', label: 'Sóc Professor', icon: GraduationCap }
+                                            ].map((r) => (
+                                                <button
+                                                    key={r.id}
+                                                    type="button"
+                                                    onClick={() => setRole(r.id as any)}
+                                                    className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-full font-bold text-sm transition-all duration-300 ${role === r.id ? 'bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-md' : 'text-slate-500 dark:text-slate-400 hover:bg-white/20 dark:hover:bg-slate-700/20'}`}
+                                                >
+                                                    <r.icon className={`h-4 w-4 ${role === r.id ? 'text-blue-600' : 'text-slate-500'}`} />
+                                                    {r.label}
+                                                </button>
+                                            ))}
                                         </div>
-                                        <div className="space-y-2">
-                                            <Label className="text-slate-700 font-semibold text-sm">Correu electrònic</Label>
+
+                                        <div className="space-y-3">
+                                            <Label className="text-slate-700 dark:text-slate-300 font-bold text-sm ml-1">Email</Label>
                                             <Input
                                                 type="email"
                                                 value={email}
                                                 onChange={(e) => setEmail(e.target.value)}
-                                                className="h-12 bg-slate-50 border-slate-200 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-xl"
-                                                placeholder="hola@exemple.com"
+                                                className="h-13 bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700/50 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-full px-6"
+                                                placeholder="nom@correu.com"
                                             />
                                         </div>
-                                        <div className="space-y-2">
-                                            <Label className="text-slate-700 font-semibold text-sm">Contrasenya</Label>
+
+                                        <div className="space-y-3">
+                                            <Label className="text-slate-700 dark:text-slate-300 font-bold text-sm ml-1">Contrasenya</Label>
                                             <Input
                                                 type="password"
                                                 value={password}
                                                 onChange={(e) => setPassword(e.target.value)}
-                                                className="h-12 bg-slate-50 border-slate-200 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-xl"
-                                                placeholder="Crear contrasenya"
+                                                className="h-13 bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700/50 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-full px-6"
+                                                placeholder="••••••••"
                                             />
                                         </div>
+
                                         {role === 'student' && (
-                                            <div className="space-y-2">
-                                                <Label className="text-slate-700 font-semibold text-xs uppercase tracking-wide">Codi de classe (Opcional)</Label>
+                                            <div className="space-y-3">
+                                                <Label className="text-slate-700 dark:text-slate-300 font-bold text-xs uppercase tracking-widest ml-1">Codi Classe (Optiu)</Label>
                                                 <Input
                                                     value={classCode}
                                                     onChange={(e) => setClassCode(e.target.value.toUpperCase())}
-                                                    className="h-12 font-mono text-center bg-slate-50 border-slate-200 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-xl"
-                                                    placeholder="ABC-123"
+                                                    className="h-13 font-mono text-center bg-white/50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-700/50 transition-all rounded-2xl tracking-widest uppercase"
+                                                    placeholder="XYZ-123"
                                                 />
                                             </div>
                                         )}
+
                                         <Button
                                             type="submit"
-                                            className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-200 font-bold text-base transition-all rounded-xl active:scale-[0.98]"
+                                            className="w-full h-14 bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-500/20 font-extrabold text-lg transition-all rounded-full active:scale-[0.97] mt-3"
                                             disabled={loading}
                                         >
-                                            {loading ? "Creant compte..." : "Registrar-se"}
+                                            {loading ? "Creant..." : "Començar Ara"}
                                         </Button>
                                     </form>
                                 </TabsContent>
                             </Tabs>
                         ) : (
-                            <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-                                <div className="text-center mb-8">
-                                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Recuperar Contrasenya</h3>
-                                    <p className="text-slate-500 text-sm">Introdueix el teu correu i t'enviarem les instruccions.</p>
-                                </div>
-
-                                <div className="space-y-6">
-                                    <div className="space-y-2">
-                                        <Label className="text-slate-700 font-semibold text-sm">Correu electrònic</Label>
+                            <div className="animate-in fade-in slide-in-from-bottom-2 duration-500 py-4">
+                                <div className="space-y-8">
+                                    <div className="space-y-3">
+                                        <Label className="text-slate-700 dark:text-slate-300 font-bold text-sm ml-1">El teu correu</Label>
                                         <Input
                                             type="email"
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
-                                            className="h-12 pl-4 bg-slate-50 border-slate-200 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-xl"
+                                            className="h-14 px-6 bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700/50 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-full"
                                             placeholder="hola@exemple.com"
                                         />
                                     </div>
@@ -414,31 +442,36 @@ export default function Auth() {
                                     <Button
                                         onClick={handlePasswordReset}
                                         disabled={loading}
-                                        className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-200 font-bold text-base transition-all rounded-xl active:scale-[0.98]"
+                                        className="w-full h-14 bg-indigo-600 hover:bg-indigo-700 text-white shadow-xl shadow-indigo-500/20 font-extrabold text-lg transition-all rounded-full active:scale-[0.97]"
                                     >
-                                        {loading ? "Enviant..." : "Enviar enllaç de recuperació"}
+                                        {loading ? "Enviant..." : "Recuperar la Meva Clau"}
                                     </Button>
 
-                                    <div className="text-xs text-center text-slate-500 bg-blue-50 p-3 rounded-lg">
-                                        <p className="font-semibold text-blue-700 mb-1">⚠️ Important:</p>
-                                        <p>Revisa la carpeta de <span className="font-bold">Spam</span> si no reps el correu en pocs minuts.</p>
+                                    <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800/30 p-5 rounded-[1.5rem] flex gap-3 items-start">
+                                        <div className="w-1.5 h-full bg-indigo-400 rounded-full shrink-0"></div>
+                                        <p className="text-sm text-indigo-700 dark:text-indigo-300 leading-relaxed font-medium">
+                                            Rebràs un correu amb un enllaç especial. Recorda mirar a la carpeta de **correu brossa** si no el trobes.
+                                        </p>
                                     </div>
 
-                                    <Button
-                                        variant="ghost"
+                                    <button
                                         onClick={() => setIsResetMode(false)}
-                                        className="w-full text-slate-500 hover:text-slate-800"
+                                        className="w-full py-2 text-slate-500 dark:text-slate-400 font-bold hover:text-slate-700 dark:hover:text-slate-200 transition-colors text-sm"
                                     >
-                                        Tornar enrere
-                                    </Button>
+                                        ← Tornar a l'inici de sessió
+                                    </button>
                                 </div>
                             </div>
                         )}
 
-                        <div className="text-center">
-                            <Button variant="link" size="sm" onClick={() => router.push('/')} className="text-slate-400 hover:text-slate-600 font-normal">
-                                ← Tornar a l'inici
-                            </Button>
+                        <div className="pt-6 border-t border-slate-200/50 dark:border-slate-800/50 flex justify-center">
+                            <button
+                                onClick={() => router.push('/')}
+                                className="inline-flex items-center gap-2 text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all font-bold text-sm group"
+                            >
+                                <span className="group-hover:-translate-x-1 transition-transform">←</span>
+                                Tornar a l'Inici
+                            </button>
                         </div>
                     </div>
                 </div>
