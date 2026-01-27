@@ -24,8 +24,7 @@ export const AuthModal = ({ isOpen, onClose, onSuccess }: AuthModalProps) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    password: '',
-    classCode: ''
+    password: ''
   });
   const { toast } = useToast();
 
@@ -87,8 +86,7 @@ export const AuthModal = ({ isOpen, onClose, onSuccess }: AuthModalProps) => {
             emailRedirectTo: 'https://edu-cat.vercel.app/',
             data: {
               name: formData.name,
-              role: role,
-              class_code: role === 'student' ? formData.classCode : undefined
+              role: role
             }
           }
         });
@@ -169,8 +167,7 @@ export const AuthModal = ({ isOpen, onClose, onSuccess }: AuthModalProps) => {
     setFormData({
       name: '',
       email: '',
-      password: '',
-      classCode: ''
+      password: ''
     });
     setPasswordErrors([]);
   };
@@ -286,21 +283,6 @@ export const AuthModal = ({ isOpen, onClose, onSuccess }: AuthModalProps) => {
                 </div>
               )}
             </div>
-
-            {!isLogin && role === 'student' && (
-              <div className="space-y-2">
-                <Label htmlFor="classCode">Codi de classe (opcional)</Label>
-                <Input
-                  id="classCode"
-                  value={formData.classCode}
-                  onChange={(e) => setFormData({...formData, classCode: e.target.value})}
-                  placeholder="ex. ABC1234"
-                />
-                <p className="text-xs text-muted-foreground">
-                  Pots registrar-te sense codi i afegir-te a una classe més tard
-                </p>
-              </div>
-            )}
 
             <Button type="submit" className="w-full">
               {isLogin ? 'Iniciar sessió' : 'Registrar-se'}
