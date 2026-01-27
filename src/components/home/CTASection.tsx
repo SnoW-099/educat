@@ -4,23 +4,11 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
-import { useState, useEffect } from "react";
 
 export const CTASection = () => {
   const router = useRouter();
   const { user, profile, loading } = useAuth();
-  const [hasSession, setHasSession] = useState(false);
-  
-  // Actualizar el estado cuando cambien los datos
-  useEffect(() => {
-    const sessionActive = !loading && !!user && !!profile;
-    console.log('CTASection - Verificando:', { loading, hasUser: !!user, hasProfile: !!profile, sessionActive });
-    setHasSession(sessionActive);
-  }, [user, profile, loading]);
-
-  // Verificación directa para debug
-  const directCheck = !loading && !!user && !!profile;
-  console.log('CTASection - Verificación directa:', directCheck, 'Estado local:', hasSession);
+  const hasSession = !loading && !!user && !!profile;
 
   const benefits = [
     "Sense targeta de crèdit",
@@ -29,19 +17,14 @@ export const CTASection = () => {
   ];
 
   const handleGetStarted = () => {
-    console.log('CTASection - Botón clickeado, hasSession:', hasSession);
-    
     if (hasSession) {
-      console.log('CTASection - Redirigiendo a dashboard');
-      // Ir al dashboard según el rol
       if (profile?.role === 'professor') {
-        window.location.href = '/teacherdashboard';
+        router.push('/teacherdashboard');
       } else if (profile?.role === 'student') {
-        window.location.href = '/studentdashboard';
+        router.push('/studentdashboard');
       }
     } else {
-      console.log('CTASection - Redirigiendo a auth');
-      window.location.href = '/auth';
+      router.push('/auth');
     }
   };
 
@@ -97,21 +80,10 @@ export const CTASection = () => {
           <div className="animate-scale-in" style={{ animationDelay: '0.3s' }}>
             <Button
               size="lg"
-              className={`${directCheck ? 'bg-green-600 hover:bg-green-700' : 'bg-blue-600 hover:bg-blue-700'} text-white font-bold px-12 py-8 text-lg shadow-xl rounded-xl transition-all duration-300 hover:scale-105 group`}
-              onClick={() => {
-                console.log('CTASection - Botón clickeado, directCheck:', directCheck);
-                if (directCheck) {
-                  if (profile?.role === 'professor') {
-                    window.location.href = '/teacherdashboard';
-                  } else if (profile?.role === 'student') {
-                    window.location.href = '/studentdashboard';
-                  }
-                } else {
-                  window.location.href = '/auth';
-                }
-              }}
+              className={`${hasSession ? 'bg-green-600 hover:bg-green-700' : 'bg-blue-600 hover:bg-blue-700'} text-white font-bold px-12 py-8 text-lg shadow-xl rounded-xl transition-all duration-300 hover:scale-105 group`}
+              onClick={handleGetStarted}
             >
-              {directCheck ? 'Continuar aprenent' : 'Començar gratis'}
+              {hasSession ? 'Continuar aprenent' : 'Començar gratis'}
               <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
           </div>

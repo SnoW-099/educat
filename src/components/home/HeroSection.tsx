@@ -10,12 +10,9 @@ export const HeroSection = () => {
   const router = useRouter();
   const { user, profile, loading } = useAuth();
   const [typewriterText, setTypewriterText] = useState("");
-  const fullText = "Aprèn català de debò";
 
   // Verificar si tiene sesión
   const hasSession = !loading && !!user && !!profile;
-
-  console.log('HeroSection - Estado:', { hasSession, loading, userName: profile?.name });
 
   useEffect(() => {
     const phrases = [
@@ -27,69 +24,34 @@ export const HeroSection = () => {
     let currentPhraseIndex = 0;
     let currentCharIndex = 0;
     let isDeleting = false;
-    let typingSpeed = 100;
 
-    const type = () => {
-      const currentPhrase = phrases[currentPhraseIndex];
-
-      if (isDeleting) {
-        setTypewriterText(currentPhrase.substring(0, currentCharIndex - 1));
-        currentCharIndex--;
-        typingSpeed = 50;
-      } else {
-        setTypewriterText(currentPhrase.substring(0, currentCharIndex + 1));
-        currentCharIndex++;
-        typingSpeed = 100;
-      }
-
-      if (!isDeleting && currentCharIndex === currentPhrase.length) {
-        isDeleting = true;
-        typingSpeed = 2000; // Pause at end of phrase
-      } else if (isDeleting && currentCharIndex === 0) {
-        isDeleting = false;
-        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-        typingSpeed = 500; // Pause before typing next phrase
-      }
-    };
-
-    const timer = setTimeout(type, typingSpeed);
-
-    // Recursive timeout to handle variable speeds
-    const loop = () => {
-      type();
-      setTimeout(loop, typingSpeed);
-    };
-
-    // We need a ref or a slightly different approach for the variable speed loop in a simple useEffect
-    // A robust way simply uses a timeout that sets another timeout
     let timeoutId: NodeJS.Timeout;
 
     const runTyping = () => {
       const currentPhrase = phrases[currentPhraseIndex];
+      const nextText = isDeleting
+        ? currentPhrase.substring(0, currentCharIndex - 1)
+        : currentPhrase.substring(0, currentCharIndex + 1);
 
-      if (isDeleting) {
-        setTypewriterText(currentPhrase.substring(0, currentCharIndex - 1));
-        currentCharIndex--;
-        typingSpeed = 50;
-      } else {
-        setTypewriterText(currentPhrase.substring(0, currentCharIndex + 1));
-        currentCharIndex++;
-        typingSpeed = 100;
-      }
+      setTypewriterText(nextText);
+
+      currentCharIndex = isDeleting ? currentCharIndex - 1 : currentCharIndex + 1;
+
+      let typingSpeed = isDeleting ? 50 : 90;
 
       if (!isDeleting && currentCharIndex === currentPhrase.length) {
         isDeleting = true;
-        typingSpeed = 2000; // Wait before deleting
+        typingSpeed = 2000;
       } else if (isDeleting && currentCharIndex === 0) {
         isDeleting = false;
         currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-        typingSpeed = 500; // Wait before typing next
+        typingSpeed = 500;
       }
 
       timeoutId = setTimeout(runTyping, typingSpeed);
     };
 
-    timeoutId = setTimeout(runTyping, 500);
+    timeoutId = setTimeout(runTyping, 400);
 
     return () => clearTimeout(timeoutId);
   }, []);
@@ -132,15 +94,14 @@ export const HeroSection = () => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-5 mb-24 animate-fade-in animation-delay-400">
+        <div className="flex flex-col sm:flex-row gap-5 mb-12 animate-fade-in animation-delay-400">
           <Button
             onClick={() => {
-              console.log('HeroSection - Botón clickeado, hasSession:', hasSession);
               if (hasSession) {
                 if (profile?.role === 'professor') {
-                  window.location.href = '/teacherdashboard';
+                  router.push('/teacherdashboard');
                 } else if (profile?.role === 'student') {
-                  window.location.href = '/studentdashboard';
+                  router.push('/studentdashboard');
                 }
               } else {
                 router.push('/auth');
@@ -159,9 +120,25 @@ export const HeroSection = () => {
             variant="outline"
             size="lg"
             className="h-14 px-10 text-lg border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/10 hover:border-slate-300 dark:hover:border-slate-500 bg-white dark:bg-white/10 rounded-full transition-all font-semibold"
+            onClick={() => {
+              const featuresSection = document.getElementById("features");
+              featuresSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
           >
             Saber-ne més
           </Button>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-4 mb-16 text-sm text-slate-600 dark:text-slate-300">
+          {features.map((feature) => (
+            <div
+              key={feature.text}
+              className="flex items-center gap-2 rounded-full border border-slate-200/70 dark:border-slate-700 bg-white/80 dark:bg-slate-800/70 px-4 py-2 shadow-sm"
+            >
+              <feature.icon className="w-4 h-4 text-primary" />
+              <span className="font-semibold">{feature.text}</span>
+            </div>
+          ))}
         </div>
 
         {/* Floating UI Grid - REAL UI MOCKUPS */}
@@ -201,7 +178,7 @@ export const HeroSection = () => {
               {/* Streak Header */}
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="font-bold text-slate-900 dark:text-white text-lg">Racha</h3>
+                  <h3 className="font-bold text-slate-900 dark:text-white text-lg">Ratxa</h3>
                   <p className="text-xs text-slate-500 dark:text-slate-400">Mantén el ritme!</p>
                 </div>
                 <div className="flex items-center gap-1 bg-orange-50 px-3 py-1.5 rounded-full border border-orange-100 shadow-sm">

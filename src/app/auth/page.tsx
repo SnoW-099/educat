@@ -16,7 +16,6 @@ export default function Auth() {
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
     const [role, setRole] = useState<'professor' | 'student'>('student');
-    const [classCode, setClassCode] = useState("");
     const [loading, setLoading] = useState(false);
     const { toast } = useToast();
     const router = useRouter();
@@ -76,8 +75,6 @@ export default function Auth() {
             return;
         }
 
-        // Codi de classe ara és opcional per a estudiants
-
         setLoading(true);
         try {
             cleanupAuthState();
@@ -91,32 +88,11 @@ export default function Auth() {
                     data: {
                         name,
                         role,
-                        class_code: classCode || undefined,
                     }
                 }
             });
 
             if (error) throw error;
-
-            // Si hay class_code, verificar que la clase existe antes de mostrar éxito
-            if (classCode) {
-                const { data: classData, error: classError } = await supabase
-                    .from('classes')
-                    .select('id')
-                    .eq('code', classCode)
-                    .eq('is_active', true)
-                    .maybeSingle();
-
-                if (classError || !classData) {
-                    toast({
-                        title: "Codi de classe incorrecte",
-                        description: "El codi de classe no existeix o no està actiu. Pots registrar-te sense codi i afegir-te a una classe més tard.",
-                        variant: "destructive",
-                        duration: 5000,
-                    });
-                    return;
-                }
-            }
 
             if (data.user && !data.user.email_confirmed_at) {
                 toast({
@@ -403,18 +379,6 @@ export default function Auth() {
                                             />
                                         </div>
 
-                                        {role === 'student' && (
-                                            <div className="space-y-3">
-                                                <Label className="text-slate-700 dark:text-slate-300 font-bold text-xs uppercase tracking-widest ml-1">Codi Classe (Optiu)</Label>
-                                                <Input
-                                                    value={classCode}
-                                                    onChange={(e) => setClassCode(e.target.value.toUpperCase())}
-                                                    className="h-13 font-mono text-center bg-white/50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-700/50 transition-all rounded-2xl tracking-widest uppercase"
-                                                    placeholder="XYZ-123"
-                                                />
-                                            </div>
-                                        )}
-
                                         <Button
                                             type="submit"
                                             className="w-full h-14 bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-500/20 font-extrabold text-lg transition-all rounded-full active:scale-[0.97] mt-3"
@@ -479,4 +443,3 @@ export default function Auth() {
         </div>
     );
 }
-
