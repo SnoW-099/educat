@@ -3,19 +3,17 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
-import { User, GraduationCap, LogIn, UserPlus } from "lucide-react";
+import { User, GraduationCap } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function Auth() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
-    const [role, setRole] = useState<'professor' | 'student'>('student');
     const [loading, setLoading] = useState(false);
     const { toast } = useToast();
     const router = useRouter();
@@ -87,7 +85,7 @@ export default function Auth() {
                     emailRedirectTo: `${window.location.origin}/auth/callback`,
                     data: {
                         name,
-                        role,
+                        role: 'student',
                     }
                 }
             });
@@ -338,23 +336,6 @@ export default function Auth() {
                                                 className="h-13 bg-white/50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-700/50 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-2xl"
                                                 placeholder="El teu nom"
                                             />
-                                        </div>
-
-                                        <div className="bg-slate-200/40 dark:bg-slate-800/60 p-1 rounded-full flex backdrop-blur-md">
-                                            {[
-                                                { id: 'student', label: 'Sóc Estudiant', icon: User },
-                                                { id: 'professor', label: 'Sóc Professor', icon: GraduationCap }
-                                            ].map((r) => (
-                                                <button
-                                                    key={r.id}
-                                                    type="button"
-                                                    onClick={() => setRole(r.id as any)}
-                                                    className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-full font-bold text-sm transition-all duration-300 ${role === r.id ? 'bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-md' : 'text-slate-500 dark:text-slate-400 hover:bg-white/20 dark:hover:bg-slate-700/20'}`}
-                                                >
-                                                    <r.icon className={`h-4 w-4 ${role === r.id ? 'text-blue-600' : 'text-slate-500'}`} />
-                                                    {r.label}
-                                                </button>
-                                            ))}
                                         </div>
 
                                         <div className="space-y-3">

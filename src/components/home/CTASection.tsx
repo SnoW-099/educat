@@ -18,11 +18,7 @@ export const CTASection = () => {
 
   const handleGetStarted = () => {
     if (hasSession) {
-      if (profile?.role === 'professor') {
-        router.push('/teacherdashboard');
-      } else if (profile?.role === 'student') {
-        router.push('/studentdashboard');
-      }
+      router.push('/studentdashboard');
     } else {
       router.push('/auth');
     }

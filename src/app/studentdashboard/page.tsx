@@ -27,19 +27,17 @@ export default function StudentDashboard() {
         window.scrollTo(0, 0);
     }, []);
 
-    // Redirect if not authenticated or not a student
+    // Redirect if not authenticated
     useEffect(() => {
         if (!loading && minTimeElapsed) {
             if (!user || !profile) {
                 router.replace("/auth");
-            } else if (profile.role !== 'student') {
-                router.replace("/teacherdashboard");
             }
         }
     }, [user, profile, loading, router, minTimeElapsed]);
 
     // Show loader if still loading OR minimum time hasn't elapsed
-    if (loading || !minTimeElapsed || !user || !profile || profile.role !== 'student') {
+    if (loading || !minTimeElapsed || !user || !profile) {
         return (
             <div className="min-h-screen bg-background flex items-center justify-center relative">
                 <LiquidBackground />
