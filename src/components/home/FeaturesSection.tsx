@@ -36,7 +36,7 @@ export const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-24 container mx-auto px-6 relative z-10">
+    <section id="features" className="py-24 container mx-auto px-6 relative z-10 scroll-mt-24">
       <div className="text-center mb-16">
         <span className="inline-block px-5 py-2 bg-blue-600 text-white text-sm font-bold mb-6 rounded-full shadow-lg shadow-blue-500/20">
           Funcionalitats Clau

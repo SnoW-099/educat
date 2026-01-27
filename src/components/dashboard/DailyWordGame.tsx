@@ -6,13 +6,14 @@ import { RefreshCw, Delete, Sparkles, Trophy, Play, Check, X } from 'lucide-reac
 import { toast } from '@/hooks/use-toast';
 import { BAD_WORDS } from '@/utils/profanityList';
 
-// Data source for the game
 const WORD_LIST = [
-    { letters: ['A', 'L', 'G', 'R', 'I', 'M', 'E'], center: 'A', words: ['ALGRIMA', 'LLAGRIMA', 'AMIGA', 'MAGIA', 'AIRE', 'MAR', 'IRA', 'AMB', 'AMIC'] },
-    { letters: ['E', 'S', 'T', 'U', 'D', 'I', 'O'], center: 'E', words: ['ESTUDI', 'DIES', 'ESTIU', 'USE', 'SEU', 'DUE'] },
-    { letters: ['P', 'O', 'R', 'T', 'A', 'L', 'S'], center: 'O', words: ['PORTAL', 'SOL', 'SORT', 'PORTA', 'TOP', 'POT'] },
-    { letters: ['C', 'A', 'T', 'A', 'L', 'A', 'N'], center: 'A', words: ['CATALAN', 'CANT', 'TANC', 'ALA', 'ANA', 'CAT'] }
+    {
+        letters: ['A', 'E', 'I', 'L', 'N', 'R', 'S'],
+        center: 'A',
+    }
 ];
+
+const TARGET_WORDS = 30;
 
 export const DailyWordGame = () => {
     const [gameData, setGameData] = useState(WORD_LIST[0]);
@@ -37,7 +38,7 @@ export const DailyWordGame = () => {
         if (saved) {
             const parsed = JSON.parse(saved);
             setFoundWords(parsed);
-            if (parsed.length >= todaysGame.words.length) {
+            if (parsed.length >= TARGET_WORDS) {
                 setIsCompleted(true);
             }
         }
@@ -121,6 +122,10 @@ export const DailyWordGame = () => {
         if (guess.length < 3) return toast({ description: "Massa curta" });
         if (!guess.includes(gameData.center)) return toast({ description: `Has d'utilitzar la lletra ${gameData.center}` });
         if (foundWords.includes(guess)) return toast({ description: "Ja la tens!" });
+        if (!/^[A-ZÀ-ÝÇ]+$/.test(guess)) return toast({ description: "Només lletres." });
+        if ([...guess].some((letter) => !gameData.letters.includes(letter))) {
+            return toast({ description: "Només pots usar les lletres disponibles." });
+        }
 
         if (BAD_WORDS.includes(guess)) { // Simple check, ideally imported
             setCurrentGuess('');
@@ -130,30 +135,23 @@ export const DailyWordGame = () => {
         setIsVerifying(true);
         await new Promise(resolve => setTimeout(resolve, 300)); // Faster feel
 
-        const isValid = gameData.words.includes(guess) || (guess.length > 3 && gameData.words.includes(guess));
+        const newFound = [...foundWords, guess];
+        setFoundWords(newFound);
+        setCurrentGuess('');
 
-        if (isValid) {
-            const newFound = [...foundWords, guess];
-            setFoundWords(newFound);
-            setCurrentGuess('');
+        const today = new Date().toISOString().split('T')[0];
+        localStorage.setItem(`paraulogic_daily_${today}`, JSON.stringify(newFound));
 
-            const today = new Date().toISOString().split('T')[0];
-            localStorage.setItem(`paraulogic_daily_${today}`, JSON.stringify(newFound));
-
-            if (newFound.length >= gameData.words.length) {
-                setIsCompleted(true);
-                updateStreak();
-                toast({ title: "🏆 Enhorabona!", description: "Has completat el joc d'avui!", className: "bg-yellow-50 border-yellow-200" });
-            }
-        } else {
-            toast({ title: "Incorrecte", description: "No apareix al diccionari.", variant: "destructive" });
-            setCurrentGuess('');
+        if (newFound.length >= TARGET_WORDS) {
+            setIsCompleted(true);
+            updateStreak();
+            toast({ title: "🏆 Enhorabona!", description: "Has completat el joc d'avui!", className: "bg-yellow-50 border-yellow-200" });
         }
         setIsVerifying(false);
     };
 
     const totalPoints = foundWords.reduce((acc, w) => acc + w.length, 0);
-    const progressPerc = Math.round((foundWords.length / gameData.words.length) * 100);
+    const progressPerc = Math.min(100, Math.round((foundWords.length / TARGET_WORDS) * 100));
 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -184,7 +182,7 @@ export const DailyWordGame = () => {
                                 {isCompleted ? (
                                     <span>Torna demà per més reptes</span>
                                 ) : (
-                                    <span>{foundWords.length} de {gameData.words.length} paraules</span>
+                                    <span>{foundWords.length} de {TARGET_WORDS} paraules</span>
                                 )}
                             </p>
                         </div>
@@ -193,7 +191,7 @@ export const DailyWordGame = () => {
                         {isCompleted ? (
                             <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/60 border border-amber-200/50 rounded-full shadow-sm">
                                 <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                                <span className="text-xs font-bold text-amber-700">Racha: {paraulogicStreak} dies</span>
+                                <span className="text-xs font-bold text-amber-700">Ratxa: {paraulogicStreak} dies</span>
                             </div>
                         ) : (
                             <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
@@ -288,7 +286,7 @@ export const DailyWordGame = () => {
                                             <Trophy className="w-3 h-3 text-amber-500" /> {totalPoints} punts
                                         </span>
                                         <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600" />
-                                        <span className="text-slate-400">{foundWords.length}/{gameData.words.length} trobades</span>
+                                        <span className="text-slate-400">{foundWords.length}/{TARGET_WORDS} trobades</span>
                                     </DialogDescription>
                                 </div>
                                 <div className="radial-progress text-blue-500 text-xs font-bold" style={{ "--value": progressPerc, "--size": "2.5rem" } as any}>

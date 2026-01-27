@@ -7,7 +7,7 @@ import { useAuth } from "@/hooks/useAuth";
 
 export const CTASectionLogged = () => {
   const router = useRouter();
-  const { user, profile } = useAuth();
+  const { profile } = useAuth();
 
   const benefits = [
     "Sense targeta de crèdit",
@@ -16,10 +16,7 @@ export const CTASectionLogged = () => {
   ];
 
   const handleGetStarted = () => {
-    // Siempre ir al dashboard del estudiante
-    if (profile?.role === 'professor') {
-      router.push('/teacherdashboard');
-    } else if (profile?.role === 'student') {
+    if (profile) {
       router.push('/studentdashboard');
     }
   };

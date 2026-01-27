@@ -20,7 +20,7 @@ export const FooterSection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
             <p>© {new Date().getFullYear()} EduCat. Tots els drets reservats.</p>
             <p>
-              Creat per <span className="text-foreground font-medium">Neevets</span> y <span className="text-foreground font-medium">Snow</span>
+              Fet per <span className="text-foreground font-medium">Steeven</span>, <span className="text-foreground font-medium">Angel</span> i <span className="text-foreground font-medium">Bryan</span>
             </p>
           </div>
         </div>
