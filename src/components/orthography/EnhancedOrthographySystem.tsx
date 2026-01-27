@@ -198,7 +198,7 @@ export const EnhancedOrthographySystem = ({
   };
 
   const getCategoryBadgeStyle = (category: string) => {
-    return 'bg-slate-100 text-slate-700 border-slate-200';
+    return 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-600';
   };
 
   if (showExamModels) {
@@ -262,16 +262,16 @@ export const EnhancedOrthographySystem = ({
 
           {/* B2 Card */}
           <Card
-            className="cursor-pointer bg-white dark:bg-white border-2 border-slate-100 dark:border-slate-100 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 transition-all duration-300 ease-out group dark:hover:bg-white"
+            className="cursor-pointer bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl hover:shadow-blue-100/50 dark:hover:shadow-blue-900/30 hover:-translate-y-1 transition-all duration-300 ease-out group"
             onClick={() => setCourseFilter('B2')}
           >
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl mx-auto mb-5 flex items-center justify-center group-hover:bg-blue-100 group-hover:scale-110 transition-all duration-300">
-                <BookOpen className="w-8 h-8 text-blue-600" />
+              <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl mx-auto mb-5 flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-800/50 group-hover:scale-110 transition-all duration-300">
+                <BookOpen className="w-8 h-8 text-blue-600 dark:text-blue-400" />
               </div>
-              <h3 className="text-3xl font-bold text-slate-800 mb-2">B2</h3>
-              <p className="text-slate-500 mb-6">780+ exercicis</p>
-              <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-200">
+              <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">B2</h3>
+              <p className="text-slate-500 dark:text-slate-400 mb-6">780+ exercicis</p>
+              <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-200 dark:hover:shadow-blue-900/50">
                 Començar
               </Button>
             </CardContent>
@@ -279,16 +279,16 @@ export const EnhancedOrthographySystem = ({
 
           {/* C1 Card */}
           <Card
-            className="cursor-pointer bg-white dark:bg-white border-2 border-slate-100 dark:border-slate-100 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 transition-all duration-300 ease-out group dark:hover:bg-white"
+            className="cursor-pointer bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl hover:shadow-blue-100/50 dark:hover:shadow-blue-900/30 hover:-translate-y-1 transition-all duration-300 ease-out group"
             onClick={() => setCourseFilter('C1')}
           >
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl mx-auto mb-5 flex items-center justify-center group-hover:bg-blue-100 group-hover:scale-110 transition-all duration-300">
-                <GraduationCap className="w-8 h-8 text-blue-600" />
+              <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl mx-auto mb-5 flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-800/50 group-hover:scale-110 transition-all duration-300">
+                <GraduationCap className="w-8 h-8 text-blue-600 dark:text-blue-400" />
               </div>
-              <h3 className="text-3xl font-bold text-slate-800 mb-2">C1</h3>
-              <p className="text-slate-500 mb-6">100+ exercicis</p>
-              <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-200">
+              <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">C1</h3>
+              <p className="text-slate-500 dark:text-slate-400 mb-6">100+ exercicis</p>
+              <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-200 dark:hover:shadow-blue-900/50">
                 Començar
               </Button>
             </CardContent>
@@ -385,7 +385,7 @@ export const EnhancedOrthographySystem = ({
             return (
               <Card
                 key={section.id}
-                className="group card-premium cursor-pointer animate-scale-in glow-on-hover text-slate-900 dark:text-slate-900 bg-white dark:bg-white hover:bg-white dark:hover:bg-white"
+                className="group card-premium cursor-pointer animate-scale-in glow-on-hover text-slate-900 dark:text-white bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700"
                 onClick={() => setSelectedSection(section)}
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
@@ -402,7 +402,7 @@ export const EnhancedOrthographySystem = ({
                     </Badge>
                   </div>
 
-                  <CardDescription className="text-sm leading-relaxed line-clamp-2 text-slate-500 dark:text-slate-500">
+                  <CardDescription className="text-sm leading-relaxed line-clamp-2 text-slate-500 dark:text-slate-400">
                     {section.description}
                   </CardDescription>
                 </CardHeader>
@@ -423,14 +423,14 @@ export const EnhancedOrthographySystem = ({
 
                     {progressPercentage > 0 && (
                       <div className="space-y-2">
-                        <div className="h-2.5 bg-slate-200 rounded-full overflow-hidden">
+                        <div className="h-2.5 bg-slate-200 dark:bg-slate-600 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-slate-900 transition-all duration-500"
+                            className="h-full bg-slate-900 dark:bg-blue-500 transition-all duration-500"
                             style={{ width: `${progressPercentage}%` }}
                           />
                         </div>
                         <div className="flex justify-between items-center text-xs">
-                          <span className="text-slate-500 dark:text-slate-500 font-medium">Progrés</span>
+                          <span className="text-slate-500 dark:text-slate-400 font-medium">Progrés</span>
                           <span className="font-bold">{progressPercentage}%</span>
                         </div>
                       </div>

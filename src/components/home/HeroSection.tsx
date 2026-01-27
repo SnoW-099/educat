@@ -11,10 +11,10 @@ export const HeroSection = () => {
   const { user, profile, loading } = useAuth();
   const [typewriterText, setTypewriterText] = useState("");
   const fullText = "Aprèn català de debò";
-  
+
   // Verificar si tiene sesión
   const hasSession = !loading && !!user && !!profile;
-  
+
   console.log('HeroSection - Estado:', { hasSession, loading, userName: profile?.name });
 
   useEffect(() => {
@@ -113,7 +113,7 @@ export const HeroSection = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
           </span>
-          La nova manera d'aprendre
+          Creada per estudiants, per a estudiants
         </div>
 
         {/* Hero Title - UPDATED TEXT */}
@@ -147,11 +147,10 @@ export const HeroSection = () => {
               }
             }}
             size="lg"
-            className={`h-14 px-10 text-lg rounded-full shadow-xl transition-all hover:scale-105 hover:-translate-y-1 font-bold ${
-              hasSession 
-                ? 'bg-green-600 hover:bg-green-700 text-white shadow-green-600/30' 
-                : 'bg-blue-600 hover:bg-blue-700 text-white shadow-blue-600/30'
-            }`}
+            className={`h-14 px-10 text-lg rounded-full shadow-xl transition-all hover:scale-105 hover:-translate-y-1 font-bold ${hasSession
+              ? 'bg-green-600 hover:bg-green-700 text-white shadow-green-600/30'
+              : 'bg-blue-600 hover:bg-blue-700 text-white shadow-blue-600/30'
+              }`}
           >
             {hasSession ? 'Continuar aprenent' : 'Començar Gratis'}
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -159,7 +158,7 @@ export const HeroSection = () => {
           <Button
             variant="outline"
             size="lg"
-            className="h-14 px-10 text-lg border-2 border-slate-200 text-slate-900 hover:bg-slate-50 hover:border-slate-300 bg-white rounded-full transition-all font-semibold"
+            className="h-14 px-10 text-lg border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/10 hover:border-slate-300 dark:hover:border-slate-500 bg-white dark:bg-white/10 rounded-full transition-all font-semibold"
           >
             Saber-ne més
           </Button>
@@ -169,41 +168,41 @@ export const HeroSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl animate-fade-in animation-delay-600 text-left">
 
           {/* Card 1: Exercise UI Mockup */}
-          <div className="p-6 rounded-3xl bg-white border border-slate-100 shadow-xl shadow-blue-100/50 hover:shadow-2xl hover:shadow-blue-200 hover:-translate-y-1 transition-all overflow-hidden relative group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+          <div className="p-6 rounded-3xl bg-white dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700 shadow-xl shadow-blue-100/50 dark:shadow-black/20 hover:shadow-2xl hover:shadow-blue-200 dark:hover:shadow-black/30 hover:-translate-y-1 transition-all overflow-hidden relative group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 dark:bg-primary/10 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                   <Hash className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900">Exercici #42</h3>
-                  <p className="text-xs text-slate-500">Gramàtica · Nivell A2</p>
+                  <h3 className="font-bold text-slate-900 dark:text-white">Exercici #42</h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Gramàtica · Nivell A2</p>
                 </div>
               </div>
               {/* Simulated Exercise content */}
               <div className="space-y-3">
-                <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-medium text-slate-700">
+                <div className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-xl border border-slate-100 dark:border-slate-600 text-sm font-medium text-slate-700 dark:text-slate-200">
                   Com es diu "Hello" en català?
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="p-2 border border-primary bg-primary/10 text-primary rounded-lg text-xs font-bold text-center">Hola</div>
-                  <div className="p-2 border border-slate-100 bg-white text-slate-500 rounded-lg text-xs text-center">Adéu</div>
+                  <div className="p-2 border border-slate-100 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-500 dark:text-slate-300 rounded-lg text-xs text-center">Adéu</div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Card 2: Streak & Classes UI Mockup */}
-          <div className="p-6 rounded-3xl bg-white border border-slate-100 shadow-xl shadow-blue-100/50 hover:shadow-2xl hover:shadow-blue-200 hover:-translate-y-1 transition-all overflow-hidden relative group">
+          <div className="p-6 rounded-3xl bg-white dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700 shadow-xl shadow-blue-100/50 dark:shadow-black/20 hover:shadow-2xl hover:shadow-blue-200 dark:hover:shadow-black/30 hover:-translate-y-1 transition-all overflow-hidden relative group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
             <div className="relative z-10">
 
               {/* Streak Header */}
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="font-bold text-slate-900 text-lg">Racha</h3>
-                  <p className="text-xs text-slate-500">Mantén el ritme!</p>
+                  <h3 className="font-bold text-slate-900 dark:text-white text-lg">Racha</h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Mantén el ritme!</p>
                 </div>
                 <div className="flex items-center gap-1 bg-orange-50 px-3 py-1.5 rounded-full border border-orange-100 shadow-sm">
                   <Flame className="w-5 h-5 text-orange-500 fill-orange-500 animate-pulse" />
@@ -228,7 +227,7 @@ export const HeroSection = () => {
 
               {/* Skills Section */}
               <div className="space-y-3">
-                <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Habilitats</div>
+                <div className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">Habilitats</div>
 
                 <div className="flex items-center gap-3 p-3 bg-blue-50/50 rounded-2xl border border-blue-100">
                   <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
@@ -236,7 +235,7 @@ export const HeroSection = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex justify-between mb-1">
-                      <span className="font-bold text-slate-900 text-sm">Gramàtica</span>
+                      <span className="font-bold text-slate-900 dark:text-white text-sm">Gramàtica</span>
                       <span className="text-xs font-bold text-blue-600">94%</span>
                     </div>
                     <div className="h-1.5 w-full bg-blue-200 rounded-full overflow-hidden">
@@ -245,13 +244,13 @@ export const HeroSection = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-3 bg-white rounded-2xl border border-slate-100">
+                <div className="flex items-center gap-3 p-3 bg-white dark:bg-slate-700/50 rounded-2xl border border-slate-100 dark:border-slate-600">
                   <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-500 flex items-center justify-center shrink-0">
                     <TrendingUp className="w-5 h-5" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex justify-between mb-1">
-                      <span className="font-bold text-slate-900 text-sm">Vocabulari</span>
+                      <span className="font-bold text-slate-900 dark:text-white text-sm">Vocabulari</span>
                       <span className="text-xs font-bold text-indigo-500">88%</span>
                     </div>
                     <div className="h-1.5 w-full bg-indigo-100 rounded-full overflow-hidden">

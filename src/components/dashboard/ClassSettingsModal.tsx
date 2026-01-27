@@ -19,11 +19,11 @@ interface ClassSettingsModalProps {
   onSettingsUpdate: () => void;
 }
 
-export const ClassSettingsModal = ({ 
-  isOpen, 
-  onClose, 
-  classData, 
-  onSettingsUpdate 
+export const ClassSettingsModal = ({
+  isOpen,
+  onClose,
+  classData,
+  onSettingsUpdate
 }: ClassSettingsModalProps) => {
   const [allowAnswerChecking, setAllowAnswerChecking] = useState(classData.allow_answer_checking);
   const [saving, setSaving] = useState(false);
@@ -62,33 +62,33 @@ export const ClassSettingsModal = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl">
+      <DialogContent className="max-w-2xl bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">
         <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
+          <DialogTitle className="flex items-center gap-2 dark:text-white">
             <Settings className="h-5 w-5" />
             Configuració de la Classe: {classData.name}
           </DialogTitle>
         </DialogHeader>
 
         <div className="space-y-6">
-          <Card>
+          <Card className="bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-lg">
+              <CardTitle className="flex items-center gap-2 text-lg dark:text-white">
                 <Eye className="h-5 w-5" />
                 Control de Respostes
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="dark:text-slate-300">
                 Controla si els estudiants poden veure les respostes correctes durant els exercicis
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
-                  <Label htmlFor="answer-checking" className="text-base font-medium">
+                  <Label htmlFor="answer-checking" className="text-base font-medium dark:text-white">
                     Permetre visualització de respostes
                   </Label>
                   <p className="text-sm text-muted-foreground">
-                    {allowAnswerChecking 
+                    {allowAnswerChecking
                       ? "Els estudiants poden veure les respostes correctes mentre fan els exercicis"
                       : "Els estudiants NO poden veure les respostes fins completar l'exercici"
                     }
@@ -102,12 +102,12 @@ export const ClassSettingsModal = ({
               </div>
 
               {!allowAnswerChecking && (
-                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
-                  <div className="flex items-center gap-2 text-amber-800">
+                <div className="bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-700 rounded-lg p-3">
+                  <div className="flex items-center gap-2 text-amber-800 dark:text-amber-300">
                     <EyeOff className="h-4 w-4" />
                     <span className="text-sm font-medium">Mode Examen Activat</span>
                   </div>
-                  <p className="text-sm text-amber-700 mt-1">
+                  <p className="text-sm text-amber-700 dark:text-amber-400 mt-1">
                     Els estudiants hauran de confiar en els seus coneixements sense poder comprovar les respostes fins al final.
                   </p>
                 </div>

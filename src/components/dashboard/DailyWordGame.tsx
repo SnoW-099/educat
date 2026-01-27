@@ -158,12 +158,12 @@ export const DailyWordGame = () => {
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-                <Card className="group relative overflow-hidden border border-slate-200 bg-white dark:bg-white shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-white transition-all duration-300 cursor-pointer h-full flex flex-col justify-between">
+                <Card className="group relative overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer h-full flex flex-col justify-between">
                     {/* Background Gradient */}
-                    <div className={`absolute inset-0 transition-colors ${isCompleted ? 'bg-gradient-to-br from-amber-50 to-orange-50/50' : 'bg-gradient-to-br from-slate-50 to-white group-hover:from-blue-50/50 group-hover:to-white'}`} />
+                    <div className={`absolute inset-0 transition-colors ${isCompleted ? 'bg-gradient-to-br from-amber-50 to-orange-50/50 dark:from-amber-900/20 dark:to-orange-900/10' : 'bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-800 group-hover:from-blue-50/50 dark:group-hover:from-blue-900/20 group-hover:to-white dark:group-hover:to-slate-800'}`} />
 
                     <CardContent className="p-6 relative flex flex-col items-center justify-center h-full text-center space-y-4">
-                        <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 ${isCompleted ? 'bg-amber-100 scale-110' : 'bg-blue-100/50 group-hover:scale-110 group-hover:bg-blue-100'}`}>
+                        <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 ${isCompleted ? 'bg-amber-100 dark:bg-amber-900/50 scale-110' : 'bg-blue-100/50 dark:bg-blue-900/30 group-hover:scale-110 group-hover:bg-blue-100 dark:group-hover:bg-blue-800/50'}`}>
                             {isCompleted ? (
                                 <Trophy className="w-8 h-8 text-amber-500 animate-pulse" />
                             ) : (
@@ -177,10 +177,10 @@ export const DailyWordGame = () => {
                         </div>
 
                         <div>
-                            <h3 className={`text-xl font-bold mb-1 ${isCompleted ? 'text-amber-700' : 'text-slate-800'}`}>
+                            <h3 className={`text-xl font-bold mb-1 ${isCompleted ? 'text-amber-700 dark:text-amber-400' : 'text-slate-800 dark:text-white'}`}>
                                 {isCompleted ? 'Completat!' : 'Paraulògic'}
                             </h3>
-                            <p className={`text-sm font-medium ${isCompleted ? 'text-amber-600/80' : 'text-slate-500'}`}>
+                            <p className={`text-sm font-medium ${isCompleted ? 'text-amber-600/80 dark:text-amber-400/80' : 'text-slate-500 dark:text-slate-400'}`}>
                                 {isCompleted ? (
                                     <span>Torna demà per més reptes</span>
                                 ) : (
@@ -196,7 +196,7 @@ export const DailyWordGame = () => {
                                 <span className="text-xs font-bold text-amber-700">Racha: {paraulogicStreak} dies</span>
                             </div>
                         ) : (
-                            <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                            <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
                                 <div className="h-full bg-blue-500 transition-all duration-500" style={{ width: `${progressPerc}%` }} />
                             </div>
                         )}
@@ -208,14 +208,14 @@ export const DailyWordGame = () => {
                 </Card>
             </DialogTrigger>
 
-            <DialogContent className="max-w-2xl bg-white/95 backdrop-blur-xl border-slate-100 shadow-2xl p-0 gap-0 overflow-hidden sm:rounded-3xl">
+            <DialogContent className="max-w-2xl bg-white dark:bg-slate-800 backdrop-blur-xl border-slate-100 dark:border-slate-700 shadow-2xl p-0 gap-0 overflow-hidden sm:rounded-3xl">
                 <div className="grid md:grid-cols-2 h-[600px] md:h-[500px]">
 
                     {/* Game Area (Left/Top) */}
-                    <div className="p-8 flex flex-col items-center justify-center relative bg-slate-50/50">
+                    <div className="p-8 flex flex-col items-center justify-center relative bg-slate-50/50 dark:bg-slate-900/50">
                         {/* Current Guess Display */}
                         <div className="h-16 flex items-center justify-center mb-6 w-full relative">
-                            <span className={`text-3xl font-black tracking-[0.2em] text-slate-800 transition-all ${isVerifying ? 'opacity-50 blur-sm' : ''}`}>
+                            <span className={`text-3xl font-black tracking-[0.2em] text-slate-800 dark:text-white transition-all ${isVerifying ? 'opacity-50 blur-sm' : ''}`}>
                                 {currentGuess || <span className="text-slate-200 animate-pulse">...</span>}
                             </span>
                             {currentGuess && (
@@ -262,8 +262,8 @@ export const DailyWordGame = () => {
 
                         {/* Controls */}
                         <div className="flex gap-4 mt-8">
-                            <Button size="icon" variant="outline" className="rounded-full border-slate-200 hover:bg-white hover:border-blue-300" onClick={handleShuffle}>
-                                <RefreshCw className="w-5 h-5 text-slate-600" />
+                            <Button size="icon" variant="outline" className="rounded-full border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-700 hover:border-blue-300" onClick={handleShuffle}>
+                                <RefreshCw className="w-5 h-5 text-slate-600 dark:text-slate-300" />
                             </Button>
                             <Button
                                 className="px-8 rounded-full bg-slate-900 hover:bg-blue-600 text-white font-bold tracking-widest transition-all shadow-lg hover:shadow-blue-200"
@@ -276,18 +276,18 @@ export const DailyWordGame = () => {
                     </div>
 
                     {/* Scoreboard (Right/Bottom) */}
-                    <div className="bg-white border-l border-slate-100 flex flex-col h-full">
-                        <DialogHeader className="p-6 border-b border-slate-50 bg-slate-50/30">
+                    <div className="bg-white dark:bg-slate-800 border-l border-slate-100 dark:border-slate-700 flex flex-col h-full">
+                        <DialogHeader className="p-6 border-b border-slate-50 dark:border-slate-700 bg-slate-50/30 dark:bg-slate-800/50">
                             <div className="flex items-center justify-between">
                                 <div className="space-y-1">
-                                    <DialogTitle className="text-xl font-bold flex items-center gap-2">
-                                        Paraulògic <span className="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-[10px] uppercase font-bold tracking-wide">AVUI</span>
+                                    <DialogTitle className="text-xl font-bold flex items-center gap-2 dark:text-white">
+                                        Paraulògic <span className="px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-[10px] uppercase font-bold tracking-wide">AVUI</span>
                                     </DialogTitle>
                                     <DialogDescription className="flex items-center gap-3 text-sm">
-                                        <span className="flex items-center gap-1 text-slate-600">
+                                        <span className="flex items-center gap-1 text-slate-600 dark:text-slate-300">
                                             <Trophy className="w-3 h-3 text-amber-500" /> {totalPoints} punts
                                         </span>
-                                        <span className="w-1 h-1 rounded-full bg-slate-300" />
+                                        <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600" />
                                         <span className="text-slate-400">{foundWords.length}/{gameData.words.length} trobades</span>
                                     </DialogDescription>
                                 </div>
@@ -301,7 +301,7 @@ export const DailyWordGame = () => {
                             <div className="flex flex-wrap gap-2 content-start">
                                 {foundWords.length > 0 ? (
                                     foundWords.map(word => (
-                                        <span key={word} className="px-3 py-1 bg-white border border-slate-100 shadow-sm rounded-lg text-sm font-semibold text-slate-700 animate-in zoom-in-50 duration-300">
+                                        <span key={word} className="px-3 py-1 bg-white dark:bg-slate-700 border border-slate-100 dark:border-slate-600 shadow-sm rounded-lg text-sm font-semibold text-slate-700 dark:text-white animate-in zoom-in-50 duration-300">
                                             {word}
                                         </span>
                                     ))

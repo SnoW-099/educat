@@ -25,7 +25,7 @@ export const OrthographySection = ({
   };
 
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(getSavedIndex());
-  const [showExercises, setShowExercises] = useState(false);
+  const [showExercises, setShowExercises] = useState(true);
   const [sectionProgress, setSectionProgress] = useState<Map<string, boolean>>(new Map());
 
   // Save current exercise index to localStorage whenever it changes
@@ -186,7 +186,7 @@ export const OrthographySection = ({
       )}
 
       {/* Navigation */}
-      <Card>
+      <Card className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">
         <CardContent className="pt-6">
           <div className="flex items-center justify-between">
             <Button
@@ -210,10 +210,10 @@ export const OrthographySection = ({
                     key={`ex-${index}`}
                     onClick={() => setCurrentExerciseIndex(index)}
                     className={`w-8 h-8 rounded-full text-xs font-medium transition-colors flex-shrink-0 ${index === currentExerciseIndex
-                        ? 'bg-primary text-primary-foreground'
-                        : sectionProgress.get(section.exercises[index].id) === true
-                          ? 'bg-green-500 text-white'
-                          : 'bg-muted hover:bg-muted-foreground/10'
+                      ? 'bg-primary text-primary-foreground'
+                      : sectionProgress.get(section.exercises[index].id) === true
+                        ? 'bg-green-500 text-white'
+                        : 'bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-500'
                       }`}
                   >
                     {label || (index + 1)}

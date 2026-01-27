@@ -4,13 +4,23 @@ import { useAuth } from "@/hooks/useAuth";
 import { Header } from "@/components/layout/Header";
 import { StudentDashboard as StudentDashboardComponent } from "@/components/dashboard/StudentDashboard";
 import { LiquidBackground } from "@/components/ui/LiquidBackground";
+import { BookLoader } from "@/components/ui/book-loader";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 export default function StudentDashboard() {
     const { user, profile, loading, signOut } = useAuth();
     const router = useRouter();
+    const [minTimeElapsed, setMinTimeElapsed] = useState(false);
+
+    // Minimum loading time of 1.5 seconds to show book animation
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setMinTimeElapsed(true);
+        }, 1500);
+        return () => clearTimeout(timer);
+    }, []);
 
     // Scroll to top when component mounts
     useEffect(() => {
@@ -19,22 +29,22 @@ export default function StudentDashboard() {
 
     // Redirect if not authenticated or not a student
     useEffect(() => {
-        if (!loading) {
+        if (!loading && minTimeElapsed) {
             if (!user || !profile) {
                 router.replace("/auth");
             } else if (profile.role !== 'student') {
                 router.replace("/teacherdashboard");
             }
         }
-    }, [user, profile, loading, router]);
+    }, [user, profile, loading, router, minTimeElapsed]);
 
-    if (loading || !user || !profile || profile.role !== 'student') {
+    // Show loader if still loading OR minimum time hasn't elapsed
+    if (loading || !minTimeElapsed || !user || !profile || profile.role !== 'student') {
         return (
             <div className="min-h-screen bg-background flex items-center justify-center relative">
                 <LiquidBackground />
-                <div className="text-center space-y-4 relative z-10">
-                    <div className="animate-spin h-8 w-8 border-2 border-muted-foreground/20 border-t-primary mx-auto rounded-full"></div>
-                    <p className="text-sm text-muted-foreground font-mono">Carregant...</p>
+                <div className="relative z-10">
+                    <BookLoader text="Carregant EduCat..." size="lg" />
                 </div>
             </div>
         );

@@ -14,7 +14,7 @@ import { useEasterEgg } from "@/hooks/useEasterEgg";
 import { useToast } from "@/hooks/use-toast";
 import { useStudentData } from "@/hooks/useStudentData";
 import { useRealStats } from "@/hooks/useRealStats";
-import { LoadingSpinner } from "@/components/ui/loading-spinner";
+import { BookLoader } from "@/components/ui/book-loader";
 import { ALL_ORTHOGRAPHY_SECTIONS } from '@/utils/catalanOrthographyData';
 import { cn } from "@/lib/utils";
 
@@ -53,16 +53,7 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
 
   const orthographyTotals = getOrthographyTotals();
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-96">
-        <div className="text-center">
-          <LoadingSpinner size="lg" className="mb-4" />
-          <p className="text-muted-foreground">Carregant dades de l'estudiant...</p>
-        </div>
-      </div>
-    );
-  }
+  // Loading is handled at page level, no need to show loader here
 
   if (error) {
     return (
@@ -119,9 +110,6 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
 
   return (
     <div className="space-y-8 relative">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl -z-10 animate-pulse" />
-      <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-72 h-72 bg-purple-100/40 rounded-full blur-3xl -z-10 animate-pulse" style={{ animationDelay: '2s' }} />
 
       {/* Header section with enhanced styling */}
       {/* Header section with enhanced styling - ALIGNED LEFT */}
@@ -150,7 +138,7 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
 
       {/* Grid: Stats, Streak, Game - SAME HEIGHT */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto relative z-10 w-full px-4 sm:px-0 auto-rows-fr">
-        <div className="w-full h-full">
+        <div className="w-full h-full animate-card-entrance">
           <StudentStatistics
             completedExercises={stats.totalExercises}
             totalExercises={orthographyTotals.total}
@@ -162,11 +150,11 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
           />
         </div>
 
-        <div className="w-full h-full">
+        <div className="w-full h-full animate-card-entrance-delay-1">
           <StreakWidget userId={user.user_id} />
         </div>
 
-        <div className="w-full h-full">
+        <div className="w-full h-full animate-card-entrance-delay-2">
           <DailyWordGame />
         </div>
       </div>
@@ -179,17 +167,20 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
             <div className="relative w-full max-w-xl">
               <TabsList
                 ref={tabsListRef}
-                className="relative flex w-full h-auto p-1 bg-white rounded-full shadow-lg transition-all duration-300"
+                className="relative flex w-full h-auto p-1.5 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-full shadow-lg border border-white/20 dark:border-slate-700/50 transition-all duration-300"
               >
-                {/* Liquid Glass Sliding Pill with Blue Line */}
+                {/* Liquid Glass Sliding Pill */}
                 <div
-                  className="absolute top-1 bottom-1 left-1 w-[calc((100%-8px)/3)] rounded-full bg-blue-50/50 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] z-0 flex flex-col justify-end"
+                  className="absolute top-1.5 bottom-1.5 left-1.5 w-[calc((100%-12px)/3)] rounded-full z-0"
                   style={{
-                    transform: `translateX(${["orthography", "theory", "news"].indexOf(activeTab) * 100
-                      }%)`,
+                    transform: `translateX(${["orthography", "theory", "news"].indexOf(activeTab) * 100}%)`,
+                    background: "linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(99, 102, 241, 0.1) 100%)",
+                    boxShadow: "0 2px 8px rgba(59, 130, 246, 0.15), inset 0 1px 1px rgba(255,255,255,0.5)",
+                    backdropFilter: "blur(8px)",
+                    transition: "transform 700ms cubic-bezier(0.25, 1, 0.5, 1)"
                   }}
                 >
-                  <div className="w-full h-[3px] bg-blue-600 rounded-full mb-1 mx-auto max-w-[20px]" />
+                  <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-5 h-[3px] bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full shadow-sm shadow-blue-500/50" />
                 </div>
 
                 {/* Tab Triggers */}
@@ -202,11 +193,11 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
                     key={tab.id}
                     value={tab.id}
                     onClick={(e) => handleTabClick(tab.id, e)}
-                    className="relative flex-1 flex items-center justify-center gap-2 py-2 text-xs sm:text-sm font-medium transition-colors duration-300 z-10 text-gray-500 data-[state=active]:text-black hover:text-black border-0 border-none shadow-none outline-none ring-0 data-[state=active]:shadow-none data-[state=active]:bg-transparent data-[state=active]:border-none"
+                    className="relative flex-1 flex items-center justify-center gap-2 py-2 text-xs sm:text-sm font-medium transition-colors duration-300 z-10 text-white/60 data-[state=active]:text-white hover:text-white border-0 border-none shadow-none outline-none ring-0 data-[state=active]:shadow-none data-[state=active]:bg-transparent data-[state=active]:border-none"
                   >
                     <tab.icon className={cn(
                       "w-4 h-4 transition-transform duration-500",
-                      activeTab === tab.id ? "scale-110 text-black" : "scale-100"
+                      activeTab === tab.id ? "scale-110 text-white" : "scale-100"
                     )} />
                     <span className={cn(
                       "hidden sm:inline transition-opacity duration-300",

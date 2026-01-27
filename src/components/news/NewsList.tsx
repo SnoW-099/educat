@@ -180,10 +180,10 @@ export const NewsList = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {sources.map((source, sourceIdx) => (
-                <Card 
+                <Card
                   key={source.name}
-                  className="hover:shadow-xl transition-all duration-300 group border-l-4 bg-white dark:bg-white text-slate-900 dark:text-slate-900 dark:hover:bg-white"
-                  style={{ 
+                  className="hover:shadow-xl transition-all duration-300 group border-l-4 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                  style={{
                     borderLeftColor: `hsl(var(--primary))`
                   }}
                 >
@@ -195,14 +195,14 @@ export const NewsList = () => {
                       </span>
                       <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-all duration-200" />
                     </CardTitle>
-                    <CardDescription className="text-sm mt-2 line-clamp-2 text-slate-500 dark:text-slate-500">
+                    <CardDescription className="text-sm mt-2 line-clamp-2 text-slate-500 dark:text-slate-400">
                       {source.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <Button 
-                      variant="outline" 
-                      className="w-full group/btn hover:bg-primary hover:text-primary-foreground transition-all duration-200 bg-white dark:bg-white text-slate-900 dark:text-slate-900 border-slate-200 dark:border-slate-200"
+                    <Button
+                      variant="outline"
+                      className="w-full group/btn hover:bg-primary hover:text-primary-foreground transition-all duration-200 bg-white dark:bg-slate-700 text-slate-900 dark:text-white border-slate-200 dark:border-slate-600"
                       onClick={() => window.open(source.url, '_blank')}
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />
@@ -226,7 +226,7 @@ export const NewsList = () => {
             <div>
               <p className="font-semibold text-foreground mb-2">Consell per millorar el teu català</p>
               <p className="text-sm text-muted-foreground">
-                Llegir notícies en català regularment t'ajudarà a millorar 
+                Llegir notícies en català regularment t'ajudarà a millorar
                 la comprensió lectora, ampliar el vocabulari i mantenir-te informat sobre l'actualitat.
                 Dedica 10-15 minuts diaris a la lectura!
               </p>

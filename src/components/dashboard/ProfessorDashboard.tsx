@@ -18,7 +18,7 @@ import { ProfileManagement } from "@/components/profile/ProfileManagement";
 import { EssayReviewManager } from "@/components/dashboard/EssayReviewManager";
 import { useProfessorData } from "@/hooks/useProfessorData";
 import { usePlatformStats } from "@/hooks/usePlatformStats";
-import { LoadingSpinner } from "@/components/ui/loading-spinner";
+import { BookLoader } from "@/components/ui/book-loader";
 
 interface ProfessorDashboardProps {
   user: any;
@@ -97,7 +97,7 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
         allow_late_enrollment: true,
         allow_answer_checking: false
       });
-      
+
       toast({
         title: 'Classe creada!',
         description: `S'ha creat la classe "${newClass.name}" amb codi ${newClass.code}`,
@@ -128,7 +128,7 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
         allow_all_levels: false // Default value
       });
       setIsSettingsDialogOpen(false);
-      
+
       toast({
         title: 'Configuració actualitzada',
         description: 'Els canvis s\'han desat correctament'
@@ -186,23 +186,14 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
     });
   };
 
-  if (dataLoading) {
-    return (
-      <div className="flex items-center justify-center h-96">
-        <div className="text-center">
-          <LoadingSpinner size="lg" className="mb-4" />
-          <p className="text-muted-foreground">Carregant dashboard del professor...</p>
-        </div>
-      </div>
-    );
-  }
+  // Loading is handled at page level, no need to show loader here
 
   if (dataError) {
     return (
       <div className="flex items-center justify-center h-96">
         <div className="text-center">
           <p className="text-destructive mb-4">{dataError}</p>
-          <button 
+          <button
             onClick={() => window.location.reload()}
             className="text-primary hover:underline"
           >
@@ -285,32 +276,32 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
               </DialogDescription>
             </DialogHeader>
             <div className="space-y-4">
-                <div>
-                  <Label htmlFor="name">Nom de la classe</Label>
-                  <Input
-                    id="name"
-                    value={newClassData.name}
-                    onChange={(e) => setNewClassData(prev => ({...prev, name: e.target.value.slice(0, 100)}))}
-                    maxLength={100}
-                  />
-                  <p className="text-xs text-muted-foreground">{newClassData.name.length}/100 caràcters</p>
-                </div>
-                <div>
-                  <Label htmlFor="description">Descripció</Label>
-                  <Input
-                    id="description"
-                    value={newClassData.description}
-                    onChange={(e) => setNewClassData(prev => ({...prev, description: e.target.value.slice(0, 200)}))}
-                    placeholder="Descripció opcional..."
-                    maxLength={200}
-                  />
-                  <p className="text-xs text-muted-foreground">{newClassData.description.length}/200 caràcters</p>
-                </div>
+              <div>
+                <Label htmlFor="name">Nom de la classe</Label>
+                <Input
+                  id="name"
+                  value={newClassData.name}
+                  onChange={(e) => setNewClassData(prev => ({ ...prev, name: e.target.value.slice(0, 100) }))}
+                  maxLength={100}
+                />
+                <p className="text-xs text-muted-foreground">{newClassData.name.length}/100 caràcters</p>
+              </div>
+              <div>
+                <Label htmlFor="description">Descripció</Label>
+                <Input
+                  id="description"
+                  value={newClassData.description}
+                  onChange={(e) => setNewClassData(prev => ({ ...prev, description: e.target.value.slice(0, 200) }))}
+                  placeholder="Descripció opcional..."
+                  maxLength={200}
+                />
+                <p className="text-xs text-muted-foreground">{newClassData.description.length}/200 caràcters</p>
+              </div>
               <div>
                 <Label htmlFor="level">Nivell</Label>
                 <Select
                   value={newClassData.level}
-                  onValueChange={(value) => setNewClassData(prev => ({...prev, level: value}))}
+                  onValueChange={(value) => setNewClassData(prev => ({ ...prev, level: value }))}
                 >
                   <SelectTrigger>
                     <SelectValue />
@@ -333,14 +324,14 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
                   min="1"
                   max="50"
                   value={newClassData.max_students}
-                  onChange={(e) => setNewClassData(prev => ({...prev, max_students: parseInt(e.target.value) || 50}))}
+                  onChange={(e) => setNewClassData(prev => ({ ...prev, max_students: parseInt(e.target.value) || 50 }))}
                 />
               </div>
               <div className="flex items-center space-x-2">
                 <Switch
                   id="allow_late_enrollment"
                   checked={newClassData.allow_late_enrollment}
-                  onCheckedChange={(checked) => setNewClassData(prev => ({...prev, allow_late_enrollment: checked}))}
+                  onCheckedChange={(checked) => setNewClassData(prev => ({ ...prev, allow_late_enrollment: checked }))}
                 />
                 <Label htmlFor="allow_late_enrollment">Permetre inscripcions tardanes</Label>
               </div>
@@ -348,7 +339,7 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
                 <Switch
                   id="allow_answer_checking"
                   checked={newClassData.allow_answer_checking}
-                  onCheckedChange={(checked) => setNewClassData(prev => ({...prev, allow_answer_checking: checked}))}
+                  onCheckedChange={(checked) => setNewClassData(prev => ({ ...prev, allow_answer_checking: checked }))}
                 />
                 <Label htmlFor="allow_answer_checking">Permetre veure respostes durant exercicis</Label>
               </div>
@@ -356,7 +347,7 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
                 <Label htmlFor="chat_permissions">Permisos de xat</Label>
                 <Select
                   value={newClassData.chat_permissions}
-                  onValueChange={(value: 'all' | 'professor_only') => setNewClassData(prev => ({...prev, chat_permissions: value}))}
+                  onValueChange={(value: 'all' | 'professor_only') => setNewClassData(prev => ({ ...prev, chat_permissions: value }))}
                 >
                   <SelectTrigger>
                     <SelectValue />
@@ -409,13 +400,12 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
           ) : (
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {classes.map((classItem) => (
-                <Card 
-                  key={classItem.id} 
-                  className={`glass-card cursor-pointer transition-all hover-lift ${
-                    selectedClass?.id === classItem.id 
-                      ? 'ring-2 ring-primary bg-gradient-surface' 
-                      : 'hover:shadow-elevation'
-                  }`}
+                <Card
+                  key={classItem.id}
+                  className={`glass-card cursor-pointer transition-all hover-lift ${selectedClass?.id === classItem.id
+                    ? 'ring-2 ring-primary bg-gradient-surface'
+                    : 'hover:shadow-elevation'
+                    }`}
                   onClick={() => selectClass(classItem)}
                 >
                   <CardHeader>
@@ -435,9 +425,9 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
                         <span className="text-muted-foreground">Codi:</span>
                         <div className="flex items-center space-x-2">
                           <Badge variant="outline">{classItem.code}</Badge>
-                          <Button 
-                            size="sm" 
-                            variant="ghost" 
+                          <Button
+                            size="sm"
+                            variant="ghost"
                             onClick={(e) => {
                               e.stopPropagation();
                               copyClassCode(classItem.code);
@@ -454,15 +444,15 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
                             setIsSettingsDialogOpen(open);
                             if (open) {
                               selectClass(classItem);
-                               setNewClassData({
-                                 name: classItem.name,
-                                 description: classItem.description,
-                                 level: classItem.level,
-                                  chat_permissions: classItem.chat_permissions,
-                                  max_students: classItem.max_students,
-                                  allow_late_enrollment: classItem.allow_late_enrollment,
-                                  allow_answer_checking: classItem.allow_answer_checking
-                               });
+                              setNewClassData({
+                                name: classItem.name,
+                                description: classItem.description,
+                                level: classItem.level,
+                                chat_permissions: classItem.chat_permissions,
+                                max_students: classItem.max_students,
+                                allow_late_enrollment: classItem.allow_late_enrollment,
+                                allow_answer_checking: classItem.allow_answer_checking
+                              });
                             }
                           }}
                         >
@@ -482,7 +472,7 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
                                 <Input
                                   id="edit_name"
                                   value={newClassData.name}
-                                  onChange={(e) => setNewClassData(prev => ({...prev, name: e.target.value}))}
+                                  onChange={(e) => setNewClassData(prev => ({ ...prev, name: e.target.value }))}
                                 />
                               </div>
                               <div>
@@ -490,14 +480,14 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
                                 <Input
                                   id="edit_description"
                                   value={newClassData.description}
-                                  onChange={(e) => setNewClassData(prev => ({...prev, description: e.target.value}))}
+                                  onChange={(e) => setNewClassData(prev => ({ ...prev, description: e.target.value }))}
                                 />
                               </div>
                               <div>
                                 <Label htmlFor="edit_level">Nivell</Label>
                                 <Select
                                   value={newClassData.level}
-                                  onValueChange={(value) => setNewClassData(prev => ({...prev, level: value}))}
+                                  onValueChange={(value) => setNewClassData(prev => ({ ...prev, level: value }))}
                                 >
                                   <SelectTrigger>
                                     <SelectValue />
@@ -520,30 +510,30 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
                                   min="1"
                                   max="50"
                                   value={newClassData.max_students}
-                                  onChange={(e) => setNewClassData(prev => ({...prev, max_students: parseInt(e.target.value) || 50}))}
+                                  onChange={(e) => setNewClassData(prev => ({ ...prev, max_students: parseInt(e.target.value) || 50 }))}
                                 />
                               </div>
-                               <div className="flex items-center space-x-2">
-                                 <Switch
-                                   id="edit_allow_late_enrollment"
-                                   checked={newClassData.allow_late_enrollment}
-                                   onCheckedChange={(checked) => setNewClassData(prev => ({...prev, allow_late_enrollment: checked}))}
-                                 />
-                                 <Label htmlFor="edit_allow_late_enrollment">Permetre inscripcions tardanes</Label>
-                               </div>
-                                <div className="flex items-center space-x-2">
-                                  <Switch
-                                    id="edit_allow_answer_checking"
-                                    checked={newClassData.allow_answer_checking}
-                                    onCheckedChange={(checked) => setNewClassData(prev => ({...prev, allow_answer_checking: checked}))}
-                                  />
-                                  <Label htmlFor="edit_allow_answer_checking">Permetre veure respostes durant exercicis</Label>
-                                </div>
+                              <div className="flex items-center space-x-2">
+                                <Switch
+                                  id="edit_allow_late_enrollment"
+                                  checked={newClassData.allow_late_enrollment}
+                                  onCheckedChange={(checked) => setNewClassData(prev => ({ ...prev, allow_late_enrollment: checked }))}
+                                />
+                                <Label htmlFor="edit_allow_late_enrollment">Permetre inscripcions tardanes</Label>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <Switch
+                                  id="edit_allow_answer_checking"
+                                  checked={newClassData.allow_answer_checking}
+                                  onCheckedChange={(checked) => setNewClassData(prev => ({ ...prev, allow_answer_checking: checked }))}
+                                />
+                                <Label htmlFor="edit_allow_answer_checking">Permetre veure respostes durant exercicis</Label>
+                              </div>
                               <div>
                                 <Label htmlFor="edit_chat_permissions">Permisos de xat</Label>
                                 <Select
                                   value={newClassData.chat_permissions}
-                                  onValueChange={(value: 'all' | 'professor_only') => setNewClassData(prev => ({...prev, chat_permissions: value}))}
+                                  onValueChange={(value: 'all' | 'professor_only') => setNewClassData(prev => ({ ...prev, chat_permissions: value }))}
                                 >
                                   <SelectTrigger>
                                     <SelectValue />
@@ -604,7 +594,7 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
                   Codi: {selectedClass.code}
                 </Badge>
               </div>
-              
+
               {students.length === 0 ? (
                 <Card className="shadow-card">
                   <CardContent className="flex flex-col items-center justify-center py-16">
@@ -618,7 +608,7 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
               ) : (
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                   {students.map((student) => (
-                    <StudentStatsCard 
+                    <StudentStatsCard
                       key={student.id}
                       student={student}
                       classId={selectedClass.id}
@@ -655,7 +645,7 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
 
         <TabsContent value="essays" className="space-y-4">
           {selectedClass ? (
-            <EssayReviewManager 
+            <EssayReviewManager
               classId={selectedClass.id}
               userRole="professor"
               userId={user.user_id}
@@ -664,10 +654,10 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
             <Card className="shadow-card">
               <CardContent className="flex flex-col items-center justify-center py-16">
                 <FileText className="h-16 w-16 text-muted-foreground mb-4" />
-                 <h3 className="text-xl font-semibold mb-2">Selecciona una classe</h3>
-                 <p className="text-muted-foreground text-center">
-                   Tria una classe per veure les tasques del professorat
-                 </p>
+                <h3 className="text-xl font-semibold mb-2">Selecciona una classe</h3>
+                <p className="text-muted-foreground text-center">
+                  Tria una classe per veure les tasques del professorat
+                </p>
               </CardContent>
             </Card>
           )}

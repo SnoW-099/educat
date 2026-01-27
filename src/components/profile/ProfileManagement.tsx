@@ -513,16 +513,16 @@ export const ProfileManagement = ({ className = '', variant = 'default' }: Profi
     return (
       <div className={`space-y-6 ${className}`}>
         {/* New Hero Header */}
-        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-blue-50 to-indigo-50 border border-indigo-100 p-6">
+        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-700 dark:to-slate-800 border border-indigo-100 dark:border-slate-600 p-6">
           <div className="absolute top-0 right-0 p-4 opacity-10">
-            <Shield className="w-32 h-32 text-indigo-500 transform rotate-12 translate-x-8 -translate-y-8" />
+            <Shield className="w-32 h-32 text-indigo-500 dark:text-indigo-400 transform rotate-12 translate-x-8 -translate-y-8" />
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-6 relative z-10">
             <div className="relative group cursor-pointer">
-              <Avatar className="h-24 w-24 ring-4 ring-white shadow-xl transition-transform group-hover:scale-105">
+              <Avatar className="h-24 w-24 ring-4 ring-white dark:ring-slate-600 shadow-xl transition-transform group-hover:scale-105">
                 <AvatarImage src={formData.avatar_url} className="object-cover" />
-                <AvatarFallback className="text-2xl bg-indigo-100 text-indigo-600 font-bold">
+                <AvatarFallback className="text-2xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-300 font-bold">
                   {getInitials(formData.name)}
                 </AvatarFallback>
               </Avatar>
@@ -550,14 +550,14 @@ export const ProfileManagement = ({ className = '', variant = 'default' }: Profi
 
             <div className="text-center sm:text-left space-y-2">
               <div>
-                <h3 className="text-2xl font-bold text-slate-900 tracking-tight">{profile.name}</h3>
-                <p className="text-slate-500 font-medium">{profile.email}</p>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">{profile.name}</h3>
+                <p className="text-slate-500 dark:text-slate-400 font-medium">{profile.email}</p>
               </div>
               <div className="flex items-center justify-center sm:justify-start gap-2">
                 <Badge className={`${getRoleColor(profile.role)} px-3 py-1 text-xs uppercase tracking-wider shadow-sm`}>
                   {profile.role === 'professor' ? 'Professor' : 'Estudiant'}
                 </Badge>
-                <Badge variant="outline" className="bg-white/50 text-slate-500 border-slate-200">
+                <Badge variant="outline" className="bg-white/50 dark:bg-slate-700/50 text-slate-500 dark:text-slate-300 border-slate-200 dark:border-slate-600">
                   User ID: {profile.user_id.slice(0, 8)}...
                 </Badge>
               </div>
@@ -567,17 +567,17 @@ export const ProfileManagement = ({ className = '', variant = 'default' }: Profi
 
         {/* Content Tabs */}
         <Tabs defaultValue="profile" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 p-1 bg-slate-100/80 rounded-xl mb-6">
+          <TabsList className="grid w-full grid-cols-2 p-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-xl mb-6">
             <TabsTrigger
               value="profile"
-              className="rounded-lg data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:shadow-sm transition-all"
+              className="rounded-lg data-[state=active]:bg-white dark:data-[state=active]:bg-slate-800 data-[state=active]:text-indigo-600 dark:data-[state=active]:text-indigo-400 data-[state=active]:shadow-sm transition-all"
             >
               <User className="w-4 h-4 mr-2" />
               Perfil
             </TabsTrigger>
             <TabsTrigger
               value="security"
-              className="rounded-lg data-[state=active]:bg-white data-[state=active]:text-rose-600 data-[state=active]:shadow-sm transition-all"
+              className="rounded-lg data-[state=active]:bg-white dark:data-[state=active]:bg-slate-800 data-[state=active]:text-rose-600 dark:data-[state=active]:text-rose-400 data-[state=active]:shadow-sm transition-all"
             >
               <Shield className="w-4 h-4 mr-2" />
               Seguretat
@@ -588,13 +588,13 @@ export const ProfileManagement = ({ className = '', variant = 'default' }: Profi
           <TabsContent value="profile" className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
             <div className="grid gap-6">
               <div className="space-y-2">
-                <Label className="text-slate-600 font-semibold">Nom Complet</Label>
+                <Label className="text-slate-600 dark:text-slate-300 font-semibold">Nom Complet</Label>
                 <div className="relative">
                   <User className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <Input
                     value={formData.name}
                     onChange={(e) => handleInputChange('name', e.target.value)}
-                    className="pl-10 bg-slate-50 border-slate-200 focus:bg-white transition-colors h-10"
+                    className="pl-10 bg-slate-50 dark:bg-slate-700 border-slate-200 dark:border-slate-600 dark:text-white focus:bg-white dark:focus:bg-slate-600 transition-colors h-10"
                     placeholder="El teu nom"
                   />
                 </div>
@@ -614,14 +614,14 @@ export const ProfileManagement = ({ className = '', variant = 'default' }: Profi
 
             {/* Email Section */}
             <div className="space-y-4">
-              <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider border-b border-slate-100 pb-2">Correu Electrònic</h4>
+              <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider border-b border-slate-100 dark:border-slate-700 pb-2">Correu Electrònic</h4>
               <div className="flex gap-4">
                 <div className="relative flex-1">
                   <Mail className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <Input
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
-                    className="pl-10 bg-slate-50 border-slate-200"
+                    className="pl-10 bg-slate-50 dark:bg-slate-700 border-slate-200 dark:border-slate-600 dark:text-white"
                   />
                 </div>
                 <Button variant="outline" onClick={handleChangeEmail} disabled={formData.email === profile.email}>
@@ -632,39 +632,39 @@ export const ProfileManagement = ({ className = '', variant = 'default' }: Profi
 
             {/* Password Section */}
             <div className="space-y-4">
-              <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider border-b border-slate-100 pb-2">Contrasenya</h4>
+              <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider border-b border-slate-100 dark:border-slate-700 pb-2">Contrasenya</h4>
 
-              <div className="grid gap-4 bg-slate-50 p-6 rounded-xl border border-slate-100">
+              <div className="grid gap-4 bg-slate-50 dark:bg-slate-700 p-6 rounded-xl border border-slate-100 dark:border-slate-600">
                 <div className="space-y-2">
-                  <Label className="text-xs text-slate-500 uppercase">Contrasenya Actual</Label>
+                  <Label className="text-xs text-slate-500 dark:text-slate-400 uppercase">Contrasenya Actual</Label>
                   <Input
                     type="password"
                     value={formData.currentPassword}
                     onChange={(e) => handleInputChange('currentPassword', e.target.value)}
-                    className="bg-white"
+                    className="bg-white dark:bg-slate-600 dark:border-slate-500 dark:text-white"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label className="text-xs text-slate-500 uppercase">Nova Contrasenya</Label>
+                    <Label className="text-xs text-slate-500 dark:text-slate-400 uppercase">Nova Contrasenya</Label>
                     <Input
                       type="password"
                       value={formData.newPassword}
                       onChange={(e) => handleInputChange('newPassword', e.target.value)}
-                      className="bg-white"
+                      className="bg-white dark:bg-slate-600 dark:border-slate-500 dark:text-white"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-xs text-slate-500 uppercase">Confirmar</Label>
+                    <Label className="text-xs text-slate-500 dark:text-slate-400 uppercase">Confirmar</Label>
                     <Input
                       type="password"
                       value={formData.confirmPassword}
                       onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
-                      className="bg-white"
+                      className="bg-white dark:bg-slate-600 dark:border-slate-500 dark:text-white"
                     />
                   </div>
                 </div>
-                <Button onClick={handleChangePassword} className="w-full mt-2 bg-slate-800 text-white hover:bg-slate-900">
+                <Button onClick={handleChangePassword} className="w-full mt-2 bg-slate-800 dark:bg-slate-600 text-white hover:bg-slate-900 dark:hover:bg-slate-500">
                   Canviar Contrasenya
                 </Button>
               </div>
@@ -672,13 +672,13 @@ export const ProfileManagement = ({ className = '', variant = 'default' }: Profi
 
             {/* Danger Zone */}
             <div className="pt-6">
-              <div className="rounded-xl border border-rose-100 bg-rose-50/50 p-6">
+              <div className="rounded-xl border border-rose-100 dark:border-rose-900/50 bg-rose-50/50 dark:bg-rose-950/30 p-6">
                 <div className="flex items-start justify-between">
                   <div className="space-y-1">
-                    <h4 className="text-base font-bold text-rose-700 flex items-center gap-2">
+                    <h4 className="text-base font-bold text-rose-700 dark:text-rose-400 flex items-center gap-2">
                       <Shield className="h-4 w-4" /> Zona de Perill
                     </h4>
-                    <p className="text-sm text-rose-600/80 max-w-sm">
+                    <p className="text-sm text-rose-600/80 dark:text-rose-400/80 max-w-sm">
                       Eliminar el teu compte és irreversible. Es perdran totes les dades.
                     </p>
                   </div>

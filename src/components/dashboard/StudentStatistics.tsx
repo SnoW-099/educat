@@ -34,16 +34,16 @@ export const StudentStatistics = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Card className="group relative overflow-hidden border border-slate-200 bg-white dark:bg-white shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-white transition-all duration-300 cursor-pointer h-full flex flex-col justify-between">
+        <Card className="group relative overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer h-full flex flex-col justify-between">
           <CardHeader className="pb-2">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-md bg-slate-50 text-slate-600 border border-slate-100">
+                <div className="p-2 rounded-md bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-100 dark:border-slate-600">
                   <BarChart3 className="h-4 w-4" />
                 </div>
                 <div>
-                  <CardTitle className="text-sm font-semibold text-slate-800">El teu Progrés</CardTitle>
-                  <CardDescription className="text-xs text-slate-500">Visió general</CardDescription>
+                  <CardTitle className="text-sm font-semibold text-slate-800 dark:text-white">El teu Progrés</CardTitle>
+                  <CardDescription className="text-xs text-slate-500 dark:text-slate-400">Visió general</CardDescription>
                 </div>
               </div>
               <ChevronRight className="h-4 w-4 text-slate-300 group-hover:text-slate-600 transition-colors" />
@@ -51,29 +51,29 @@ export const StudentStatistics = ({
           </CardHeader>
 
           <CardContent className="space-y-6 pt-2 flex-1 flex flex-col justify-between">
-            <div className="grid grid-cols-3 gap-4 divide-x divide-slate-100">
+            <div className="grid grid-cols-3 gap-4 divide-x divide-slate-100 dark:divide-slate-600">
               <div className="text-center px-2">
-                <div className="text-xl font-bold text-slate-800">{completedExercises}</div>
+                <div className="text-xl font-bold text-slate-800 dark:text-white">{completedExercises}</div>
                 <p className="text-[10px] uppercase tracking-wider text-slate-400 font-medium mt-1">Exercicis</p>
               </div>
 
               <div className="text-center px-2">
-                <div className="text-xl font-bold text-slate-800">{accuracy}%</div>
+                <div className="text-xl font-bold text-slate-800 dark:text-white">{accuracy}%</div>
                 <p className="text-[10px] uppercase tracking-wider text-slate-400 font-medium mt-1">Precisió</p>
               </div>
 
               <div className="text-center px-2">
-                <div className="text-xl font-bold text-slate-800">{xpPoints}</div>
+                <div className="text-xl font-bold text-slate-800 dark:text-white">{xpPoints}</div>
                 <p className="text-[10px] uppercase tracking-wider text-slate-400 font-medium mt-1">XP</p>
               </div>
             </div>
 
             <div className="space-y-2">
               <div className="flex items-center justify-between text-xs">
-                <span className="font-medium text-slate-600">Progrés diari</span>
+                <span className="font-medium text-slate-600 dark:text-slate-300">Progrés diari</span>
                 <span className="text-slate-500">{Math.round(exerciseProgress)}%</span>
               </div>
-              <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+              <div className="h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-slate-800 rounded-full transition-all duration-500 ease-out"
                   style={{ width: `${exerciseProgress}%` }}
@@ -81,7 +81,7 @@ export const StudentStatistics = ({
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-2 border-t border-slate-50">
+            <div className="flex items-center justify-between pt-2 border-t border-slate-50 dark:border-slate-700">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                 <span className="text-[10px] font-medium text-slate-500 uppercase tracking-wide">Actiu</span>
@@ -94,17 +94,17 @@ export const StudentStatistics = ({
         </Card>
       </DialogTrigger>
 
-      <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto border border-slate-200 bg-white shadow-xl sm:rounded-2xl"
+      <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xl sm:rounded-2xl"
         onInteractOutside={(e) => e.preventDefault()}
       >
         {/* ... (Header and Metrics Grid remain largely same, skipping to Performance Section for brevity in replace if possible, but replace tool needs context) */}
         {/* Actually replace tool needs continuous block. I will include full logical start to keep context valid. */}
-        <DialogHeader className="pb-6 border-b border-slate-100">
-          <DialogTitle className="flex items-center gap-3 text-xl font-semibold text-slate-900">
-            <BarChart3 className="h-5 w-5 text-slate-500" />
+        <DialogHeader className="pb-6 border-b border-slate-100 dark:border-slate-700">
+          <DialogTitle className="flex items-center gap-3 text-xl font-semibold text-slate-900 dark:text-white">
+            <BarChart3 className="h-5 w-5 text-slate-500 dark:text-slate-400" />
             Estadístiques
           </DialogTitle>
-          <DialogDescription className="text-slate-500 text-sm">
+          <DialogDescription className="text-slate-500 dark:text-slate-400 text-sm">
             Detalls de la teva activitat d'aprenentatge
           </DialogDescription>
         </DialogHeader>
@@ -113,63 +113,63 @@ export const StudentStatistics = ({
           {/* Main metrics grid - Minimalist */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Exercises Minimal Card */}
-            <div className="p-5 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-colors">
+            <div className="p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-700/50 hover:bg-white dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Exercicis</span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Exercicis</span>
                 <Target className="h-4 w-4 text-slate-400" />
               </div>
               <div className="flex items-baseline gap-1">
-                <span className="text-2xl font-bold text-slate-900">{completedExercises}</span>
+                <span className="text-2xl font-bold text-slate-900 dark:text-white">{completedExercises}</span>
                 <span className="text-xs text-slate-400">/ {totalExercises}</span>
               </div>
               <div className="mt-3">
-                <div className="h-1 bg-slate-200 rounded-full overflow-hidden">
+                <div className="h-1 bg-slate-200 dark:bg-slate-600 rounded-full overflow-hidden">
                   <div className="h-full bg-blue-500" style={{ width: `${exerciseProgress}%` }}></div>
                 </div>
               </div>
             </div>
 
             {/* Orthography Minimal Card */}
-            <div className="p-5 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-colors">
+            <div className="p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-700/50 hover:bg-white dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Ortografia</span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Ortografia</span>
                 <TrendingUp className="h-4 w-4 text-slate-400" />
               </div>
               <div className="flex items-baseline gap-1">
-                <span className="text-2xl font-bold text-slate-900">{orthographyCompleted}</span>
+                <span className="text-2xl font-bold text-slate-900 dark:text-white">{orthographyCompleted}</span>
                 <span className="text-xs text-slate-400">/ {orthographyTotal}</span>
               </div>
               <div className="mt-3">
-                <div className="h-1 bg-slate-200 rounded-full overflow-hidden">
+                <div className="h-1 bg-slate-200 dark:bg-slate-600 rounded-full overflow-hidden">
                   <div className="h-full bg-purple-500" style={{ width: `${orthographyProgress}%` }}></div>
                 </div>
               </div>
             </div>
 
             {/* Accuracy Minimal Card */}
-            <div className="p-5 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-colors">
+            <div className="p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-700/50 hover:bg-white dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Precisió</span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Precisió</span>
                 <Trophy className="h-4 w-4 text-slate-400" />
               </div>
               <div className="flex items-baseline gap-1">
-                <span className="text-2xl font-bold text-slate-900">{accuracy}%</span>
+                <span className="text-2xl font-bold text-slate-900 dark:text-white">{accuracy}%</span>
               </div>
-              <div className="mt-3 text-xs text-slate-500">
+              <div className="mt-3 text-xs text-slate-500 dark:text-slate-400">
                 {accuracy >= 80 ? 'Excel·lent' : accuracy >= 60 ? 'Bé' : 'Millorar'}
               </div>
             </div>
 
             {/* Errors Minimal Card */}
-            <div className="p-5 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-colors">
+            <div className="p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-700/50 hover:bg-white dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Errors</span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Errors</span>
                 <AlertCircle className="h-4 w-4 text-slate-400" />
               </div>
               <div className="flex items-baseline gap-1">
-                <span className="text-2xl font-bold text-slate-900">{errors}</span>
+                <span className="text-2xl font-bold text-slate-900 dark:text-white">{errors}</span>
               </div>
-              <div className="mt-3 text-xs text-slate-500">
+              <div className="mt-3 text-xs text-slate-500 dark:text-slate-400">
                 Errors detectats
               </div>
             </div>
@@ -178,38 +178,38 @@ export const StudentStatistics = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
             {/* Minimalist XP Section */}
-            <div className="p-6 rounded-xl border border-slate-200 bg-white">
-              <h3 className="text-sm font-semibold text-slate-800 mb-6 flex items-center gap-2">
-                <Flame className="w-4 h-4 text-slate-800" />
+            <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-700">
+              <h3 className="text-sm font-semibold text-slate-800 dark:text-white mb-6 flex items-center gap-2">
+                <Flame className="w-4 h-4 text-slate-800 dark:text-slate-300" />
                 Experiència
               </h3>
 
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <div className="text-3xl font-bold text-slate-900">{xpPoints}</div>
-                  <div className="text-xs text-slate-500 uppercase tracking-wide">XP Total</div>
+                  <div className="text-3xl font-bold text-slate-900 dark:text-white">{xpPoints}</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide">XP Total</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold text-slate-900">{Math.floor(xpPoints / 1000) + 1}</div>
-                  <div className="text-xs text-slate-500 uppercase tracking-wide">Nivell</div>
+                  <div className="text-3xl font-bold text-slate-900 dark:text-white">{Math.floor(xpPoints / 1000) + 1}</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide">Nivell</div>
                 </div>
               </div>
 
               <div className="space-y-3">
-                <div className="flex justify-between text-sm py-2 border-b border-slate-100">
-                  <span className="text-slate-600">Per Exercicis</span>
-                  <span className="font-mono font-medium text-slate-900">+{completedExercises * 10}</span>
+                <div className="flex justify-between text-sm py-2 border-b border-slate-100 dark:border-slate-600">
+                  <span className="text-slate-600 dark:text-slate-300">Per Exercicis</span>
+                  <span className="font-mono font-medium text-slate-900 dark:text-white">+{completedExercises * 10}</span>
                 </div>
-                <div className="flex justify-between text-sm py-2 border-b border-slate-100">
-                  <span className="text-slate-600">Per Ortografia</span>
-                  <span className="font-mono font-medium text-slate-900">+{orthographyCompleted * 15}</span>
+                <div className="flex justify-between text-sm py-2 border-b border-slate-100 dark:border-slate-600">
+                  <span className="text-slate-600 dark:text-slate-300">Per Ortografia</span>
+                  <span className="font-mono font-medium text-slate-900 dark:text-white">+{orthographyCompleted * 15}</span>
                 </div>
               </div>
             </div>
 
             {/* Minimalist Performance Section */}
-            <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-sm font-semibold text-slate-800 mb-6 flex items-center gap-2">
+            <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-700 shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-sm font-semibold text-slate-800 dark:text-white mb-6 flex items-center gap-2">
                 <BarChart3 className="w-4 h-4 text-blue-500" />
                 Rendiment
               </h3>

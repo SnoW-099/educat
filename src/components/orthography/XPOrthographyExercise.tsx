@@ -20,9 +20,9 @@ interface XPOrthographyExerciseProps {
   category?: string;
 }
 
-export const XPOrthographyExercise = ({ 
-  exercise, 
-  onComplete, 
+export const XPOrthographyExercise = ({
+  exercise,
+  onComplete,
   showFeedback = true,
   userRole = 'student',
   hideAnswersUntilComplete = false,
@@ -48,7 +48,7 @@ export const XPOrthographyExercise = ({
 
   const checkAnswer = (answer: string) => {
     if (Array.isArray(exercise.correctAnswer)) {
-      return exercise.correctAnswer.some(correct => 
+      return exercise.correctAnswer.some(correct =>
         answer.toLowerCase().trim() === correct.toLowerCase().trim()
       );
     }
@@ -57,7 +57,7 @@ export const XPOrthographyExercise = ({
 
   const calculateXP = (isCorrect: boolean, difficulty: number) => {
     if (!isCorrect) return 0;
-    
+
     // Base XP with multipliers based on difficulty
     const baseXP = 10;
     const multipliers = {
@@ -66,7 +66,7 @@ export const XPOrthographyExercise = ({
       3: 1.6,   // Difícil - 16 XP
       4: 2.0    // Master - 20 XP
     };
-    
+
     const multiplier = multipliers[difficulty] || 1.3;
     return Math.round(baseXP * multiplier);
   };
@@ -82,20 +82,20 @@ export const XPOrthographyExercise = ({
     const finalAnswer = submitAnswer || userAnswer;
     const correct = checkAnswer(finalAnswer);
     const earnedXP = calculateXP(correct, exercise.difficulty);
-    
+
     setIsCorrect(correct);
     setShowResult(true);
-    
+
     // Only show explanation if all exercises are completed or hideAnswersUntilComplete is false
     if (!hideAnswersUntilComplete || allExercisesCompleted) {
       setShowExplanation(true);
     }
-    
+
     setXpEarned(earnedXP);
-    
+
     if (showFeedback) {
       onComplete(exercise.id, correct, earnedXP);
-      
+
       if (correct) {
         toast({
           title: "Correcte!",
@@ -103,10 +103,10 @@ export const XPOrthographyExercise = ({
           duration: 3000,
         });
       } else {
-        const correctAnswerText = Array.isArray(exercise.correctAnswer) 
-          ? exercise.correctAnswer.join(' o ') 
+        const correctAnswerText = Array.isArray(exercise.correctAnswer)
+          ? exercise.correctAnswer.join(' o ')
           : exercise.correctAnswer;
-        
+
         toast({
           title: "Incorrecte",
           description: (!hideAnswersUntilComplete || allExercisesCompleted) ? `La resposta correcta és: ${correctAnswerText}` : "Resposta incorrecta. Continua amb els altres exercicis.",
@@ -170,9 +170,8 @@ export const XPOrthographyExercise = ({
   };
 
   return (
-    <Card className={`transition-all duration-200 ${
-      showResult ? (isCorrect ? 'border-success/50 bg-success/5' : 'border-destructive/50 bg-destructive/5') : 'hover:shadow-md'
-    }`}>
+    <Card className={`transition-all duration-200 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 ${showResult ? (isCorrect ? 'border-success/50 bg-success/5 dark:bg-success/10' : 'border-destructive/50 bg-destructive/5 dark:bg-destructive/10') : 'hover:shadow-md'
+      }`}>
       <CardHeader className="pb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -196,22 +195,23 @@ export const XPOrthographyExercise = ({
           </Badge>
         </div>
       </CardHeader>
-      
+
       <CardContent className="space-y-4">
         {/* Multiple Choice */}
         {exercise.type === 'multiple_choice' && exercise.options && (
           <div className="space-y-3">
             {exercise.options.map((option, index) => (
-              <Button
+              <button
                 key={index}
-                variant={userAnswer === option ? 'default' : 'outline'}
-                className={`w-full justify-start text-left h-auto py-3 ${
-                  showResult ? (
-                    (!hideAnswersUntilComplete || allExercisesCompleted) && option === exercise.correctAnswer ? 'border-success bg-success/10 text-success' :
-                    (!hideAnswersUntilComplete || allExercisesCompleted) && option === userAnswer && option !== exercise.correctAnswer ? 'border-destructive bg-destructive/10 text-destructive' :
-                    'opacity-60'
+                className={`w-full flex items-center justify-start text-left h-auto py-3 px-4 rounded-lg border transition-colors ${userAnswer === option
+                    ? 'bg-primary text-primary-foreground border-primary'
+                    : 'bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white'
+                  } ${showResult ? (
+                    (!hideAnswersUntilComplete || allExercisesCompleted) && option === exercise.correctAnswer ? 'border-success bg-success/10 dark:bg-success/20 text-success dark:text-emerald-400' :
+                      (!hideAnswersUntilComplete || allExercisesCompleted) && option === userAnswer && option !== exercise.correctAnswer ? 'border-destructive bg-destructive/10 dark:bg-destructive/20 text-destructive' :
+                        'opacity-60'
                   ) : ''
-                }`}
+                  } ${showResult ? 'pointer-events-none' : ''}`}
                 onClick={() => handleAnswer(option)}
                 disabled={showResult}
               >
@@ -220,7 +220,7 @@ export const XPOrthographyExercise = ({
                 {showAnswers && option === exercise.correctAnswer && (
                   <CheckCircle className="h-4 w-4 ml-auto text-success" />
                 )}
-              </Button>
+              </button>
             ))}
           </div>
         )}
@@ -230,9 +230,8 @@ export const XPOrthographyExercise = ({
           <div className="space-y-3">
             <Input
               type="text"
-              className={`w-full ${
-                showResult ? (isCorrect ? 'border-success' : 'border-destructive') : ''
-              }`}
+              className={`w-full ${showResult ? (isCorrect ? 'border-success' : 'border-destructive') : ''
+                }`}
               placeholder="Escriu la teva resposta..."
               value={userAnswer}
               onChange={(e) => setUserAnswer(e.target.value)}
@@ -242,8 +241,8 @@ export const XPOrthographyExercise = ({
             />
             {showAnswers && (!hideAnswersUntilComplete || allExercisesCompleted) && (
               <div className="text-sm text-success bg-success/10 p-2 rounded">
-                Respostes possibles: {Array.isArray(exercise.correctAnswer) 
-                  ? exercise.correctAnswer.join(', ') 
+                Respostes possibles: {Array.isArray(exercise.correctAnswer)
+                  ? exercise.correctAnswer.join(', ')
                   : exercise.correctAnswer}
               </div>
             )}
@@ -253,12 +252,12 @@ export const XPOrthographyExercise = ({
         {/* Dictation */}
         {exercise.type === 'dictation' && (
           <div className="space-y-3">
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               className="mb-4"
               onClick={() => playDictationAudio(
-                Array.isArray(exercise.correctAnswer) 
-                  ? exercise.correctAnswer[0] 
+                Array.isArray(exercise.correctAnswer)
+                  ? exercise.correctAnswer[0]
                   : exercise.correctAnswer as string
               )}
             >
@@ -266,9 +265,8 @@ export const XPOrthographyExercise = ({
               Reproduir àudio
             </Button>
             <textarea
-              className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-accent resize-none ${
-                showResult ? (isCorrect ? 'border-success' : 'border-destructive') : ''
-              }`}
+              className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-accent resize-none ${showResult ? (isCorrect ? 'border-success' : 'border-destructive') : ''
+                }`}
               rows={3}
               placeholder="Escriu el que has escoltat..."
               value={userAnswer}
@@ -279,8 +277,8 @@ export const XPOrthographyExercise = ({
             />
             {showAnswers && (!hideAnswersUntilComplete || allExercisesCompleted) && (
               <div className="text-sm text-success bg-success/10 p-2 rounded">
-                Text correcte: {Array.isArray(exercise.correctAnswer) 
-                  ? exercise.correctAnswer.join(' / ') 
+                Text correcte: {Array.isArray(exercise.correctAnswer)
+                  ? exercise.correctAnswer.join(' / ')
                   : exercise.correctAnswer}
               </div>
             )}
@@ -292,9 +290,8 @@ export const XPOrthographyExercise = ({
           <div className="space-y-3">
             <Input
               type="text"
-              className={`w-full ${
-                showResult ? (isCorrect ? 'border-success' : 'border-destructive') : ''
-              }`}
+              className={`w-full ${showResult ? (isCorrect ? 'border-success' : 'border-destructive') : ''
+                }`}
               placeholder="Escriu la transformació..."
               value={userAnswer}
               onChange={(e) => setUserAnswer(e.target.value)}
@@ -304,8 +301,8 @@ export const XPOrthographyExercise = ({
             />
             {showAnswers && (!hideAnswersUntilComplete || allExercisesCompleted) && (
               <div className="text-sm text-success bg-success/10 p-2 rounded">
-                Transformació correcta: {Array.isArray(exercise.correctAnswer) 
-                  ? exercise.correctAnswer.join(' / ') 
+                Transformació correcta: {Array.isArray(exercise.correctAnswer)
+                  ? exercise.correctAnswer.join(' / ')
                   : exercise.correctAnswer}
               </div>
             )}
@@ -316,16 +313,16 @@ export const XPOrthographyExercise = ({
         {exercise.type !== 'multiple_choice' && (
           <div className="flex items-center gap-2 pt-4">
             {!showResult ? (
-              <Button 
-                onClick={() => handleSubmit()} 
+              <Button
+                onClick={() => handleSubmit()}
                 disabled={!canSubmit()}
                 className="bg-primary hover:bg-primary/90"
               >
                 Comprovar Resposta
               </Button>
             ) : (
-              <Button 
-                onClick={handleReset} 
+              <Button
+                onClick={handleReset}
                 variant="outline"
                 className="flex items-center gap-2"
               >
@@ -339,8 +336,8 @@ export const XPOrthographyExercise = ({
         {/* Reset button for multiple choice when answered */}
         {exercise.type === 'multiple_choice' && showResult && (
           <div className="flex items-center gap-2 pt-4">
-            <Button 
-              onClick={handleReset} 
+            <Button
+              onClick={handleReset}
               variant="outline"
               className="flex items-center gap-2"
             >
@@ -371,8 +368,8 @@ export const XPOrthographyExercise = ({
               <div>
                 <h4 className="font-medium text-destructive mb-1">Resposta correcta</h4>
                 <p className="text-sm text-muted-foreground">
-                  {Array.isArray(exercise.correctAnswer) 
-                    ? exercise.correctAnswer.join(' o ') 
+                  {Array.isArray(exercise.correctAnswer)
+                    ? exercise.correctAnswer.join(' o ')
                     : exercise.correctAnswer}
                 </p>
               </div>

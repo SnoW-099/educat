@@ -21,6 +21,7 @@ export default function RootLayout({
             <body className="min-h-screen bg-background text-foreground antialiased">
                 <Providers>
                     <AnimatedBackground />
+
                     <div className="relative z-0">
                         {children}
                     </div>

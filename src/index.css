@@ -268,3 +268,109 @@
     transform: translateX(-50%) translateY(10px) rotate(10deg);
   }
 }
+
+/* ============================================
+   REALISTIC PAGE TURN ANIMATION (Right to Left)
+   ============================================ */
+
+@keyframes realistic-page-turn {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+    z-index: 10;
+  }
+
+  30% {
+    transform: perspective(1000px) rotateY(-20deg) scale(1.02);
+    z-index: 10;
+  }
+
+  70% {
+    transform: perspective(1000px) rotateY(-160deg) scale(1.02);
+    z-index: 10;
+  }
+
+  100% {
+    transform: perspective(1000px) rotateY(-180deg);
+    z-index: 0;
+  }
+}
+
+@keyframes dot-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+@keyframes loading-bar {
+  0% {
+    width: 0%;
+    margin-left: 0;
+  }
+
+  50% {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  100% {
+    width: 0%;
+    margin-left: 100%;
+  }
+}
+
+@keyframes loading-progress {
+  0% {
+    width: 0%;
+    background-position: 0% 50%;
+  }
+
+  50% {
+    width: 100%;
+    background-position: 100% 50%;
+  }
+
+  100% {
+    width: 0%;
+    background-position: 0% 50%;
+  }
+}
+
+/* Card entrance animations */
+@keyframes card-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-entrance {
+  animation: card-entrance 0.5s ease-out forwards;
+}
+
+.animate-card-entrance-delay-1 {
+  animation: card-entrance 0.5s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-card-entrance-delay-2 {
+  animation: card-entrance 0.5s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-card-entrance-delay-3 {
+  animation: card-entrance 0.5s ease-out 0.3s forwards;
+  opacity: 0;
+}
