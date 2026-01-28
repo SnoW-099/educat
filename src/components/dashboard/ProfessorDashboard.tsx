@@ -381,7 +381,6 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
         <TabsList className="bg-gradient-surface border shadow-card">
           <TabsTrigger value="classes" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Classes</TabsTrigger>
           <TabsTrigger value="students" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Alumnes</TabsTrigger>
-          <TabsTrigger value="chat" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Xat</TabsTrigger>
           <TabsTrigger value="essays" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Redaccions</TabsTrigger>
           <TabsTrigger value="profile" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Perfil</TabsTrigger>
         </TabsList>
@@ -629,18 +628,6 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
               </CardContent>
             </Card>
           )}
-        </TabsContent>
-
-        <TabsContent value="chat">
-          <Card className="shadow-card">
-            <CardContent className="flex flex-col items-center justify-center py-16">
-              <MessageCircle className="h-16 w-16 text-muted-foreground mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Xat temporalment inactiu</h3>
-              <p className="text-muted-foreground text-center">
-                Estem treballant per millorar aquesta funcionalitat
-              </p>
-            </CardContent>
-          </Card>
         </TabsContent>
 
         <TabsContent value="essays" className="space-y-4">
