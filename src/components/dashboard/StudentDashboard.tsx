@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, Trophy, Target, Users, Newspaper, Zap, TrendingUp } from "lucide-react";
 
 import { EnhancedOrthographySystem } from "@/components/orthography/EnhancedOrthographySystem";
+import { EnhancedChatInterface } from "@/components/chat/EnhancedChatInterface";
 import { StudentStatistics } from "@/components/dashboard/StudentStatistics";
 import { CatalanTheory } from "@/components/theory/CatalanTheory";
 import { NewsList } from "@/components/news/NewsList";
@@ -257,9 +258,20 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
                 <NewsList />
               </TabsContent>
 
-
-
-
+              {studentClass && (
+                <TabsContent
+                  value="chat"
+                  className={cn(
+                    "space-y-4 mt-6",
+                    activeTab === "chat" && !isPanelAnimating && "animate-in fade-in-0 slide-in-from-top-4 duration-400"
+                  )}
+                >
+                  <EnhancedChatInterface
+                    classId={studentClass.id}
+                    chatPermissions={studentClass.chat_permissions}
+                  />
+                </TabsContent>
+              )}
             </div>
           </div>
         </Tabs>
