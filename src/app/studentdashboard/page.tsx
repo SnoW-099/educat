@@ -39,7 +39,7 @@ export default function StudentDashboard() {
     // Show loader if still loading OR minimum time hasn't elapsed
     if (loading || !minTimeElapsed || !user || !profile) {
         return (
-            <div className="min-h-screen bg-background flex items-center justify-center relative">
+            <div className="min-h-screen flex items-center justify-center relative">
                 {/* LiquidBackground removed to use global AnimatedBackground */}
                 <div className="relative z-10">
                     <BookLoader text="Carregant EduCat..." size="lg" />
