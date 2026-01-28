@@ -20,7 +20,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="min-h-screen relative bg-background overflow-hidden font-sans text-foreground">
+        <div className="min-h-screen relative overflow-hidden font-sans text-foreground">
             {/* Same LiquidBackground as StudentDashboard for consistent dark mode */}
             {/* LiquidBackground removed to use global AnimatedBackground */}
 
