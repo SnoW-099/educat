@@ -12,8 +12,6 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Users, BookOpen, MessageCircle, Plus, Copy, Settings, Trash2, Eye, FileText } from "lucide-react";
 import { StudentStatsCard } from "./StudentStatsCard";
 import { useToast } from "@/hooks/use-toast";
-import { ChatInterface } from "@/components/chat/ChatInterface";
-import { EnhancedChatInterface } from "@/components/chat/EnhancedChatInterface";
 import { ProfileManagement } from "@/components/profile/ProfileManagement";
 import { EssayReviewManager } from "@/components/dashboard/EssayReviewManager";
 import { useProfessorData } from "@/hooks/useProfessorData";
