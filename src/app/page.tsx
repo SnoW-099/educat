@@ -32,12 +32,7 @@ export default function Index() {
             {/* LiquidBackground removed to use global AnimatedBackground */}
 
 
-            {/* Ambient background effects */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-blue-400/20 dark:bg-blue-500/10 rounded-full blur-[120px] animate-blob" />
-                <div className="absolute top-[30%] -right-[15%] w-[50%] h-[50%] bg-purple-400/20 dark:bg-purple-500/10 rounded-full blur-[120px] animate-blob animation-delay-2000" />
-                <div className="absolute -bottom-[20%] left-[20%] w-[60%] h-[50%] bg-indigo-400/20 dark:bg-indigo-500/10 rounded-full blur-[120px] animate-blob animation-delay-4000" />
-            </div>
+
 
             <div className="relative z-10 text-center scale-110">
                 <BookLoader
