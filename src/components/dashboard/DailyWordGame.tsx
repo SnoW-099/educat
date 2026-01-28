@@ -1,22 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogHeader, DialogDescription } from '@/components/ui/dialog';
 import { RefreshCw, Delete, Sparkles, Trophy, Play, Check, X } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { BAD_WORDS } from '@/utils/profanityList';
-
-const WORD_LIST = [
-    {
-        letters: ['A', 'E', 'I', 'L', 'N', 'R', 'S'],
-        center: 'A',
-    }
-];
-
-const TARGET_WORDS = 30;
+import { PARAULOGIC_GAMES } from '@/utils/paraulogicGames';
 
 export const DailyWordGame = () => {
-    const [gameData, setGameData] = useState(WORD_LIST[0]);
+    const [gameData, setGameData] = useState(PARAULOGIC_GAMES[0]);
     const [currentGuess, setCurrentGuess] = useState('');
     const [foundWords, setFoundWords] = useState<string[]>([]);
     const [isCompleted, setIsCompleted] = useState(false);
@@ -30,7 +22,7 @@ export const DailyWordGame = () => {
         const dayIndex = today.getDay();
 
         // Set game data based on day
-        const todaysGame = WORD_LIST[dayIndex % WORD_LIST.length];
+        const todaysGame = PARAULOGIC_GAMES[dayIndex % PARAULOGIC_GAMES.length];
         setGameData(todaysGame);
 
         // Load progress
@@ -38,7 +30,7 @@ export const DailyWordGame = () => {
         if (saved) {
             const parsed = JSON.parse(saved);
             setFoundWords(parsed);
-            if (parsed.length >= TARGET_WORDS) {
+            if (parsed.length >= todaysGame.validWords.length) {
                 setIsCompleted(true);
             }
         }
@@ -123,32 +115,11 @@ export const DailyWordGame = () => {
             .replace(/·/g, '')
             .replace(/-/g, '');
 
-    const verifyWordWithApi = async (word: string) => {
-        const cacheKey = `paraulogic_valid_${word}`;
-        const cached = localStorage.getItem(cacheKey);
-        if (cached) return cached === '1';
-
-        try {
-            const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/ca/${word.toLowerCase()}`);
-            if (response.ok) {
-                localStorage.setItem(cacheKey, '1');
-                return true;
-            }
-            if (response.status === 404) {
-                localStorage.setItem(cacheKey, '0');
-                return false;
-            }
-        } catch (error) {
-            console.warn('No es pot verificar la paraula amb l\'API:', error);
-        }
-
-        return null;
-    };
+    const validWordsSet = useMemo(() => new Set(gameData.validWords), [gameData]);
 
     const handleSubmit = async () => {
         if (isCompleted || isVerifying) return;
         const guess = normalizeGuess(currentGuess);
-        const originalGuess = currentGuess.trim().toUpperCase();
 
         if (guess.length < 3) return toast({ description: "Massa curta" });
         if (!guess.includes(gameData.center)) return toast({ description: `Has d'utilitzar la lletra ${gameData.center}` });
@@ -163,9 +134,13 @@ export const DailyWordGame = () => {
             return toast({ title: "Paraula bloquejada", variant: "destructive" });
         }
 
+        if (!validWordsSet.has(guess)) {
+            setCurrentGuess('');
+            return toast({ description: "Només acceptem paraules en català." });
+        }
+
         setIsVerifying(true);
-        await new Promise(resolve => setTimeout(resolve, 300)); // Faster feel
-        const apiResult = await verifyWordWithApi(guess);
+        await new Promise(resolve => setTimeout(resolve, 200));
 
         const newFound = [...foundWords, guess];
         setFoundWords(newFound);
@@ -174,20 +149,17 @@ export const DailyWordGame = () => {
         const today = new Date().toISOString().split('T')[0];
         localStorage.setItem(`paraulogic_daily_${today}`, JSON.stringify(newFound));
 
-        if (newFound.length >= TARGET_WORDS) {
+        if (newFound.length >= gameData.validWords.length) {
             setIsCompleted(true);
             updateStreak();
             toast({ title: "🏆 Enhorabona!", description: "Has completat el joc d'avui!", className: "bg-yellow-50 border-yellow-200" });
-        } else if (apiResult === false) {
-            toast({
-                description: `Acceptem "${originalGuess}" tot i que no l'hem pogut verificar.`,
-            });
         }
         setIsVerifying(false);
     };
 
     const totalPoints = foundWords.reduce((acc, w) => acc + w.length, 0);
-    const progressPerc = Math.min(100, Math.round((foundWords.length / TARGET_WORDS) * 100));
+    const targetWords = gameData.validWords.length;
+    const progressPerc = Math.min(100, Math.round((foundWords.length / targetWords) * 100));
 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -218,7 +190,7 @@ export const DailyWordGame = () => {
                                 {isCompleted ? (
                                     <span>Torna demà per més reptes</span>
                                 ) : (
-                                    <span>{foundWords.length} de {TARGET_WORDS} paraules</span>
+                                    <span>{foundWords.length} de {targetWords} paraules</span>
                                 )}
                             </p>
                         </div>
@@ -322,7 +294,7 @@ export const DailyWordGame = () => {
                                             <Trophy className="w-3 h-3 text-amber-500" /> {totalPoints} punts
                                         </span>
                                         <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600" />
-                                        <span className="text-slate-400">{foundWords.length}/{TARGET_WORDS} trobades</span>
+                                        <span className="text-slate-400">{foundWords.length}/{targetWords} trobades</span>
                                     </DialogDescription>
                                 </div>
                                 <div className="radial-progress text-blue-500 text-xs font-bold" style={{ "--value": progressPerc, "--size": "2.5rem" } as any}>
