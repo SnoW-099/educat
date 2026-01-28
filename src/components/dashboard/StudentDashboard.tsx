@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, Trophy, Target, MessageCircle, Users, Newspaper, Zap, TrendingUp } from "lucide-react";
+import { BookOpen, Trophy, Target, Users, Newspaper, Zap, TrendingUp } from "lucide-react";
 
 import { EnhancedOrthographySystem } from "@/components/orthography/EnhancedOrthographySystem";
 import { StudentStatistics } from "@/components/dashboard/StudentStatistics";
