@@ -632,15 +632,22 @@ export const ProfessorDashboard = ({ user }: ProfessorDashboardProps) => {
         </TabsContent>
 
         <TabsContent value="chat">
-          <Card className="shadow-card">
-            <CardContent className="flex flex-col items-center justify-center py-16">
-              <MessageCircle className="h-16 w-16 text-muted-foreground mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Xat temporalment inactiu</h3>
-              <p className="text-muted-foreground text-center">
-                Estem treballant per millorar aquesta funcionalitat
-              </p>
-            </CardContent>
-          </Card>
+          {selectedClass ? (
+            <EnhancedChatInterface
+              classId={selectedClass.id}
+              chatPermissions={selectedClass.chat_permissions}
+            />
+          ) : (
+            <Card className="shadow-card">
+              <CardContent className="flex flex-col items-center justify-center py-16">
+                <MessageCircle className="h-16 w-16 text-muted-foreground mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Selecciona una classe</h3>
+                <p className="text-muted-foreground text-center">
+                  Tria una classe per veure el xat
+                </p>
+              </CardContent>
+            </Card>
+          )}
         </TabsContent>
 
         <TabsContent value="essays" className="space-y-4">
