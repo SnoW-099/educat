@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, Trophy, Target, MessageCircle, Users, Newspaper, Zap, TrendingUp } from "lucide-react";
+import { BookOpen, Trophy, Target, Users, Newspaper, Zap, TrendingUp } from "lucide-react";
 
 import { EnhancedOrthographySystem } from "@/components/orthography/EnhancedOrthographySystem";
 import { StudentStatistics } from "@/components/dashboard/StudentStatistics";
@@ -52,6 +52,11 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
   };
 
   const orthographyTotals = getOrthographyTotals();
+  const tabs = [
+    { id: 'orthography', label: 'Exercicis', icon: BookOpen },
+    { id: 'theory', label: 'Teoria', icon: Newspaper },
+    { id: 'news', label: 'Notícies', icon: Zap },
+  ];
 
   // Loading is handled at page level, no need to show loader here
 
@@ -171,9 +176,10 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
               >
                 {/* Liquid Glass Sliding Pill */}
                 <div
-                  className="absolute top-1.5 bottom-1.5 left-1.5 w-[calc((100%-12px)/3)] rounded-full z-0"
+                  className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full z-0"
                   style={{
-                    transform: `translateX(${["orthography", "theory", "news"].indexOf(activeTab) * 100}%)`,
+                    width: `calc((100% - 12px) / ${tabs.length})`,
+                    transform: `translateX(${tabs.findIndex((tab) => tab.id === activeTab) * 100}%)`,
                     background: "linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(99, 102, 241, 0.1) 100%)",
                     boxShadow: "0 2px 8px rgba(59, 130, 246, 0.15), inset 0 1px 1px rgba(255,255,255,0.5)",
                     backdropFilter: "blur(8px)",
@@ -184,11 +190,7 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
                 </div>
 
                 {/* Tab Triggers */}
-                {[
-                  { id: 'orthography', label: 'Exercicis', icon: BookOpen },
-                  { id: 'theory', label: 'Teoria', icon: Newspaper },
-                  { id: 'news', label: 'Notícies', icon: Zap },
-                ].map((tab) => (
+                {tabs.map((tab) => (
                   <TabsTrigger
                     key={tab.id}
                     value={tab.id}
