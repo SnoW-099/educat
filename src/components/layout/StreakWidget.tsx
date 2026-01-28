@@ -75,7 +75,7 @@ export const StreakWidget = ({ userId }: StreakWidgetProps) => {
     const getStreakMessage = () => {
         if (!todayCompleted && streak > 0) return 'Fes un exercici! 🎯';
         if (streak === 0) return 'Comença ara!';
-        if (streak === 1) return 'Primera racha!';
+        if (streak === 1) return 'Primera ratxa!';
         if (streak < 3) return 'Segueix així!';
         if (streak < 7) return 'Imparable! 🔥';
         if (streak < 14) return 'Llegenda! ⚡';
@@ -123,7 +123,7 @@ export const StreakWidget = ({ userId }: StreakWidgetProps) => {
 
                         <div>
                             <p className="text-lg font-bold text-slate-900 dark:text-white">
-                                {streak > 0 ? `${streak} ${streak === 1 ? 'dia' : 'dies'}` : 'Sense racha'}
+                                {streak > 0 ? `${streak} ${streak === 1 ? 'dia' : 'dies'}` : 'Sense ratxa'}
                             </p>
                             <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
                                 {getStreakMessage()}
@@ -159,4 +159,3 @@ export const StreakWidget = ({ userId }: StreakWidgetProps) => {
         </Card>
     );
 };
-
