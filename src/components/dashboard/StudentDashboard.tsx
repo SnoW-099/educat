@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, Trophy, Target, MessageCircle, Users, Newspaper, Zap, TrendingUp } from "lucide-react";
 
 import { EnhancedOrthographySystem } from "@/components/orthography/EnhancedOrthographySystem";
+import { EnhancedChatInterface } from "@/components/chat/EnhancedChatInterface";
 import { StudentStatistics } from "@/components/dashboard/StudentStatistics";
 import { CatalanTheory } from "@/components/theory/CatalanTheory";
 import { NewsList } from "@/components/news/NewsList";
@@ -171,9 +172,10 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
               >
                 {/* Liquid Glass Sliding Pill */}
                 <div
-                  className="absolute top-1.5 bottom-1.5 left-1.5 w-[calc((100%-12px)/3)] rounded-full z-0"
+                  className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full z-0"
                   style={{
-                    transform: `translateX(${["orthography", "theory", "news"].indexOf(activeTab) * 100}%)`,
+                    width: `calc((100% - 12px) / ${studentClass ? 4 : 3})`,
+                    transform: `translateX(${["orthography", "theory", "news", "chat"].indexOf(activeTab) * 100}%)`,
                     background: "linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(99, 102, 241, 0.1) 100%)",
                     boxShadow: "0 2px 8px rgba(59, 130, 246, 0.15), inset 0 1px 1px rgba(255,255,255,0.5)",
                     backdropFilter: "blur(8px)",
@@ -188,6 +190,7 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
                   { id: 'orthography', label: 'Exercicis', icon: BookOpen },
                   { id: 'theory', label: 'Teoria', icon: Newspaper },
                   { id: 'news', label: 'Notícies', icon: Zap },
+                  ...(studentClass ? [{ id: 'chat', label: 'Xat', icon: MessageCircle }] : []),
                 ].map((tab) => (
                   <TabsTrigger
                     key={tab.id}
@@ -255,9 +258,20 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
                 <NewsList />
               </TabsContent>
 
-
-
-
+              {studentClass && (
+                <TabsContent
+                  value="chat"
+                  className={cn(
+                    "space-y-4 mt-6",
+                    activeTab === "chat" && !isPanelAnimating && "animate-in fade-in-0 slide-in-from-top-4 duration-400"
+                  )}
+                >
+                  <EnhancedChatInterface
+                    classId={studentClass.id}
+                    chatPermissions={studentClass.chat_permissions}
+                  />
+                </TabsContent>
+              )}
             </div>
           </div>
         </Tabs>
