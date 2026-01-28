@@ -1,11 +1,11 @@
+/* Import professional fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Vercel/Railway Design System - Ultra Professional */
-
-/* Import professional fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @layer base {
   :root {
@@ -373,28 +373,4 @@
 .animate-card-entrance-delay-3 {
   animation: card-entrance 0.5s ease-out 0.3s forwards;
   opacity: 0;
-}
-
-/* ============================================
-   MISSING ORBITAL ANIMATIONS
-   ============================================ */
-@keyframes float-very-slow {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(30px, -50px) rotate(10deg); }
-  66% { transform: translate(-20px, 20px) rotate(-5deg); }
-}
-
-@keyframes float-slow {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(-30px, 30px) rotate(5deg); }
-}
-
-@keyframes float-medium {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(20px, -40px) rotate(-5deg); }
-}
-
-@keyframes float-fast {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(-20px, 20px) rotate(5deg); }
 }
