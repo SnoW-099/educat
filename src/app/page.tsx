@@ -1,6 +1,6 @@
 "use client";
 
-import { LiquidBackground } from "@/components/ui/LiquidBackground";
+
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -29,7 +29,8 @@ export default function Index() {
 
     return (
         <div className="min-h-screen relative flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950">
-            <LiquidBackground />
+            {/* LiquidBackground removed to use global AnimatedBackground */}
+
 
             {/* Ambient background effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">

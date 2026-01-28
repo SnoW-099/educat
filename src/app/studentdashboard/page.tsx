@@ -3,7 +3,7 @@
 import { useAuth } from "@/hooks/useAuth";
 import { Header } from "@/components/layout/Header";
 import { StudentDashboard as StudentDashboardComponent } from "@/components/dashboard/StudentDashboard";
-import { LiquidBackground } from "@/components/ui/LiquidBackground";
+
 import { BookLoader } from "@/components/ui/book-loader";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -40,7 +40,7 @@ export default function StudentDashboard() {
     if (loading || !minTimeElapsed || !user || !profile) {
         return (
             <div className="min-h-screen bg-background flex items-center justify-center relative">
-                <LiquidBackground />
+                {/* LiquidBackground removed to use global AnimatedBackground */}
                 <div className="relative z-10">
                     <BookLoader text="Carregant EduCat..." size="lg" />
                 </div>
@@ -50,7 +50,7 @@ export default function StudentDashboard() {
 
     return (
         <div className="min-h-screen relative">
-            <LiquidBackground />
+            {/* LiquidBackground removed to use global AnimatedBackground */}
             <div className="relative" style={{ zIndex: 10 }}>
                 <Header
                     user={profile}
