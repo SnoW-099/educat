@@ -196,7 +196,7 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
                     key={tab.id}
                     value={tab.id}
                     onClick={(e) => handleTabClick(tab.id, e)}
-                    className="relative flex-1 flex items-center justify-center gap-2 py-2 text-xs sm:text-sm font-medium transition-colors duration-300 z-10 text-slate-600 data-[state=active]:text-slate-900 hover:text-slate-900 dark:text-white/60 dark:data-[state=active]:text-white dark:hover:text-white border-0 border-none shadow-none outline-none ring-0 data-[state=active]:shadow-none data-[state=active]:bg-transparent data-[state=active]:border-none"
+                    className="relative flex-1 flex items-center justify-center gap-2 py-2 text-xs sm:text-sm font-medium transition-all duration-300 z-10 text-slate-600 data-[state=active]:text-slate-900 hover:text-slate-900 hover:-translate-y-0.5 hover:shadow-md hover:bg-transparent dark:hover:bg-transparent dark:text-white/60 dark:data-[state=active]:text-white dark:hover:text-white border-0 border-none shadow-none outline-none ring-0 data-[state=active]:shadow-none data-[state=active]:bg-transparent data-[state=active]:border-none"
                   >
                     <tab.icon className={cn(
                       "w-4 h-4 transition-transform duration-500",
