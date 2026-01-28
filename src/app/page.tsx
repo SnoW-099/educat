@@ -28,7 +28,7 @@ export default function Index() {
     }, [user, profile, loading, router]);
 
     return (
-        <div className="min-h-screen relative flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950">
+        <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
             {/* LiquidBackground removed to use global AnimatedBackground */}
 
 
