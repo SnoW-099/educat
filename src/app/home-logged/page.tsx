@@ -6,7 +6,7 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { FeaturesSection } from "@/components/home/FeaturesSection";
 import { CTASectionLogged } from "@/components/home/CTASectionLogged";
 import { FooterSection } from "@/components/home/FooterSection";
-import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
+
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
