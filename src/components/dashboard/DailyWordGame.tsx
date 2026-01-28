@@ -115,9 +115,40 @@ export const DailyWordGame = () => {
 
     const handleDelete = () => setCurrentGuess(prev => prev.slice(0, -1));
 
+    const normalizeGuess = (value: string) =>
+        value
+            .trim()
+            .toUpperCase()
+            .replace(/[’']/g, '')
+            .replace(/·/g, '')
+            .replace(/-/g, '');
+
+    const verifyWordWithApi = async (word: string) => {
+        const cacheKey = `paraulogic_valid_${word}`;
+        const cached = localStorage.getItem(cacheKey);
+        if (cached) return cached === '1';
+
+        try {
+            const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/ca/${word.toLowerCase()}`);
+            if (response.ok) {
+                localStorage.setItem(cacheKey, '1');
+                return true;
+            }
+            if (response.status === 404) {
+                localStorage.setItem(cacheKey, '0');
+                return false;
+            }
+        } catch (error) {
+            console.warn('No es pot verificar la paraula amb l\'API:', error);
+        }
+
+        return null;
+    };
+
     const handleSubmit = async () => {
         if (isCompleted || isVerifying) return;
-        const guess = currentGuess.toUpperCase();
+        const guess = normalizeGuess(currentGuess);
+        const originalGuess = currentGuess.trim().toUpperCase();
 
         if (guess.length < 3) return toast({ description: "Massa curta" });
         if (!guess.includes(gameData.center)) return toast({ description: `Has d'utilitzar la lletra ${gameData.center}` });
@@ -127,13 +158,14 @@ export const DailyWordGame = () => {
             return toast({ description: "Només pots usar les lletres disponibles." });
         }
 
-        if (BAD_WORDS.includes(guess)) { // Simple check, ideally imported
+        if (BAD_WORDS.includes(guess)) {
             setCurrentGuess('');
             return toast({ title: "Paraula bloquejada", variant: "destructive" });
         }
 
         setIsVerifying(true);
         await new Promise(resolve => setTimeout(resolve, 300)); // Faster feel
+        const apiResult = await verifyWordWithApi(guess);
 
         const newFound = [...foundWords, guess];
         setFoundWords(newFound);
@@ -146,6 +178,10 @@ export const DailyWordGame = () => {
             setIsCompleted(true);
             updateStreak();
             toast({ title: "🏆 Enhorabona!", description: "Has completat el joc d'avui!", className: "bg-yellow-50 border-yellow-200" });
+        } else if (apiResult === false) {
+            toast({
+                description: `Acceptem "${originalGuess}" tot i que no l'hem pogut verificar.`,
+            });
         }
         setIsVerifying(false);
     };
