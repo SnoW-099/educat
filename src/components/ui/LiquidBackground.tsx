@@ -14,13 +14,13 @@ export const LiquidBackground = () => {
                 style={{
                     background: `
                         radial-gradient(ellipse 80% 80% at 50% -20%, 
-                            hsl(var(--primary) / 0.15), 
+                            hsl(var(--primary) / 0.2), 
                             transparent),
                         radial-gradient(ellipse 80% 80% at 80% 60%, 
-                            hsl(var(--accent) / 0.1), 
+                            hsl(var(--accent) / 0.2), 
                             transparent),
                         radial-gradient(ellipse 100% 100% at 20% 80%, 
-                            hsl(var(--primary) / 0.12), 
+                            hsl(var(--primary) / 0.18), 
                             transparent)
                     `
                 }}
@@ -35,7 +35,7 @@ export const LiquidBackground = () => {
                         width: '600px',
                         height: '600px',
                         borderRadius: '50%',
-                        background: 'linear-gradient(135deg, hsl(var(--primary) / 0.3), hsl(var(--accent) / 0.2))',
+                        background: 'linear-gradient(135deg, hsl(var(--primary) / 0.35), hsl(var(--accent) / 0.25))',
                         top: '-10%',
                         left: '10%',
                         animation: 'blob-float 20s ease-in-out infinite',
@@ -50,7 +50,7 @@ export const LiquidBackground = () => {
                         width: '500px',
                         height: '500px',
                         borderRadius: '50%',
-                        background: 'linear-gradient(135deg, hsl(var(--accent) / 0.25), hsl(var(--primary) / 0.25))',
+                        background: 'linear-gradient(135deg, hsl(var(--accent) / 0.3), hsl(var(--primary) / 0.3))',
                         top: '40%',
                         right: '-5%',
                         animation: 'blob-float 18s ease-in-out infinite',
@@ -65,7 +65,7 @@ export const LiquidBackground = () => {
                         width: '550px',
                         height: '550px',
                         borderRadius: '50%',
-                        background: 'linear-gradient(135deg, hsl(var(--primary) / 0.28), hsl(var(--accent) / 0.22))',
+                        background: 'linear-gradient(135deg, hsl(var(--primary) / 0.32), hsl(var(--accent) / 0.28))',
                         bottom: '-10%',
                         left: '-5%',
                         animation: 'blob-float 22s ease-in-out infinite',
@@ -80,7 +80,7 @@ export const LiquidBackground = () => {
                         width: '450px',
                         height: '450px',
                         borderRadius: '50%',
-                        background: 'linear-gradient(135deg, hsl(var(--accent) / 0.2), hsl(var(--primary) / 0.2))',
+                        background: 'linear-gradient(135deg, hsl(var(--accent) / 0.28), hsl(var(--primary) / 0.28))',
                         top: '50%',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',

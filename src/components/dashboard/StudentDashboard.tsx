@@ -116,15 +116,15 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
       <div className="space-y-4 py-6 max-w-5xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-end gap-3 justify-between">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium mb-2 border border-blue-100/50">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-primary rounded-full text-xs font-medium mb-2 border border-white/10">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               Aprenentatge actiu
             </div>
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-foreground">
-              {getGreeting()}, <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">{user.name}</span>
+              {getGreeting()}, <span className="bg-gradient-to-r from-primary to-indigo-300 bg-clip-text text-transparent">{user.name}</span>
             </h1>
           </div>
           <div className="text-right hidden sm:block">
@@ -167,20 +167,20 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
             <div className="relative w-full max-w-xl">
               <TabsList
                 ref={tabsListRef}
-                className="relative flex w-full h-auto p-1.5 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-full shadow-lg border border-white/20 dark:border-slate-700/50 transition-all duration-300"
+                className="relative flex w-full h-auto p-1.5 bg-white/5 backdrop-blur-xl rounded-full shadow-lg border border-white/10 transition-all duration-300"
               >
                 {/* Liquid Glass Sliding Pill */}
                 <div
                   className="absolute top-1.5 bottom-1.5 left-1.5 w-[calc((100%-12px)/3)] rounded-full z-0"
                   style={{
                     transform: `translateX(${["orthography", "theory", "news"].indexOf(activeTab) * 100}%)`,
-                    background: "linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(99, 102, 241, 0.1) 100%)",
-                    boxShadow: "0 2px 8px rgba(59, 130, 246, 0.15), inset 0 1px 1px rgba(255,255,255,0.5)",
+                    background: "linear-gradient(135deg, rgba(124, 58, 237, 0.35) 0%, rgba(99, 102, 241, 0.25) 100%)",
+                    boxShadow: "0 2px 12px rgba(124, 58, 237, 0.3), inset 0 1px 1px rgba(255,255,255,0.2)",
                     backdropFilter: "blur(8px)",
                     transition: "transform 700ms cubic-bezier(0.25, 1, 0.5, 1)"
                   }}
                 >
-                  <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-5 h-[3px] bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full shadow-sm shadow-blue-500/50" />
+                  <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-5 h-[3px] bg-gradient-to-r from-primary to-indigo-300 rounded-full shadow-sm shadow-primary/50" />
                 </div>
 
                 {/* Tab Triggers */}
@@ -193,11 +193,11 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
                     key={tab.id}
                     value={tab.id}
                     onClick={(e) => handleTabClick(tab.id, e)}
-                    className="relative flex-1 flex items-center justify-center gap-2 py-2 text-xs sm:text-sm font-medium transition-colors duration-300 z-10 text-slate-600 data-[state=active]:text-slate-900 hover:text-slate-900 dark:text-white/60 dark:data-[state=active]:text-white dark:hover:text-white border-0 border-none shadow-none outline-none ring-0 data-[state=active]:shadow-none data-[state=active]:bg-transparent data-[state=active]:border-none"
+                    className="relative flex-1 flex items-center justify-center gap-2 py-2 text-xs sm:text-sm font-medium transition-colors duration-300 z-10 text-muted-foreground data-[state=active]:text-foreground hover:text-foreground border-0 border-none shadow-none outline-none ring-0 data-[state=active]:shadow-none data-[state=active]:bg-transparent data-[state=active]:border-none"
                   >
                     <tab.icon className={cn(
                       "w-4 h-4 transition-transform duration-500",
-                      activeTab === tab.id ? "scale-110 text-slate-900 dark:text-white" : "scale-100 text-slate-500 dark:text-white/60"
+                      activeTab === tab.id ? "scale-110 text-foreground" : "scale-100 text-muted-foreground"
                     )} />
                     <span className={cn(
                       "hidden sm:inline transition-opacity duration-300",

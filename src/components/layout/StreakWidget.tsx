@@ -64,12 +64,12 @@ export const StreakWidget = ({ userId }: StreakWidgetProps) => {
     };
 
     const getFlameColor = () => {
-        if (streak === 0) return 'text-slate-300';
-        if (streak < 3) return 'text-orange-400';
-        if (streak < 7) return 'text-orange-500';
-        if (streak < 14) return 'text-red-500';
-        if (streak < 30) return 'text-red-600';
-        return 'text-purple-500';
+        if (streak === 0) return 'text-muted-foreground';
+        if (streak < 3) return 'text-amber-400';
+        if (streak < 7) return 'text-amber-500';
+        if (streak < 14) return 'text-orange-400';
+        if (streak < 30) return 'text-primary';
+        return 'text-indigo-300';
     };
 
     const getStreakMessage = () => {
@@ -94,13 +94,13 @@ export const StreakWidget = ({ userId }: StreakWidgetProps) => {
 
     return (
         <Card
-            className={`relative overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 h-full flex flex-col`}
+            className="relative overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl border border-white/10 bg-white/5 shadow-lg shadow-black/40 h-full flex flex-col"
             onMouseEnter={() => setIsFlaming(true)}
             onMouseLeave={() => setIsFlaming(false)}
         >
             {/* Glow effect for high streaks */}
             {streak >= 7 && (
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-indigo-400/10 animate-pulse" />
             )}
 
             <div className="p-6 relative z-10 flex flex-col h-full justify-between">
@@ -122,10 +122,10 @@ export const StreakWidget = ({ userId }: StreakWidgetProps) => {
                         </div>
 
                         <div>
-                            <p className="text-lg font-bold text-slate-900 dark:text-white">
+                            <p className="text-lg font-bold text-foreground">
                                 {streak > 0 ? `${streak} ${streak === 1 ? 'dia' : 'dies'}` : 'Sense racha'}
                             </p>
-                            <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                            <p className="text-xs text-muted-foreground font-medium">
                                 {getStreakMessage()}
                             </p>
                         </div>
@@ -133,8 +133,8 @@ export const StreakWidget = ({ userId }: StreakWidgetProps) => {
 
                     {/* Status indicator */}
                     <div className={`px-2 py-1 rounded-full text-xs font-semibold ${todayCompleted
-                        ? 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400'
-                        : 'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-400'
+                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
+                        : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
                         }`}>
                         {todayCompleted ? '✓ Avui' : 'Pendent'}
                     </div>
@@ -143,13 +143,13 @@ export const StreakWidget = ({ userId }: StreakWidgetProps) => {
 
                 {/* Stats row */}
                 {longestStreak > 0 && (
-                    <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-200/50 dark:border-slate-600">
-                        <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
+                    <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/10">
+                        <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                             <TrendingUp className="w-3 h-3" />
-                            <span>Millor: <strong className="text-slate-700 dark:text-slate-200">{longestStreak} dies</strong></span>
+                            <span>Millor: <strong className="text-foreground">{longestStreak} dies</strong></span>
                         </div>
                         {streak >= longestStreak && streak > 1 && (
-                            <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-semibold">
+                            <span className="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full font-semibold border border-primary/30">
                                 🏆 Rècord!
                             </span>
                         )}
@@ -159,4 +159,3 @@ export const StreakWidget = ({ userId }: StreakWidgetProps) => {
         </Card>
     );
 };
-

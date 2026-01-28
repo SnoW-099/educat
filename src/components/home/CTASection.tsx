@@ -27,24 +27,24 @@ export const CTASection = () => {
   return (
     <section className="py-40 relative overflow-hidden z-10">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-400/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-400/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-14">
           {/* Stats row */}
-          <div className="grid grid-cols-3 gap-8 mb-20 animate-fade-in text-slate-900">
+          <div className="grid grid-cols-3 gap-8 mb-20 animate-fade-in text-foreground">
             <div className="text-center space-y-3">
-              <p className="text-5xl sm:text-6xl font-bold font-mono text-blue-600">500+</p>
-              <p className="text-sm sm:text-base text-slate-500 font-medium">Exercicis</p>
+              <p className="text-5xl sm:text-6xl font-bold font-mono text-primary">500+</p>
+              <p className="text-sm sm:text-base text-muted-foreground font-medium">Exercicis</p>
             </div>
             <div className="text-center space-y-3">
-              <p className="text-5xl sm:text-6xl font-bold font-mono text-indigo-600">A1-C2</p>
-              <p className="text-sm sm:text-base text-slate-500 font-medium">Nivells</p>
+              <p className="text-5xl sm:text-6xl font-bold font-mono text-indigo-300">A1-C2</p>
+              <p className="text-sm sm:text-base text-muted-foreground font-medium">Nivells</p>
             </div>
             <div className="text-center space-y-3">
-              <p className="text-5xl sm:text-6xl font-bold font-mono text-purple-600">100%</p>
-              <p className="text-sm sm:text-base text-slate-500 font-medium">Gratuït</p>
+              <p className="text-5xl sm:text-6xl font-bold font-mono text-purple-300">100%</p>
+              <p className="text-sm sm:text-base text-muted-foreground font-medium">Gratuït</p>
             </div>
           </div>
 
@@ -66,8 +66,8 @@ export const CTASection = () => {
           {/* Benefits */}
           <div className="flex items-center justify-center gap-8 flex-wrap animate-fade-in" style={{ animationDelay: '0.2s' }}>
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center gap-2.5 text-base text-slate-700">
-                <CheckCircle2 className="h-5 w-5 text-blue-600" />
+              <div key={index} className="flex items-center gap-2.5 text-base text-muted-foreground">
+                <CheckCircle2 className="h-5 w-5 text-primary" />
                 <span className="font-medium">{benefit}</span>
               </div>
             ))}
@@ -76,7 +76,7 @@ export const CTASection = () => {
           <div className="animate-scale-in" style={{ animationDelay: '0.3s' }}>
             <Button
               size="lg"
-              className={`${hasSession ? 'bg-green-600 hover:bg-green-700' : 'bg-blue-600 hover:bg-blue-700'} text-white font-bold px-12 py-8 text-lg shadow-xl rounded-xl transition-all duration-300 hover:scale-105 group`}
+              className={`${hasSession ? 'bg-emerald-500 hover:bg-emerald-600' : 'bg-primary hover:bg-primary/90'} text-white font-bold px-12 py-8 text-lg shadow-xl rounded-xl transition-all duration-300 hover:scale-105 group`}
               onClick={handleGetStarted}
             >
               {hasSession ? 'Continuar aprenent' : 'Començar gratis'}

@@ -192,29 +192,29 @@ export const DailyWordGame = () => {
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-                <Card className="group relative overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer h-full flex flex-col justify-between">
+                <Card className="group relative overflow-hidden border border-white/10 bg-white/5 shadow-lg shadow-black/40 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 cursor-pointer h-full flex flex-col justify-between">
                     {/* Background Gradient */}
-                    <div className={`absolute inset-0 transition-colors ${isCompleted ? 'bg-gradient-to-br from-amber-50 to-orange-50/50 dark:from-amber-900/20 dark:to-orange-900/10' : 'bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-800 group-hover:from-blue-50/50 dark:group-hover:from-blue-900/20 group-hover:to-white dark:group-hover:to-slate-800'}`} />
+                    <div className={`absolute inset-0 transition-colors ${isCompleted ? 'bg-gradient-to-br from-emerald-500/10 to-amber-500/10' : 'bg-gradient-to-br from-white/5 to-transparent group-hover:from-primary/10 group-hover:to-transparent'}`} />
 
                     <CardContent className="p-6 relative flex flex-col items-center justify-center h-full text-center space-y-4">
-                        <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 ${isCompleted ? 'bg-amber-100 dark:bg-amber-900/50 scale-110' : 'bg-blue-100/50 dark:bg-blue-900/30 group-hover:scale-110 group-hover:bg-blue-100 dark:group-hover:bg-blue-800/50'}`}>
+                        <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 ${isCompleted ? 'bg-amber-500/20 scale-110' : 'bg-primary/20 group-hover:scale-110 group-hover:bg-primary/30'}`}>
                             {isCompleted ? (
-                                <Trophy className="w-8 h-8 text-amber-500 animate-pulse" />
+                                <Trophy className="w-8 h-8 text-amber-300 animate-pulse" />
                             ) : (
                                 <div className="grid grid-cols-2 gap-1 rotate-45 scale-75">
-                                    <div className="w-6 h-6 bg-blue-500 rounded-md"></div>
-                                    <div className="w-6 h-6 bg-blue-300 rounded-md"></div>
-                                    <div className="w-6 h-6 bg-blue-300 rounded-md"></div>
-                                    <div className="w-6 h-6 bg-slate-200 rounded-md"></div>
+                                    <div className="w-6 h-6 bg-primary rounded-md"></div>
+                                    <div className="w-6 h-6 bg-indigo-300 rounded-md"></div>
+                                    <div className="w-6 h-6 bg-indigo-300 rounded-md"></div>
+                                    <div className="w-6 h-6 bg-white/20 rounded-md"></div>
                                 </div>
                             )}
                         </div>
 
                         <div>
-                            <h3 className={`text-xl font-bold mb-1 ${isCompleted ? 'text-amber-700 dark:text-amber-400' : 'text-slate-800 dark:text-white'}`}>
+                            <h3 className={`text-xl font-bold mb-1 ${isCompleted ? 'text-amber-300' : 'text-foreground'}`}>
                                 {isCompleted ? 'Completat!' : 'Paraulògic'}
                             </h3>
-                            <p className={`text-sm font-medium ${isCompleted ? 'text-amber-600/80 dark:text-amber-400/80' : 'text-slate-500 dark:text-slate-400'}`}>
+                            <p className={`text-sm font-medium ${isCompleted ? 'text-amber-300/80' : 'text-muted-foreground'}`}>
                                 {isCompleted ? (
                                     <span>Torna demà per més reptes</span>
                                 ) : (
@@ -225,37 +225,37 @@ export const DailyWordGame = () => {
 
                         {/* Mini progress bar or Streak Badge */}
                         {isCompleted ? (
-                            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/60 border border-amber-200/50 rounded-full shadow-sm">
-                                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                                <span className="text-xs font-bold text-amber-700">Ratxa: {paraulogicStreak} dies</span>
+                            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 border border-amber-500/30 rounded-full shadow-sm">
+                                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                                <span className="text-xs font-bold text-amber-300">Ratxa: {paraulogicStreak} dies</span>
                             </div>
                         ) : (
-                            <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
-                                <div className="h-full bg-blue-500 transition-all duration-500" style={{ width: `${progressPerc}%` }} />
+                            <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div className="h-full bg-primary transition-all duration-500" style={{ width: `${progressPerc}%` }} />
                             </div>
                         )}
 
-                        <Button variant="ghost" className={`${isCompleted ? 'text-amber-600 hover:bg-amber-100' : 'text-blue-600 group-hover:bg-blue-50'} font-semibold`}>
+                        <Button variant="ghost" className={`${isCompleted ? 'text-amber-300 hover:bg-amber-500/10' : 'text-primary group-hover:bg-primary/10'} font-semibold`}>
                             {isCompleted ? 'Veure resum' : 'Jugar ara'} <Play className="w-4 h-4 ml-2 fill-current" />
                         </Button>
                     </CardContent>
                 </Card>
             </DialogTrigger>
 
-            <DialogContent className="max-w-2xl bg-white dark:bg-slate-800 backdrop-blur-xl border-slate-100 dark:border-slate-700 shadow-2xl p-0 gap-0 overflow-hidden sm:rounded-3xl">
+            <DialogContent className="max-w-2xl bg-black/80 backdrop-blur-xl border-white/10 shadow-2xl p-0 gap-0 overflow-hidden sm:rounded-3xl">
                 <div className="grid md:grid-cols-2 h-[600px] md:h-[500px]">
 
                     {/* Game Area (Left/Top) */}
-                    <div className="p-8 flex flex-col items-center justify-center relative bg-slate-50/50 dark:bg-slate-900/50">
+                    <div className="p-8 flex flex-col items-center justify-center relative bg-white/5">
                         {/* Current Guess Display */}
                         <div className="h-16 flex items-center justify-center mb-6 w-full relative">
-                            <span className={`text-3xl font-black tracking-[0.2em] text-slate-800 dark:text-white transition-all ${isVerifying ? 'opacity-50 blur-sm' : ''}`}>
-                                {currentGuess || <span className="text-slate-200 animate-pulse">...</span>}
+                            <span className={`text-3xl font-black tracking-[0.2em] text-foreground transition-all ${isVerifying ? 'opacity-50 blur-sm' : ''}`}>
+                                {currentGuess || <span className="text-muted-foreground animate-pulse">...</span>}
                             </span>
                             {currentGuess && (
                                 <button
                                     onClick={handleDelete}
-                                    className="absolute right-0 p-2 text-red-600 hover:text-red-700 transition-colors bg-white rounded-md shadow-md border border-red-300"
+                                    className="absolute right-0 p-2 text-red-300 hover:text-red-200 transition-colors bg-white/10 rounded-md shadow-md border border-red-500/30"
                                 >
                                     <Delete className="w-6 h-6" />
                                 </button>
@@ -296,11 +296,11 @@ export const DailyWordGame = () => {
 
                         {/* Controls */}
                         <div className="flex gap-4 mt-8">
-                            <Button size="icon" variant="outline" className="rounded-full border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-700 hover:border-blue-300" onClick={handleShuffle}>
-                                <RefreshCw className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+                            <Button size="icon" variant="outline" className="rounded-full border-white/10 hover:bg-white/10 hover:border-primary/40" onClick={handleShuffle}>
+                                <RefreshCw className="w-5 h-5 text-muted-foreground" />
                             </Button>
                             <Button
-                                className="px-8 rounded-full bg-slate-900 hover:bg-blue-600 text-white font-bold tracking-widest transition-all shadow-lg hover:shadow-blue-200"
+                                className="px-8 rounded-full bg-primary hover:bg-primary/90 text-white font-bold tracking-widest transition-all shadow-lg hover:shadow-primary/40"
                                 onClick={handleSubmit}
                                 disabled={!currentGuess}
                             >
@@ -310,39 +310,39 @@ export const DailyWordGame = () => {
                     </div>
 
                     {/* Scoreboard (Right/Bottom) */}
-                    <div className="bg-white dark:bg-slate-800 border-l border-slate-100 dark:border-slate-700 flex flex-col h-full">
-                        <DialogHeader className="p-6 border-b border-slate-50 dark:border-slate-700 bg-slate-50/30 dark:bg-slate-800/50">
+                    <div className="bg-black/60 border-l border-white/10 flex flex-col h-full">
+                        <DialogHeader className="p-6 border-b border-white/10 bg-white/5">
                             <div className="flex items-center justify-between">
                                 <div className="space-y-1">
-                                    <DialogTitle className="text-xl font-bold flex items-center gap-2 dark:text-white">
-                                        Paraulògic <span className="px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-[10px] uppercase font-bold tracking-wide">AVUI</span>
+                                    <DialogTitle className="text-xl font-bold flex items-center gap-2 text-foreground">
+                                        Paraulògic <span className="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-[10px] uppercase font-bold tracking-wide border border-primary/30">AVUI</span>
                                     </DialogTitle>
                                     <DialogDescription className="flex items-center gap-3 text-sm">
-                                        <span className="flex items-center gap-1 text-slate-600 dark:text-slate-300">
-                                            <Trophy className="w-3 h-3 text-amber-500" /> {totalPoints} punts
+                                        <span className="flex items-center gap-1 text-muted-foreground">
+                                            <Trophy className="w-3 h-3 text-amber-300" /> {totalPoints} punts
                                         </span>
-                                        <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600" />
-                                        <span className="text-slate-400">{foundWords.length}/{TARGET_WORDS} trobades</span>
+                                        <span className="w-1 h-1 rounded-full bg-white/20" />
+                                        <span className="text-muted-foreground">{foundWords.length}/{TARGET_WORDS} trobades</span>
                                     </DialogDescription>
                                 </div>
-                                <div className="radial-progress text-blue-500 text-xs font-bold" style={{ "--value": progressPerc, "--size": "2.5rem" } as any}>
+                                <div className="radial-progress text-primary text-xs font-bold" style={{ "--value": progressPerc, "--size": "2.5rem" } as any}>
                                     {progressPerc}%
                                 </div>
                             </div>
                         </DialogHeader>
 
-                        <div className="flex-1 overflow-y-auto p-6 scrollbar-thin scrollbar-thumb-slate-200">
+                        <div className="flex-1 overflow-y-auto p-6 scrollbar-thin scrollbar-thumb-white/10">
                             <div className="flex flex-wrap gap-2 content-start">
                                 {foundWords.length > 0 ? (
                                     foundWords.map(word => (
-                                        <span key={word} className="px-3 py-1 bg-white dark:bg-slate-700 border border-slate-100 dark:border-slate-600 shadow-sm rounded-lg text-sm font-semibold text-slate-700 dark:text-white animate-in zoom-in-50 duration-300">
+                                        <span key={word} className="px-3 py-1 bg-white/10 border border-white/10 shadow-sm rounded-lg text-sm font-semibold text-foreground animate-in zoom-in-50 duration-300">
                                             {word}
                                         </span>
                                     ))
                                 ) : (
                                     <div className="flex flex-col items-center justify-center w-full h-full text-center space-y-3 opacity-40 mt-10">
-                                        <div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center">
-                                            <Sparkles className="w-6 h-6 text-slate-400" />
+                                        <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center">
+                                            <Sparkles className="w-6 h-6 text-muted-foreground" />
                                         </div>
                                         <p className="text-sm font-medium">Troba paraules de 3+ lletres.<br />La lletra central és obligatòria.</p>
                                     </div>
@@ -369,14 +369,14 @@ const HexagonButton = ({ letter, onClick, type = 'normal' }: { letter: string, o
             <div
                 className={`absolute inset-0 transition-all duration-300 shadow-sm rounded-2xl rotate-45 group-hover:rotate-[55deg]
                     ${isCenter
-                        ? 'bg-blue-600 shadow-blue-200 shadow-lg scale-110 z-10'
-                        : 'bg-white border-2 border-slate-100 group-hover:border-blue-200 group-hover:bg-slate-50'
+                        ? 'bg-primary shadow-primary/40 shadow-lg scale-110 z-10'
+                        : 'bg-white/10 border-2 border-white/10 group-hover:border-primary/40 group-hover:bg-white/20'
                     }`}
             />
 
             {/* Letter Content */}
             <span className={`absolute inset-0 flex items-center justify-center z-20 text-2xl font-black select-none
-                ${isCenter ? 'text-white' : 'text-slate-700 group-hover:text-blue-600'}
+                ${isCenter ? 'text-white' : 'text-foreground group-hover:text-primary'}
             `}>
                 {letter}
             </span>

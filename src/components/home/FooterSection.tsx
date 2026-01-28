@@ -2,7 +2,7 @@ import { Github, Twitter } from "lucide-react";
 
 export const FooterSection = () => {
   return (
-    <footer className="border-t border-border bg-background relative z-10">
+    <footer className="border-t border-white/10 bg-background/60 backdrop-blur-xl relative z-10">
       <div className="container mx-auto px-6 py-16">
         <div className="max-w-4xl mx-auto">
           {/* Main content */}

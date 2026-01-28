@@ -10,166 +10,130 @@
 @layer base {
   :root {
     /* ============================================
-       PALETA MODERNA ESTILO APPLE (LIGHT ONLY)
-       Monocromático mejorado con acento azul suave
+       DARK ULTRA VIOLET THEME
        ============================================ */
 
-    /* Fondos */
-    --background: 0 0% 100%;
-    /* Blanco puro */
-    --foreground: 0 0% 10%;
-    /* Gris muy oscuro, casi negro, más suave */
-
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
-
-    /* Primary: Azul estilo Apple #007AFF */
-    --primary: 210 100% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    /* Secondary: Gris muy claro mejorado */
-    --secondary: 210 20% 96%;
-    /* Ligero tinte azulado muy sutil */
-    --secondary-foreground: 222 47% 11%;
-
-    /* Accent: Azul suave para elementos secundarios */
-    --accent: 210 100% 96%;
-    --accent-foreground: 210 100% 45%;
-
-    /* Tertiary: Gris medio mejorado */
-    --tertiary: 210 20% 96%;
-    --tertiary-foreground: 215 16% 47%;
-
-    /* Muted: Gris suave mejorado */
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    /* Destructive: Rojo suave estilo Apple */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    /* Borders & Inputs */
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 210 100% 50%;
-
-    /* Estados */
-    --success: 142 71% 45%;
-    --success-foreground: 0 0% 100%;
-
-    --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 10%;
-
-    /* Gradientes Modernos con acento azul */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%), hsl(210 100% 45%));
-    --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 100% 98%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(210 100% 96%), hsl(210 100% 98%));
-    --gradient-surface: hsl(210 100% 99%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 100% 99%));
-
-    /* Sombras - Más suaves y naturales */
-    --shadow-minimal: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-    --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
-    --shadow-focus: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(210 100% 50% / 0.2);
-    --shadow-elevation: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
-
-    /* Bordes redondeados sutiles */
-    --radius: 0.75rem;
-    /* 12px */
-
-    /* Sidebar */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    /* ============================================
-       PALETA MODO OSCURO ESTILO APPLE
-       ============================================ */
-
-    /* Fondos */
-    --background: 0 0% 3.9%;
-    /* Gris muy oscuro, casi negro */
+    --background: 240 20% 7%;
     --foreground: 0 0% 98%;
-    /* Blanco puro */
 
-    --card: 0 0% 3.9%;
+    --card: 240 18% 10%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 3.9%;
+    --popover: 240 18% 10%;
     --popover-foreground: 0 0% 98%;
 
-    /* Primary: Azul estilo Apple #007AFF */
-    --primary: 210 100% 50%;
+    --primary: 265 85% 62%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary: Gris oscuro mejorado */
-    --secondary: 210 20% 8%;
-    --secondary-foreground: 222 47% 89%;
+    --secondary: 240 16% 14%;
+    --secondary-foreground: 0 0% 95%;
 
-    /* Accent: Azul oscuro para elementos secundarios */
-    --accent: 210 100% 8%;
-    --accent-foreground: 210 100% 55%;
+    --accent: 268 50% 18%;
+    --accent-foreground: 270 80% 70%;
 
-    /* Tertiary: Gris medio oscuro */
-    --tertiary: 210 20% 12%;
-    --tertiary-foreground: 215 16% 83%;
+    --tertiary: 240 18% 16%;
+    --tertiary-foreground: 240 10% 75%;
 
-    /* Muted: Gris oscuro suave */
-    --muted: 210 40% 3.9%;
-    --muted-foreground: 215.4 16.3% 83.9%;
+    --muted: 240 12% 16%;
+    --muted-foreground: 240 8% 70%;
 
-    /* Destructive: Rojo oscuro */
-    --destructive: 0 62% 55%;
+    --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders & Inputs */
-    --border: 214.3 31.8% 12.9%;
-    --input: 214.3 31.8% 12.9%;
-    --ring: 210 100% 50%;
+    --border: 240 12% 18%;
+    --input: 240 12% 18%;
+    --ring: 265 85% 62%;
 
-    /* Estados */
-    --success: 142 71% 55%;
+    --success: 142 62% 52%;
     --success-foreground: 0 0% 10%;
 
     --warning: 38 92% 60%;
     --warning-foreground: 0 0% 10%;
 
-    /* Gradientes Modernos para modo oscuro */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%), hsl(210 100% 45%));
-    --gradient-card: linear-gradient(180deg, rgba(10, 10, 10, 0.8), rgba(20, 20, 20, 0.4));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 3.9%) 0%, hsl(210 100% 8%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(210 100% 8%), hsl(210 100% 12%));
-    --gradient-surface: hsl(210 100% 6%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 3.9%), hsl(210 100% 6%));
+    --gradient-primary: linear-gradient(135deg, hsl(265 85% 62%), hsl(250 90% 58%));
+    --gradient-card: linear-gradient(180deg, rgba(20, 18, 34, 0.9), rgba(16, 14, 26, 0.7));
+    --gradient-hero: radial-gradient(circle at top, rgba(124, 58, 237, 0.25), transparent 60%);
+    --gradient-accent: linear-gradient(135deg, rgba(72, 36, 128, 0.6), rgba(32, 24, 56, 0.9));
+    --gradient-surface: hsl(240 18% 11%);
+    --gradient-subtle: linear-gradient(180deg, hsl(240 20% 7%), hsl(240 16% 10%));
 
-    /* Sombras - Más intensas para modo oscuro */
-    --shadow-minimal: 0 1px 2px 0 rgb(0 0 0 / 0.25);
-    --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.25), 0 2px 4px -2px rgb(0 0 0 / 0.25);
-    --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
-    --shadow-focus: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(210 100% 50% / 0.3);
-    --shadow-elevation: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+    --shadow-minimal: 0 1px 2px 0 rgb(0 0 0 / 0.2);
+    --shadow-card: 0 10px 30px -12px rgb(0 0 0 / 0.55);
+    --shadow-hover: 0 16px 35px -12px rgb(0 0 0 / 0.6);
+    --shadow-focus: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(265 85% 62% / 0.35);
+    --shadow-elevation: 0 30px 50px -20px rgb(0 0 0 / 0.7);
 
-    /* Sidebar */
-    --sidebar-background: 0 0% 3.9%;
-    --sidebar-foreground: 240 5.3% 83.9%;
-    --sidebar-primary: 240 5.9% 90%;
-    --sidebar-primary-foreground: 0 0% 3.9%;
-    --sidebar-accent: 240 4.8% 8.9%;
-    --sidebar-accent-foreground: 240 5.9% 90%;
-    --sidebar-border: 220 13% 12.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 1rem;
+
+    --sidebar-background: 240 18% 9%;
+    --sidebar-foreground: 0 0% 92%;
+    --sidebar-primary: 265 85% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 16% 16%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 240 12% 18%;
+    --sidebar-ring: 265 85% 62%;
+  }
+
+  .dark {
+    --background: 240 18% 6%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 16% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 18% 9%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 265 90% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 16% 12%;
+    --secondary-foreground: 0 0% 95%;
+
+    --accent: 268 50% 16%;
+    --accent-foreground: 270 80% 75%;
+
+    --tertiary: 240 16% 12%;
+    --tertiary-foreground: 240 10% 75%;
+
+    --muted: 240 12% 14%;
+    --muted-foreground: 240 8% 72%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 12% 16%;
+    --input: 240 12% 16%;
+    --ring: 265 90% 68%;
+
+    --success: 142 62% 52%;
+    --success-foreground: 0 0% 10%;
+
+    --warning: 38 92% 60%;
+    --warning-foreground: 0 0% 10%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(265 90% 68%), hsl(250 90% 60%));
+    --gradient-card: linear-gradient(180deg, rgba(16, 14, 26, 0.9), rgba(12, 10, 20, 0.7));
+    --gradient-hero: radial-gradient(circle at top, rgba(124, 58, 237, 0.3), transparent 60%);
+    --gradient-accent: linear-gradient(135deg, rgba(72, 36, 128, 0.7), rgba(24, 18, 44, 0.95));
+    --gradient-surface: hsl(240 16% 8%);
+    --gradient-subtle: linear-gradient(180deg, hsl(240 18% 6%), hsl(240 16% 8%));
+
+    --shadow-minimal: 0 1px 2px 0 rgb(0 0 0 / 0.35);
+    --shadow-card: 0 12px 30px -15px rgb(0 0 0 / 0.7);
+    --shadow-hover: 0 20px 40px -15px rgb(0 0 0 / 0.75);
+    --shadow-focus: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(265 90% 68% / 0.35);
+    --shadow-elevation: 0 35px 60px -20px rgb(0 0 0 / 0.8);
+
+    --sidebar-background: 240 16% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 265 90% 68%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 16% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 12% 16%;
+    --sidebar-ring: 265 90% 68%;
   }
 
   /* ============================================
@@ -178,22 +142,22 @@
 
   /* Glassmorphism Effects */
   .glass-card {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+    background: rgba(22, 20, 35, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 45px -25px rgba(0, 0, 0, 0.65);
   }
 
   .dark .glass-card {
-    background: rgba(10, 10, 10, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    background: rgba(14, 12, 24, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 20px 45px -25px rgba(0, 0, 0, 0.75);
   }
 
   /* Gradient Text */
   .text-gradient {
-    background: linear-gradient(135deg, hsl(210 100% 45%), hsl(210 100% 60%));
+    background: linear-gradient(135deg, hsl(265 90% 70%), hsl(240 90% 65%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -209,7 +173,7 @@
     font-feature-settings: "ss01", "ss02", "cv01", "cv03";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: transparent;
+    background-color: hsl(var(--background));
     /* For AnimatedBackground visibility */
   }
 
