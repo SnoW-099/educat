@@ -16,7 +16,7 @@ export const FeaturesSection = () => {
     {
       icon: Users,
       title: "Classes Virtuals",
-      description: "Uneix-te a classes amb professors i altres alumnes. Xat integrat i seguiment del progrés en temps real."
+      description: "Uneix-te a classes amb professors i altres alumnes amb seguiment del progrés en temps real."
     },
     {
       icon: Zap,
