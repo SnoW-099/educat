@@ -6,7 +6,7 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { FeaturesSection } from "@/components/home/FeaturesSection";
 import { CTASection } from "@/components/home/CTASection";
 import { FooterSection } from "@/components/home/FooterSection";
-import { LiquidBackground } from "@/components/ui/LiquidBackground";
+
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -20,9 +20,9 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="min-h-screen relative bg-background overflow-hidden font-sans text-foreground">
+        <div className="min-h-screen relative overflow-hidden font-sans text-foreground">
             {/* Same LiquidBackground as StudentDashboard for consistent dark mode */}
-            <LiquidBackground />
+            {/* LiquidBackground removed to use global AnimatedBackground */}
 
             <div className="relative z-10">
                 <Header
