@@ -65,6 +65,46 @@ const TEMP_ORTHOGRAPHY_SECTIONS: OrthographySection[] = [
     category: 'ortografia' as const,
     exercises: ALPHABET_EXERCISES
   },
+  {
+    id: 'accentuacio_c1',
+    title: 'Accentuació C1',
+    description: 'Separació de síl·labes i classificació segons la síl·laba tònica',
+    category: 'ortografia' as const,
+    exercises: [
+      {
+        id: 'c1_sillaba_tonica',
+        type: 'classification',
+        question: 'Separeu en síl·labes les paraules següents i classifiqueu-les segons la posició de la síl·laba tònica: panet, remei, crèdit, futbol, Himàlaia, desmai, atmosfera, déu, almoina, queixal, ciutats, ràdio, runa, gràssius, delinqüent, seqüència, ús, safareig.',
+        options: [
+          "Mots amb la síl·laba tònica a l'última síl·laba",
+          "Mots amb la síl·laba tònica a la penúltima síl·laba",
+          "Mots amb la síl·laba tònica a l'antepenúltima síl·laba"
+        ],
+        correctAnswer: [
+          "panet, remei, desmai, déu, queixal, ciutats, delinqüent, ús, safareig",
+          "crèdit, futbol, almoina, runa",
+          "Himàlaia, atmosfera, ràdio, gràssius, seqüència"
+        ],
+        explanation: 'Classificació segons la síl·laba tònica: agudes (última), planes (penúltima) i esdrúixoles (antepenúltima).',
+        difficulty: 3
+      },
+      {
+        id: 'c1_monosillabs',
+        type: 'classification',
+        question: 'A continuació teniu mots monosíl·labs. Classifiqueu-los segons que siguin àtons o tònics: em, hem, que, què, les, quan, pa, jo, de, es, pels.',
+        options: [
+          'Monosíl·labs àtons',
+          'Monosíl·labs tònics'
+        ],
+        correctAnswer: [
+          'em, hem, que, les, quan, de, es, pels',
+          'què, pa, jo'
+        ],
+        explanation: 'Els monosíl·labs tònics són els que porten accent d’intensitat i poden dur accent diacrític.',
+        difficulty: 2
+      }
+    ]
+  },
 
   // CONSELLS PRÀCTICS - ORTOGRAFIA
   {
