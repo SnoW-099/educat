@@ -260,13 +260,7 @@ export const ProfileManagement = ({ className = '', variant = 'default' }: Profi
   };
 
   if (!profile) {
-    return (
-      <Card className={className}>
-        <CardContent className="flex items-center justify-center h-64">
-          <p className="text-slate-600 dark:text-slate-200">Carregant perfil...</p>
-        </CardContent>
-      </Card>
-    );
+    return null;
   }
 
   const content = (
