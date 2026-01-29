@@ -73,6 +73,60 @@ export const COURSE_4A_EXERCISES: CourseSection[] = [
     exercises: []
   },
   {
+    id: '4a_vocal_neutra',
+    title: 'Vocal neutra (C1)',
+    description: 'Exercicis per completar, singularitzar i canviar gènere amb vocal neutra',
+    category: 'ortografia',
+    course: '4A',
+    exercises: [
+      {
+        id: '4a_vocal_neutra_1',
+        type: 'transformation',
+        question: 'Ompliu amb a o e els espais buits: en_gar, p_l_luc, dav__ntal, cinquè__ntenari, cal__ixera, quar__ntena, s__gar, p__r.',
+        correctAnswer: 'enagar, pel·luc, davantal, cinquècentenari, calaixera, quarantena, segar, per',
+        explanation: 'Completeu cada mot amb a o e segons la grafia correcta.',
+        difficulty: 2,
+        course: '4A'
+      },
+      {
+        id: '4a_vocal_neutra_2',
+        type: 'transformation',
+        question: 'Feu el mateix que en l’exercici anterior: n__dresa, n__var, ll__mpec, carr__ró, n__tad_, ass__nar, tr__scor, v__ndró.',
+        correctAnswer: 'endresa, nevar, llampec, carreró, natada, assenar, trescor, vendró',
+        explanation: 'Completeu cada mot amb a o e segons la grafia correcta.',
+        difficulty: 3,
+        course: '4A'
+      },
+      {
+        id: '4a_vocal_neutra_3',
+        type: 'transformation',
+        question: 'Passeu al singular: calvícies, elegies, piràmides, síncopes, llebres, filarines, puntaries, superfícies.',
+        correctAnswer: 'calvícia, elegia, piràmide, síncope, llebre, filarina, puntaria, superfície',
+        explanation: 'Formes singulars correctes dels substantius/plurals indicats.',
+        difficulty: 2,
+        course: '4A'
+      },
+      {
+        id: '4a_vocal_neutra_4',
+        type: 'transformation',
+        question: 'Canvieu el nombre de les paraules següents: les alumnes, les sogres, les verges, els salvavides, els mestres, els incendis, les hipòrbole(s), els psiquiatres.',
+        correctAnswer: 'l’alumna, la sogra, la verge, el salvavides, el mestre, l’incendi, la hipòrbole, el psiquiatre',
+        explanation: 'Transformeu al singular mantenint els articles correctes.',
+        difficulty: 3,
+        course: '4A'
+      },
+      {
+        id: '4a_vocal_neutra_5',
+        type: 'transformation',
+        question: 'Torneu a escriure les frases passant-les al singular, si són en plural, o al plural, si són en singular: 1) Són uns atles molt famosos. 2) Correu, afegeix els paraigües. 3) Era una platja amb sorra grisa. 4) La dona europea desitja un sou digne.',
+        correctAnswer: '1) És un atles molt famós. 2) Corre, afegeix el paraigua. 3) Eren unes platges amb sorra grisa. 4) Les dones europees desitgen uns sous dignes.',
+        explanation: 'Canvieu el nombre i ajusteu articles i verbs en conseqüència.',
+        difficulty: 3,
+        course: '4A'
+      }
+    ]
+  },
+  {
     id: '4a_diacritics',
     title: 'Accents diacrítics (C1)',
     description: 'Exercicis d\'accents diacrítics (Nivell C1)',
