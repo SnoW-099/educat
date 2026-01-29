@@ -191,21 +191,9 @@ export default function Auth() {
 
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 bg-background relative overflow-hidden selection:bg-blue-500/30">
-            {/* Ultra-Premium Animated Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 left-0 w-full h-full bg-background dark:bg-slate-950"></div>
+        <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden selection:bg-blue-500/30">
+            {/* Local background removed to use global AnimatedBackground */}
 
-                {/* Moving Mesh Gradients */}
-                <div className="absolute -top-[10%] -left-[10%] w-[70%] h-[70%] bg-blue-600/20 dark:bg-blue-600/15 rounded-full blur-[120px] animate-blob mix-blend-multiply dark:mix-blend-soft-light transition-all duration-1000"></div>
-                <div className="absolute top-[20%] -right-[10%] w-[60%] h-[80%] bg-indigo-500/20 dark:bg-indigo-500/15 rounded-full blur-[120px] animate-blob animation-delay-2000 mix-blend-multiply dark:mix-blend-soft-light transition-all duration-1000"></div>
-                <div className="absolute -bottom-[20%] left-[10%] w-[80%] h-[60%] bg-sky-400/20 dark:bg-sky-400/15 rounded-full blur-[120px] animate-blob animation-delay-4000 mix-blend-multiply dark:mix-blend-soft-light transition-all duration-1000"></div>
-
-                {/* Accent blobs for more depth */}
-                <div className="absolute top-[40%] left-[30%] w-[30%] h-[30%] bg-purple-500/10 dark:bg-purple-600/10 rounded-full blur-[100px] animate-pulse transition-all duration-1000"></div>
-            </div>
-
-            {/* Glassmorphism Main Container */}
             <div className="w-full max-w-5xl md:min-h-[700px] flex flex-col lg:flex-row relative z-10 transition-all duration-500 ease-in-out rounded-[3rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)]">
 
                 {/* Left Side: Premium Brand Experience */}
