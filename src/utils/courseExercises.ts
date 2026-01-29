@@ -6,7 +6,7 @@ import { ALL_NEW_EXERCISES } from './newExercises';
 
 export interface CourseExercise {
   id: string;
-  type: 'multiple_choice' | 'fill_blank' | 'dictation' | 'matching' | 'transformation';
+  type: 'multiple_choice' | 'fill_blank' | 'dictation' | 'matching' | 'transformation' | 'classification';
   question: string;
   options?: string[];
   correctAnswer: string | string[];
@@ -35,7 +35,26 @@ export const COURSE_4A_EXERCISES: CourseSection[] = [
     description: 'Exercicis complets de separació de síl·labes (Nivell C1)',
     category: 'ortografia',
     course: '4A',
-    exercises: []
+    exercises: [
+      {
+        id: '4a_sep_sil_1',
+        type: 'classification',
+        question: 'Separeu en síl·labes les paraules següents i classifiqueu-les segons la posició de la síl·laba tònica: panet, remei, crèdit, futbol, Himàlaia, desmai, atmosfera, déu, almoina, queixal, ciutats, ràdio, runa, gràssius, delinqüent, seqüència, ús, safareig.',
+        options: [
+          "Mots amb la síl·laba tònica a l'última síl·laba",
+          "Mots amb la síl·laba tònica a la penúltima síl·laba",
+          "Mots amb la síl·laba tònica a l'antepenúltima síl·laba"
+        ],
+        correctAnswer: [
+          "panet, remei, desmai, déu, queixal, ciutats, delinqüent, ús, safareig",
+          "crèdit, futbol, almoina, runa",
+          "Himàlaia, atmosfera, ràdio, gràssius, seqüència"
+        ],
+        explanation: 'Classificació segons la síl·laba tònica: agudes (última), planes (penúltima) i esdrúixoles (antepenúltima).',
+        difficulty: 3,
+        course: '4A'
+      }
+    ]
   },
   {
     id: '4a_diftongs',
@@ -54,12 +73,83 @@ export const COURSE_4A_EXERCISES: CourseSection[] = [
     exercises: []
   },
   {
+    id: '4a_vocal_neutra',
+    title: 'Vocal neutra (C1)',
+    description: 'Exercicis per completar, singularitzar i canviar gènere amb vocal neutra',
+    category: 'ortografia',
+    course: '4A',
+    exercises: [
+      {
+        id: '4a_vocal_neutra_1',
+        type: 'transformation',
+        question: 'Ompliu amb a o e els espais buits: en_gar, p_l_luc, dav__ntal, cinquè__ntenari, cal__ixera, quar__ntena, s__gar, p__r.',
+        correctAnswer: 'enagar, pel·luc, davantal, cinquècentenari, calaixera, quarantena, segar, per',
+        explanation: 'Completeu cada mot amb a o e segons la grafia correcta.',
+        difficulty: 2,
+        course: '4A'
+      },
+      {
+        id: '4a_vocal_neutra_2',
+        type: 'transformation',
+        question: 'Feu el mateix que en l’exercici anterior: n__dresa, n__var, ll__mpec, carr__ró, n__tad_, ass__nar, tr__scor, v__ndró.',
+        correctAnswer: 'endresa, nevar, llampec, carreró, natada, assenar, trescor, vendró',
+        explanation: 'Completeu cada mot amb a o e segons la grafia correcta.',
+        difficulty: 3,
+        course: '4A'
+      },
+      {
+        id: '4a_vocal_neutra_3',
+        type: 'transformation',
+        question: 'Passeu al singular: calvícies, elegies, piràmides, síncopes, llebres, filarines, puntaries, superfícies.',
+        correctAnswer: 'calvícia, elegia, piràmide, síncope, llebre, filarina, puntaria, superfície',
+        explanation: 'Formes singulars correctes dels substantius/plurals indicats.',
+        difficulty: 2,
+        course: '4A'
+      },
+      {
+        id: '4a_vocal_neutra_4',
+        type: 'transformation',
+        question: 'Canvieu el nombre de les paraules següents: les alumnes, les sogres, les verges, els salvavides, els mestres, els incendis, les hipòrbole(s), els psiquiatres.',
+        correctAnswer: 'l’alumna, la sogra, la verge, el salvavides, el mestre, l’incendi, la hipòrbole, el psiquiatre',
+        explanation: 'Transformeu al singular mantenint els articles correctes.',
+        difficulty: 3,
+        course: '4A'
+      },
+      {
+        id: '4a_vocal_neutra_5',
+        type: 'transformation',
+        question: 'Torneu a escriure les frases passant-les al singular, si són en plural, o al plural, si són en singular: 1) Són uns atles molt famosos. 2) Correu, afegeix els paraigües. 3) Era una platja amb sorra grisa. 4) La dona europea desitja un sou digne.',
+        correctAnswer: '1) És un atles molt famós. 2) Corre, afegeix el paraigua. 3) Eren unes platges amb sorra grisa. 4) Les dones europees desitgen uns sous dignes.',
+        explanation: 'Canvieu el nombre i ajusteu articles i verbs en conseqüència.',
+        difficulty: 3,
+        course: '4A'
+      }
+    ]
+  },
+  {
     id: '4a_diacritics',
     title: 'Accents diacrítics (C1)',
     description: 'Exercicis d\'accents diacrítics (Nivell C1)',
     category: 'ortografia',
     course: '4A',
-    exercises: []
+    exercises: [
+      {
+        id: '4a_diacritics_1',
+        type: 'classification',
+        question: 'A continuació teniu mots monosíl·labs. Classifiqueu-los segons que siguin àtons o tònics: em, hem, que, què, les, quan, pa, jo, de, es, pels.',
+        options: [
+          'Monosíl·labs àtons',
+          'Monosíl·labs tònics'
+        ],
+        correctAnswer: [
+          'em, hem, que, les, quan, de, es, pels',
+          'què, pa, jo'
+        ],
+        explanation: 'Els monosíl·labs tònics són els que porten accent d’intensitat i poden dur accent diacrític.',
+        difficulty: 2,
+        course: '4A'
+      }
+    ]
   },
   {
     id: '4a_dieresi',
@@ -707,4 +797,3 @@ export {
 
 // NOUS EXERCICIS ADDICIONALS
 export { ALL_NEW_EXERCISES };
-
