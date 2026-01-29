@@ -370,8 +370,8 @@ export const EnhancedOrthographySystem = ({
       {/* Sections Grid - Premium Bento Style */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredSections.length === 0 ? (
-          <Card className="col-span-full p-8 text-center">
-            <p className="text-muted-foreground">
+          <Card className="col-span-full p-8 text-center bg-transparent border border-slate-200/60 dark:border-slate-700/60 shadow-none">
+            <p className="text-slate-500 dark:text-slate-400">
               Encara no hi ha exercicis disponibles per aquest curs. Aviat s'afegiran nous exercicis!
             </p>
           </Card>

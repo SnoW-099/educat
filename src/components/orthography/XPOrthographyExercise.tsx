@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, XCircle, Lightbulb, RotateCcw, Volume2, Zap } from 'lucide-react';
 import { OrthographyExercise as ExerciseType } from '@/utils/catalanOrthographyData';
@@ -30,6 +31,7 @@ export const XPOrthographyExercise = ({
   category = 'ortografia'
 }: XPOrthographyExerciseProps) => {
   const [userAnswer, setUserAnswer] = useState<string>('');
+  const [classificationAnswers, setClassificationAnswers] = useState<string[]>([]);
   const [showResult, setShowResult] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -40,19 +42,48 @@ export const XPOrthographyExercise = ({
   // Reset state when exercise changes
   useEffect(() => {
     setUserAnswer('');
+    setClassificationAnswers(
+      exercise.type === 'classification' && exercise.options
+        ? exercise.options.map(() => '')
+        : []
+    );
     setShowResult(false);
     setIsCorrect(false);
     setShowExplanation(false);
     setXpEarned(0);
   }, [exercise.id]);
 
+  const normalizeList = (value: string) =>
+    value
+      .split(',')
+      .map((entry) => entry.trim().toLowerCase())
+      .filter(Boolean)
+      .sort();
+
+  const normalizeText = (value: string) =>
+    value
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, ' ');
+
   const checkAnswer = (answer: string) => {
+    if (exercise.type === 'classification') {
+      if (!exercise.options || !Array.isArray(exercise.correctAnswer)) {
+        return false;
+      }
+      return exercise.options.every((_, index) => {
+        const userList = normalizeList(classificationAnswers[index] || '');
+        const correctList = normalizeList(exercise.correctAnswer[index] || '');
+        return userList.length === correctList.length && userList.every((item, idx) => item === correctList[idx]);
+      });
+    }
     if (Array.isArray(exercise.correctAnswer)) {
+      const normalizedAnswer = normalizeText(answer);
       return exercise.correctAnswer.some(correct =>
-        answer.toLowerCase().trim() === correct.toLowerCase().trim()
+        normalizedAnswer === normalizeText(correct)
       );
     }
-    return answer.toLowerCase().trim() === exercise.correctAnswer.toLowerCase().trim();
+    return normalizeText(answer) === normalizeText(exercise.correctAnswer);
   };
 
   const calculateXP = (isCorrect: boolean, difficulty: number) => {
@@ -119,6 +150,11 @@ export const XPOrthographyExercise = ({
 
   const handleReset = () => {
     setUserAnswer('');
+    setClassificationAnswers(
+      exercise.type === 'classification' && exercise.options
+        ? exercise.options.map(() => '')
+        : []
+    );
     setShowResult(false);
     setIsCorrect(false);
     setShowExplanation(false);
@@ -126,6 +162,9 @@ export const XPOrthographyExercise = ({
   };
 
   const canSubmit = () => {
+    if (exercise.type === 'classification') {
+      return classificationAnswers.length > 0 && classificationAnswers.every((answer) => answer.trim().length > 0) && !showResult;
+    }
     return userAnswer.trim().length > 0 && !showResult;
   };
 
@@ -222,6 +261,38 @@ export const XPOrthographyExercise = ({
                 )}
               </button>
             ))}
+          </div>
+        )}
+
+        {/* Classification */}
+        {exercise.type === 'classification' && exercise.options && (
+          <div className="space-y-4">
+            <p className="text-sm text-muted-foreground">
+              Escriu les paraules separades per comes dins de cada categoria.
+            </p>
+            <div className="grid gap-4 md:grid-cols-3">
+              {exercise.options.map((option, index) => (
+                <div key={option} className="space-y-2">
+                  <Label className="text-sm font-semibold text-slate-700 dark:text-slate-200">{option}</Label>
+                  <Textarea
+                    value={classificationAnswers[index] || ''}
+                    onChange={(e) => {
+                      const next = [...classificationAnswers];
+                      next[index] = e.target.value;
+                      setClassificationAnswers(next);
+                    }}
+                    placeholder="Ex: panet, remei, desmai"
+                    disabled={showResult}
+                    className={showResult ? (isCorrect ? 'border-success' : 'border-destructive') : ''}
+                  />
+                  {showResult && !isCorrect && (!hideAnswersUntilComplete || allExercisesCompleted) && Array.isArray(exercise.correctAnswer) && (
+                    <p className="text-xs text-destructive">
+                      Correcte: <span className="font-medium">{exercise.correctAnswer[index]}</span>
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         )}
 
