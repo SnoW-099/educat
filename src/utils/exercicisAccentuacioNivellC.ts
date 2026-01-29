@@ -172,6 +172,45 @@ export const exercicisAccentuacioNivellC: ExerciciAccentuacio[] = [
     },
     referencia: "Joan Maragall, El comte Arnau"
   },
+  {
+    id: 322,
+    titol: "Separació de síl·labes i síl·laba tònica",
+    instruccio: "Separeu en síl·labes les paraules que teniu a continuació i classifiqueu-les segons quina sigui la posició de la síl·laba tònica.",
+    tipus: "classificacio",
+    nivell: "C1",
+    categoria: "accentuacio",
+    novetat: true,
+    contingut: {
+      paraules: [
+        "panet", "remei", "crèdit", "futbol", "Himàlaia", "desmai", "atmosfera",
+        "déu", "almoina", "queixal", "ciutats", "ràdio", "runa", "gràssius",
+        "delinqüent", "seqüència", "ús", "safareig"
+      ],
+      categories: [
+        "Mots que tenen la síl·laba tònica en l'última síl·laba",
+        "Mots que tenen la síl·laba tònica en la penúltima síl·laba",
+        "Mots que tenen la síl·laba tònica en l'antepenúltima síl·laba"
+      ]
+    }
+  },
+  {
+    id: 323,
+    titol: "Monosíl·labs",
+    instruccio: "A continuació teniu mots monosíl·labs. Classifiqueu-los segons que siguin àtons o tònics.",
+    tipus: "classificacio",
+    nivell: "C1",
+    categoria: "diacritic",
+    novetat: true,
+    contingut: {
+      paraules: [
+        "em", "hem", "que", "què", "les", "quan", "pa", "jo", "de", "es", "pels"
+      ],
+      categories: [
+        "Monosíl·labs àtons",
+        "Monosíl·labs tònics"
+      ]
+    }
+  },
 
   // ==========================================
   // EXERCICIS DE TEXTOS LLARGS - NIVELL C

@@ -6,7 +6,7 @@ import { ALL_NEW_EXERCISES } from './newExercises';
 
 export interface CourseExercise {
   id: string;
-  type: 'multiple_choice' | 'fill_blank' | 'dictation' | 'matching' | 'transformation';
+  type: 'multiple_choice' | 'fill_blank' | 'dictation' | 'matching' | 'transformation' | 'classification';
   question: string;
   options?: string[];
   correctAnswer: string | string[];
@@ -35,7 +35,26 @@ export const COURSE_4A_EXERCISES: CourseSection[] = [
     description: 'Exercicis complets de separació de síl·labes (Nivell C1)',
     category: 'ortografia',
     course: '4A',
-    exercises: []
+    exercises: [
+      {
+        id: '4a_sep_sil_1',
+        type: 'classification',
+        question: 'Separeu en síl·labes les paraules següents i classifiqueu-les segons la posició de la síl·laba tònica: panet, remei, crèdit, futbol, Himàlaia, desmai, atmosfera, déu, almoina, queixal, ciutats, ràdio, runa, gràssius, delinqüent, seqüència, ús, safareig.',
+        options: [
+          "Mots amb la síl·laba tònica a l'última síl·laba",
+          "Mots amb la síl·laba tònica a la penúltima síl·laba",
+          "Mots amb la síl·laba tònica a l'antepenúltima síl·laba"
+        ],
+        correctAnswer: [
+          "panet, remei, desmai, déu, queixal, ciutats, delinqüent, ús, safareig",
+          "crèdit, futbol, almoina, runa",
+          "Himàlaia, atmosfera, ràdio, gràssius, seqüència"
+        ],
+        explanation: 'Classificació segons la síl·laba tònica: agudes (última), planes (penúltima) i esdrúixoles (antepenúltima).',
+        difficulty: 3,
+        course: '4A'
+      }
+    ]
   },
   {
     id: '4a_diftongs',
@@ -59,7 +78,24 @@ export const COURSE_4A_EXERCISES: CourseSection[] = [
     description: 'Exercicis d\'accents diacrítics (Nivell C1)',
     category: 'ortografia',
     course: '4A',
-    exercises: []
+    exercises: [
+      {
+        id: '4a_diacritics_1',
+        type: 'classification',
+        question: 'A continuació teniu mots monosíl·labs. Classifiqueu-los segons que siguin àtons o tònics: em, hem, que, què, les, quan, pa, jo, de, es, pels.',
+        options: [
+          'Monosíl·labs àtons',
+          'Monosíl·labs tònics'
+        ],
+        correctAnswer: [
+          'em, hem, que, les, quan, de, es, pels',
+          'què, pa, jo'
+        ],
+        explanation: 'Els monosíl·labs tònics són els que porten accent d’intensitat i poden dur accent diacrític.',
+        difficulty: 2,
+        course: '4A'
+      }
+    ]
   },
   {
     id: '4a_dieresi',
@@ -707,4 +743,3 @@ export {
 
 // NOUS EXERCICIS ADDICIONALS
 export { ALL_NEW_EXERCISES };
-
