@@ -60,6 +60,12 @@ export const XPOrthographyExercise = ({
       .filter(Boolean)
       .sort();
 
+  const normalizeText = (value: string) =>
+    value
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, ' ');
+
   const checkAnswer = (answer: string) => {
     if (exercise.type === 'classification') {
       if (!exercise.options || !Array.isArray(exercise.correctAnswer)) {
@@ -72,11 +78,12 @@ export const XPOrthographyExercise = ({
       });
     }
     if (Array.isArray(exercise.correctAnswer)) {
+      const normalizedAnswer = normalizeText(answer);
       return exercise.correctAnswer.some(correct =>
-        answer.toLowerCase().trim() === correct.toLowerCase().trim()
+        normalizedAnswer === normalizeText(correct)
       );
     }
-    return answer.toLowerCase().trim() === exercise.correctAnswer.toLowerCase().trim();
+    return normalizeText(answer) === normalizeText(exercise.correctAnswer);
   };
 
   const calculateXP = (isCorrect: boolean, difficulty: number) => {

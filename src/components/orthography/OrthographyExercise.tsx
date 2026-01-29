@@ -48,6 +48,12 @@ export const OrthographyExercise = ({ exercise, onComplete, showFeedback = true,
       .filter(Boolean)
       .sort();
 
+  const normalizeText = (value: string) =>
+    value
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, ' ');
+
   const handleSubmit = () => {
     if (!submitted) {
       const isCorrect = (() => {
@@ -62,12 +68,12 @@ export const OrthographyExercise = ({ exercise, onComplete, showFeedback = true,
           });
         }
         const userAnswer = exercise.type === 'fill_blank' || exercise.type === 'dictation' || exercise.type === 'transformation' || exercise.type === 'text_correction' || exercise.type === 'text_completion' || exercise.type === 'ordering'
-          ? textAnswer.trim().toLowerCase()
-          : selectedAnswer;
+          ? normalizeText(textAnswer)
+          : normalizeText(selectedAnswer);
 
         const correctAnswer = Array.isArray(exercise.correctAnswer)
-          ? exercise.correctAnswer[0].toLowerCase()
-          : exercise.correctAnswer.toLowerCase();
+          ? normalizeText(exercise.correctAnswer[0])
+          : normalizeText(exercise.correctAnswer);
 
         return userAnswer === correctAnswer;
       })();
@@ -119,12 +125,12 @@ export const OrthographyExercise = ({ exercise, onComplete, showFeedback = true,
       });
     }
     const userAnswer = exercise.type === 'fill_blank' || exercise.type === 'dictation' || exercise.type === 'transformation' || exercise.type === 'text_correction' || exercise.type === 'text_completion' || exercise.type === 'ordering'
-      ? textAnswer.trim().toLowerCase()
-      : selectedAnswer;
+      ? normalizeText(textAnswer)
+      : normalizeText(selectedAnswer);
 
     const correctAnswer = Array.isArray(exercise.correctAnswer)
-      ? exercise.correctAnswer[0].toLowerCase()
-      : exercise.correctAnswer.toLowerCase();
+      ? normalizeText(exercise.correctAnswer[0])
+      : normalizeText(exercise.correctAnswer);
 
     return userAnswer === correctAnswer;
   };
