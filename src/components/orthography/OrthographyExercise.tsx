@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, XCircle, Lightbulb, RotateCcw } from 'lucide-react';
 import { OrthographyExercise as ExerciseType } from '@/utils/catalanOrthographyData';
@@ -22,6 +23,7 @@ interface OrthographyExerciseProps {
 export const OrthographyExercise = ({ exercise, onComplete, showFeedback = true, hideAnswersUntilComplete = false, allExercisesCompleted = false, category = 'ortografia' }: OrthographyExerciseProps) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string>('');
   const [textAnswer, setTextAnswer] = useState<string>('');
+  const [classificationAnswers, setClassificationAnswers] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [showExplanation, setShowExplanation] = useState(false);
   const { toast } = useToast();
@@ -30,21 +32,45 @@ export const OrthographyExercise = ({ exercise, onComplete, showFeedback = true,
   useEffect(() => {
     setSelectedAnswer('');
     setTextAnswer('');
+    setClassificationAnswers(
+      exercise.type === 'classification' && exercise.options
+        ? exercise.options.map(() => '')
+        : []
+    );
     setSubmitted(false);
     setShowExplanation(false);
   }, [exercise.id]);
 
+  const normalizeList = (value: string) =>
+    value
+      .split(',')
+      .map((entry) => entry.trim().toLowerCase())
+      .filter(Boolean)
+      .sort();
+
   const handleSubmit = () => {
     if (!submitted) {
-      const userAnswer = exercise.type === 'fill_blank' || exercise.type === 'dictation' || exercise.type === 'transformation' || exercise.type === 'text_correction' || exercise.type === 'text_completion' || exercise.type === 'ordering'
-        ? textAnswer.trim().toLowerCase()
-        : selectedAnswer;
+      const isCorrect = (() => {
+        if (exercise.type === 'classification') {
+          if (!exercise.options || !Array.isArray(exercise.correctAnswer)) {
+            return false;
+          }
+          return exercise.options.every((_, index) => {
+            const userList = normalizeList(classificationAnswers[index] || '');
+            const correctList = normalizeList(exercise.correctAnswer[index] || '');
+            return userList.length === correctList.length && userList.every((item, idx) => item === correctList[idx]);
+          });
+        }
+        const userAnswer = exercise.type === 'fill_blank' || exercise.type === 'dictation' || exercise.type === 'transformation' || exercise.type === 'text_correction' || exercise.type === 'text_completion' || exercise.type === 'ordering'
+          ? textAnswer.trim().toLowerCase()
+          : selectedAnswer;
 
-      const correctAnswer = Array.isArray(exercise.correctAnswer)
-        ? exercise.correctAnswer[0].toLowerCase()
-        : exercise.correctAnswer.toLowerCase();
+        const correctAnswer = Array.isArray(exercise.correctAnswer)
+          ? exercise.correctAnswer[0].toLowerCase()
+          : exercise.correctAnswer.toLowerCase();
 
-      const isCorrect = userAnswer === correctAnswer;
+        return userAnswer === correctAnswer;
+      })();
 
       setSubmitted(true);
 
@@ -82,6 +108,16 @@ export const OrthographyExercise = ({ exercise, onComplete, showFeedback = true,
   };
 
   const isCorrect = () => {
+    if (exercise.type === 'classification') {
+      if (!exercise.options || !Array.isArray(exercise.correctAnswer)) {
+        return false;
+      }
+      return exercise.options.every((_, index) => {
+        const userList = normalizeList(classificationAnswers[index] || '');
+        const correctList = normalizeList(exercise.correctAnswer[index] || '');
+        return userList.length === correctList.length && userList.every((item, idx) => item === correctList[idx]);
+      });
+    }
     const userAnswer = exercise.type === 'fill_blank' || exercise.type === 'dictation' || exercise.type === 'transformation' || exercise.type === 'text_correction' || exercise.type === 'text_completion' || exercise.type === 'ordering'
       ? textAnswer.trim().toLowerCase()
       : selectedAnswer;
@@ -94,6 +130,9 @@ export const OrthographyExercise = ({ exercise, onComplete, showFeedback = true,
   };
 
   const canSubmit = () => {
+    if (exercise.type === 'classification') {
+      return classificationAnswers.length > 0 && classificationAnswers.every((answer) => answer.trim().length > 0);
+    }
     if (exercise.type === 'fill_blank' || exercise.type === 'dictation' || exercise.type === 'transformation' || exercise.type === 'text_correction' || exercise.type === 'text_completion' || exercise.type === 'ordering') {
       return textAnswer.trim().length > 0;
     }
@@ -182,6 +221,38 @@ export const OrthographyExercise = ({ exercise, onComplete, showFeedback = true,
             </RadioGroup>
           );
         })()}
+
+        {/* Classification */}
+        {exercise.type === 'classification' && exercise.options && (
+          <div className="space-y-4">
+            <p className="text-sm text-muted-foreground">
+              Escriu les paraules separades per comes dins de cada categoria.
+            </p>
+            <div className="grid gap-4 md:grid-cols-3">
+              {exercise.options.map((option, index) => (
+                <div key={option} className="space-y-2">
+                  <Label className="text-sm font-semibold text-slate-700 dark:text-slate-200">{option}</Label>
+                  <Textarea
+                    value={classificationAnswers[index] || ''}
+                    onChange={(e) => {
+                      const next = [...classificationAnswers];
+                      next[index] = e.target.value;
+                      setClassificationAnswers(next);
+                    }}
+                    placeholder="Ex: panet, remei, desmai"
+                    disabled={submitted}
+                    className={submitted ? (isCorrect() ? 'border-green-500' : 'border-red-500') : ''}
+                  />
+                  {submitted && !isCorrect() && (!hideAnswersUntilComplete || allExercisesCompleted) && Array.isArray(exercise.correctAnswer) && (
+                    <p className="text-xs text-red-600">
+                      Correcte: <span className="font-medium">{exercise.correctAnswer[index]}</span>
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Fill in the Blank, Dictation, Transformation, Text Correction, Text Completion & Ordering */}
         {(exercise.type === 'fill_blank' || exercise.type === 'dictation' || exercise.type === 'transformation' || exercise.type === 'text_correction' || exercise.type === 'text_completion' || exercise.type === 'ordering') && (
