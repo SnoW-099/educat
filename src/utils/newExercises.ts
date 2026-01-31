@@ -763,10 +763,10 @@ export const VERBS_IRR_4A: CourseSection[] = [];
 export const VERBS_REG_4A: CourseSection[] = [];
 export const PRON_REL_4A: CourseSection[] = [{ id: 'prel_4a', title: 'Pronoms Relatius (C1)', description: 'Exercicis de pronoms relatius consolidated.', category: 'gramàtica', course: '4A', exercises: [] }];
 export const PREP_4A: CourseSection[] = [{ id: 'prep_4a', title: 'Preposicions (C1)', description: 'Exercicis de preposicions consolidated.', category: 'gramàtica', course: '4A', exercises: [] }];
-export const APOS_4A: CourseSection[] = [{ id: 'apos_4a', title: 'Apostròf (C1)', description: 'Exercicis d\'apòstrof consolidated.', category: 'ortografia', course: '4A', exercises: [] }];
+export const APOS_4A: CourseSection[] = [];
 export const CONJ_4A: CourseSection[] = [{ id: 'conj_4a', title: 'Conjuncions (C1)', description: 'Exercicis de conjuncions consolidated.', category: 'gramàtica', course: '4A', exercises: [] }];
 export const FONETICA_4A: CourseSection[] = [{ id: 'fon_4a', title: 'Fonètica (C1)', description: 'Exercicis de fonètica consolidated.', category: 'ortografia', course: '4A', exercises: [] }];
-export const DIER_4A: CourseSection[] = [{ id: 'dier_4a', title: 'Dièresi (C1)', description: 'Exercicis de dièresi consolidated.', category: 'ortografia', course: '4A', exercises: [] }];
+export const DIER_4A: CourseSection[] = [];
 
 export const ALL_NEW_EXERCISES: CourseSection[] = [
   ...GUIONET_4C,
