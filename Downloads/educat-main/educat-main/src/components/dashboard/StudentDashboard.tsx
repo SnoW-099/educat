@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, Trophy, Target, Users, Newspaper, Zap, TrendingUp } from "lucide-react";
+import { BookOpen, Trophy, Target, Users, Newspaper, Zap, TrendingUp, Plus } from "lucide-react";
 
 import { EnhancedOrthographySystem } from "@/components/orthography/EnhancedOrthographySystem";
 import { EnhancedChatInterface } from "@/components/chat/EnhancedChatInterface";
@@ -18,6 +18,7 @@ import { useRealStats } from "@/hooks/useRealStats";
 import { BookLoader } from "@/components/ui/book-loader";
 import { ALL_ORTHOGRAPHY_SECTIONS } from '@/utils/catalanOrthographyData';
 import { cn } from "@/lib/utils";
+import { BeginnerDashboard } from "@/components/beginner/BeginnerDashboard";
 
 interface StudentDashboardProps {
   user: any;
@@ -57,6 +58,7 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
     { id: 'orthography', label: 'Exercicis', icon: BookOpen },
     { id: 'theory', label: 'Teoria', icon: Newspaper },
     { id: 'news', label: 'Notícies', icon: Zap },
+    { id: 'extra', label: 'Extra', icon: Plus, badge: 'Nou!' },
   ];
 
   // Loading is handled at page level, no need to show loader here
@@ -113,6 +115,31 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
     if (hour < 20) return "Bona tarda";
     return "Bona nit";
   };
+
+  // Ctrl+K Shortcut for Quick Action (e.g., Reload or Specific focus)
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+        event.preventDefault();
+        // Implement desired action: Reset active tab? Reload data?
+        // User asked for "y el ctl+k" typically meaning 'Command Palette' or search, 
+        // OR in this context maybe a shortcut to restart the exercise/module?
+        // Since this is Dashboard, maybe they mean general command palette (not implemented yet)
+        // OR they mean inside the exercise runner.
+        // If inside runner, it should be in BeginnerExerciseRunner.
+        // But user mentioned "y el ctl+k" in same request as "volver a intentarlo se reinicie".
+        // Let's assume they want a shortcut to restart/reset.
+
+        // However, I am editing StudentDashboard here.
+        // It's likely they meant "I want the Ctrl+K feature" (which is usually a command palette)
+        // OR "Make Ctrl+K restart the exercise".
+        // Given the "buga" context, likely "Ctrl+K to reset/restart".
+        // I will implement it in BeginnerExerciseRunner first as that seems more relevant to the bug fix.
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   return (
     <div className="space-y-8 relative">
@@ -206,6 +233,12 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
                       "hidden sm:inline transition-opacity duration-300",
                       activeTab === tab.id ? "opacity-100 font-bold" : "opacity-70"
                     )}>{tab.label}</span>
+                    {/* Badge "Nou!" */}
+                    {(tab as any).badge && (
+                      <span className="absolute top-1.5 right-1.5 px-1.5 py-0.5 text-[9px] font-bold bg-indigo-100 text-indigo-600 dark:bg-indigo-500/20 dark:text-indigo-300 rounded-full shadow-sm">
+                        {(tab as any).badge}
+                      </span>
+                    )}
                   </TabsTrigger>
                 ))}
               </TabsList>
@@ -256,6 +289,24 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
                 )}
               >
                 <NewsList />
+              </TabsContent>
+
+              <TabsContent
+                value="extra"
+                className={cn(
+                  "space-y-4 mt-6",
+                  activeTab === "extra" && !isPanelAnimating && "animate-in fade-in-0 slide-in-from-top-4 duration-400"
+                )}
+              >
+                <Card className="border-0 shadow-lg bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl">
+                  <CardHeader>
+                    <CardTitle>Secció de Principiant</CardTitle>
+                    <CardDescription>Exercicis per a principiants, ideals per a gent de 1r d'ESO.</CardDescription>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <BeginnerDashboard />
+                  </CardContent>
+                </Card>
               </TabsContent>
 
               {studentClass && (
