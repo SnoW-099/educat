@@ -1,0 +1,56 @@
+import { useAuth } from "@/hooks/useAuth";
+import { Header } from "@/components/layout/Header";
+import { ProfessorDashboard } from "@/components/dashboard/ProfessorDashboard";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+
+const TeacherDashboard = () => {
+  const { user, profile, loading, signOut } = useAuth();
+  const router = useRouter();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Redirect if not authenticated or not a professor
+  useEffect(() => {
+    if (!loading) {
+      if (!user || !profile) {
+        router.replace("/auth");
+      } else if (profile.role !== 'professor') {
+        router.replace("/studentdashboard");
+      }
+    }
+  }, [user, profile, loading, router]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-accent mx-auto mb-4"></div>
+          <p className="text-lg text-muted-foreground">Carregant EduCat...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Hide content while redirecting
+  if (!user || !profile || profile.role !== 'professor') {
+    return null;
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header
+        user={profile}
+        onLogout={signOut}
+      />
+      <main className="container mx-auto px-4 py-8">
+        <ProfessorDashboard user={profile} />
+      </main>
+    </div>
+  );
+};
+
+export default TeacherDashboard;

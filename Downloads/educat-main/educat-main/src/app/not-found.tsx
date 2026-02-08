@@ -1,0 +1,28 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
+
+export default function NotFound() {
+    const pathname = usePathname();
+
+    useEffect(() => {
+        console.error(
+            "404 Error: User attempted to access non-existent route:",
+            pathname
+        );
+    }, [pathname]);
+
+    return (
+        <div className="min-h-screen flex items-center justify-center">
+            <div className="text-center">
+                <h1 className="text-4xl font-bold mb-4">404</h1>
+                <p className="text-xl text-gray-600 mb-4">Ups! Pàgina no trobada</p>
+                <Link href="/" className="text-accent hover:opacity-80 underline">
+                    Tornar a l'inici
+                </Link>
+            </div>
+        </div>
+    );
+}
