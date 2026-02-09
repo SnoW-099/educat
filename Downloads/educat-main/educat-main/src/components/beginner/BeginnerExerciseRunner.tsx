@@ -78,7 +78,7 @@ export const BeginnerExerciseRunner = ({ exercises, onExit, currentModuleId, onU
             if (!currentExercise.pairs) return;
             let allCorrect = true;
             currentExercise.pairs.forEach(p => {
-                const rightIndex = matches[p.left];
+                const rightIndex = matches[p.left] as number | undefined;
                 // Check if the selected item index corresponds to the value p.right
                 if (rightIndex === undefined) allCorrect = false;
                 else if (userOrder[rightIndex] !== p.right) allCorrect = false;
@@ -89,7 +89,7 @@ export const BeginnerExerciseRunner = ({ exercises, onExit, currentModuleId, onU
             if (placedIndex === undefined) {
                 isCorrect = false;
             } else {
-                const placedValue = userOrder[placedIndex];
+                const placedValue = userOrder[placedIndex as number];
                 isCorrect = placedValue === currentExercise.correctAnswer;
             }
         } else if (currentExercise.type === 'classify' && currentExercise.classification) {
@@ -433,7 +433,7 @@ export const BeginnerExerciseRunner = ({ exercises, onExit, currentModuleId, onU
                                     <div className="flex flex-col gap-3">
                                         {userOrder.map((rightItem, idx) => {
                                             // Check if this item is already placed somewhere
-                                            const isPlaced = Object.values(matches).includes(idx);
+                                            const isPlaced = Object.values(matches).includes(idx as any);
 
                                             if (isPlaced) return null; // Hide if placed
 

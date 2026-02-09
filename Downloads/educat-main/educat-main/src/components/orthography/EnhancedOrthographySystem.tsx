@@ -287,7 +287,7 @@ export const EnhancedOrthographySystem = ({
                 <GraduationCap className="w-8 h-8 text-blue-600 dark:text-blue-400" />
               </div>
               <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">C1</h3>
-              <p className="text-slate-500 dark:text-slate-400 mb-6">100+ exercicis</p>
+              <p className="text-slate-500 dark:text-slate-400 mb-6">+750 exercicis</p>
               <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-200 dark:hover:shadow-blue-900/50">
                 Començar
               </Button>
