@@ -21,9 +21,6 @@ export default function Home() {
 
     return (
         <div className="min-h-screen relative overflow-hidden font-sans text-foreground">
-            {/* Same LiquidBackground as StudentDashboard for consistent dark mode */}
-            {/* LiquidBackground removed to use global AnimatedBackground */}
-
             <div className="relative z-10">
                 <Header
                     user={profile}
@@ -31,7 +28,7 @@ export default function Home() {
                     onNavigateToAuth={() => router.push('/auth')}
                 />
 
-                <main>
+                <main className="relative isolate">
                     <HeroSection />
                     <FeaturesSection />
                     <CTASection />

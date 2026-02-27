@@ -154,15 +154,6 @@ export const OrthographySection = ({
           <div className="flex items-center justify-between">
             <div className="space-y-1">
               <div className="flex items-center gap-3">
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  onClick={() => setShowExercises(false)} 
-                  className="p-0 h-auto hover:bg-transparent -ml-1 text-slate-400 hover:text-white transition-colors"
-                >
-                  <ChevronLeft className="h-4 w-4 mr-1" />
-                  Tornar
-                </Button>
                 <Badge className={`${getCategoryColor(section.category)} border-none shadow-sm px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-bold`}>
                   {getCategoryLabel(section.category)}
                 </Badge>
