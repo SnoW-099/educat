@@ -1,5 +1,5 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Newspaper, ExternalLink } from 'lucide-react';
+
+import { Newspaper, ExternalLink, Radio, Globe, Map, Trophy, Music, Building, ArrowUpRight, Landmark, MonitorSmartphone, MapPin, Dumbbell, Palette } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface NewsSource {
@@ -129,111 +129,126 @@ export const NewsList = () => {
     return acc;
   }, {} as Record<string, NewsSource[]>);
 
+  const categoryIcons: Record<string, any> = {
+    'Públic': Landmark,
+    'General': Newspaper,
+    'Digital': MonitorSmartphone,
+    'Regional': MapPin,
+    'Ràdio': Radio,
+    'Esports': Trophy,
+    'Cultura': Palette
+  };
+
   const categoryColors: Record<string, string> = {
-    'Públic': 'from-blue-500 to-blue-600',
-    'General': 'from-purple-500 to-purple-600',
-    'Digital': 'from-green-500 to-green-600',
-    'Regional': 'from-orange-500 to-orange-600',
-    'Ràdio': 'from-pink-500 to-pink-600',
-    'Esports': 'from-red-500 to-red-600',
-    'Cultura': 'from-indigo-500 to-indigo-600'
+    'Públic': 'bg-blue-600 text-white',
+    'General': 'bg-slate-700 text-white',
+    'Digital': 'bg-sky-600 text-white',
+    'Regional': 'bg-amber-600 text-white',
+    'Ràdio': 'bg-red-600 text-white',
+    'Esports': 'bg-emerald-600 text-white',
+    'Cultura': 'bg-blue-500 text-white'
   };
 
   return (
     <div className="space-y-8">
-      {/* Hero Header */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/90 via-primary to-primary-dark p-8 shadow-2xl">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="relative z-10">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="rounded-full bg-white/20 p-4 backdrop-blur-sm">
-              <Newspaper className="h-8 w-8 text-white" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-2">
-                Notícies en Català
-              </h2>
-              <p className="text-white/90 text-lg">
-                Fonts d'informació en català per mantenir-te actualitzat
-              </p>
-            </div>
+      {/* Minimalist Hero Header */}
+      <div className="relative overflow-hidden rounded-3xl bg-slate-950 p-6 shadow-xl isolate">
+        {/* Glow Effects */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-72 h-72 rounded-full bg-blue-500/10 blur-[80px] pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 rounded-full bg-sky-500/10 blur-[80px] pointer-events-none"></div>
+        
+        {/* Dot pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(#ffffff22_1px,transparent_1px)] [background-size:16px_16px] opacity-10"></div>
+        
+        <div className="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
+          <div className="inline-flex items-center justify-center p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shrink-0">
+            <Newspaper className="h-7 w-7 text-blue-400" />
           </div>
-          <div className="flex flex-wrap gap-2 mt-4">
-            {Object.keys(groupedSources).map((category) => (
-              <span key={category} className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white">
-                {category} ({groupedSources[category].length})
-              </span>
-            ))}
+          <div className="flex-1 space-y-2">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center justify-center sm:justify-start gap-2">
+              Premsa en <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-400">Català</span>
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base font-medium max-w-2xl leading-relaxed">
+              Descobreix una selecció curada de diaris, ràdios i mitjans digitals per estar sempre informat.
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="space-y-8">
-        {Object.entries(groupedSources).map(([category, sources], idx) => (
-          <div key={category}>
-            <div className="mb-4 flex items-center gap-3">
-              <div className={`h-1 w-12 rounded-full bg-gradient-to-r ${categoryColors[category] || 'from-primary to-primary-dark'}`}></div>
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
-                {category}
-              </h3>
-              <span className="text-sm text-muted-foreground">({sources.length})</span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {sources.map((source, sourceIdx) => (
-                <Card
-                  key={source.name}
-                  className="hover:shadow-xl transition-all duration-300 group border-l-4 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
-                  style={{
-                    borderLeftColor: `hsl(var(--primary))`
-                  }}
-                >
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center justify-between group-hover:text-primary transition-colors">
-                      <span className="flex items-center gap-2">
-                        <div className={`h-2 w-2 rounded-full bg-gradient-to-r ${categoryColors[category] || 'from-primary to-primary-dark'}`}></div>
+      <div className="space-y-12 stagger-build">
+        {Object.entries(groupedSources).map(([category, sources], idx) => {
+          const Icon = categoryIcons[category] || Newspaper;
+          
+          return (
+            <div key={category} className="relative">
+              <div className="flex items-center gap-3 mb-6">
+                <div className={`p-2.5 rounded-xl ${categoryColors[category] || 'bg-slate-700 text-white'} shadow-md flex items-center justify-center`}>
+                  <Icon className="w-5 h-5 flex-shrink-0" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 tracking-tight">
+                  {category}
+                </h3>
+                <div className="h-px flex-1 bg-gradient-to-r from-slate-200 dark:from-slate-800 to-transparent ml-4"></div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 stagger-build">
+                {sources.map((source, sourceIdx) => (
+                  <a
+                    key={source.name}
+                    href={source.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex flex-col h-full bg-white dark:bg-slate-900/40 rounded-2xl p-5 border border-slate-200 dark:border-slate-800/60 hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-[0_8px_30px_rgba(59,130,246,0.12)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden isolate focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+                  >
+                    {/* Hover Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-sky-500/0 group-hover:from-blue-500/5 group-hover:to-sky-500/5 transition-colors duration-500 -z-10"></div>
+                    
+                    <div className="flex justify-between items-start mb-4">
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800/80 group-hover:scale-110 transition-transform duration-300`}>
+                        <span className="text-lg font-black bg-gradient-to-br from-slate-700 to-slate-900 dark:from-slate-200 dark:to-white bg-clip-text text-transparent uppercase">
+                          {source.name.charAt(0)}
+                        </span>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800/50 flex items-center justify-center text-slate-400 group-hover:text-blue-500 group-hover:bg-blue-50 dark:group-hover:bg-blue-500/20 transition-all duration-300">
+                        <ArrowUpRight className="w-4 h-4" />
+                      </div>
+                    </div>
+                    
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                         {source.name}
-                      </span>
-                      <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-all duration-200" />
-                    </CardTitle>
-                    <CardDescription className="text-sm mt-2 line-clamp-2 text-slate-500 dark:text-slate-400">
-                      {source.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button
-                      variant="outline"
-                      className="w-full group/btn hover:bg-primary hover:text-primary-foreground transition-all duration-200 bg-white dark:bg-slate-700 text-slate-900 dark:text-white border-slate-200 dark:border-slate-600"
-                      onClick={() => window.open(source.url, '_blank')}
-                    >
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Visitar web
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+                      </h4>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
+                        {source.description}
+                      </p>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Footer tip */}
-      <Card className="glass-card border-dashed border-primary/20">
-        <CardContent className="pt-6">
+      <div className="bg-transparent dark:bg-transparent border-dashed border-2 border-blue-200 dark:border-blue-500/30 rounded-2xl overflow-hidden relative group">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-sky-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="p-6">
           <div className="flex items-start gap-4">
-            <div className="rounded-full bg-primary/10 p-3 shrink-0">
-              <Newspaper className="h-6 w-6 text-primary" />
+            <div className="rounded-full bg-blue-500/10 dark:bg-blue-500/20 p-3 shrink-0">
+              <Newspaper className="h-6 w-6 text-blue-500" />
             </div>
             <div>
-              <p className="font-semibold text-foreground mb-2">Consell per millorar el teu català</p>
-              <p className="text-sm text-muted-foreground">
+              <p className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Consell per millorar el teu català</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">
                 Llegir notícies en català regularment t'ajudarà a millorar
                 la comprensió lectora, ampliar el vocabulari i mantenir-te informat sobre l'actualitat.
                 Dedica 10-15 minuts diaris a la lectura!
               </p>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </div>
   );
 };

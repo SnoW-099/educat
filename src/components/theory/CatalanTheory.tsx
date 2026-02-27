@@ -1,38 +1,47 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { BookOpen, Check, X } from "lucide-react";
+import { BookOpen, Check, X, GraduationCap, Library, Sparkles, AlertCircle } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 export const CatalanTheory = () => {
   return (
-    <div className="space-y-6">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/90 via-primary to-primary-dark p-8 shadow-2xl">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="relative z-10 flex items-center gap-4">
-          <div className="rounded-full bg-white/20 p-4 backdrop-blur-sm">
-            <BookOpen className="h-8 w-8 text-white" />
+    <div className="space-y-6 stagger-build">
+      {/* Minimalist Hero Section */}
+      <div className="relative overflow-hidden rounded-3xl bg-slate-950 p-6 shadow-xl isolate mb-8">
+        {/* Glow Effects - More Blue, Less Purple */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-72 h-72 rounded-full bg-blue-500/10 blur-[80px] pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 rounded-full bg-sky-500/10 blur-[80px] pointer-events-none"></div>
+        
+        {/* Dot pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(#ffffff22_1px,transparent_1px)] [background-size:16px_16px] opacity-10"></div>
+        
+        <div className="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
+          <div className="inline-flex items-center justify-center p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shrink-0">
+            <BookOpen className="h-7 w-7 text-blue-400" />
           </div>
-          <div>
-            <h1 className="text-3xl font-bold text-white mb-2">Teoria de Català</h1>
-            <p className="text-white/90 text-lg">
-              Aprèn les regles fonamentals de la llengua catalana de manera clara i visual
+          <div className="flex-1 space-y-2">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center justify-center sm:justify-start gap-2">
+              Teoria de <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-400">Català</span>
+            </h1>
+            <p className="text-slate-400 text-sm sm:text-base font-medium max-w-2xl leading-relaxed">
+              Descobreix, repassa i domina les regles fonamentals de la llengua catalana de manera clara i visual.
             </p>
           </div>
         </div>
       </div>
 
-      <Card className="glass-card">
-        <CardContent className="pt-6">
-          <Accordion type="single" collapsible className="w-full">
+      <div className="px-1 sm:px-4">
+        <Accordion type="single" collapsible className="w-full space-y-4 stagger-build">
             {/* Regles d'accentuació */}
             <AccordionItem value="accentuacio">
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-lg transition-all duration-300 group data-[state=open]:rounded-b-none data-[state=open]:border-b-0 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
+                <span className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 Regles d'Accentuació
+              </span>
               </AccordionTrigger>
-              <AccordionContent className="space-y-6 text-base">
+              <AccordionContent className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-t-0 rounded-b-2xl shadow-sm text-base">
                 <div className="space-y-4">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-5 rounded-xl border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-6 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <div className="flex items-start gap-3 mb-3">
                       <div className="rounded-full bg-blue-500/10 p-2 shrink-0">
                         <Check className="h-4 w-4 text-blue-500" />
@@ -56,7 +65,8 @@ export const CatalanTheory = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-5 rounded-xl border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-6 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <div className="flex items-start gap-3 mb-3">
                       <div className="rounded-full bg-blue-500/10 p-2 shrink-0">
                         <Check className="h-4 w-4 text-blue-500" />
@@ -73,7 +83,8 @@ export const CatalanTheory = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-5 rounded-xl border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-6 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <div className="flex items-start gap-3 mb-3">
                       <div className="rounded-full bg-blue-500/10 p-2 shrink-0">
                         <Check className="h-4 w-4 text-blue-500" />
@@ -100,53 +111,53 @@ export const CatalanTheory = () => {
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-4">
-                    <Card>
-                      <CardHeader className="pb-3">
-                        <CardTitle className="text-base">Accentuació de la E</CardTitle>
-                      </CardHeader>
-                      <CardContent className="space-y-3">
+                    <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm">
+                      <div className="pb-3 border-b border-slate-200 dark:border-slate-700/50 mb-3">
+                        <h5 className="font-semibold text-foreground text-base">Accentuació de la E</h5>
+                      </div>
+                      <div className="space-y-3">
                         <div>
-                          <p className="font-medium text-sm mb-1">Accent obert (è)</p>
-                          <ul className="text-sm text-muted-foreground space-y-1 ml-4 list-disc">
+                          <p className="font-medium text-sm mb-1 text-slate-800 dark:text-slate-200">Accent obert (è)</p>
+                          <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-1 ml-4 list-disc">
                             <li><strong>Aguts:</strong> cafè, ofès, aprèn, sorprèn</li>
                             <li><strong>Plans:</strong> cèntim, dèbil, cèrcol, pèsol</li>
                             <li><strong>Esdrúixols:</strong> comèdia, ètica, matèria</li>
                           </ul>
                         </div>
                         <div>
-                          <p className="font-medium text-sm mb-1">Accent tancat (é)</p>
-                          <ul className="text-sm text-muted-foreground space-y-1 ml-4 list-disc">
+                          <p className="font-medium text-sm mb-1 text-slate-800 dark:text-slate-200">Accent tancat (é)</p>
+                          <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-1 ml-4 list-disc">
                             <li><strong>Aguts:</strong> entén, pretén, tindré, accés, només</li>
                             <li><strong>Plans:</strong> néixer, témer, créixer, érem</li>
                             <li><strong>Esdrúixols:</strong> cérvola, església, feréstega</li>
                           </ul>
                         </div>
-                      </CardContent>
-                    </Card>
+                      </div>
+                    </div>
 
-                    <Card className="glass-card">
-                      <CardHeader className="pb-3">
-                        <CardTitle className="text-base">Accentuació de la O</CardTitle>
-                      </CardHeader>
-                      <CardContent className="space-y-3">
+                    <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm">
+                      <div className="pb-3 border-b border-slate-200 dark:border-slate-700/50 mb-3">
+                        <h5 className="font-semibold text-foreground text-base">Accentuació de la O</h5>
+                      </div>
+                      <div className="space-y-3">
                         <div>
-                          <p className="font-medium text-sm mb-1">Accent obert (ò)</p>
-                          <ul className="text-sm text-muted-foreground space-y-1 ml-4 list-disc">
+                          <p className="font-medium text-sm mb-1 text-slate-800 dark:text-slate-200">Accent obert (ò)</p>
+                          <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-1 ml-4 list-disc">
                             <li><strong>Aguts:</strong> això, allò, arròs, però, repòs</li>
                             <li><strong>Plans:</strong> sòcol, lògic, mòbil, pròxim</li>
                             <li><strong>Esdrúixols:</strong> còlera, còpia, crònica, òpera</li>
                           </ul>
                         </div>
                         <div>
-                          <p className="font-medium text-sm mb-1">Accent tancat (ó)</p>
-                          <ul className="text-sm text-muted-foreground space-y-1 ml-4 list-disc">
+                          <p className="font-medium text-sm mb-1 text-slate-800 dark:text-slate-200">Accent tancat (ó)</p>
+                          <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-1 ml-4 list-disc">
                             <li><strong>Aguts:</strong> cançó, botó, atenció, educació</li>
                             <li><strong>Plans:</strong> córrer, fórem, estómac</li>
                             <li><strong>Esdrúixols:</strong> fórmula, pólvora, tómbola</li>
                           </ul>
                         </div>
-                      </CardContent>
-                    </Card>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </AccordionContent>
@@ -154,10 +165,12 @@ export const CatalanTheory = () => {
 
             {/* Accent diacrític */}
             <AccordionItem value="accent-diacritic">
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-lg transition-all duration-300 group data-[state=open]:rounded-b-none data-[state=open]:border-b-0 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
+                <span className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 L'Accent en els Mots Monosil·làbics (Accent Diacrític)
+              </span>
               </AccordionTrigger>
-              <AccordionContent className="space-y-4 text-base">
+              <AccordionContent className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-t-0 rounded-b-2xl shadow-sm text-base">
                 <p className="text-muted-foreground">
                   En català, la majoria dels mots monosil·làbics no s'accentuen. Però hi ha alguns mots d'una síl·laba 
                   que porten accent gràfic per distingir-los d'altres que s'escriuen igual, tot i que tenen una 
@@ -252,12 +265,15 @@ export const CatalanTheory = () => {
 
             {/* La dièresi */}
             <AccordionItem value="dieresi">
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-lg transition-all duration-300 group data-[state=open]:rounded-b-none data-[state=open]:border-b-0 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
+                <span className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 La Dièresi
+              </span>
               </AccordionTrigger>
-              <AccordionContent className="space-y-4 text-base">
+              <AccordionContent className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-t-0 rounded-b-2xl shadow-sm text-base">
                 <div className="space-y-4">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">A. Quan utilitzem la dièresi:</h4>
                     
                     <div className="space-y-3">
@@ -291,7 +307,8 @@ export const CatalanTheory = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">B. Estalvi de la dièresi:</h4>
                     <p className="text-sm text-muted-foreground mb-2">No posem dièresi en els casos següents:</p>
                     <ul className="list-disc list-inside space-y-1 text-sm ml-4">
@@ -308,12 +325,15 @@ export const CatalanTheory = () => {
 
             {/* Gènere dels noms */}
             <AccordionItem value="genere">
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-lg transition-all duration-300 group data-[state=open]:rounded-b-none data-[state=open]:border-b-0 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
+                <span className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 Gènere dels Noms
+              </span>
               </AccordionTrigger>
-              <AccordionContent className="space-y-4 text-base">
+              <AccordionContent className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-t-0 rounded-b-2xl shadow-sm text-base">
                 <div className="space-y-4">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Substantius variables</h4>
                     <p className="text-sm text-muted-foreground mb-3">
                       Tenen una forma per al masculí i una per al femení.
@@ -339,7 +359,8 @@ export const CatalanTheory = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Substantius invariables</h4>
                     <p className="text-sm text-muted-foreground mb-2">
                       Mantenen la mateixa forma per als dos gèneres.
@@ -350,32 +371,32 @@ export const CatalanTheory = () => {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4">
-                    <Card>
-                      <CardHeader className="pb-3">
-                        <CardTitle className="text-base">Noms sempre masculins</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-muted-foreground">
+                    <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm">
+                      <div className="pb-3 border-b border-slate-200 dark:border-slate-700/50 mb-3">
+                        <h5 className="font-semibold text-foreground text-base">Noms sempre masculins</h5>
+                      </div>
+                      <div>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                           els afores, un anell, un avantatge, el compte, el deute, el dot, el dubte, 
                           els espinacs, el front, un full, un interrogant, el llegum, el marge, 
                           els narius, un ordre, un orgue, el pebre, el pendent, el senyal, els tèrmits, el titella
                         </p>
-                      </CardContent>
-                    </Card>
+                      </div>
+                    </div>
 
-                    <Card>
-                      <CardHeader className="pb-3">
-                        <CardTitle className="text-base">Noms sempre femenins</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-muted-foreground">
+                    <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm">
+                      <div className="pb-3 border-b border-slate-200 dark:border-slate-700/50 mb-3">
+                        <h5 className="font-semibold text-foreground text-base">Noms sempre femenins</h5>
+                      </div>
+                      <div>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                           les alicates, una allau, una amargor, una anàlisi, una àncora, una aroma, 
                           una au, la calor, la claror, la dent, la destrossa, la frescor, la gla, 
                           la grip, la icona, la marató, la nespra, una olor, les postres, 
                           la remor, la resplendor, la resta, la sidra, la síncope, la síndrome, la suor
                         </p>
-                      </CardContent>
-                    </Card>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </AccordionContent>
@@ -383,12 +404,15 @@ export const CatalanTheory = () => {
 
             {/* Nombre dels noms */}
             <AccordionItem value="nombre">
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-lg transition-all duration-300 group data-[state=open]:rounded-b-none data-[state=open]:border-b-0 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
+                <span className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 Flexió de Nombre
+              </span>
               </AccordionTrigger>
-              <AccordionContent className="space-y-4 text-base">
+              <AccordionContent className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-t-0 rounded-b-2xl shadow-sm text-base">
                 <div className="space-y-4">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Substantius variables</h4>
                     <div className="space-y-2 text-sm">
                       <p><strong>Regla general:</strong> El plural es forma afegint -s: <span className="italic">arbre → arbres</span></p>
@@ -399,7 +423,8 @@ export const CatalanTheory = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Substantius invariables</h4>
                     <p className="text-sm">
                       Hi ha mots que s'escriuen igual en singular que en plural: <span className="italic">llapis → llapis</span>
@@ -414,12 +439,15 @@ export const CatalanTheory = () => {
 
             {/* Adjectius */}
             <AccordionItem value="adjectius">
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-lg transition-all duration-300 group data-[state=open]:rounded-b-none data-[state=open]:border-b-0 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
+                <span className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 Adjectius
+              </span>
               </AccordionTrigger>
-              <AccordionContent className="space-y-4 text-base">
+              <AccordionContent className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-t-0 rounded-b-2xl shadow-sm text-base">
                 <div className="space-y-4">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Adjectius de dues terminacions</h4>
                     <p className="text-sm text-muted-foreground mb-3">
                       Tenen una forma per a cada gènere, és a dir quatre formes segons si són singular i plural.
@@ -447,7 +475,8 @@ export const CatalanTheory = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Adjectius d'una sola terminació</h4>
                     <p className="text-sm text-muted-foreground mb-2">Mateixa forma per a masculí i femení:</p>
                     <ul className="list-disc list-inside space-y-1 text-sm ml-4">
@@ -468,16 +497,19 @@ export const CatalanTheory = () => {
 
             {/* L'article definit */}
             <AccordionItem value="article">
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-lg transition-all duration-300 group data-[state=open]:rounded-b-none data-[state=open]:border-b-0 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
+                <span className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 L'Article Definit
+              </span>
               </AccordionTrigger>
-              <AccordionContent className="space-y-4 text-base">
+              <AccordionContent className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-t-0 rounded-b-2xl shadow-sm text-base">
                 <div className="space-y-4">
                   <p className="text-muted-foreground">
                     L'article definit és una categoria gramatical que exerceix principalment la funció de determinar un nom ja conegut.
                   </p>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-3">Morfologia</h4>
                     <table className="w-full text-sm">
                       <thead>
@@ -507,7 +539,8 @@ export const CatalanTheory = () => {
                     </table>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Apostrofació</h4>
                     <p className="text-sm text-muted-foreground mb-2">
                       Com a regla general, quan la paraula següent comença per vocal o h: <strong>el → l'</strong>, <strong>la → l'</strong>
@@ -519,7 +552,8 @@ export const CatalanTheory = () => {
                     <p className="text-sm italic">l'stop, l'1, l'11, l'FMI, l'IVA, l'ESO, l'ONCE, l'ONU...</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">NO s'apostrofen</h4>
                     <ul className="list-disc list-inside space-y-1 text-sm ml-4">
                       <li>Mots amb h aspirada: <span className="italic">el hall, el hòlding</span></li>
@@ -530,7 +564,8 @@ export const CatalanTheory = () => {
                     </ul>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-3">Contracció</h4>
                     <table className="w-full text-sm">
                       <thead>
@@ -570,7 +605,8 @@ export const CatalanTheory = () => {
                     </table>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Estalvi de l'article</h4>
                     <p className="text-sm text-muted-foreground mb-2">Se suprimeix l'article en els casos següents:</p>
                     <ul className="list-disc list-inside space-y-1 text-sm ml-4">
@@ -588,16 +624,19 @@ export const CatalanTheory = () => {
 
             {/* Pronoms febles */}
             <AccordionItem value="pronoms">
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-lg transition-all duration-300 group data-[state=open]:rounded-b-none data-[state=open]:border-b-0 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
+                <span className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 Els Pronoms Febles i les seves Combinacions
+              </span>
               </AccordionTrigger>
-              <AccordionContent className="space-y-4 text-base">
+              <AccordionContent className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-t-0 rounded-b-2xl shadow-sm text-base">
                 <p className="text-muted-foreground">
                   Els complements del verb poden ésser representats per pronoms inaccentuats que es col·loquen 
                   immediatament al davant o al darrera del verb.
                 </p>
 
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                   <h4 className="font-semibold text-foreground mb-3">Formes dels pronoms febles</h4>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
@@ -699,12 +738,15 @@ export const CatalanTheory = () => {
 
             {/* Preposicions */}
             <AccordionItem value="preposicions">
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-lg transition-all duration-300 group data-[state=open]:rounded-b-none data-[state=open]:border-b-0 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
+                <span className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 Les Preposicions
+              </span>
               </AccordionTrigger>
-              <AccordionContent className="space-y-4 text-base">
+              <AccordionContent className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-t-0 rounded-b-2xl shadow-sm text-base">
                 <div className="space-y-4">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Preposicions febles (o àtones)</h4>
                     <ul className="list-disc list-inside space-y-1 text-sm ml-4">
                       <li><strong>a</strong> (a + el/els → al/als): <span className="italic">Vindré a casa teva</span></li>
@@ -716,7 +758,8 @@ export const CatalanTheory = () => {
                     </ul>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Preposicions fortes (o tòniques)</h4>
                     <p className="text-sm font-medium mb-2">Simples:</p>
                     <ul className="list-disc list-inside space-y-1 text-sm ml-4">
@@ -753,17 +796,20 @@ export const CatalanTheory = () => {
 
             {/* Adverbis */}
             <AccordionItem value="adverbis">
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-lg transition-all duration-300 group data-[state=open]:rounded-b-none data-[state=open]:border-b-0 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
+                <span className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 L'Adverbi i les Locucions Adverbials
+              </span>
               </AccordionTrigger>
-              <AccordionContent className="space-y-4 text-base">
+              <AccordionContent className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-t-0 rounded-b-2xl shadow-sm text-base">
                 <div className="space-y-4">
                   <p className="text-muted-foreground">
                     Categoria gramatical invariable que serveix per a modificar el significat d'un adjectiu, 
                     d'un verb, d'un altre adverbi, d'un predicat o d'una oració.
                   </p>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Adverbis de manera</h4>
                     <p className="text-sm text-muted-foreground mb-2">
                       Els adverbis acabats en <strong>-ment</strong> són derivats dels adjectius: 
@@ -775,7 +821,8 @@ export const CatalanTheory = () => {
                     </p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Adverbis de quantitat</h4>
                     <p className="text-sm text-muted-foreground mb-2">
                       Principals: <span className="italic">quant, molt, poc, tant, tan, prou, massa, gaire...</span>
@@ -787,7 +834,8 @@ export const CatalanTheory = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Adverbis de lloc</h4>
                     <p className="text-sm text-muted-foreground">
                       <span className="italic">aquí, ací, allà, allí, a dalt, a baix, a dins, a fora, a prop, lluny, on...</span>
@@ -797,7 +845,8 @@ export const CatalanTheory = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Adverbis de temps</h4>
                     <p className="text-sm text-muted-foreground">
                       <span className="italic">quan, ara, abans, després, encara, aviat, tard, sempre, mai, ja, demà, ahir, avui...</span>
@@ -809,17 +858,20 @@ export const CatalanTheory = () => {
 
             {/* Derivació */}
             <AccordionItem value="derivacio">
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-lg transition-all duration-300 group data-[state=open]:rounded-b-none data-[state=open]:border-b-0 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
+                <span className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 Derivació i Pseudoderivats
+              </span>
               </AccordionTrigger>
-              <AccordionContent className="space-y-4 text-base">
+              <AccordionContent className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-t-0 rounded-b-2xl shadow-sm text-base">
                 <div className="space-y-4">
                   <p className="text-muted-foreground">
                     Les paraules d'una mateixa família tenen un element en comú, anomenat <strong>arrel o lexema</strong>.
                   </p>
                   <p className="text-sm italic">Exemple: fort, fortor, enfortir, fortificar, fortalesa</p>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Afixos</h4>
                     <p className="text-sm text-muted-foreground mb-2">
                       Partícules que s'annexen a l'arrel d'un mot per compondre'n un altre de significació diferent:
@@ -831,7 +883,8 @@ export const CatalanTheory = () => {
                     </ul>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Canvis ortogràfics en la derivació</h4>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
                       <div>c → qu: <span className="italic">sec → sequedat</span></div>
@@ -847,7 +900,8 @@ export const CatalanTheory = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Pseudoderivats</h4>
                     <p className="text-sm text-muted-foreground mb-3">
                       Paraules cultes que provenen directament del llatí i no s'escriuen com la resta de paraules de la mateixa família.
@@ -890,101 +944,121 @@ export const CatalanTheory = () => {
 
             {/* Frases fetes */}
             <AccordionItem value="frases">
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-lg transition-all duration-300 group data-[state=open]:rounded-b-none data-[state=open]:border-b-0 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
+                <span className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 Frases Fetes
+              </span>
               </AccordionTrigger>
-              <AccordionContent className="space-y-4 text-base">
+              <AccordionContent className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-t-0 rounded-b-2xl shadow-sm text-base">
                 <p className="text-muted-foreground mb-4">
                   Selecció de les frases fetes més comunes del català:
                 </p>
                 
                 <div className="space-y-3">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Agafar el rave per les fulles</p>
                     <p className="text-sm text-muted-foreground">Agafar o entendre una cosa pel cantó més maliciós.</p>
                   </div>
                   
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Anar-se'n en orris</p>
                     <p className="text-sm text-muted-foreground">Referir-se a alguna cosa que s'ha espatllat, s'ha perdut o ha fracassat.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Bufar i fer ampolles</p>
                     <p className="text-sm text-muted-foreground">Indica que una cosa és molt fàcil de fer.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Caure de quatre potes, com els gats</p>
                     <p className="text-sm text-muted-foreground">Sortir-se bé, amb sort, de situacions difícils o de malifetes.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Costar un ull de la cara</p>
                     <p className="text-sm text-muted-foreground">Ésser molt cara una cosa.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">De gom a gom</p>
                     <p className="text-sm text-muted-foreground">Completament ple; atapeït.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Donar gat per llebre</p>
                     <p className="text-sm text-muted-foreground">Enganyar donant una cosa per una altra o fent veure allò que no és.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Ésser la mare dels ous</p>
                     <p className="text-sm text-muted-foreground">Ésser la causa, la raó d'una cosa.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Fer el salt</p>
                     <p className="text-sm text-muted-foreground">Mancar a una cita o a un compromís; cometre una infidelitat conjugal.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Fer mans i mànigues</p>
                     <p className="text-sm text-muted-foreground">Esforçar-se molt per aconseguir alguna cosa, fer tots els possibles d'aconseguir-la.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Haver-hi gat amagat</p>
                     <p className="text-sm text-muted-foreground">Haver-hi intenció oculta.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Llançar la tovallola</p>
                     <p className="text-sm text-muted-foreground">Renunciar, donar-se per vençut.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">No tenir ni cap ni peus</p>
                     <p className="text-sm text-muted-foreground">Estar una cosa mal feta.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Perdre bous i esquelles</p>
                     <p className="text-sm text-muted-foreground">Quedar-se sense res.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Posar tota la carn a la graella</p>
                     <p className="text-sm text-muted-foreground">Jugar tots els recursos en una empresa o en un intent.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Tallar el bacallà</p>
                     <p className="text-sm text-muted-foreground">Manar, dirigir.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Tindre la paella pel mànec</p>
                     <p className="text-sm text-muted-foreground">Dominar la situació, controlar una qüestió, tindre poder.</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <p className="font-semibold text-sm">Venir com l'anell al dit</p>
                     <p className="text-sm text-muted-foreground">Ser oportú.</p>
                   </div>
@@ -994,16 +1068,19 @@ export const CatalanTheory = () => {
 
             {/* Confusions comunes */}
             <AccordionItem value="confusions">
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-lg transition-all duration-300 group data-[state=open]:rounded-b-none data-[state=open]:border-b-0 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
+                <span className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 Evitem Confusions
+              </span>
               </AccordionTrigger>
-              <AccordionContent className="space-y-4 text-base">
+              <AccordionContent className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-t-0 rounded-b-2xl shadow-sm text-base">
                 <p className="text-muted-foreground mb-4">
                   En català hi ha alguns parells de paraules que posen certes dificultats a l'hora d'escriure'ls:
                 </p>
 
                 <div className="space-y-4">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Sinó / Si no</h4>
                     <ul className="list-disc list-inside space-y-1 text-sm ml-4">
                       <li><strong>Sinó</strong> (conjunció adversativa): <span className="italic">No vull vi sinó aigua</span></li>
@@ -1011,7 +1088,8 @@ export const CatalanTheory = () => {
                     </ul>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Perquè / Per què</h4>
                     <ul className="list-disc list-inside space-y-1 text-sm ml-4">
                       <li><strong>Perquè</strong> (conjunció causal): <span className="italic">Ho faig perquè vull</span></li>
@@ -1019,7 +1097,8 @@ export const CatalanTheory = () => {
                     </ul>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Perquè / Doncs</h4>
                     <ul className="list-disc list-inside space-y-1 text-sm ml-4">
                       <li><strong>Perquè</strong> (conjunció): <span className="italic">Ho faig perquè vull</span></li>
@@ -1027,7 +1106,8 @@ export const CatalanTheory = () => {
                     </ul>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Què / Que</h4>
                     <ul className="list-disc list-inside space-y-1 text-sm ml-4">
                       <li><strong>Què</strong> (interrogatiu o exclamatiu): <span className="italic">Què vols? Què bonic!</span></li>
@@ -1035,7 +1115,8 @@ export const CatalanTheory = () => {
                     </ul>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Tant / Tan</h4>
                     <ul className="list-disc list-inside space-y-1 text-sm ml-4">
                       <li><strong>Tant</strong> (modifica verb o nom): <span className="italic">Menjo tant. Tant de temps</span></li>
@@ -1043,7 +1124,8 @@ export const CatalanTheory = () => {
                     </ul>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm relative overflow-hidden group/card hover:border-blue-200 dark:hover:border-blue-500/30 hover:shadow-md transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/80 rounded-l-2xl transform origin-left scale-y-50 opacity-0 group-hover/card:scale-y-100 group-hover/card:opacity-100 transition-all duration-300" />
                     <h4 className="font-semibold text-foreground mb-2">Quant / Quan</h4>
                     <ul className="list-disc list-inside space-y-1 text-sm ml-4">
                       <li><strong>Quant</strong> (quantitatiu): <span className="italic">Quanta gent! Quant val?</span></li>
@@ -1054,8 +1136,7 @@ export const CatalanTheory = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-        </CardContent>
-      </Card>
+      </div>
     </div>
   );
 };

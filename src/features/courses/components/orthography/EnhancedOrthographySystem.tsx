@@ -271,7 +271,7 @@ export const EnhancedOrthographySystem = ({
         </div>
 
         {/* Cards with animations */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl w-full px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl w-full px-4 stagger-build">
 
           {/* B2 Card */}
           <Card
@@ -318,9 +318,9 @@ export const EnhancedOrthographySystem = ({
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 stagger-build">
       {/* Premium Course Explorer Header */}
-      <div className="relative space-y-8 animate-in fade-in slide-in-from-top-4 duration-700">
+      <div className="relative space-y-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-2">
           <div className="flex items-center gap-4 group">
             <Button
@@ -420,7 +420,7 @@ export const EnhancedOrthographySystem = ({
       </div>
 
       {/* Sections Grid - Premium Bento Style */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-build">
         {filteredSections.length === 0 ? (
           <Card className="col-span-full p-8 text-center bg-transparent border border-slate-200/60 dark:border-slate-700/60 shadow-none">
             <p className="text-slate-500 dark:text-slate-400">

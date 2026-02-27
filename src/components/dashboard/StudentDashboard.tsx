@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, Trophy, Target, Users, Newspaper, Zap, TrendingUp, Plus } from "lucide-react";
+import { BookOpen, Trophy, Target, Users, Newspaper, Zap, TrendingUp, Plus, Bot } from "lucide-react";
 
 import { EnhancedOrthographySystem } from "@/features/courses/components/orthography/EnhancedOrthographySystem";
 import { EnhancedChatInterface } from "@/components/chat/EnhancedChatInterface";
@@ -28,8 +28,6 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
   const { toast } = useToast();
   const { showAnswers: easterEggActive } = useEasterEgg(user?.role || 'student');
   const [activeTab, setActiveTab] = useState("orthography");
-  const [panelPosition, setPanelPosition] = useState({ x: 0, y: 0 });
-  const [isPanelAnimating, setIsPanelAnimating] = useState(false);
   const tabsListRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -79,33 +77,8 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
     );
   }
 
-  const handleTabClick = (tabValue: string, event: React.MouseEvent<HTMLButtonElement>) => {
-    const button = event.currentTarget;
-    const container = containerRef.current;
-
-    if (container) {
-      const buttonRect = button.getBoundingClientRect();
-      const containerRect = container.getBoundingClientRect();
-
-      // Calculate relative position inside the container
-      const x = buttonRect.left - containerRect.left + buttonRect.width / 2;
-      const y = buttonRect.top - containerRect.top; // Start from top of button row approx
-
-      setPanelPosition({ x, y });
-
-      // Trigger restart of animation
-      setIsPanelAnimating(true);
-      setActiveTab(tabValue);
-
-      // Detailed scheduling for snappy feel
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          setIsPanelAnimating(false);
-        });
-      });
-    } else {
-      setActiveTab(tabValue);
-    }
+  const handleTabClick = (tabValue: string) => {
+    setActiveTab(tabValue);
   };
 
   // Determine greeting based on time of day
@@ -199,17 +172,17 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
               >
                 {/* Liquid Glass Sliding Pill */}
                 <div
-                  className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full z-0"
+                  className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full z-0 tab-indicator-smooth"
                   style={{
                     width: `calc((100% - 12px) / ${tabs.length})`,
                     transform: `translateX(${tabs.findIndex((tab) => tab.id === activeTab) * 100}%)`,
-                    background: "linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(99, 102, 241, 0.1) 100%)",
-                    boxShadow: "0 2px 8px rgba(59, 130, 246, 0.15), inset 0 1px 1px rgba(255,255,255,0.5)",
-                    backdropFilter: "blur(8px)",
-                    transition: "transform 700ms cubic-bezier(0.25, 1, 0.5, 1)"
+                    background: "rgba(59, 130, 246, 0.08)",
+                    border: "1px solid rgba(59, 130, 246, 0.2)",
+                    boxShadow: "0 2px 10px rgba(59, 130, 246, 0.1)",
+                    backdropFilter: "blur(4px)",
                   }}
                 >
-                  <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-5 h-[3px] bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full shadow-sm shadow-blue-500/50" />
+                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-4 h-1 bg-blue-500 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
                 </div>
 
                 {/* Tab Triggers */}
@@ -217,7 +190,7 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
                   <TabsTrigger
                     key={tab.id}
                     value={tab.id}
-                    onClick={(e) => handleTabClick(tab.id, e)}
+                    onClick={() => handleTabClick(tab.id)}
                     className="relative flex-1 flex items-center justify-center gap-2 py-2 text-xs sm:text-sm font-medium transition-all duration-300 z-10 text-slate-600 data-[state=active]:text-slate-900 hover:text-slate-900 hover:-translate-y-0.5 hover:shadow-md hover:bg-transparent dark:hover:bg-transparent dark:text-white/60 dark:data-[state=active]:text-white dark:hover:text-white border-0 border-none shadow-none outline-none ring-0 data-[state=active]:shadow-none data-[state=active]:bg-transparent data-[state=active]:border-none"
                   >
                     <tab.icon className={cn(
@@ -230,7 +203,7 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
                     )}>{tab.label}</span>
                     {/* Badge "Nou!" */}
                     {(tab as any).badge && (
-                      <span className="absolute top-1.5 right-1.5 px-1.5 py-0.5 text-[9px] font-bold bg-indigo-100 text-indigo-600 dark:bg-indigo-500/20 dark:text-indigo-300 rounded-full shadow-sm">
+                      <span className="absolute top-1.5 right-1.5 px-1.5 py-0.5 text-[9px] font-bold bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300 rounded-full shadow-sm">
                         {(tab as any).badge}
                       </span>
                     )}
@@ -242,20 +215,12 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
 
           <div className="relative" ref={containerRef}>
             <div
-              className={cn(
-                "w-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]",
-                isPanelAnimating ? "opacity-0 scale-90 translate-y-4 blur-sm" : "opacity-100 scale-100 translate-y-0 blur-0"
-              )}
-              style={{
-                transformOrigin: `${panelPosition.x}px -20px`, // Anchor to the button position above
-              }}
+              key={activeTab}
+              className="w-full pt-6 animate-tab-entry"
             >
               <TabsContent
                 value="orthography"
-                className={cn(
-                  "space-y-4 mt-6",
-                  activeTab === "orthography" && !isPanelAnimating && "animate-in fade-in-0 slide-in-from-top-4 duration-400"
-                )}
+                className="space-y-4 mt-6 outline-none"
               >
                 <EnhancedOrthographySystem
                   userId={user.user_id}
@@ -268,49 +233,31 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
 
               <TabsContent
                 value="theory"
-                className={cn(
-                  "space-y-4 mt-6",
-                  activeTab === "theory" && !isPanelAnimating && "animate-in fade-in-0 slide-in-from-top-4 duration-400"
-                )}
+                className="space-y-4 mt-6 outline-none"
               >
                 <CatalanTheory />
               </TabsContent>
 
               <TabsContent
                 value="news"
-                className={cn(
-                  "space-y-4 mt-6",
-                  activeTab === "news" && !isPanelAnimating && "animate-in fade-in-0 slide-in-from-top-4 duration-400"
-                )}
+                className="space-y-4 mt-6 outline-none"
               >
                 <NewsList />
               </TabsContent>
 
               <TabsContent
                 value="extra"
-                className={cn(
-                  "space-y-4 mt-6",
-                  activeTab === "extra" && !isPanelAnimating && "animate-in fade-in-0 slide-in-from-top-4 duration-400"
-                )}
+                className="space-y-4 mt-6 outline-none"
               >
-                <Card className="border-0 shadow-lg bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl">
-                  <CardHeader>
-                    <CardTitle>Secció de Principiant</CardTitle>
-                    <CardDescription>Exercicis per a principiants, ideals per a gent de 1r d'ESO.</CardDescription>
-                  </CardHeader>
-                  <CardContent className="p-6">
-                    <BeginnerDashboard />
-                  </CardContent>
-                </Card>
+                <div className="w-full">
+                  <BeginnerDashboard />
+                </div>
               </TabsContent>
 
               {studentClass && (
                 <TabsContent
                   value="chat"
-                  className={cn(
-                    "space-y-4 mt-6",
-                    activeTab === "chat" && !isPanelAnimating && "animate-in fade-in-0 slide-in-from-top-4 duration-400"
-                  )}
+                  className="space-y-4 mt-6 outline-none"
                 >
                   <EnhancedChatInterface
                     classId={studentClass.id}
@@ -321,6 +268,18 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
             </div>
           </div>
         </Tabs>
+      </div>
+
+      {/* Subtle AI Professor teaser */}
+      <div className="flex justify-center w-full mt-12 pb-8 opacity-40 hover:opacity-100 transition-opacity duration-700">
+        <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-100/50 dark:bg-slate-800/30 border border-slate-200/50 dark:border-slate-700/30 cursor-default select-none shadow-sm backdrop-blur-sm">
+          <div className="relative flex items-center justify-center">
+            <Bot className="w-4 h-4 text-blue-500 dark:text-blue-400" />
+            <span className="absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-20 animate-ping"></span>
+          </div>
+          <span className="text-xs font-medium text-slate-600 dark:text-slate-400 tracking-wide">Professor Personal (IA)</span>
+          <span className="text-[9px] uppercase font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-blue-500/10 to-sky-500/10 text-blue-600 dark:text-blue-400 border border-blue-200/50 dark:border-blue-700/50">Pròximament</span>
+        </div>
       </div>
     </div>
   );
