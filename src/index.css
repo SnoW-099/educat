@@ -1,0 +1,448 @@
+/* Import professional fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Vercel/Railway Design System - Ultra Professional */
+
+@layer base {
+  :root {
+    /* ============================================
+       PALETA MODERNA ESTILO APPLE (LIGHT ONLY)
+       Monocromático mejorado con acento azul suave
+       ============================================ */
+
+    /* Fondos */
+    --background: 0 0% 100%;
+    /* Blanco puro */
+    --foreground: 0 0% 10%;
+    /* Gris muy oscuro, casi negro, más suave */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    /* Primary: Azul estilo Apple #007AFF */
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Gris muy claro mejorado */
+    --secondary: 210 20% 96%;
+    /* Ligero tinte azulado muy sutil */
+    --secondary-foreground: 222 47% 11%;
+
+    /* Accent: Azul suave para elementos secundarios */
+    --accent: 210 100% 96%;
+    --accent-foreground: 210 100% 45%;
+
+    /* Tertiary: Gris medio mejorado */
+    --tertiary: 210 20% 96%;
+    --tertiary-foreground: 215 16% 47%;
+
+    /* Muted: Gris suave mejorado */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Destructive: Rojo suave estilo Apple */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 100% 50%;
+
+    /* Estados */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 10%;
+
+    /* Gradientes Modernos con acento azul */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(210 100% 50%),
+      hsl(210 100% 45%)
+    );
+    --gradient-card: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.4)
+    );
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(0 0% 100%) 0%,
+      hsl(210 100% 98%) 100%
+    );
+    --gradient-accent: linear-gradient(
+      135deg,
+      hsl(210 100% 96%),
+      hsl(210 100% 98%)
+    );
+    --gradient-surface: hsl(210 100% 99%);
+    --gradient-subtle: linear-gradient(
+      180deg,
+      hsl(0 0% 100%),
+      hsl(210 100% 99%)
+    );
+
+    /* Sombras - Más suaves y naturales */
+    --shadow-minimal: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-card:
+      0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --shadow-hover:
+      0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+    --shadow-focus:
+      0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(210 100% 50% / 0.2);
+    --shadow-elevation:
+      0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
+
+    /* Bordes redondeados sutiles */
+    --radius: 0.75rem;
+    /* 12px */
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* ============================================
+       PALETA MODO OSCURO ESTILO APPLE
+       ============================================ */
+
+    /* Fondos */
+    --background: 0 0% 3.9%;
+    /* Gris muy oscuro, casi negro */
+    --foreground: 0 0% 98%;
+    /* Blanco puro */
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary: Azul estilo Apple #007AFF */
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Gris oscuro mejorado */
+    --secondary: 210 20% 8%;
+    --secondary-foreground: 222 47% 89%;
+
+    /* Accent: Azul oscuro para elementos secundarios */
+    --accent: 210 100% 8%;
+    --accent-foreground: 210 100% 55%;
+
+    /* Tertiary: Gris medio oscuro */
+    --tertiary: 210 20% 12%;
+    --tertiary-foreground: 215 16% 83%;
+
+    /* Muted: Gris oscuro suave */
+    --muted: 210 40% 3.9%;
+    --muted-foreground: 215.4 16.3% 83.9%;
+
+    /* Destructive: Rojo oscuro */
+    --destructive: 0 62% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 214.3 31.8% 12.9%;
+    --input: 214.3 31.8% 12.9%;
+    --ring: 210 100% 50%;
+
+    /* Estados */
+    --success: 142 71% 55%;
+    --success-foreground: 0 0% 10%;
+
+    --warning: 38 92% 60%;
+    --warning-foreground: 0 0% 10%;
+
+    /* Gradientes Modernos para modo oscuro */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(210 100% 50%),
+      hsl(210 100% 45%)
+    );
+    --gradient-card: linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.8),
+      rgba(20, 20, 20, 0.4)
+    );
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(0 0% 3.9%) 0%,
+      hsl(210 100% 8%) 100%
+    );
+    --gradient-accent: linear-gradient(
+      135deg,
+      hsl(210 100% 8%),
+      hsl(210 100% 12%)
+    );
+    --gradient-surface: hsl(210 100% 6%);
+    --gradient-subtle: linear-gradient(
+      180deg,
+      hsl(0 0% 3.9%),
+      hsl(210 100% 6%)
+    );
+
+    /* Sombras - Más intensas para modo oscuro */
+    --shadow-minimal: 0 1px 2px 0 rgb(0 0 0 / 0.25);
+    --shadow-card:
+      0 4px 6px -1px rgb(0 0 0 / 0.25), 0 2px 4px -2px rgb(0 0 0 / 0.25);
+    --shadow-hover:
+      0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+    --shadow-focus:
+      0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(210 100% 50% / 0.3);
+    --shadow-elevation:
+      0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 3.9%;
+    --sidebar-foreground: 240 5.3% 83.9%;
+    --sidebar-primary: 240 5.9% 90%;
+    --sidebar-primary-foreground: 0 0% 3.9%;
+    --sidebar-accent: 240 4.8% 8.9%;
+    --sidebar-accent-foreground: 240 5.9% 90%;
+    --sidebar-border: 220 13% 12.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* ============================================
+     PREMIUM VISUAL STYLES
+     ============================================ */
+
+  /* Glassmorphism Effects */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+  }
+
+  .dark .glass-card {
+    background: rgba(10, 10, 10, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(210 100% 45%), hsl(210 100% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv03";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: transparent;
+    /* For AnimatedBackground visibility */
+  }
+
+  /* Monospace for data/code */
+  code,
+  kbd,
+  pre,
+  .font-mono {
+    font-family:
+      "JetBrains Mono", "SF Mono", Monaco, "Cascadia Code", monospace;
+  }
+}
+
+@layer utilities {
+  /* Simplified utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animation Delays */
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4000ms;
+  }
+}
+
+/* Main Snowflake Indicator specific animation */
+#snowdev-indicator {
+  filter: drop-shadow(0 0 15px rgba(100, 200, 255, 0.8));
+  animation: float-Snowflake 3s ease-in-out infinite;
+}
+
+@keyframes float-Snowflake {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(10px) rotate(10deg);
+  }
+}
+
+/* ============================================
+   REALISTIC PAGE TURN ANIMATION (Right to Left)
+   ============================================ */
+
+@keyframes realistic-page-turn {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+    z-index: 10;
+  }
+
+  30% {
+    transform: perspective(1000px) rotateY(-20deg) scale(1.02);
+    z-index: 10;
+  }
+
+  70% {
+    transform: perspective(1000px) rotateY(-160deg) scale(1.02);
+    z-index: 10;
+  }
+
+  100% {
+    transform: perspective(1000px) rotateY(-180deg);
+    z-index: 0;
+  }
+}
+
+@keyframes dot-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+@keyframes loading-bar {
+  0% {
+    width: 0%;
+    margin-left: 0;
+  }
+
+  50% {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  100% {
+    width: 0%;
+    margin-left: 100%;
+  }
+}
+
+@keyframes loading-progress {
+  0% {
+    width: 0%;
+    background-position: 0% 50%;
+  }
+
+  50% {
+    width: 100%;
+    background-position: 100% 50%;
+  }
+
+  100% {
+    width: 0%;
+    background-position: 0% 50%;
+  }
+}
+
+/* Card entrance animations */
+@keyframes card-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-entrance {
+  animation: card-entrance 0.5s ease-out forwards;
+}
+
+.animate-card-entrance-delay-1 {
+  animation: card-entrance 0.5s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-card-entrance-delay-2 {
+  animation: card-entrance 0.5s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-card-entrance-delay-3 {
+  animation: card-entrance 0.5s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* Particle animation for success feedback */
+@keyframes success-particle {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(15deg);
+  }
+  100% {
+    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y) + 60px)) scale(0.2) rotate(var(--rotate, 180deg));
+    opacity: 0;
+  }
+}
+
+.animate-success-particle {
+  animation: success-particle 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
