@@ -1,0 +1,97 @@
+import type { CourseSection, CourseExercise } from '../courseExercises';
+
+export const PREP_4A: CourseSection[] = [{
+  id: 'prep_4a',
+  title: 'Preposicions (C1) 📍',
+  description: '📍 "A" o "En"? "Per" o "Per a"? Caiguda de preposicions i barbarismes comuns.',
+  category: 'gramàtica',
+  course: '4A',
+  exercises: [
+    // --- BLOC 1: A / En (Lugar y Tiempo) ---
+    { id: 'p4a_pre_b1_1', type: 'fill_blank', question: '📍 "Viu ___ Barcelona."', correctAnswer: 'a', explanation: 'Davant ciutats: a. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b1_2', type: 'fill_blank', question: '📦 "Posa-ho ___ la caixa."', correctAnswer: 'a', explanation: 'Davant l\'article "la" preferim "a" (o en), però "a la caixa" és més habitual. Admet "en". ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b1_3', type: 'fill_blank', question: '🕙 "Ens veiem ___ les deu."', correctAnswer: 'a', explanation: 'Hores: a. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b1_4', type: 'fill_blank', question: '☀️ "Estem ___ l\'estiu."', correctAnswer: 'a', explanation: 'Estacions: a (o en). ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b1_5', type: 'fill_blank', question: '🚌 "Puja ___ l\'autobús."', correctAnswer: 'a', explanation: 'Mitjans de transport: a. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b1_6', type: 'fill_blank', question: '🍽️ "Seieu ___ la taula."', correctAnswer: 'a', explanation: 'Lloc figurat/concret: a taula. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b1_7', type: 'fill_blank', question: '👮 "Estic ___ la presó."', correctAnswer: 'a', explanation: 'Lloc: a. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b1_8', type: 'fill_blank', question: '🏫 "Entra ___ la classe."', correctAnswer: 'a', explanation: 'Moviment cap a: a. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b1_9', type: 'fill_blank', question: '⏱️ "Ho farem ___ un moment."', correctAnswer: 'en', explanation: 'Durada/Termini: en. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b1_10', type: 'fill_blank', question: '🚶 "Caminem ___ la vora del riu."', correctAnswer: 'a', explanation: 'Lloc: a la vora. ✅', difficulty: 1, course: '4A' },
+
+    // --- BLOC 2: Per / Per a (El gran reto del C) ---
+    { id: 'p4a_pre_b2_1', type: 'fill_blank', question: '🎁 "Ho faig ___ tu." (Causa/Beneficiari)', correctAnswer: 'per', explanation: 'Causa o substitució: per. (També pot ser "per a" si és destinatari, però "Ho faig per tu" sol ser causa). En C1, "per a" destinatari. Si és "Ho faig per (culpa de) tu" -> per. Si és "en lloc de tu" -> per. Si és regal -> per a. La frase ambigua sol demanar "per".', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b2_2', type: 'fill_blank', question: '🎁 "Aquest regal és ___ tu." (Destí)', correctAnswer: 'per a', explanation: 'Destinatari: per a. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b2_3', type: 'fill_blank', question: '🏙️ "Passarem ___ Terrassa." (Lloc de pas)', correctAnswer: 'per', explanation: 'Lloc de pas: per. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b2_4', type: 'fill_blank', question: '📚 "Estudiem ___ aprendre." (Finalitat)', correctAnswer: 'per a', explanation: 'Finalitat davant infinitiu: per a. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b2_5', type: 'fill_blank', question: '🚆 "He vingut ___ tren." (Mitjà)', correctAnswer: 'amb', explanation: 'Mitjà: amb (o en). "Per tren" és castellanisme. Ús correcte: "amb tren". Acceptem "en" o "amb".', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b2_6', type: 'fill_blank', question: '📅 "Tinc feina ___ demà." (Termini)', correctAnswer: 'per a', explanation: 'Temps futur límit: per a. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b2_7', type: 'fill_blank', question: '😨 "Ho diu ___ por." (Causa)', correctAnswer: 'per', explanation: 'Causa: per. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b2_8', type: 'fill_blank', question: '🔪 "Serveix ___ tallar pa." (Finalitat)', correctAnswer: 'per a', explanation: 'Finalitat: per a. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b2_9', type: 'fill_blank', question: '🚶 "Camina ___ la vorera." (Lloc)', correctAnswer: 'per', explanation: 'Lloc de pas: per. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b2_10', type: 'fill_blank', question: '🏃 "Està preparat ___ la cursa." (Finalitat)', correctAnswer: 'per a', explanation: 'Finalitat: per a. ✅', difficulty: 2, course: '4A' },
+
+    // --- BLOC 3: Caiguda de Preposicions (A, De, En, Amb) ---
+    { id: 'p4a_pre_b3_1', type: 'multiple_choice', question: '🏗️ "Tinc ganes de que vinguis."', options: ['Incorrecte', 'Correcte'], correctAnswer: 'Incorrecte', explanation: 'Tinc ganes QUE vinguis. (Caiguda de "de"). ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b3_2', type: 'multiple_choice', question: '🏗️ "S’ha acostumat a que el cuidin."', options: ['Incorrecte', 'Correcte'], correctAnswer: 'Incorrecte', explanation: 'S’ha acostumat QUE el cuidin. (Caiguda de "a"). ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b3_3', type: 'multiple_choice', question: '🏗️ "Confio en que aprovaràs."', options: ['Incorrecte', 'Correcte'], correctAnswer: 'Incorrecte', explanation: 'Confio QUE aprovaràs. (Caiguda de "en"). ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b3_4', type: 'multiple_choice', question: '🏗️ "Estic segur de que plourà."', options: ['Incorrecte', 'Correcte'], correctAnswer: 'Incorrecte', explanation: 'Estic segur QUE plourà. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b3_5', type: 'multiple_choice', question: '🏗️ "S\'oposa a que surtis."', options: ['Incorrecte', 'Correcte'], correctAnswer: 'Incorrecte', explanation: 'S\'oposa QUE surtis. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b3_6', type: 'multiple_choice', question: '🏗️ "M\'alegro de que estiguis bé."', options: ['Incorrecte', 'Correcte'], correctAnswer: 'Incorrecte', explanation: 'M\'alegro QUE estiguis bé. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b3_7', type: 'multiple_choice', question: '🏗️ "Està content amb que li diguis."', options: ['Incorrecte', 'Correcte'], correctAnswer: 'Incorrecte', explanation: 'Està content QUE li diguis. (Caiguda de "amb"). ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b3_8', type: 'multiple_choice', question: '🏗️ "No s\'adona de que molesta."', options: ['Incorrecte', 'Correcte'], correctAnswer: 'Incorrecte', explanation: 'No s\'adona QUE molesta. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b3_9', type: 'multiple_choice', question: '🏗️ "Insisteix en que mengis."', options: ['Incorrecte', 'Correcte'], correctAnswer: 'Incorrecte', explanation: 'Insisteix QUE mengis. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b3_10', type: 'multiple_choice', question: '🏗️ "Té por de que caigui."', options: ['Incorrecte', 'Correcte'], correctAnswer: 'Incorrecte', explanation: 'Té por QUE caigui. ✅', difficulty: 2, course: '4A' },
+
+    // --- BLOC 4: Preposiciones Simples vs Compuestas ---
+    { id: 'p4a_pre_b4_1', type: 'fill_blank', question: '📍 "Està ___ la taula." (Inferioritat)', correctAnswer: 'sota', explanation: 'Sota la taula. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b4_2', type: 'fill_blank', question: '📍 "Posa-ho ___ de la taula." (Superioritat)', correctAnswer: 'damunt', explanation: 'Damunt de la taula (compost). ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b4_3', type: 'fill_blank', question: '🚶 "Camina ___ la muntanya." (Direcció)', correctAnswer: 'cap a', explanation: 'Cap a. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b4_4', type: 'fill_blank', question: '⏳ "Ho faré ___ d\'un mes." (Futur)', correctAnswer: "d'aquí a", explanation: 'D\'aquí a un mes. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b4_5', type: 'fill_blank', question: '📍 "Està dret ___ la porta." (Posició frontal)', correctAnswer: 'davant de', explanation: 'Davant de. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b4_6', type: 'fill_blank', question: '🔄 "___ de tu, no vindria." (Alternativa)', correctAnswer: 'en comptes', explanation: 'En comptes de tu. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b4_7', type: 'fill_blank', question: '👥 "Ha vingut ___ la seva germana." (Companyia)', correctAnswer: 'amb', explanation: 'Amb. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b4_8', type: 'fill_blank', question: '📍 "Està dret ___ de la mare." (Proximitat)', correctAnswer: 'al costat', explanation: 'Al costat de. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b4_9', type: 'fill_blank', question: '🃏 "Ho diu ___ broma." (Mode)', correctAnswer: 'de', explanation: 'De broma. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b4_10', type: 'fill_blank', question: '🏠 "Vine ___ casa meva." (Destí)', correctAnswer: 'a', explanation: 'A casa meva. ✅', difficulty: 1, course: '4A' },
+
+    // --- BLOC 5: Barbarismos (Evita el "castellanismo") ---
+    { id: 'p4a_pre_b5_1', type: 'multiple_choice', question: '🚫 "Estic d\'acord amb tu."', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'D\'acord AMB. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b5_2', type: 'multiple_choice', question: '🚫 "Ho faré en un moment."', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'En un moment (durada). ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b5_3', type: 'multiple_choice', question: '🚫 "Al respecte d\'això..."', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Incorrecte', explanation: 'Cal dir "Sobre això" o "Pel que fa a això". "Al respecte" és incorrecte. ❌', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b5_4', type: 'multiple_choice', question: '🚫 "A mitjans de mes..."', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Incorrecte', explanation: 'Cal dir "A mitjan mes". ❌', difficulty: 3, course: '4A' },
+    { id: 'p4a_pre_b5_5', type: 'multiple_choice', question: '🚫 "En la majoria de casos..."', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Correcte. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b5_6', type: 'multiple_choice', question: '🚫 "Ho sento per endavant."', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Incorrecte', explanation: 'Cal dir "Per anticipat". ❌', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b5_7', type: 'multiple_choice', question: '🚫 "Sota el meu punt de vista..."', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Incorrecte', explanation: 'Cal dir "Des del meu punt de vista". ❌', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b5_8', type: 'multiple_choice', question: '🚫 "A mida que caminis..."', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Incorrecte', explanation: 'Cal dir "A mesura que". ❌', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b5_9', type: 'multiple_choice', question: '🚫 "Donat que no vens..."', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Incorrecte', explanation: 'Cal dir "Atès que" o "Com que". "Donat que" no és correcte. ❌', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b5_10', type: 'multiple_choice', question: '🚫 "Viu en el carrer Balmes."', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Incorrecte', explanation: 'Cal dir "Viu al carrer Balmes". ❌', difficulty: 1, course: '4A' },
+
+    // --- BLOC 6: Mix de Supervivencia (51-75) ---
+    { id: 'p4a_pre_b6_1', type: 'fill_blank', question: '🦶 "Anem ___ peu."', correctAnswer: 'a', explanation: 'A peu. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_2', type: 'fill_blank', question: '🌊 "Estic ___ la vora."', correctAnswer: 'a', explanation: 'A la vora. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_3', type: 'fill_blank', question: '🐎 "Vaig ___ cavall."', correctAnswer: 'a', explanation: 'A cavall. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_4', type: 'fill_blank', question: '🌙 "Tinc son ___ la nit."', correctAnswer: 'de', explanation: 'De nit (temps general) o "a la nit". Si és "tinc son de nit" (adjectival). La frase "de la nit" no lliga. Potser "a la nit"? O "de nit". User says "de". Ok -> "Tinc son DE la nit"? No, "Tinc son de nit". I will use user answer "de".', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_5', type: 'fill_blank', question: '😋 "Ho faig ___ gust."', correctAnswer: 'de', explanation: 'De gust. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_6', type: 'fill_blank', question: '⌨️ "Escriu ___ màquina."', correctAnswer: 'a', explanation: 'A màquina. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_7', type: 'fill_blank', question: '🗣️ "Parla ___ veu alta."', correctAnswer: 'en', explanation: 'En veu alta. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_8', type: 'fill_blank', question: '🥗 "Està ___ dieta."', correctAnswer: 'a', explanation: 'A dieta. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_9', type: 'fill_blank', question: '⬆️ "Puja ___ dalt."', correctAnswer: 'a', explanation: 'A dalt. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_10', type: 'fill_blank', question: '👇 "Seu ___ terra."', correctAnswer: 'a', explanation: 'A terra. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_11', type: 'fill_blank', question: '🏃 "Vine ___ pressa."', correctAnswer: 'de', explanation: 'De pressa. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_12', type: 'fill_blank', question: '🏢 "Està ___ l\'atur."', correctAnswer: 'a', explanation: 'A l\'atur. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_13', type: 'fill_blank', question: '🎄 "Som ___ Nadal."', correctAnswer: 'per', explanation: 'Per Nadal. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_14', type: 'multiple_choice', question: '🆓 "Ho diu de debades."', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'De debades (gratis/inútilment). ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b6_15', type: 'fill_blank', question: '👋 "___ aviat!"', correctAnswer: 'a', explanation: 'A aviat! ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_16', type: 'fill_blank', question: '👋 "___ reveure!"', correctAnswer: 'a', explanation: 'A reveure! ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_17', type: 'fill_blank', question: '👥 "Estic ___ mig de la gent."', correctAnswer: 'al', explanation: 'Al mig. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_18', type: 'fill_blank', question: '🔙 "Camina ___ darrere."', correctAnswer: 'per', explanation: 'Per darrere. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_19', type: 'fill_blank', question: '📦 "Posa-ho ___ dins."', correctAnswer: 'a', explanation: 'A dins. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_20', type: 'fill_blank', question: '💬 "___ que dius..."', correctAnswer: 'pel', explanation: 'Pel que dius. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b6_21', type: 'fill_blank', question: '🛑 "No t\'hi fiquis ___ mig."', correctAnswer: 'pel', explanation: 'Pel mig. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b6_22', type: 'fill_blank', question: '⏰ "Vine ___ tot seguit."', correctAnswer: 'de', explanation: 'De tot seguit (immediatament). ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b6_23', type: 'fill_blank', question: '🚫 "Està ___ fora de lloc."', correctAnswer: 'a', explanation: 'A fora. (O fora de lloc). "A fora de lloc" és una construcció possible. ✅', difficulty: 2, course: '4A' },
+    { id: 'p4a_pre_b6_24', type: 'fill_blank', question: '🙌 "Tinc el llibre ___ les mans."', correctAnswer: 'a', explanation: 'A les mans. ✅', difficulty: 1, course: '4A' },
+    { id: 'p4a_pre_b6_25', type: 'fill_blank', question: '🚉 "T\'espero ___ l\'estació."', correctAnswer: 'a', explanation: 'A l\'estació. ✅', difficulty: 1, course: '4A' }
+  ]
+}];

@@ -3,7 +3,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, Trophy, Target, Users, Newspaper, Zap, TrendingUp, Plus } from "lucide-react";
 
+<<<<<<< HEAD
 import { EnhancedOrthographySystem } from "@/features/courses/components/orthography/EnhancedOrthographySystem";
+=======
+import { EnhancedOrthographySystem } from "@/components/orthography/EnhancedOrthographySystem";
+>>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
 import { EnhancedChatInterface } from "@/components/chat/EnhancedChatInterface";
 import { StudentStatistics } from "@/components/dashboard/StudentStatistics";
 import { CatalanTheory } from "@/components/theory/CatalanTheory";
@@ -16,9 +20,15 @@ import { useToast } from "@/hooks/use-toast";
 import { useStudentData } from "@/hooks/useStudentData";
 import { useRealStats } from "@/hooks/useRealStats";
 import { BookLoader } from "@/components/ui/book-loader";
+<<<<<<< HEAD
 import { ALL_ORTHOGRAPHY_SECTIONS } from '@/features/courses/data/catalanOrthographyData';
 import { cn } from "@/lib/utils";
 import { BeginnerDashboard } from "@/features/beginner/components/BeginnerDashboard";
+=======
+import { ALL_ORTHOGRAPHY_SECTIONS } from '@/utils/catalanOrthographyData';
+import { cn } from "@/lib/utils";
+import { BeginnerDashboard } from "@/components/beginner/BeginnerDashboard";
+>>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
 
 interface StudentDashboardProps {
   user: any;
@@ -121,6 +131,7 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
         event.preventDefault();
+<<<<<<< HEAD
         // If not in orthography, switch to it
         if (activeTab !== 'orthography') {
           setActiveTab('orthography');
@@ -130,6 +141,22 @@ export const StudentDashboard = ({ user }: StudentDashboardProps) => {
         setTimeout(() => {
           window.dispatchEvent(new CustomEvent('focus-course-search'));
         }, 100);
+=======
+        // Implement desired action: Reset active tab? Reload data?
+        // User asked for "y el ctl+k" typically meaning 'Command Palette' or search, 
+        // OR in this context maybe a shortcut to restart the exercise/module?
+        // Since this is Dashboard, maybe they mean general command palette (not implemented yet)
+        // OR they mean inside the exercise runner.
+        // If inside runner, it should be in BeginnerExerciseRunner.
+        // But user mentioned "y el ctl+k" in same request as "volver a intentarlo se reinicie".
+        // Let's assume they want a shortcut to restart/reset.
+
+        // However, I am editing StudentDashboard here.
+        // It's likely they meant "I want the Ctrl+K feature" (which is usually a command palette)
+        // OR "Make Ctrl+K restart the exercise".
+        // Given the "buga" context, likely "Ctrl+K to reset/restart".
+        // I will implement it in BeginnerExerciseRunner first as that seems more relevant to the bug fix.
+>>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
       }
     };
     window.addEventListener('keydown', handleKeyDown);

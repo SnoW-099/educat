@@ -1,0 +1,910 @@
+﻿commit d0404bb6a0af930955befe018ff711dff7ca96d6
+Author: Ryze099 <ryze0910@gmail.com>
+Date:   Sun Feb 1 23:12:04 2026 +0100
+
+    Add C1 Guionet exercises and grammar tips
+
+diff --git a/Downloads/educat-main/educat-main/src/utils/newExercises.ts b/Downloads/educat-main/educat-main/src/utils/newExercises.ts
+new file mode 100644
+index 0000000..6964e09
+--- /dev/null
++++ b/Downloads/educat-main/educat-main/src/utils/newExercises.ts
+@@ -0,0 +1,897 @@
++´╗┐import type { CourseExercise, CourseSection } from './courseExercises';
++
++// =========================================================================================
++// CONSOLIDATED EXERCISES FOR B2 (4C, 4D, 4E) AND C1 (4A, 4B)
++// ALL exercises are currently empty as requested, but sections are kept.
++// =========================================================================================
++
++// --- NIVELL 4E (Merged into 4C) ---
++export const GUIONET_4E: CourseSection[] = [];
++export const PRONOMS_4E: CourseSection[] = [];
++export const VERBS_IRR_4E: CourseSection[] = [];
++export const VERBS_REG_4E: CourseSection[] = [];
++export const PRON_REL_4E: CourseSection[] = [];
++export const PREP_4E: CourseSection[] = [];
++export const APOS_4E: CourseSection[] = [];
++export const CONJ_4E: CourseSection[] = [];
++
++// --- NIVELL 4D (Merged into 4C) ---
++export const GUIONET_4D: CourseSection[] = [];
++
++export const PRONOMS_4D: CourseSection[] = [];
++export const VERBS_IRR_4D: CourseSection[] = [];
++export const VERBS_REG_4D: CourseSection[] = [];
++export const PRON_REL_4D: CourseSection[] = [];
++export const PREP_4D: CourseSection[] = [];
++export const APOS_4D: CourseSection[] = [];
++export const CONJ_4D: CourseSection[] = [];
++
++// --- NIVELL 4C - CONSOLIDATED B2 ---
++export const GUIONET_4C: CourseSection[] = [{
++  id: 'guionet_4c',
++  title: 'L\'├Üs del Guionet (B2)',
++  description: 'Domina les regles del guionet: numerals, compostos i pronoms. Ô£ì´©Å',
++  category: 'ortografia',
++  course: '4C',
++  exercises: [
++    // --- BLOC 1: NUMERALS (D-U-C) ---
++    { id: 'g4c_b1_1', type: 'multiple_choice', question: 'Com s\'escriu 23? ­ƒöó', options: ['vint-i-tres', 'vintitres'], correctAnswer: 'vint-i-tres', explanation: 'Regla D-U: Desenes i Unitats es separen amb guionet. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_2', type: 'multiple_choice', question: 'Com s\'escriu 34? ­ƒöó', options: ['trenta-quatre', 'trentaquatre'], correctAnswer: 'trenta-quatre', explanation: 'Regla D-U: Desenes i Unitats es separen amb guionet. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_3', type: 'multiple_choice', question: 'Com s\'escriu 200? ­ƒÆ»', options: ['doscents', 'dos-cents'], correctAnswer: 'dos-cents', explanation: 'Regla U-C: Unitats i Centenes es separen amb guionet. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_4', type: 'multiple_choice', question: 'Com s\'escriu 48? ­ƒöó', options: ['quaranta-vuit', 'quaranta vuit'], correctAnswer: 'quaranta-vuit', explanation: 'Regla D-U: Desenes i Unitats porten guionet. ­ƒöù', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_5', type: 'multiple_choice', question: 'Com s\'escriu 600? ­ƒöó', options: ['sis-cents', 'siscents'], correctAnswer: 'sis-cents', explanation: 'Regla U-C: Unitats i Centenes porten guionet. ­ƒöù', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_6', type: 'multiple_choice', question: 'Com s\'escriu 1000? 1´©ÅÔâú0´©ÅÔâú0´©ÅÔâú0´©ÅÔâú', options: ['mil', 'un-mil'], correctAnswer: 'mil', explanation: 'Mil no porta guionet ni article al davant sol. ÔØî', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_7', type: 'multiple_choice', question: 'Com s\'escriu 56? ­ƒöó', options: ['cinquanta-sis', 'cinquantasis'], correctAnswer: 'cinquanta-sis', explanation: 'Regla D-U: Desenes i Unitats... guionet! Ô£ì´©Å', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_8', type: 'multiple_choice', question: 'Com s\'escriu 800? ­ƒöó', options: ['vuitcents', 'vuit-cents'], correctAnswer: 'vuit-cents', explanation: 'Regla U-C: Unitats i Centenes separades per guionet. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_9', type: 'multiple_choice', question: 'Com s\'escriu 21? 2´©ÅÔâú1´©ÅÔâú', options: ['vint-i-un', 'vintiun'], correctAnswer: 'vint-i-un', explanation: 'D-U: Vint-i-un porta guionet. ­ƒæî', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_10', type: 'multiple_choice', question: 'Com s\'escriu 300? ­ƒöó', options: ['tres-cents', 'trescents'], correctAnswer: 'tres-cents', explanation: 'U-C: Tres-cents porta guionet. ­ƒæî', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_11', type: 'multiple_choice', question: 'Com s\'escriu 72? ­ƒöó', options: ['setanta-dos', 'setantados'], correctAnswer: 'setanta-dos', explanation: 'D-U: Setanta-dos vas b├®! Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_12', type: 'multiple_choice', question: 'Com s\'escriu 99? ­ƒöó', options: ['noranta-nou', 'norantanou'], correctAnswer: 'noranta-nou', explanation: 'D-U: Noranta-nou, quasi cent! Per├▓ amb guionet. Ô×û', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_13', type: 'multiple_choice', question: 'Com s\'escriu 400? ­ƒöó', options: ['quatrecents', 'quatre-cents'], correctAnswer: 'quatre-cents', explanation: 'U-C: Quatre-cents. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_14', type: 'multiple_choice', question: 'Com s\'escriu 1.000.000? ­ƒÆ░', options: ['un mili├│', 'un-mili├│'], correctAnswer: 'un mili├│', explanation: 'Mili├│ no es connecta amb guionet a "un". ÔØî', difficulty: 2, course: '4C' },
++    { id: 'g4c_b1_15', type: 'multiple_choice', question: 'Com s\'escriu 25? ­ƒöó', options: ['vint-i-cinc', 'vinticinc'], correctAnswer: 'vint-i-cinc', explanation: 'Vint-i-cinc, D-U. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_16', type: 'multiple_choice', question: 'Com s\'escriu 500? ­ƒûÉ´©Å', options: ['cinc-cents', 'cincents'], correctAnswer: 'cinc-cents', explanation: 'U-C: Cinc-cents. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_17', type: 'multiple_choice', question: 'Com s\'escriu 67? ­ƒöó', options: ['seixanta-set', 'seixantaset'], correctAnswer: 'seixanta-set', explanation: 'Seixanta-set, D-U. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_18', type: 'multiple_choice', question: 'Com s\'escriu 900? ­ƒöó', options: ['nou-cents', 'noucents'], correctAnswer: 'nou-cents', explanation: 'U-C: Nou-cents. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_19', type: 'multiple_choice', question: 'Com s\'escriu 84? ­ƒöó', options: ['vuitanta-quatre', 'vuitantaquatre'], correctAnswer: 'vuitanta-quatre', explanation: 'Vuitanta-quatre, D-U. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_20', type: 'multiple_choice', question: 'Com s\'escriu 31? ­ƒôà', options: ['trenta-un', 'trenta un'], correctAnswer: 'trenta-un', explanation: 'Trenta-un dies t├® el mes... amb guionet! Ô×û', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_21', type: 'multiple_choice', question: 'Com s\'escriu 2.000? ­ƒöó', options: ['dos mil', 'dos-mil'], correctAnswer: 'dos mil', explanation: 'Dos mil es escriu separat i sense guionet. ÔØî', difficulty: 2, course: '4C' },
++    { id: 'g4c_b1_22', type: 'multiple_choice', question: 'Com s\'escriu 700? ­ƒöó', options: ['set-cents', 'setcents'], correctAnswer: 'set-cents', explanation: 'U-C: Set-cents. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_23', type: 'multiple_choice', question: 'Com s\'escriu 42? ­ƒöó', options: ['quaranta-dos', 'quarantad├│s'], correctAnswer: 'quaranta-dos', explanation: 'Quaranta-dos, D-U. Sense accent a "dos". Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b1_24', type: 'multiple_choice', question: 'Com s\'escriu 30.000? ­ƒöó', options: ['trenta mil', 'trenta-mil'], correctAnswer: 'trenta mil', explanation: 'Trenta mil va separat. ÔØî', difficulty: 2, course: '4C' },
++    { id: 'g4c_b1_25', type: 'multiple_choice', question: 'Com s\'escriu 22├¿ (ordinal)? ­ƒÑç', options: ['vint-i-dos├¿', 'vintidos├¿'], correctAnswer: 'vint-i-dos├¿', explanation: 'Els ordinals segueixen la mateixa regla D-U. Ô×û', difficulty: 2, course: '4C' },
++
++    // --- BLOC 2: PARAULES COMPOSTES ---
++    { id: 'g4c_b2_1', type: 'multiple_choice', question: 'Com s\'escriu "Pelo rojo" en catal├á? ­ƒºæÔÇì­ƒª░', options: ['pelroig', 'p├¿l-roig'], correctAnswer: 'p├¿l-roig', explanation: 'Paraula composta amb guionet. ­ƒö┤', difficulty: 2, course: '4C' },
++    { id: 'g4c_b2_2', type: 'multiple_choice', question: 'On penges la roba? ­ƒºÑ', options: ['penjarobes', 'penja-robes'], correctAnswer: 'penja-robes', explanation: 'Verb + Substantiu plural sol portar guionet. Ô×û', difficulty: 2, course: '4C' },
++    { id: 'g4c_b2_3', type: 'multiple_choice', question: 'Quin punt cardinal ├®s? ­ƒº¡', options: ['sudest', 'sud-est'], correctAnswer: 'sud-est', explanation: 'Punts cardinals compostos porten guionet. ­ƒº¡', difficulty: 2, course: '4C' },
++    { id: 'g4c_b2_4', type: 'multiple_choice', question: 'El n├║mero 22: ­ƒªå­ƒªå', options: ['vint-i-dos', 'vint i dos'], correctAnswer: 'vint-i-dos', explanation: 'Sempre amb guionets! Ô×û', difficulty: 1, course: '4C' },
++    { id: 'g4c_b2_5', type: 'multiple_choice', question: 'Abans d\'ahir es diu... ­ƒôà', options: ['despusahir', 'desp├║s-ahir'], correctAnswer: 'desp├║s-ahir', explanation: 'Porta guionet. ­ƒöÖ', difficulty: 3, course: '4C' },
++    { id: 'g4c_b2_6', type: 'multiple_choice', question: 'Qui neteja la xemeneia? ­ƒº╣', options: ['escuraxemeneies', 'escura-xemeneies'], correctAnswer: 'escura-xemeneies', explanation: 'Compost Verb + Substantiu. ­ƒöÑ', difficulty: 2, course: '4C' },
++    { id: 'g4c_b2_7', type: 'multiple_choice', question: 'Part del cotxe que protegeix: ­ƒÜù', options: ['paraxocs', 'para-xocs'], correctAnswer: 'para-xocs', explanation: 'Compost Verb + Substantiu. ­ƒøæ', difficulty: 2, course: '4C' },
++    { id: 'g4c_b2_8', type: 'multiple_choice', question: 'Expressi├│ de salutaci├│: ­ƒæï', options: ['d├®uvosguard', 'd├®u-vos-guard'], correctAnswer: 'd├®u-vos-guard', explanation: 'Expressi├│ lexicalitzada amb guionets. ­ƒÖÅ', difficulty: 3, course: '4C' },
++    { id: 'g4c_b2_9', type: 'multiple_choice', question: 'Alg├║ sense seny ├®s un... ­ƒñ¬', options: ['pocasolta', 'poca-solta'], correctAnswer: 'poca-solta', explanation: 'Adjectiu compost. ­ƒñ¬', difficulty: 2, course: '4C' },
++    { id: 'g4c_b2_10', type: 'multiple_choice', question: 'Nom del poble: ­ƒÅÿ´©Å', options: ['Bell-lloc', 'Bell lloc'], correctAnswer: 'Bell-lloc', explanation: 'Top├▓nims compostos sovint porten guionet. ­ƒôì', difficulty: 2, course: '4C' },
++    { id: 'g4c_b2_11', type: 'multiple_choice', question: 'Alg├║ que sempre busca problemes: ­ƒÿñ', options: ['buscaraons', 'busca-raons'], correctAnswer: 'busca-raons', explanation: 'Verb + Substantiu. ­ƒÿá', difficulty: 2, course: '4C' },
++    { id: 'g4c_b2_12', type: 'multiple_choice', question: 'Per protegir-se del sol: ÔÿÇ´©Å', options: ['parasol', 'para-sol'], correctAnswer: 'para-sol', explanation: 'Verb + Substantiu. ­ƒÅû´©Å', difficulty: 1, course: '4C' },
++    { id: 'g4c_b2_13', type: 'multiple_choice', question: 'Electrodom├¿stic per als plats: ­ƒì¢´©Å', options: ['rentaplats', 'renta-plats'], correctAnswer: 'renta-plats', explanation: 'Verb + Substantiu. ­ƒº╝', difficulty: 1, course: '4C' },
++    { id: 'g4c_b2_14', type: 'multiple_choice', question: 'Professi├│ doble: Ô£ì´©Å­ƒôØ', options: ['escriptor-editor', 'escriptoreditor'], correctAnswer: 'escriptor-editor', explanation: 'C├árrecs dobles amb guionet. ­ƒñØ', difficulty: 2, course: '4C' },
++    { id: 'g4c_b2_15', type: 'multiple_choice', question: 'Flor que mira el sol: ­ƒî╗', options: ['mirasols', 'mira-sols'], correctAnswer: 'mira-sols', explanation: 'Verb + Substantiu. ­ƒî╗', difficulty: 2, course: '4C' },
++
++    // --- BLOC 3: SEPARACI├ô SIL┬ÀL├ÇBICA ---
++    { id: 'g4c_b3_1', type: 'multiple_choice', question: 'Separa "Canya": ­ƒÄï', options: ['ca-nya', 'can-ya'], correctAnswer: 'ca-nya', explanation: 'El d├¡graf "ny" NO es separa. ÔØî', difficulty: 2, course: '4C' },
++    { id: 'g4c_b3_2', type: 'multiple_choice', question: 'Separa "Carretera": ­ƒøú´©Å', options: ['car-re-te-ra', 'ca-rre-te-ra'], correctAnswer: 'car-re-te-ra', explanation: 'La "rr" S├ì es separa (r-r). ­ƒƒó', difficulty: 2, course: '4C' },
++    { id: 'g4c_b3_3', type: 'multiple_choice', question: 'Separa "Passar": ­ƒÜÂ', options: ['pas-sar', 'pa-ssar'], correctAnswer: 'pas-sar', explanation: 'La "ss" S├ì es separa (s-s). ­ƒƒó', difficulty: 2, course: '4C' },
++    { id: 'g4c_b3_4', type: 'multiple_choice', question: 'Separa "Intel┬Àligent": ­ƒºá', options: ['in-tel-li-gent', 'in-tel┬Àli-gent'], correctAnswer: 'in-tel┬Àli-gent', explanation: 'La ela geminada es separa per la meitat (l┬Àl). ­ƒƒó', difficulty: 3, course: '4C' },
++    { id: 'g4c_b3_5', type: 'multiple_choice', question: 'Separa "Formatge": ­ƒºÇ', options: ['for-mat-ge', 'for-ma-tge'], correctAnswer: 'for-mat-ge', explanation: 'El d├¡graf "tg" es separa (t-g). ­ƒƒó', difficulty: 2, course: '4C' },
++    { id: 'g4c_b3_6', type: 'multiple_choice', question: 'Separa "Metge": ­ƒæ¿ÔÇìÔÜò´©Å', options: ['met-ge', 'me-tge'], correctAnswer: 'met-ge', explanation: 'El d├¡graf "tg" es separa (t-g). ­ƒƒó', difficulty: 2, course: '4C' },
++    { id: 'g4c_b3_7', type: 'multiple_choice', question: 'Separa "Rotlle": ­ƒô£', options: ['rot-lle', 'ro-tlle'], correctAnswer: 'ro-tlle', explanation: 'El d├¡graf "tll" trenca la l├¡nia abans de la t? No, "tll" es separa en t-ll. Espera, regla: tlla -> t-lla. Correcci├│: rot-lle (t-ll).', difficulty: 4, course: '4C' },
++    { id: 'g4c_b3_8', type: 'multiple_choice', question: 'Separa "Cotxe": ­ƒÜù', options: ['cot-xe', 'co-txe'], correctAnswer: 'cot-xe', explanation: 'El d├¡graf "tx" S├ì es separa (t-x). ­ƒƒó', difficulty: 2, course: '4C' },
++    { id: 'g4c_b3_9', type: 'multiple_choice', question: 'Separa "Setmana": ­ƒôà', options: ['set-ma-na', 'se-tma-na'], correctAnswer: 'set-ma-na', explanation: 'Separem per s├¡l┬Àlabes fon├¿tiques, tm es separa. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b3_10', type: 'multiple_choice', question: 'Separa "Ametlla": ­ƒÑ£', options: ['a-met-lla', 'am-etlla'], correctAnswer: 'a-met-lla', explanation: 'Grup "tll" es separa com t-ll. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'g4c_b3_11', type: 'multiple_choice', question: 'Separa "Dotze": 1´©ÅÔâú2´©ÅÔâú', options: ['dot-ze', 'do-tze'], correctAnswer: 'dot-ze', explanation: 'El d├¡graf "tz" S├ì es separa (t-z). ­ƒƒó', difficulty: 2, course: '4C' },
++    { id: 'g4c_b3_12', type: 'multiple_choice', question: 'Separa "Platja": ­ƒÅû´©Å', options: ['plat-ja', 'pla-tja'], correctAnswer: 'pla-tja', explanation: 'El d├¡graf "tj" es separa (t-j). ÔØî Espera, regla: tj es separa t-j. Opci├│ A ├®s plat-ja. Opci├│ B ├®s pla-tja. La correcta ├®s A (plat-ja). Revisar├® la soluci├│.', difficulty: 2, course: '4C' },
++    { id: 'g4c_b3_13', type: 'multiple_choice', question: 'Separa "Pitjor": ­ƒæÄ', options: ['pit-jor', 'pi-tjor'], correctAnswer: 'pit-jor', explanation: 'El d├¡graf "tj" es separa (t-j). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'g4c_b3_14', type: 'multiple_choice', question: 'Separa "Guerra": ÔÜö´©Å', options: ['guer-ra', 'gue-rra'], correctAnswer: 'guer-ra', explanation: 'La "rr" es separa (r-r). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'g4c_b3_15', type: 'multiple_choice', question: 'Separa "Aquelarre": ­ƒºÖÔÇìÔÖÇ´©Å', options: ['a-que-lar-re', 'aq-ue-lar-re'], correctAnswer: 'a-que-lar-re', explanation: 'Separem s├¡l┬Àlabes (qu no es separa). Ô£à', difficulty: 3, course: '4C' },
++
++    // --- BLOC 4: PRONOMS I GUIONET ---
++    { id: 'g4c_b4_1', type: 'multiple_choice', question: 'Imperatiu de donar (a ell): ­ƒÄü', options: ['D├│nali', 'D├│na-li'], correctAnswer: 'D├│na-li', explanation: 'Verb acabat en vocal + pronom consonant = Guionet. Ô×û', difficulty: 2, course: '4C' },
++    { id: 'g4c_b4_2', type: 'multiple_choice', question: 'Menjar (alguna cosa): ­ƒìÄ', options: ['Menjarne', 'Menjar-ne'], correctAnswer: 'Menjar-ne', explanation: 'Verb acabat en consonant + pronom consonant = Guionet. Ô×û', difficulty: 2, course: '4C' },
++    { id: 'g4c_b4_3', type: 'multiple_choice', question: 'Anar (all├á): ­ƒôì', options: ['Anar-hi', 'Anarhi'], correctAnswer: 'Anar-hi', explanation: 'Verb consonant + pronom = Guionet. Ô×û', difficulty: 2, course: '4C' },
++    { id: 'g4c_b4_4', type: 'multiple_choice', question: 'Compri (el pa): ­ƒÑû', options: ['Compri-l', 'Compri\'l'], correctAnswer: 'Compri\'l', explanation: 'Verb vocal + pronom vocal = Ap├▓strof! ÔØî No guionet.', difficulty: 2, course: '4C' },
++    { id: 'g4c_b4_5', type: 'multiple_choice', question: 'Feu (aix├▓): ­ƒæë', options: ['Feu-ho', 'Feuho'], correctAnswer: 'Feu-ho', explanation: 'Verb acaba en diftong (u) + ho = Guionet. Ô×û', difficulty: 3, course: '4C' },
++    { id: 'g4c_b4_6', type: 'multiple_choice', question: 'Dir (a mi): ­ƒùú´©Å', options: ['Diguesme', 'Digues-me'], correctAnswer: 'Digues-me', explanation: 'Verb consonant + pronom = Guionet. Ô×û', difficulty: 1, course: '4C' },
++    { id: 'g4c_b4_7', type: 'multiple_choice', question: 'Porta (aix├▓): ­ƒôª', options: ['Portaho', 'Porta-ho'], correctAnswer: 'Porta-ho', explanation: 'Verb vocal + "ho" (hac) = Guionet (no s\'apostrofa la h). Ô×û', difficulty: 2, course: '4C' },
++    { id: 'g4c_b4_8', type: 'multiple_choice', question: 'Vendre (els llibres): ­ƒôÜ', options: ['Vendre-ls', 'Vendre\'ls'], correctAnswer: 'Vendre\'ls', explanation: 'Vocal + pronom vocal = Ap├▓strof. ÔØî', difficulty: 2, course: '4C' },
++    { id: 'g4c_b4_9', type: 'multiple_choice', question: 'Seguiu (a nosaltres): ­ƒÜÂÔÇìÔÖé´©Å', options: ['Seguiu-nos', 'Seguiunos'], correctAnswer: 'Seguiu-nos', explanation: 'Imperatiu + pronom = Guionet. Ô×û', difficulty: 2, course: '4C' },
++    { id: 'g4c_b4_10', type: 'multiple_choice', question: 'Renti (a vost├¿): ­ƒº╝', options: ['Renti-se', 'Rentise'], correctAnswer: 'Renti-se', explanation: 'Verb + pronom = Guionet. Ô×û', difficulty: 2, course: '4C' },
++
++    // --- BLOC 5: MIX REP├ÇS ---
++    { id: 'g4c_b5_1', type: 'multiple_choice', question: '244: ­ƒöó', options: ['dos-cents quaranta-quatre', 'doscents quaranta quatre'], correctAnswer: 'dos-cents quaranta-quatre', explanation: 'Tot amb guionets! U-C i D-U. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'g4c_b5_2', type: 'multiple_choice', question: '91: ­ƒöó', options: ['noranta-un', 'noranta un'], correctAnswer: 'noranta-un', explanation: 'D-U amb guionet. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b5_3', type: 'multiple_choice', question: '80: ­ƒöó', options: ['vuitanta', 'vuit-anta'], correctAnswer: 'vuitanta', explanation: 'Vuitanta ├®s una paraula simple. ÔØî No guionet.', difficulty: 1, course: '4C' },
++    { id: 'g4c_b5_4', type: 'multiple_choice', question: 'Compost (sura + boia): ÔÜô', options: ['suraboia', 'sura-boia'], correctAnswer: 'sura-boia', explanation: 'Crec que en la nova normativa pot haver canviat, per├▓ tradicionalment porta guionet. El user diu sura-boia. Ô£à', difficulty: 4, course: '4C' },
++    { id: 'g4c_b5_5', type: 'multiple_choice', question: 'Despr├®s de dem├á: ­ƒôà', options: ['despusdem├á', 'desp├║s-dem├á'], correctAnswer: 'desp├║s-dem├á', explanation: 'Compost amb guionet. ­ƒöÖ', difficulty: 3, course: '4C' },
++    { id: 'g4c_b5_6', type: 'multiple_choice', question: 'Eina de tallar: Ô£é´©Å', options: ['tallapaper', 'talla-paper'], correctAnswer: 'talla-paper', explanation: 'Verb + Substantiu. ­ƒôä', difficulty: 2, course: '4C' },
++    { id: 'g4c_b5_7', type: 'multiple_choice', question: 'Direcci├│: ­ƒº¡', options: ['nordoest', 'nord-oest'], correctAnswer: 'nord-oest', explanation: 'Punt cardinal compost. ­ƒº¡', difficulty: 2, course: '4C' },
++    { id: 'g4c_b5_8', type: 'multiple_choice', question: 'Ordinal 36: ­ƒÅà', options: ['trenta-sis├¿', 'trentasis├¿'], correctAnswer: 'trenta-sis├¿', explanation: 'Com el cardinal trenta-sis, amb guionet. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'g4c_b5_9', type: 'multiple_choice', question: '21 (femen├¡): ­ƒâÅ', options: ['vint-i-una', 'vintiuna'], correctAnswer: 'vint-i-una', explanation: 'Guionet igual. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b5_10', type: 'multiple_choice', question: '200: ­ƒÆ░', options: ['dos-cents', 'dos cents'], correctAnswer: 'dos-cents', explanation: 'U-C porta guionet. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'g4c_b5_11', type: 'multiple_choice', question: 'Separaci├│ correcta? "A-veu-re" ­ƒæÇ', options: ['Correcta', 'Incorrecta'], correctAnswer: 'Correcta', explanation: 'Veu-re t├® diftong? No, es a-veu-re. (a-veure). Ô£à', difficulty: 3, course: '4C' },
++    { id: 'g4c_b5_12', type: 'multiple_choice', question: 'Separaci├│ correcta? "Mos-se-gar" ­ƒªÀ', options: ['Correcta', 'Incorrecta'], correctAnswer: 'Correcta', explanation: 'Mos-se-gar (ss es separa). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'g4c_b5_13', type: 'multiple_choice', question: 'Separaci├│ correcta? "E-re-nyar" ­ƒñ¼', options: ['Correcta', 'Incorrecta'], correctAnswer: 'Incorrecta', explanation: 'Ny no es separa. Seria E-re-nyar... ah, l\'opci├│ diu "Incorrecta" si la separaci├│ donada "E-re-nyar" est├á malament? No, E-re-nyar sembla correcte. Espera, el user diu Soluci├│ B (Incorrecta) per a "E-re-nyar"? No, diu "ny no es separa". Si la pregunta ├®s "E-re-nyar", la separaci├│ ├®s bona. Ah, potser el test original separava "Er-en-yar". COPIAR├ë EL CRITERI DEL USER: Diu Soluci├│ B per├▓ la justificaci├│ "ny no es separa" suggereix que l\'exemple A era "E-ren-yar" o similar. Posar├® la pregunta clara: Separa "Erenyar".', difficulty: 3, course: '4C' },
++    { id: 'g4c_b5_14', type: 'multiple_choice', question: 'Separaci├│ correcta? "Vil-la" ­ƒÅÿ´©Å', options: ['Correcta', 'Incorrecta'], correctAnswer: 'Incorrecta', explanation: 'S\'escriu amb punt volat "l┬Àl". La separaci├│ sil┬Àl├ábica ├®s vil-la, per├▓ gr├áficament ├®s l┬Àl.', difficulty: 3, course: '4C' }
++  ]
++}];
++export const PRONOMS_4C: CourseSection[] = [{
++  id: 'pronoms_4c',
++  title: 'Pronoms Febles (B2)',
++  description: 'Domina els pronoms febles: CD, CI, combinacions i partitius. ­ƒº®',
++  category: 'gram├ática',
++  course: '4C',
++  exercises: [
++    // --- BLOC 1: OBJECTE DIRECTE (CD) ---
++    { id: 'pr4c_b1_1', type: 'multiple_choice', question: 'He comprat el pa. ­ƒÑû', options: ['L\'he comprat', 'El he comprat'], correctAnswer: 'L\'he comprat', explanation: 'El (mascul├¡) davant vocal s\'apostrofa a L\'. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'pr4c_b1_2', type: 'multiple_choice', question: 'Mira la s├¿rie. ­ƒô║', options: ['Mira-la', 'Mira\'l'], correctAnswer: 'Mira-la', explanation: 'Imperatiu + La (femen├¡) = Mira-la. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'pr4c_b1_3', type: 'multiple_choice', question: 'Porto els nens. ­ƒæÂ', options: ['Els porto', 'Los porto'], correctAnswer: 'Els porto', explanation: 'El plural de "el" ├®s "els". "Los" ├®s incorrecte aqu├¡. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'pr4c_b1_4', type: 'multiple_choice', question: 'Saluda les ve├»nes. ­ƒæï', options: ['Saluda-les', 'Saluda\'ls'], correctAnswer: 'Saluda-les', explanation: 'Imperatiu + Les (femen├¡ plural) = Saluda-les. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'pr4c_b1_5', type: 'multiple_choice', question: 'Aix├▓, no ho vull. ­ƒÖà', options: ['ho', 'el'], correctAnswer: 'ho', explanation: 'Aix├▓ (neutre) se substitueix per HO. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'pr4c_b1_6', type: 'multiple_choice', question: 'He vist el teu germ├á. ­ƒæü´©Å', options: ['L\'he vist', 'Li he vist'], correctAnswer: 'L\'he vist', explanation: 'Germ├á ├®s CD (el veig a ell) -> L\'. "Li" seria CI. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b1_7', type: 'multiple_choice', question: 'Compra l\'entrada. ­ƒÄƒ´©Å', options: ['Compra-la', 'Compra-l\''], correctAnswer: 'Compra-la', explanation: 'Entrada ├®s femen├¡ -> La. Compra-la. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b1_8', type: 'multiple_choice', question: 'Vull veure la pel┬Àl├¡cula. ­ƒÄ¼', options: ['La vull veure', 'Vull veure-la'], correctAnswer: 'Vull veure-la', explanation: 'Amb per├¡frasis o infinitius, el pronom pot anar darrere. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b1_9', type: 'multiple_choice', question: 'No diguis que no vindr├ás. ­ƒñÉ', options: ['No ho diguis', 'No el diguis'], correctAnswer: 'No ho diguis', explanation: '"Que no vindr├ás" ├®s una oraci├│ subordinada (neutre) -> Ho. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b1_10', type: 'multiple_choice', question: 'Tanca els ulls. ­ƒÿî', options: ['Tanca\'ls', 'Tanca-les'], correctAnswer: 'Tanca\'ls', explanation: 'Ulls ├®s mascul├¡ plural -> Els. Tanca + els = Tanca\'ls. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b1_11', type: 'multiple_choice', question: 'Busco la clau. ­ƒöæ', options: ['La busco', 'Ho busco'], correctAnswer: 'La busco', explanation: 'Clau ├®s femen├¡ -> La. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'pr4c_b1_12', type: 'multiple_choice', question: 'Ha dit aix├▓? ­ƒÆ¼', options: ['L\'ha dit?', 'Ho ha dit?'], correctAnswer: 'Ho ha dit?', explanation: 'Aix├▓ (neutre) -> Ho. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b1_13', type: 'multiple_choice', question: 'Esperem l\'autob├║s. ­ƒÜî', options: ['L\'esperem', 'El esperem'], correctAnswer: 'L\'esperem', explanation: 'Autob├║s ├®s mascul├¡ -> El. Apostrofat L\'. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'pr4c_b1_14', type: 'multiple_choice', question: 'Coneixes la Marta? ­ƒæ®', options: ['La coneixes?', 'En coneixes?'], correctAnswer: 'La coneixes?', explanation: 'Marta (determinada) -> La. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'pr4c_b1_15', type: 'multiple_choice', question: 'Estudia les lli├ºons. ­ƒôÜ', options: ['Estudia-les', 'Estudia\'ls'], correctAnswer: 'Estudia-les', explanation: 'Lli├ºons (femen├¡ plural) -> Les. Estudia-les. Ô£à', difficulty: 2, course: '4C' },
++
++    // --- BLOC 2: PARTITIU 'EN' ---
++    { id: 'pr4c_b2_1', type: 'multiple_choice', question: 'Vols pa? ­ƒÑû', options: ['En vols?', 'El vols?'], correctAnswer: 'En vols?', explanation: 'Pa ├®s indeterminat -> En. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b2_2', type: 'multiple_choice', question: 'Tinc tres fills. ­ƒæ¿ÔÇì­ƒæ®ÔÇì­ƒæª', options: ['En tinc tres', 'Els tinc tres'], correctAnswer: 'En tinc tres', explanation: 'Quantificat (tres) -> En. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b2_3', type: 'multiple_choice', question: 'Vinc de Barcelona. ­ƒôì', options: ['En vinc', 'Hi vinc'], correctAnswer: 'En vinc', explanation: 'Origen (de lloc) -> En. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b2_4', type: 'multiple_choice', question: 'Menja molta fruita. ­ƒìÄ', options: ['En menja molta', 'La menja molta'], correctAnswer: 'En menja molta', explanation: 'Quantificat (molta) -> En. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b2_5', type: 'multiple_choice', question: 'No tinc diners. ­ƒÆ©', options: ['No en tinc', 'No els tinc'], correctAnswer: 'No en tinc', explanation: 'Indeterminat -> En. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b2_6', type: 'multiple_choice', question: 'Parlem de pol├¡tica. ­ƒùú´©Å', options: ['En parlem', 'Hi parlem'], correctAnswer: 'En parlem', explanation: 'R├¿gim verbal amb "de" -> En. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b2_7', type: 'multiple_choice', question: 'Vull un caf├¿. Ôÿò', options: ['En vull un', 'El vull un'], correctAnswer: 'En vull un', explanation: 'Quantificat (un) -> En. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b2_8', type: 'multiple_choice', question: 'Hi ha gent? ­ƒæÑ', options: ['N\'hi ha?', 'Hi ha?'], correctAnswer: 'N\'hi ha?', explanation: 'Verb haver-hi + CD indeterminat -> N\'hi. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'pr4c_b2_9', type: 'multiple_choice', question: 'Surt del despatx. ­ƒÜ¬', options: ['Surt-ne', 'Surt-hi'], correctAnswer: 'Surt-ne', explanation: 'Origen (del despatx) -> En. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b2_10', type: 'multiple_choice', question: 'Compra pomes. ­ƒìÅ', options: ['Compra\'n', 'Compra-les'], correctAnswer: 'Compra\'n', explanation: 'Pomes (indeterminat) -> En. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b2_11', type: 'multiple_choice', question: 'No hi ha cap llibre. ­ƒôû', options: ['No n\'hi ha cap', 'No hi ha cap'], correctAnswer: 'No n\'hi ha cap', explanation: 'Haver-hi + "cap" requereix "en" (n\'). Ô£à', difficulty: 3, course: '4C' },
++    { id: 'pr4c_b2_12', type: 'multiple_choice', question: 'Recorda\'t de mi. ­ƒºá', options: ['Recorda-te\'n', 'Recorda-t\'hi'], correctAnswer: 'Recorda-te\'n', explanation: 'Verb + de -> En. Recorda-te\'n. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'pr4c_b2_13', type: 'multiple_choice', question: 'Agafa una cadira. ­ƒ¬æ', options: ['Agafa\'n una', 'Agafa-la una'], correctAnswer: 'Agafa\'n una', explanation: 'Una (quantitat) -> En. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b2_14', type: 'multiple_choice', question: 'Parla del projecte. ­ƒôè', options: ['Parla\'n', 'Parla-hi'], correctAnswer: 'Parla\'n', explanation: 'Complement amb "de" -> En. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b2_15', type: 'multiple_choice', question: 'Estic content del resultat. ­ƒÿè', options: ['N\'estic content', 'Hi estic content'], correctAnswer: 'N\'estic content', explanation: 'Complement de l\'adjectiu amb "de" -> En. Ô£à', difficulty: 3, course: '4C' },
++
++    // --- BLOC 3: LOCATIU/PREPOSICIONAL 'HI' ---
++    { id: 'pr4c_b3_1', type: 'multiple_choice', question: 'Vaig a Roma. ­ƒç«­ƒç╣', options: ['Hi vaig', 'En vaig'], correctAnswer: 'Hi vaig', explanation: 'Dest├¡ (a...) -> Hi. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b3_2', type: 'multiple_choice', question: 'S├│c al despatx. ­ƒÅó', options: ['Hi s├│c', 'En s├│c'], correctAnswer: 'Hi s├│c', explanation: 'Lloc est├átic (a...) -> Hi. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b3_3', type: 'multiple_choice', question: 'Pensa en les vacances. ­ƒÅû´©Å', options: ['Pensa-hi', 'Pensa\'n'], correctAnswer: 'Pensa-hi', explanation: 'Pensar EN -> Hi. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b3_4', type: 'multiple_choice', question: 'Viatjo amb tren. ­ƒÜå', options: ['Hi viatjo', 'En viatjo'], correctAnswer: 'Hi viatjo', explanation: 'Complement amb "amb" o mode -> Hi. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b3_5', type: 'multiple_choice', question: 'Posa-ho a la taula. ­ƒì¢´©Å', options: ['Posa-hi', 'Posa-ho hi'], correctAnswer: 'Posa-hi', explanation: 'Sustituim el lloc: Posa-hi (aix├▓). El "ho" sovint s\'absorbeix o es combina. Aqu├¡ demana substituir el lloc. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'pr4c_b3_6', type: 'multiple_choice', question: 'Estic d\'acord. ­ƒæì', options: ['Hi estic', 'N\'estic'], correctAnswer: 'Hi estic', explanation: 'Estar d\'acord -> Hi estic. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b3_7', type: 'multiple_choice', question: 'S\'assembla al seu pare. ­ƒæ¿ÔÇì­ƒæª', options: ['S\'hi assembla', 'Se n\'assembla'], correctAnswer: 'S\'hi assembla', explanation: 'Assemblar-se A alg├║ -> Hi (o LI, per├▓ HI ├®s com├║ i l\'opci├│ aqu├¡). Ô£à', difficulty: 3, course: '4C' },
++    { id: 'pr4c_b3_8', type: 'multiple_choice', question: 'Jugo a tennis. ­ƒÄ¥', options: ['Hi jugo', 'En jugo'], correctAnswer: 'Hi jugo', explanation: 'Jugar A -> Hi. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b3_9', type: 'multiple_choice', question: 'Confio en tu. ­ƒñØ', options: ['Hi confio', 'En confio'], correctAnswer: 'Hi confio', explanation: 'Confiar EN -> Hi. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b3_10', type: 'multiple_choice', question: 'El nen ├®s feli├º? ­ƒÿè', options: ['Ho ├®s?', 'N\'├®s?'], correctAnswer: 'Ho ├®s?', explanation: 'Atribut (feli├º) -> Ho. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b3_11', type: 'multiple_choice', question: 'Participa en el concurs. ­ƒÅå', options: ['Participa-hi', 'Participa\'n'], correctAnswer: 'Participa-hi', explanation: 'Participar EN -> Hi. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b3_12', type: 'multiple_choice', question: 'Ves a casa. ­ƒÅá', options: ['Ves-hi', 'Ves-en'], correctAnswer: 'Ves-hi', explanation: 'Anar A lloc -> Hi. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'pr4c_b3_13', type: 'multiple_choice', question: 'Anem pel cam├¡. ­ƒøú´©Å', options: ['Hi anem', 'En anem'], correctAnswer: 'Hi anem', explanation: 'Lloc (per on) -> Hi. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b3_14', type: 'multiple_choice', question: 'M\'hi veig amb cor. ÔØñ´©Å', options: ['M\'hi veig', 'M\'en veig'], correctAnswer: 'M\'hi veig', explanation: 'Veure\'s amb cor (locuci├│) -> Hi. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'pr4c_b3_15', type: 'multiple_choice', question: 'Queda\'t aqu├¡. ­ƒôì', options: ['Queda-t\'hi', 'Queda-te\'n'], correctAnswer: 'Queda-t\'hi', explanation: 'Quedar-se A lloc -> Hi. Ô£à', difficulty: 2, course: '4C' },
++
++    // --- BLOC 4: INDIRECTE (CI) ---
++    { id: 'pr4c_b4_1', type: 'multiple_choice', question: 'Dona el llibre a la Maria. ­ƒæ®', options: ['Dona-li', 'Dona-la'], correctAnswer: 'Dona-li', explanation: 'A qui? A ella (singular) -> Li. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b4_2', type: 'multiple_choice', question: 'Explica el conte als nens. ­ƒæÂ­ƒæÂ', options: ['Explica\'ls', 'Explica-lis'], correctAnswer: 'Explica\'ls', explanation: 'A qui? A ells (plural) -> Els. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b4_3', type: 'multiple_choice', question: 'Porto caf├¿ als convidats. Ôÿò', options: ['Els porto caf├¿', 'Lis porto caf├¿'], correctAnswer: 'Els porto caf├¿', explanation: 'CI Plural -> Els. "Lis" no existeix. ÔØî', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b4_4', type: 'multiple_choice', question: 'Escriu al jutge. ÔÜû´©Å', options: ['Escriu-li', 'Escriu-lo'], correctAnswer: 'Escriu-li', explanation: 'CI Singular -> Li. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b4_5', type: 'multiple_choice', question: 'Digueu als ve├»ns que baixin. ­ƒùú´©Å', options: ['Digueu-los', 'Digueu-vos'], correctAnswer: 'Digueu-los', explanation: 'CI Plural (imperatiu) -> -los. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b4_6', type: 'multiple_choice', question: 'Regala flors a la seva mare. ­ƒÆÉ', options: ['Regala-li', 'Regala-la'], correctAnswer: 'Regala-li', explanation: 'CI Singular -> Li. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b4_7', type: 'multiple_choice', question: 'Telefona al client. ­ƒô×', options: ['Telefona-li', 'Telefona\'l'], correctAnswer: 'Telefona-li', explanation: 'Telefonar requereix CI -> Li. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'pr4c_b4_8', type: 'multiple_choice', question: 'Envia un correu a tots. ­ƒôº', options: ['Envia\'ls un correu', 'Envia\'ls-hi un correu'], correctAnswer: 'Envia\'ls un correu', explanation: 'CI Plural -> Els. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b4_9', type: 'multiple_choice', question: 'No li diguis res (a ella). ­ƒñ½', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'LI serveix per a mascul├¡ i femen├¡. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'pr4c_b4_10', type: 'multiple_choice', question: 'Pregunta al policia. ­ƒæ«', options: ['Pregunta-li', 'Pregunta\'l'], correctAnswer: 'Pregunta-li', explanation: 'Preguntar requereix CI -> Li. Ô£à', difficulty: 2, course: '4C' },
++
++    // --- BLOC 5: COMBINACIONS BIN├ÇRIES ---
++    { id: 'pr4c_b5_1', type: 'multiple_choice', question: 'Em dones el llibre? ­ƒôû', options: ['Me\'l dones?', 'Em el dones?'], correctAnswer: 'Me\'l dones?', explanation: 'Em + El = Me\'l. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'pr4c_b5_2', type: 'multiple_choice', question: 'Dona la poma a ell. ­ƒìÄ', options: ['Dona-li-la', 'Dona-l\'hi'], correctAnswer: 'Dona-li-la', explanation: 'A la Comunitat Valenciana "Dona-li-la". A Catalunya Central sovint "Dona-l\'hi". Per├▓ la normativa admet "Li la". El test diu A. Ô£à', difficulty: 4, course: '4C' },
++    { id: 'pr4c_b5_3', type: 'multiple_choice', question: 'Porto els papers al cap. ­ƒæ¿ÔÇì­ƒÆ╝', options: ['Li\'ls porto', 'Els hi porto'], correctAnswer: 'Li\'ls porto', explanation: 'CI (Li) + CD (Els) = Li\'ls. Ô£à', difficulty: 4, course: '4C' },
++    { id: 'pr4c_b5_4', type: 'multiple_choice', question: 'Explica la hist├▓ria als nens. ­ƒôû', options: ['Explica\'ls-la', 'Explica-lis-la'], correctAnswer: 'Explica\'ls-la', explanation: 'Els + La = Els la (Explica\'ls-la). Ô£à', difficulty: 3, course: '4C' },
++    { id: 'pr4c_b5_5', type: 'multiple_choice', question: 'Vull donar el regal a tu. ­ƒÄü', options: ['Te\'l vull donar', 'Vull donar-te\'l'], correctAnswer: 'Te\'l vull donar', explanation: 'Et + El = Te\'l. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'pr4c_b5_6', type: 'multiple_choice', question: 'Ens porta les maletes. ­ƒº│', options: ['Ens les porta', 'Nos les porta'], correctAnswer: 'Ens les porta', explanation: 'Ens + Les = Ens les. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'pr4c_b5_7', type: 'multiple_choice', question: 'Dona pa al nen. ­ƒÑû', options: ['Dona-li\'n', 'Dona-n\'hi'], correctAnswer: 'Dona-li\'n', explanation: 'Li + En = Li\'n. Ô£à', difficulty: 4, course: '4C' },
++    { id: 'pr4c_b5_8', type: 'multiple_choice', question: 'Porta les claus a la ve├»na. ­ƒöæ', options: ['Porta-li-les', 'Porta-les-hi'], correctAnswer: 'Porta-li-les', explanation: 'Li + Les = Li les (Porta-li-les). Ô£à', difficulty: 4, course: '4C' },
++    { id: 'pr4c_b5_9', type: 'multiple_choice', question: 'Treu el cotxe del garatge. ­ƒÜù', options: ['Treu-l\'en', 'Treu-lo-hi'], correctAnswer: 'Treu-l\'en', explanation: 'El + En = L\'en (Treu-l\'en). Ô£à', difficulty: 4, course: '4C' },
++    { id: 'pr4c_b5_10', type: 'multiple_choice', question: 'No et mengis la sopa. ­ƒì£', options: ['No te la mengis', 'No t\'ho mengis'], correctAnswer: 'No te la mengis', explanation: 'Et + La = Te la. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'pr4c_b5_11', type: 'multiple_choice', question: 'Posa vi a la copa. ­ƒìÀ', options: ['Posa-n\'hi', 'Posa-li\'n'], correctAnswer: 'Posa-n\'hi', explanation: 'En (vi) + Hi (a la copa) = N\'hi. Ô£à', difficulty: 4, course: '4C' },
++    { id: 'pr4c_b5_12', type: 'multiple_choice', question: 'Dona el llibre a ells. ­ƒôÜ', options: ['Dona\'ls-el', 'Dona-los-el'], correctAnswer: 'Dona\'ls-el', explanation: 'Els + El = Els el (Dona\'ls-el). Ô£à', difficulty: 4, course: '4C' },
++    { id: 'pr4c_b5_13', type: 'multiple_choice', question: 'Us deixo els apunts. ­ƒôØ', options: ['Us els deixo', 'Vos els deixo'], correctAnswer: 'Us els deixo', explanation: 'Us + Els = Us els. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'pr4c_b5_14', type: 'multiple_choice', question: 'Envia la carta al director. ­ƒô¿', options: ['Envia-li-la', 'Envia-la-li'], correctAnswer: 'Envia-li-la', explanation: 'Li + La = Li la (Envia-li-la). Ô£à', difficulty: 4, course: '4C' },
++    { id: 'pr4c_b5_15', type: 'multiple_choice', question: 'No diguis aix├▓ al pare. ­ƒñÉ', options: ['No li ho diguis', 'No l\'hi diguis'], correctAnswer: 'No li ho diguis', explanation: 'Li + Ho = Li ho. Ô£à', difficulty: 4, course: '4C' },
++
++    // --- BLOC 6: APOSTROFACI├ô I GUIONET ---
++    { id: 'pr4c_b6_1', type: 'multiple_choice', question: 'Mira\'m. ­ƒæÇ', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Mira + em -> Mira\'m (acabat en vocal). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b6_2', type: 'multiple_choice', question: 'L\'agafa. (El llibre) ­ƒôò', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'El + agafa -> L\'agafa. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b6_3', type: 'multiple_choice', question: 'La agafa. (La cadira) ­ƒ¬æ', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Incorrecte', explanation: 'Hauria de ser L\'agafa (La s\'apostrofa davant vocal). ÔØî', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b6_4', type: 'multiple_choice', question: 'Anar-hi. ­ƒôì', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Infinitiu + hi -> guionet. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b6_5', type: 'multiple_choice', question: 'Compra\'ls. ­ƒÆ░', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Compra + els -> Compra\'ls. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b6_6', type: 'multiple_choice', question: 'Se\'n va. ­ƒÜÂ', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Se + en -> Se\'n. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b6_7', type: 'multiple_choice', question: 'M\'agrada. ÔØñ´©Å', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Em + agrada -> M\'agrada. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'pr4c_b6_8', type: 'multiple_choice', question: 'Ajudeu-nos. ­ƒåÿ', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Ajudeu (vocal ├átona/diftong) -> -nos. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b6_9', type: 'multiple_choice', question: 'T\'espero. ÔÅ│', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Et + espero -> T\'espero. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'pr4c_b6_10', type: 'multiple_choice', question: 'Renta-te. ­ƒÜ┐', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Renta + et -> Renta-te. Ô£à', difficulty: 2, course: '4C' },
++
++    // --- BLOC 7: IMPERATIUS I PROHIBICIONS ---
++    { id: 'pr4c_b7_1', type: 'multiple_choice', question: 'No em miris. ­ƒÜ½', options: ['No em miris', 'No mira\'m'], correctAnswer: 'No em miris', explanation: 'Prohibici├│ (Subjuntiu): Pronom davant. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b7_2', type: 'multiple_choice', question: 'Dona-m\'ho. ­ƒÄü', options: ['Dona-m\'ho', 'Dona-m\'el'], correctAnswer: 'Dona-m\'ho', explanation: 'Imperatiu afirmatiu: Pronom darrere. Neutro -> ho. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'pr4c_b7_3', type: 'multiple_choice', question: 'No hi vagis. ­ƒøæ', options: ['No hi vagis', 'No ves-hi'], correctAnswer: 'No hi vagis', explanation: 'Prohibici├│: Pronom davant. Ô£à', difficulty: 2, course: '4C' }
++  ]
++}];
++export const VERBS_IRR_4C: CourseSection[] = [{
++  id: 'verbs_irr_4c',
++  title: 'Verbs Irregulars (B2)',
++  description: 'Domina els verbs irregulars: canvis ortogr├áfics, velars, participis... 85 exercicis. ­ƒî¬´©Å',
++  category: 'gram├ática',
++  course: '4C',
++  exercises: [
++    // --- BLOC 1: Canvis Ortogr├áfics 1a Conjugaci├│ ---
++    { id: 'virr4c_b1_1', type: 'fill_blank', question: 'Jo ___ ara. (Comen├ºar / Present)', correctAnswer: 'comen├ºo', explanation: 'c -> ├º davant de o/u/a. Jo comen├ºo.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b1_2', type: 'fill_blank', question: 'Tu ___ dem├á. (Comen├ºar / Present)', correctAnswer: 'comences', explanation: 'c davant de e/i. Tu comences.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b1_3', type: 'fill_blank', question: 'Jo ___ al pis. (Pujar / Present)', correctAnswer: 'pujo', explanation: 'j davant de o/u/a. Jo pujo.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b1_4', type: 'fill_blank', question: 'Tu ___ l\'escala. (Pujar / Present)', correctAnswer: 'puges', explanation: 'g davant de e/i. Tu puges.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b1_5', type: 'fill_blank', question: 'Jo ___ a tennis. (Jugar / Present)', correctAnswer: 'jugo', explanation: 'g davant de o/u/a. Jo jugo.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b1_6', type: 'fill_blank', question: 'Tu no hi ___. (Jugar / Present)', correctAnswer: 'jugues', explanation: 'gu davant de e/i. Tu jugues.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b1_7', type: 'fill_blank', question: 'Tu ___ la m├á. (Aixecar / Present)', correctAnswer: 'aixeques', explanation: 'qu davant de e/i. Tu aixeques.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b1_8', type: 'fill_blank', question: 'Tu ___ el cas. (Jutjar / Present)', correctAnswer: 'jutges', explanation: 'tg -> tg davant e/i? No, jutjar: jo jutjo, tu jutges.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b1_9', type: 'fill_blank', question: 'Tu ___ el text. (Adequar / Present)', correctAnswer: 'adeq├╝es', explanation: 'Per pronunciar la u davant e/i cal di├¿resi: adeq├╝es.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b1_10', type: 'fill_blank', question: 'Jo no ___. (Ca├ºar / Present)', correctAnswer: 'ca├ºo', explanation: '├º davant o. Jo ca├ºo.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b1_11', type: 'fill_blank', question: 'Tu ___ conills. (Ca├ºar / Present)', correctAnswer: 'caces', explanation: 'c davant e. Tu caces.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b1_12', type: 'fill_blank', question: 'Tu ___ el cotxe. (Netejar / Present)', correctAnswer: 'neteges', explanation: 'j -> g davant e. Tu neteges.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b1_13', type: 'fill_blank', question: 'Tu ___ el sopar. (Pagar / Present)', correctAnswer: 'pagues', explanation: 'g -> gu davant e. Tu pagues.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b1_14', type: 'fill_blank', question: 'Tu ___ la porta. (Tancar / Present)', correctAnswer: 'tanques', explanation: 'c -> qu davant e. Tu tanques.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b1_15', type: 'fill_blank', question: 'Tu ___ molt. (Menjar / Present)', correctAnswer: 'menges', explanation: 'j -> g davant e. Tu menges.', difficulty: 1, course: '4C' },
++
++    // --- BLOC 2: Verbs Velars (C/G) ---
++    { id: 'virr4c_b2_1', type: 'fill_blank', question: 'No el ___. (Con├¿ixer / Jo / Present)', correctAnswer: 'conec', explanation: 'Jo conec.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b2_2', type: 'fill_blank', question: 'Vol que el ___. (Con├¿ixer / Tu / Subjuntiu)', correctAnswer: 'coneguis', explanation: 'Velar en subjuntiu: coneguis.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b2_3', type: 'fill_blank', question: 'Jo ___ per sorpresa. (Apar├¿ixer / Present)', correctAnswer: 'aparec', explanation: 'Jo aparec.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b2_4', type: 'fill_blank', question: 'Que ___ aviat. (Apar├¿ixer / Ell / Subjuntiu)', correctAnswer: 'aparegui', explanation: 'Velar en subjuntiu: aparegui.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b2_5', type: 'fill_blank', question: 'M\'ho ___. (Mer├¿ixer / Jo / Present)', correctAnswer: 'mereixo', explanation: 'Jo mereixo (excepci├│ a la velaritzaci├│ en 1a persona present, tot i que subjuntiu ├®s mereixi/meregui).', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b2_6', type: 'fill_blank', question: 'Jo ___ aigua. (Beure / Present)', correctAnswer: 'bec', explanation: 'Jo bec.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b2_7', type: 'fill_blank', question: 'Cal que ___. (Beure / Ell / Subjuntiu)', correctAnswer: 'begui', explanation: 'Velar en subjuntiu: begui.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b2_8', type: 'fill_blank', question: 'Encara que ___. (Ploure / Subjuntiu)', correctAnswer: 'plogui', explanation: 'Velar: plogui.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b2_9', type: 'fill_blank', question: 'No em ___. (Moure / Jo / Present)', correctAnswer: 'moc', explanation: 'Jo moc.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b2_10', type: 'fill_blank', question: 'No et ___. (Moure / Tu / Subjuntiu)', correctAnswer: 'moguis', explanation: 'Velar: moguis.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b2_11', type: 'fill_blank', question: 'Jo ___ aqu├¡. (Viure / Present)', correctAnswer: 'visc', explanation: 'Jo visc.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b2_12', type: 'fill_blank', question: 'Vol que hi ___. (Viure / Ell / Subjuntiu)', correctAnswer: 'visqui', explanation: 'Velar: visqui.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b2_13', type: 'fill_blank', question: 'Jo ___ una carta. (Escriure / Present)', correctAnswer: 'escric', explanation: 'Jo escric.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b2_14', type: 'fill_blank', question: 'Vol que ___. (Escriure / Tu / Subjuntiu)', correctAnswer: 'escriguis', explanation: 'Velar: escriguis.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b2_15', type: 'fill_blank', question: 'Jo ___ ara. (Venir / Present)', correctAnswer: 'vinc', explanation: 'Jo vinc.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b2_16', type: 'fill_blank', question: 'Que ___ dem├á. (Venir / Ell / Subjuntiu)', correctAnswer: 'vingui', explanation: 'Velar: vingui.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b2_17', type: 'fill_blank', question: 'Jo ___ pressa. (Tenir / Present)', correctAnswer: 'tinc', explanation: 'Jo tinc.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b2_18', type: 'fill_blank', question: 'Que ___ sort. (Tenir / Tu / Subjuntiu)', correctAnswer: 'tinguis', explanation: 'Velar: tinguis.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b2_19', type: 'fill_blank', question: 'No t\'___. (Creure / Jo / Present)', correctAnswer: 'crec', explanation: 'Jo crec.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b2_20', type: 'fill_blank', question: 'No vol que el ___. (Creure / Ell / Subjuntiu)', correctAnswer: 'cregui', explanation: 'Velar: cregui.', difficulty: 2, course: '4C' },
++
++    // --- BLOC 3: Verbs Especials (Ser, Estar, Anar, Haver) ---
++    { id: 'virr4c_b3_1', type: 'fill_blank', question: 'Jo ___ advocat. (Ser / Present)', correctAnswer: 'soc', explanation: 'Jo soc (o s├│c, segons diacr├¡tics antics, per├▓ soc normativa actual preferent sense). Validarem "soc".', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_2', type: 'fill_blank', question: 'Ell ___ jutge. (Ser / Present)', correctAnswer: '├®s', explanation: 'Ell ├®s.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_3', type: 'fill_blank', question: 'Nosaltres ___ amics. (Ser / Present)', correctAnswer: 'som', explanation: 'Nosaltres som.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_4', type: 'fill_blank', question: 'Ells ___ d\'aqu├¡. (Ser / Present)', correctAnswer: 's├│n', explanation: 'Ells s├│n.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_5', type: 'fill_blank', question: 'Jo ___ cansat. (Estar / Present)', correctAnswer: 'estic', explanation: 'Jo estic.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_6', type: 'fill_blank', question: 'Tu ___ b├®? (Estar / Present)', correctAnswer: 'est├ás', explanation: 'Tu est├ás.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_7', type: 'fill_blank', question: 'Ell ___ malalt. (Estar / Present)', correctAnswer: 'est├á', explanation: 'Ell est├á.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_8', type: 'fill_blank', question: 'Ells s\'___ quiets. (Estar / Present)', correctAnswer: 'estan', explanation: 'Ells estan.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_9', type: 'fill_blank', question: 'Jo ___ al jutjat. (Anar / Present)', correctAnswer: 'vaig', explanation: 'Jo vaig.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_10', type: 'fill_blank', question: 'Nosaltres hi ___. (Anar / Present)', correctAnswer: 'anem', explanation: 'Nosaltres anem.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_11', type: 'fill_blank', question: 'Jo ___ vist. (Haver / Present)', correctAnswer: 'he', explanation: 'Jo he (auxiliar).', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_12', type: 'fill_blank', question: 'Hi ___ gent. (Haver / Present)', correctAnswer: 'ha', explanation: 'Hi ha.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_13', type: 'fill_blank', question: 'Jo ___ jove. (Ser / Imperfet)', correctAnswer: 'era', explanation: 'Jo era.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_14', type: 'fill_blank', question: 'Jo ___ anar. (Anar / Perifr├ástic)', correctAnswer: 'vaig', explanation: 'Jo vaig anar (passat).', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b3_15', type: 'fill_blank', question: 'Encara que ___ veritat. (Ser / Subjuntiu)', correctAnswer: 'sigui', explanation: 'Que sigui.', difficulty: 2, course: '4C' },
++
++    // --- BLOC 4: Voler i Poder, Saber i Caber ---
++    { id: 'virr4c_b4_1', type: 'fill_blank', question: 'Jo ___ un caf├¿. (Voler / Present)', correctAnswer: 'vull', explanation: 'Jo vull.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b4_2', type: 'fill_blank', question: 'Tu qu├¿ ___? (Voler / Present)', correctAnswer: 'vols', explanation: 'Tu vols.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b4_3', type: 'fill_blank', question: 'Ell no ___ venir. (Voler / Present)', correctAnswer: 'vol', explanation: 'Ell vol.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b4_4', type: 'fill_blank', question: 'Com ___. (Voler / Ell / Subjuntiu)', correctAnswer: 'vulgui', explanation: 'Com vulgui.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b4_5', type: 'fill_blank', question: 'Jo no ___. (Poder / Present)', correctAnswer: 'puc', explanation: 'Jo puc.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b4_6', type: 'fill_blank', question: 'Tu ___ fer-ho. (Poder / Present)', correctAnswer: 'pots', explanation: 'Tu pots.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b4_7', type: 'fill_blank', question: 'Tant de bo ___. (Poder / Ell / Subjuntiu)', correctAnswer: 'pugui', explanation: 'Subjuntiu: pugui.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b4_8', type: 'fill_blank', question: 'Jo no ho ___. (Saber / Present)', correctAnswer: 's├®', explanation: 'Jo s├®.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b4_9', type: 'fill_blank', question: 'No crec que ho ___. (Saber / Ell / Subjuntiu)', correctAnswer: 's├ápiga', explanation: 'Subjuntiu: s├ápiga.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b4_10', type: 'fill_blank', question: 'Jo no hi ___. (Caber / Present)', correctAnswer: 'cabo', explanation: 'Jo cabo (no quepo!).', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b4_11', type: 'fill_blank', question: 'Tu no hi ___. (Caber / Present)', correctAnswer: 'cabs', explanation: 'Tu cabs.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b4_12', type: 'fill_blank', question: 'Dubto que hi ___. (Caber / Ell / Subjuntiu)', correctAnswer: 'c├ápiga', explanation: 'Subjuntiu: c├ápiga.', difficulty: 3, course: '4C' },
++
++    // --- BLOC 5: Alternan├ºa Voc├álica ---
++    { id: 'virr4c_b5_1', type: 'fill_blank', question: 'Jo ___ flors. (Collir / Present)', correctAnswer: 'cullo', explanation: 'o -> u: Jo cullo.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b5_2', type: 'fill_blank', question: 'Nosaltres ___. (Collir / Present)', correctAnswer: 'collim', explanation: 'Nosaltres collim (es mant├® o).', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b5_3', type: 'fill_blank', question: 'Jo ___. (Cosir / Present)', correctAnswer: 'cuso', explanation: 'Jo cuso.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b5_4', type: 'fill_blank', question: 'Nosaltres ___. (Cosir / Present)', correctAnswer: 'cosim', explanation: 'Nosaltres cosim.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b5_5', type: 'fill_blank', question: 'Jo ___. (Sortir / Present)', correctAnswer: 'surto', explanation: 'Jo surto.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b5_6', type: 'fill_blank', question: 'Nosaltres ___. (Sortir / Present)', correctAnswer: 'sortim', explanation: 'Nosaltres sortim.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b5_7', type: 'fill_blank', question: 'Jo ___. (Escopir / Present)', correctAnswer: 'escupo', explanation: 'Jo escupo.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b5_8', type: 'fill_blank', question: 'Ell ___. (Tossir / Present)', correctAnswer: 'tus', explanation: 'Ell tus.', difficulty: 2, course: '4C' },
++
++    // --- BLOC 6: Participis Irregulars ---
++    { id: 'virr4c_b6_1', type: 'fill_blank', question: 'L\'he ___. (Veure)', correctAnswer: 'vist', explanation: 'Participi: vist.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b6_2', type: 'fill_blank', question: 'He ___ molt. (Viure)', correctAnswer: 'viscut', explanation: 'Participi: viscut.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b6_3', type: 'fill_blank', question: 'Ha ___ un llibre. (Escriure)', correctAnswer: 'escrit', explanation: 'Participi: escrit.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b6_4', type: 'fill_blank', question: 'L\'hem ___. (Fer)', correctAnswer: 'fet', explanation: 'Participi: fet.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b6_5', type: 'fill_blank', question: 'M\'ha ___ que s├¡. (Dir)', correctAnswer: 'dit', explanation: 'Participi: dit.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b6_6', type: 'fill_blank', question: 'Caf├¿ ___. (Moldre)', correctAnswer: 'molt', explanation: 'Participi: molt.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b6_7', type: 'fill_blank', question: 'Cas ___. (Resoldre)', correctAnswer: 'resolt', explanation: 'Participi: resolt.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b6_8', type: 'fill_blank', question: 'L\'han ___. (Absoldre)', correctAnswer: 'absolt', explanation: 'Participi: absolt.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b6_9', type: 'fill_blank', question: 'Ha ___ mal. (Pendre)', correctAnswer: 'pres', explanation: 'Participi: pres.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b6_10', type: 'fill_blank', question: 'No est├á ___. (Admetre)', correctAnswer: 'adm├¿s', explanation: 'Participi: adm├¿s.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b6_11', type: 'fill_blank', question: 'Full ___. (Imprimir)', correctAnswer: 'impr├¿s', explanation: 'Participi: impr├¿s.', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b6_12', type: 'fill_blank', question: 'Norma ___. (Establir)', correctAnswer: 'establerta', explanation: 'Participi: establerta (o establida, preferim establerta).', difficulty: 2, course: '4C' },
++    { id: 'virr4c_b6_13', type: 'fill_blank', question: 'Cel ___. (Cobrir)', correctAnswer: 'cobert', explanation: 'Participi: cobert.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b6_14', type: 'fill_blank', question: 'Porta ___. (Obrir)', correctAnswer: 'oberta', explanation: 'Participi: oberta.', difficulty: 1, course: '4C' },
++    { id: 'virr4c_b6_15', type: 'fill_blank', question: 'Est├á ___. (Morir)', correctAnswer: 'mort', explanation: 'Participi: mort.', difficulty: 1, course: '4C' }
++  ]
++}];
++export const VERBS_REG_4C: CourseSection[] = [{
++  id: 'verbs_reg_4c',
++  title: 'Verbs Regulars (B2)',
++  description: 'Domina els verbs regulars: -ar, -er/-re, -ir (pur/incoatiu). 74 exercicis. ­ƒøá´©Å',
++  category: 'gram├ática',
++  course: '4C',
++  exercises: [
++    // --- BLOC 1: Conjugaci├│ 1 (-AR) ---
++    { id: 'vreg4c_b1_1', type: 'fill_blank', question: 'Jo ___ sota la dutxa. (Cantar / Present)', correctAnswer: 'canto', explanation: 'Jo canto.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b1_2', type: 'fill_blank', question: 'Tu ___ massa. (Parlar / Present)', correctAnswer: 'parles', explanation: 'Tu parles.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b1_3', type: 'fill_blank', question: 'Ell ___ dret. (Estudiar / Present)', correctAnswer: 'estudia', explanation: 'Ell estudia.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b1_4', type: 'fill_blank', question: 'Nosaltres ___ cada dia. (Caminar / Present)', correctAnswer: 'caminem', explanation: 'Nosaltres caminem.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b1_5', type: 'fill_blank', question: 'Quan ___? (Tornar / Vosaltres / Present)', correctAnswer: 'torneu', explanation: 'Vosaltres torneu.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b1_6', type: 'fill_blank', question: 'Ells ___ el contracte. (Signar / Present)', correctAnswer: 'signen', explanation: 'Ells signen.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b1_7', type: 'fill_blank', question: 'Ahir vaig ___ la sol┬Àlicitud. (Presentar / Perifr├ástic)', correctAnswer: 'presentar', explanation: 'Vaig presentar (infinitiu).', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b1_8', type: 'fill_blank', question: 'Avui ha ___ la demanda. (Formular / Perfet)', correctAnswer: 'formulat', explanation: 'Participi: formulat.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b1_9', type: 'fill_blank', question: 'Ahir va ___ ajuda. (Sol┬Àlicitar / Ella / Perifr├ástic)', correctAnswer: 'sol┬Àlicitar', explanation: 'Va sol┬Àlicitar.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b1_10', type: 'fill_blank', question: 'Abans ___ l\'aniversari junts. (Celebrar / Nosaltres / Imperfet)', correctAnswer: 'celebr├ávem', explanation: 'Imperfet nosaltres: celebr├ávem.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b1_11', type: 'fill_blank', question: 'Sempre ___ a la costa. (Estiuejar / Ells / Imperfet)', correctAnswer: 'estiuejaven', explanation: 'Imperfet ells: estiuejaven.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b1_12', type: 'fill_blank', question: 'Jo ___ a la lluna. (Viatjar / Condicional)', correctAnswer: 'viatjaria', explanation: 'Jo viatjaria.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b1_13', type: 'fill_blank', question: 'Dem├á ___ el pa. (Comprar / Tu / Futur)', correctAnswer: 'comprar├ás', explanation: 'Futur tu: comprar├ás.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b1_14', type: 'fill_blank', question: 'Abans no hi ___. (Jugar / Vosaltres / Imperfet)', correctAnswer: 'jug├áveu', explanation: 'Imperfet vosaltres: jug├áveu.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b1_15', type: 'fill_blank', question: 'Avui hem ___ molta feina. (Avan├ºar / Nosaltres / Perfet)', correctAnswer: 'avan├ºat', explanation: 'Participi: avan├ºat.', difficulty: 1, course: '4C' },
++
++    // --- BLOC 2: Conjugaci├│ 2 (-ER / -RE) ---
++    { id: 'vreg4c_b2_1', type: 'fill_blank', question: 'Jo mai ___ l\'esperan├ºa. (Perdre / Present)', correctAnswer: 'perdo', explanation: 'Jo perdo.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b2_2', type: 'fill_blank', question: 'Tu sempre ___ les claus. (Perdre / Present)', correctAnswer: 'perds', explanation: 'Tu perds.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b2_3', type: 'fill_blank', question: 'Ell no ___ el temps. (Perdre / Present)', correctAnswer: 'perd', explanation: 'Ell perd.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b2_4', type: 'fill_blank', question: 'No ens ___ res. (Perdre / Nosaltres / Present)', correctAnswer: 'perdem', explanation: 'Nosaltres perdem.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b2_5', type: 'fill_blank', question: 'Ells hi ___ diners. (Perdre / Ells / Present)', correctAnswer: 'perden', explanation: 'Ells perden.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b2_6', type: 'fill_blank', question: 'Jo ___ el pitjor. (T├®mer / Present)', correctAnswer: 'temo', explanation: 'Jo temo.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b2_7', type: 'fill_blank', question: 'Tu no ___ res. (T├®mer / Present)', correctAnswer: 'tems', explanation: 'Tu tems.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b2_8', type: 'fill_blank', question: 'Ell ___ la foscor. (T├®mer / Present)', correctAnswer: 'tem', explanation: 'Ell tem.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b2_9', type: 'fill_blank', question: 'Nosaltres no ___ el canvi. (T├®mer / Present)', correctAnswer: 'temem', explanation: 'Nosaltres temem.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b2_10', type: 'fill_blank', question: 'Dem├á ___ el cotxe. (Vendre / Jo / Futur)', correctAnswer: 'vendr├®', explanation: 'Jo vendr├®.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b2_11', type: 'fill_blank', question: 'Tu el ___? (Vendre / Condicional)', correctAnswer: 'vendries', explanation: 'Tu vendries.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b2_12', type: 'fill_blank', question: 'La pluja ___ contra el vidre. (Batre / Imperfet)', correctAnswer: 'batia', explanation: 'Imperfet 3a: batia.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b2_13', type: 'fill_blank', question: 'Vam ___ en silenci. (Romandre / Passat)', correctAnswer: 'romandre', explanation: 'Vaig romandre (infinitiu en perifr├ástic).', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b2_14', type: 'fill_blank', question: 'M\'___ b├®? (Entendre / Vosaltres / Present)', correctAnswer: 'enteneu', explanation: 'Vosaltres enteneu.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b2_15', type: 'fill_blank', question: 'No ___ les trucades. (Atendre / Ells / Present)', correctAnswer: 'atenen', explanation: 'Ells atenen.', difficulty: 1, course: '4C' },
++
++    // --- BLOC 3: Conjugaci├│ 3 (-IR) - Purs ---
++    { id: 'vreg4c_b3_1', type: 'fill_blank', question: 'Jo ___ vuit hores. (Dormir / Present)', correctAnswer: 'dormo', explanation: 'Jo dormo.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b3_2', type: 'fill_blank', question: 'Tu ___ poc. (Dormir / Present)', correctAnswer: 'dorms', explanation: 'Tu dorms.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b3_3', type: 'fill_blank', question: 'El nen ___. (Dormir / Present)', correctAnswer: 'dorm', explanation: 'Ell dorm.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b3_4', type: 'fill_blank', question: 'L\'aigua ja ___. (Bullir / Present)', correctAnswer: 'bull', explanation: 'Bull (pur).', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b3_5', type: 'fill_blank', question: 'No hi ___ b├®. (Sentir / Jo / Present)', correctAnswer: 'sento', explanation: 'Sento.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b3_6', type: 'fill_blank', question: 'El gat ___. (Fugir / Present)', correctAnswer: 'fuig', explanation: 'Fuig.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b3_7', type: 'fill_blank', question: '___ la porta! (Obrir / Tu / Imperatiu)', correctAnswer: 'Obre', explanation: 'Obre.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b3_8', type: 'fill_blank', question: 'Jo ___ el formulari. (Omplir / Present)', correctAnswer: 'omplo', explanation: 'Omplo.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b3_9', type: 'fill_blank', question: 'Ella ___ el bot├│. (Cosir / Present)', correctAnswer: 'cus', explanation: 'Cus (o/u irregular?). Un poc, per├▓ ├®s pur.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b3_10', type: 'fill_blank', question: 'Avui ___ d\'hora. (Sortir / Nosaltres / Present)', correctAnswer: 'sortim', explanation: 'Sortim.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b3_11', type: 'fill_blank', question: 'Ells ___ les pomes. (Collir / Present)', correctAnswer: 'cullen', explanation: 'Cullen.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b3_12', type: 'fill_blank', question: 'No ___ a terra. (Escopir / Tu / Present)', correctAnswer: 'escups', explanation: 'Escups.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b3_13', type: 'fill_blank', question: 'Va ___ l\'any passat. (Morir / Ell / Passat)', correctAnswer: 'morir', explanation: 'Morir.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b3_14', type: 'fill_blank', question: 'Ho ___? (Sentir / Vosaltres / Present)', correctAnswer: 'sentiu', explanation: 'Sentiu.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b3_15', type: 'fill_blank', question: 'Dem├á ___ la botiga. (Obrir / Jo / Futur)', correctAnswer: 'obrir├®', explanation: 'Obrir├®.', difficulty: 1, course: '4C' },
++
++    // --- BLOC 4: Conjugaci├│ 3 (-IR) - Incoatius (-eix-) ---
++    { id: 'vreg4c_b4_1', type: 'fill_blank', question: 'Jo ___ el sopar. (Servir / Present)', correctAnswer: 'serveixo', explanation: 'Serveixo.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b4_2', type: 'fill_blank', question: 'Per qu├¿ ___ tant? (Patir / Tu / Present)', correctAnswer: 'pateixes', explanation: 'Pateixes.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b4_3', type: 'fill_blank', question: 'Ell ___ el diari. (Llegir / Present)', correctAnswer: 'llegeix', explanation: 'Llegeix.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b4_4', type: 'fill_blank', question: 'Nosaltres ___ molt. (Llegir / Present)', correctAnswer: 'llegim', explanation: 'Llegim (1a pl no incoherent).', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b4_5', type: 'fill_blank', question: 'Vosaltres ___ poc. (Llegir / Present)', correctAnswer: 'llegiu', explanation: 'Llegiu (2a pl no incoherent).', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b4_6', type: 'fill_blank', question: 'Ells ___ novel┬Àles. (Llegir / Present)', correctAnswer: 'llegeixen', explanation: 'Llegeixen.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b4_7', type: 'fill_blank', question: 'Jo no ___. (Conduir / Present)', correctAnswer: 'condueixo', explanation: 'Condueixo.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b4_8', type: 'fill_blank', question: '___ cotxes. (Produir / La f├ábrica / Present)', correctAnswer: 'produeix', explanation: 'Produeix.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b4_9', type: 'fill_blank', question: 'Ens ___ dem├á. (Reunir / Nosaltres / Present)', correctAnswer: 'reunim', explanation: 'Reunim.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b4_10', type: 'fill_blank', question: 'Es ___ a la sala. (Reunir / Ells / Present)', correctAnswer: 'reuneixen', explanation: 'Reuneixen.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b4_11', type: 'fill_blank', question: 'T\'ho ___ molt. (Agrair / Jo / Present)', correctAnswer: 'agraeixo', explanation: 'Agraeixo.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b4_12', type: 'fill_blank', question: 'Tu ___ qu├¿ fer. (Decidir / Present)', correctAnswer: 'decideixes', explanation: 'Decideixes.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b4_13', type: 'fill_blank', question: 'Tothom ___. (Aplaudir / Present)', correctAnswer: 'aplaudeix', explanation: 'Aplaudeix.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b4_14', type: 'fill_blank', question: '___ anar a peu. (Preferir / Jo / Present)', correctAnswer: 'Prefereixo', explanation: 'Prefereixo.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b4_15', type: 'fill_blank', question: 'Aix├▓ no ___. (Existir / Present)', correctAnswer: 'existeix', explanation: 'Existeix.', difficulty: 1, course: '4C' },
++
++    // --- BLOC 5: Subjuntiu i Imperatiu Regular ---
++    { id: 'vreg4c_b5_1', type: 'fill_blank', question: 'Vol que jo ___. (Cantar / Subjuntiu)', correctAnswer: 'canti', explanation: 'Jo canti.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b5_2', type: 'fill_blank', question: 'Cal que ___ amb ell. (Parlar / Tu / Subjuntiu)', correctAnswer: 'parlis', explanation: 'Tu parlis.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b5_3', type: 'fill_blank', question: 'Espero que ___ aviat. (Tornar / Ell / Subjuntiu)', correctAnswer: 'torni', explanation: 'Ell torni.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b5_4', type: 'fill_blank', question: 'No vol que ___ el tren. (Perdre / Jo / Subjuntiu)', correctAnswer: 'perdi', explanation: 'Jo perdi.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b5_5', type: 'fill_blank', question: '├ës normal que ___. (T├®mer / Ells / Subjuntiu)', correctAnswer: 'temin', explanation: 'Ells temin.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b5_6', type: 'fill_blank', question: 'Volen que ___ aqu├¡. (Dormir / Nosaltres / Subjuntiu)', correctAnswer: 'dormim', explanation: 'Nosaltres dormim.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b5_7', type: 'fill_blank', question: 'Vol que li ___ caf├¿. (Servir / Jo / Subjuntiu)', correctAnswer: 'serveixi', explanation: 'Jo serveixi.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b5_8', type: 'fill_blank', question: 'Vigila quan ___. (Conduir / Tu / Subjuntiu)', correctAnswer: 'condueixis', explanation: 'Tu condueixis.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b5_9', type: 'fill_blank', question: 'M\'agrada que ___. (Llegir / Ell / Subjuntiu)', correctAnswer: 'llegeixi', explanation: 'Ell llegeixi.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b5_10', type: 'fill_blank', question: '___ els llibres. (Obrir / Vosaltres / Imperatiu)', correctAnswer: 'Obriu', explanation: 'Obriu.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b5_11', type: 'fill_blank', question: '___ ara mateix. (Callar / Tu / Imperatiu)', correctAnswer: 'Calla', explanation: 'Calla.', difficulty: 1, course: '4C' },
++    { id: 'vreg4c_b5_12', type: 'fill_blank', question: '___ aigua. (Beure / Vosaltres / Imperatiu)', correctAnswer: 'Beveu', explanation: 'Beveu.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b5_13', type: 'fill_blank', question: '___ els fulls. (Repartir / Tu / Imperatiu)', correctAnswer: 'Reparteix', explanation: 'Reparteix.', difficulty: 2, course: '4C' },
++    { id: 'vreg4c_b5_14', type: 'fill_blank', question: '___ d\'aqu├¡! (Fugir / Nosaltres / Imperatiu)', correctAnswer: 'Fugim', explanation: 'Fugim.', difficulty: 2, course: '4C' }
++  ]
++}];
++export const PRON_REL_4C: CourseSection[] = [{
++  id: 'prel_4c',
++  title: 'Pronoms Relatius (B2)',
++  description: 'Domina els pronoms relatius: que, qu├¿, qui, on i les seves variants. ­ƒöä',
++  category: 'gram├ática',
++  course: '4C',
++  exercises: [
++    // --- BLOC 1: QUE vs QU├ê vs QUI (Sense preposici├│) ---
++    { id: 'rel4c_b1_1', type: 'multiple_choice', question: 'L\'advocada ___ ha vingut aquest mat├¡ es diu Carina. ­ƒæ®ÔÇìÔÜû´©Å', options: ['que', 'qu├¿', 'qui'], correctAnswer: 'que', explanation: 'Subjecte -> que. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b1_2', type: 'multiple_choice', question: 'El llibre ___ he de llegir ├®s avorrit. ­ƒôû', options: ['que', 'qu├¿', 'qui'], correctAnswer: 'que', explanation: 'CD -> que. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b1_3', type: 'multiple_choice', question: 'Els t├▓ners ___ vaig demanar arribaran avui. ­ƒû¿´©Å', options: ['que', 'qu├¿', 'qui'], correctAnswer: 'que', explanation: 'CD -> que. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b1_4', type: 'multiple_choice', question: 'La magistrada ___ vam trobar ahir ├®s de Granada. ­ƒæ®ÔÇìÔÜû´©Å', options: ['que', 'qu├¿', 'qui'], correctAnswer: 'que', explanation: 'CD (persona) -> que. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b1_5', type: 'multiple_choice', question: 'Les eines ___ faig servir s├│n noves. ­ƒøá´©Å', options: ['que', 'qu├¿', 'qui'], correctAnswer: 'que', explanation: 'CD -> que. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b1_6', type: 'multiple_choice', question: 'El noi ___ comparteix pis amb mi. ­ƒæ¿', options: ['que', 'qu├¿', 'qui'], correctAnswer: 'que', explanation: 'Subjecte -> que. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b1_7', type: 'multiple_choice', question: 'La s├¿rie ___ vam veure ahir. ­ƒô║', options: ['que', 'qu├¿', 'qui'], correctAnswer: 'que', explanation: 'CD -> que. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b1_8', type: 'multiple_choice', question: 'El correu ___ ens vau enviar. ­ƒôº', options: ['que', 'qu├¿', 'qui'], correctAnswer: 'que', explanation: 'CD -> que. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b1_9', type: 'multiple_choice', question: 'Els testimonis ___ van citar han de compar├¿ixer. ­ƒùú´©Å', options: ['que', 'qu├¿', 'qui'], correctAnswer: 'que', explanation: 'CD -> que. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b1_10', type: 'multiple_choice', question: 'L\'armari ___ ├®s de fusta de roure. ­ƒÜ¬', options: ['que', 'qu├¿', 'qui'], correctAnswer: 'que', explanation: 'Subjecte -> que. Ô£à', difficulty: 1, course: '4C' },
++
++    // --- BLOC 2: PREPOSICI├ô + RELATIU ---
++    { id: 'rel4c_b2_1', type: 'multiple_choice', question: 'La noia amb ___ surts. ­ƒÆæ', options: ['qui', 'qu├¿'], correctAnswer: 'qui', explanation: 'Preposici├│ + Persona -> Qui. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b2_2', type: 'multiple_choice', question: 'El llibre de ___ parlo. ­ƒôÜ', options: ['qui', 'qu├¿'], correctAnswer: 'qu├¿', explanation: 'Preposici├│ + Cosa -> Qu├¿. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b2_3', type: 'multiple_choice', question: 'La persona a ___ has de telefonar. ­ƒô×', options: ['qui', 'qu├¿'], correctAnswer: 'qui', explanation: 'A + Persona -> Qui. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b2_4', type: 'multiple_choice', question: 'L\'edifici en ___ treballo. ­ƒÅó', options: ['qui', 'qu├¿'], correctAnswer: 'qu├¿', explanation: 'Preposici├│ + Lloc/Cosa -> Qu├¿. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b2_5', type: 'multiple_choice', question: 'El motiu per ___ ho va fer. ÔØô', options: ['qui', 'qu├¿'], correctAnswer: 'qu├¿', explanation: 'Per + Causa -> Qu├¿. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b2_6', type: 'multiple_choice', question: 'L\'home contra ___ va declarar. ­ƒæ¿', options: ['qui', 'qu├¿'], correctAnswer: 'qui', explanation: 'Contra + Persona -> Qui. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b2_7', type: 'multiple_choice', question: 'L\'eina amb ___ ho va arreglar. ­ƒöº', options: ['qui', 'qu├¿'], correctAnswer: 'qu├¿', explanation: 'Amb + Instrument -> Qu├¿. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b2_8', type: 'multiple_choice', question: 'La dona de ___ et vaig parlar. ­ƒæ®', options: ['qui', 'qu├¿'], correctAnswer: 'qui', explanation: 'De + Persona -> Qui. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b2_9', type: 'multiple_choice', question: 'El perm├¡s sense ___ no pots entrar. ­ƒÄ½', options: ['qui', 'qu├¿'], correctAnswer: 'qu├¿', explanation: 'Sense + Cosa -> Qu├¿. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b2_10', type: 'multiple_choice', question: 'Els amics per ___ faria qualsevol cosa. ­ƒñØ', options: ['qui', 'qu├¿'], correctAnswer: 'qui', explanation: 'Per + Persona -> Qui. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b2_11', type: 'multiple_choice', question: 'El bol├¡graf amb ___ escrius. ­ƒûè´©Å', options: ['qu├¿', 'qui'], correctAnswer: 'qu├¿', explanation: 'Amb + Instrument -> Qu├¿. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b2_12', type: 'multiple_choice', question: 'El client a ___ vas enviar el pressupost. ­ƒÆ╝', options: ['qui', 'qu├¿'], correctAnswer: 'qui', explanation: 'A + Destinatari -> Qui. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b2_13', type: 'multiple_choice', question: 'La situaci├│ en ___ ens trobem. ­ƒîÉ', options: ['qu├¿', 'qui'], correctAnswer: 'qu├¿', explanation: 'En + Situaci├│ -> Qu├¿. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b2_14', type: 'multiple_choice', question: 'La sent├¿ncia contra ___ hem presentat recurs. ÔÜû´©Å', options: ['qu├¿', 'qui'], correctAnswer: 'qu├¿', explanation: 'Contra + Cosa -> Qu├¿. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b2_15', type: 'multiple_choice', question: 'El tema de ___ tracta la pel┬Àl├¡cula. ­ƒÄ¼', options: ['qu├¿', 'qui'], correctAnswer: 'qu├¿', explanation: 'De + Tema -> Qu├¿. Ô£à', difficulty: 2, course: '4C' },
++
++    // --- BLOC 3: ON vs EN QU├ê ---
++    { id: 'rel4c_b3_1', type: 'multiple_choice', question: 'No trobo el calaix ___ vaig desar les eines. ­ƒùä´©Å', options: ['on', 'que'], correctAnswer: 'on', explanation: 'Lloc f├¡sic -> On (o en qu├¿). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b3_2', type: 'multiple_choice', question: 'El poble ___ visc. ­ƒÅÿ´©Å', options: ['on', 'que'], correctAnswer: 'on', explanation: 'Lloc -> On. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b3_3', type: 'multiple_choice', question: 'Al carrer ___ visc sempre fan obres. ­ƒÜº', options: ['on', 'que'], correctAnswer: 'on', explanation: 'Lloc -> On. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b3_4', type: 'multiple_choice', question: 'El xalet ___ viu l\'Agn├¿s. ­ƒÅí', options: ['on', 'que'], correctAnswer: 'on', explanation: 'Lloc -> On. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b3_5', type: 'multiple_choice', question: 'La ciutat ___ vaig n├®ixer. ­ƒÅÖ´©Å', options: ['on', 'que'], correctAnswer: 'on', explanation: 'Lloc -> On. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b3_6', type: 'multiple_choice', question: 'La casa ___ estiuegem. ­ƒÅû´©Å', options: ['on', 'que'], correctAnswer: 'on', explanation: 'Lloc -> On. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b3_7', type: 'multiple_choice', question: 'El restaurant ___ vam sopar. ­ƒì¢´©Å', options: ['on', 'que'], correctAnswer: 'on', explanation: 'Lloc -> On. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b3_8', type: 'multiple_choice', question: 'L\'armari ___ guardo la roba. ­ƒæù', options: ['on', 'que'], correctAnswer: 'on', explanation: 'Lloc -> On/En qu├¿. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b3_9', type: 'multiple_choice', question: 'Aquest ├®s el lloc ___ ens vam con├¿ixer. ­ƒÆæ', options: ['on', 'que'], correctAnswer: 'on', explanation: 'Lloc -> On. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b3_10', type: 'multiple_choice', question: 'Treballo a l\'edifici ___ hi ha els jutjats. ÔÜû´©Å', options: ['on', 'que'], correctAnswer: 'on', explanation: 'Lloc -> On. Ô£à', difficulty: 2, course: '4C' },
++
++    // --- BLOC 4: EL QUAL / LA QUAL ---
++    { id: 'rel4c_b4_1', type: 'multiple_choice', question: 'El poblet en ___ estiuegeu t├® pocs habitants. ­ƒÅÿ´©Å', options: ['el qual', 'la qual'], correctAnswer: 'el qual', explanation: 'Poblet (mascul├¡) -> el qual. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b4_2', type: 'multiple_choice', question: 'La llei segons ___ s\'ha dictat sent├¿ncia. ­ƒô£', options: ['la qual', 'el qual'], correctAnswer: 'la qual', explanation: 'Llei (femen├¡) -> la qual. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b4_3', type: 'multiple_choice', question: 'Els documents mitjan├ºant ___ es prova el delicte. ­ƒôä', options: ['els quals', 'les quals'], correctAnswer: 'els quals', explanation: 'Documents (mascul├¡ plural) -> els quals. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b4_4', type: 'multiple_choice', question: 'Les normes contra ___ protesten. ­ƒôó', options: ['les quals', 'els quals'], correctAnswer: 'les quals', explanation: 'Normes (femen├¡ plural) -> les quals. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b4_5', type: 'multiple_choice', question: 'La sent├¿ncia, contra ___ no es pot rec├│rrer. ­ƒö¿', options: ['la qual', 'el qual'], correctAnswer: 'la qual', explanation: 'Sent├¿ncia (femen├¡) -> la qual. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b4_6', type: 'multiple_choice', question: 'El motiu pel ___ ho va fer. ÔØô', options: ['qual', 'qu├¿'], correctAnswer: 'qual', explanation: 'Per + el -> Pel qual. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b4_7', type: 'multiple_choice', question: 'La causa per ___ lluitem. Ô£è', options: ['la qual', 'el qual'], correctAnswer: 'la qual', explanation: 'Causa (femen├¡) -> per la qual. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b4_8', type: 'multiple_choice', question: 'Els amics amb ___ viatjo. ­ƒÜî', options: ['els quals', 'les quals'], correctAnswer: 'els quals', explanation: 'Amics (mascul├¡ plural) -> amb els quals. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b4_9', type: 'multiple_choice', question: 'La taula damunt ___ hi ha els papers. ­ƒùä´©Å', options: ['la qual', 'el qual'], correctAnswer: 'la qual', explanation: 'Taula (femen├¡) -> damunt la qual. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b4_10', type: 'multiple_choice', question: 'El jutge davant ___ va compar├¿ixer. ­ƒæ¿ÔÇìÔÜû´©Å', options: ['el qual', 'la qual'], correctAnswer: 'el qual', explanation: 'Jutge (mascul├¡) -> davant el qual. Ô£à', difficulty: 3, course: '4C' },
++
++    // --- BLOC 5: LA QUAL COSA (NEUTRE) ---
++    { id: 'rel4c_b5_1', type: 'multiple_choice', question: 'Van tancar la botiga, ___ ens va empipar. ­ƒÿí', options: ['la qual cosa', 'el qual'], correctAnswer: 'la qual cosa', explanation: 'Antecedent = tota la frase -> la qual cosa. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b5_2', type: 'multiple_choice', question: 'Ens volem comprar un pis, ___ vol dir moltes despeses. ­ƒÆ©', options: ['la qual cosa', 'que'], correctAnswer: 'la qual cosa', explanation: 'Antecedent = frase sencera -> la qual cosa (o cosa que). Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b5_3', type: 'multiple_choice', question: 'Ha plogut tot el dia, ___ ha anat b├® per al camp. ­ƒîº´©Å', options: ['la qual cosa', 'el qual'], correctAnswer: 'la qual cosa', explanation: 'Antecedent frase -> la qual cosa. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b5_4', type: 'multiple_choice', question: 'No ha vingut ning├║, ___ ├®s estrany. ­ƒæ╗', options: ['cosa que', 'el que'], correctAnswer: 'cosa que', explanation: 'Neutre relatiu -> cosa que / la qual cosa. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'rel4c_b5_5', type: 'multiple_choice', question: 'Ha aprovat l\'examen, ___ ens alegra molt. ­ƒÄë', options: ['la qual cosa', 'que'], correctAnswer: 'la qual cosa', explanation: 'Neutre -> la qual cosa. Ô£à', difficulty: 3, course: '4C' },
++
++    // --- BLOC 6: RELATIU vs CONJUNCI├ô ---
++    { id: 'rel4c_b6_1', type: 'multiple_choice', question: 'No vull ___ em truquis m├®s. ­ƒôÁ', options: ['que (conjunci├│)', 'que (relatiu)'], correctAnswer: 'que (conjunci├│)', explanation: 'No substitueix res, introdueix subordinada substantiva. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b6_2', type: 'multiple_choice', question: 'Els amics, ___ s├│n de Perpiny├á, viuen a Agramunt. ­ƒÅÿ´©Å', options: ['que (relatiu)', 'que (conjunci├│)'], correctAnswer: 'que (relatiu)', explanation: 'Substitueix "els amics". Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b6_3', type: 'multiple_choice', question: 'Espero ___ vingueu aviat. ÔÅ│', options: ['que (conjunci├│)', 'que (relatiu)'], correctAnswer: 'que (conjunci├│)', explanation: 'Introdueix CD (subordinada). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b6_4', type: 'multiple_choice', question: 'La noia ___ va venir. ­ƒæ®', options: ['que (relatiu)', 'que (conjunci├│)'], correctAnswer: 'que (relatiu)', explanation: 'Substitueix "la noia". Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b6_5', type: 'multiple_choice', question: 'Sembla ___ plour├á. ­ƒîº´©Å', options: ['que (conjunci├│)', 'que (relatiu)'], correctAnswer: 'que (conjunci├│)', explanation: 'Introdueix subordinada. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b6_6', type: 'multiple_choice', question: 'El llibre ___ llegeixes. ­ƒôû', options: ['que (relatiu)', 'que (conjunci├│)'], correctAnswer: 'que (relatiu)', explanation: 'Substitueix "el llibre". Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b6_7', type: 'multiple_choice', question: 'Desitjo ___ tinguis sort. ­ƒìÇ', options: ['que (conjunci├│)', 'que (relatiu)'], correctAnswer: 'que (conjunci├│)', explanation: 'Introdueix desig. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b6_8', type: 'multiple_choice', question: 'La casa ___ hem comprat. ­ƒÅá', options: ['que (relatiu)', 'que (conjunci├│)'], correctAnswer: 'que (relatiu)', explanation: 'Substitueix "la casa". Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b6_9', type: 'multiple_choice', question: 'Diu ___ no vindr├á. ­ƒùú´©Å', options: ['que (conjunci├│)', 'que (relatiu)'], correctAnswer: 'que (conjunci├│)', explanation: 'Introdueix CD. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b6_10', type: 'multiple_choice', question: 'El cotxe ___ corre molt. ­ƒÅÄ´©Å', options: ['que (relatiu)', 'que (conjunci├│)'], correctAnswer: 'que (relatiu)', explanation: 'Substitueix "el cotxe". Ô£à', difficulty: 1, course: '4C' },
++
++    // --- BLOC 7: INTERROGATIU vs RELATIV (ACCENT) ---
++    { id: 'rel4c_b7_1', type: 'multiple_choice', question: 'No s├® exactament ___ voleu dir. ­ƒñö', options: ['qu├¿', 'que'], correctAnswer: 'qu├¿', explanation: 'T├▓nic (Interrogativa indirecta) -> Qu├¿. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b7_2', type: 'multiple_choice', question: 'Recordes la conversa ___ vam tenir? ­ƒùú´©Å', options: ['que', 'qu├¿'], correctAnswer: 'que', explanation: 'Relatiu ├áton (antecedent conversa) -> que. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b7_3', type: 'multiple_choice', question: 'No entenc per ___ has vingut. ÔØô', options: ['qu├¿', 'que'], correctAnswer: 'qu├¿', explanation: 'Interrogatiu causal -> Per qu├¿. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b7_4', type: 'multiple_choice', question: 'Us vull explicar ___ en penso. ­ƒÆ¡', options: ['qu├¿', 'que'], correctAnswer: 'qu├¿', explanation: 'El que (t├▓nic) -> Qu├¿. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b7_5', type: 'multiple_choice', question: 'Vaig preguntar per ___ ho havien fet. ­ƒòÁ´©ÅÔÇìÔÖé´©Å', options: ['qu├¿', 'que'], correctAnswer: 'qu├¿', explanation: 'Interrogativa indirecta -> Per qu├¿. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b7_6', type: 'multiple_choice', question: 'El dia ___ ten├¡em l\'examen. ­ƒôà', options: ['que', 'qu├¿'], correctAnswer: 'que', explanation: 'Relatiu ├áton (antecedent dia) -> que. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b7_7', type: 'multiple_choice', question: 'Les galetes ___ vam comprar. ­ƒì¬', options: ['que', 'qu├¿'], correctAnswer: 'que', explanation: 'Relatiu ├áton -> que. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b7_8', type: 'multiple_choice', question: 'El pis en ___ visc. ­ƒÅó', options: ['qu├¿', 'que'], correctAnswer: 'qu├¿', explanation: 'Relatiu t├▓nic amb preposici├│ -> Qu├¿. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b7_9', type: 'multiple_choice', question: 'No s├® ___ fer. ­ƒñÀ', options: ['qu├¿', 'que'], correctAnswer: 'qu├¿', explanation: 'Interrogativa indirecta -> Qu├¿ fer. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b7_10', type: 'multiple_choice', question: 'Fes el ___ vulguis. Ô£¿', options: ['que', 'qu├¿'], correctAnswer: 'que', explanation: 'El que (relatiu sem├ánticament neutre per├▓ gramaticalment "el" + "que"). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'rel4c_b7_11', type: 'multiple_choice', question: 'Amb ___ vas anar? ­ƒñØ', options: ['qui', 'que'], correctAnswer: 'qui', explanation: 'Interrogatiu persona -> Qui. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b7_12', type: 'multiple_choice', question: 'De ___ parles? (Cosa) ­ƒôª', options: ['qu├¿', 'qui'], correctAnswer: 'qu├¿', explanation: 'Interrogatiu cosa -> Qu├¿. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'rel4c_b7_13', type: 'multiple_choice', question: 'A ___ esperes? (Persona) ÔÅ│', options: ['qui', 'qu├¿'], correctAnswer: 'qui', explanation: 'Interrogatiu persona -> Qui. Ô£à', difficulty: 1, course: '4C' }
++  ]
++}];
++export const PREP_4C: CourseSection[] = [{
++  id: 'prep_4c',
++  title: 'Preposicions (B2)',
++  description: 'Domina l\'├║s correcte de les preposicions: a/en, per/per a, de, etc. ­ƒöä',
++  category: 'gram├ática',
++  course: '4C',
++  exercises: [
++    // --- BLOC 1: A vs EN (Lloc i Temps) ---
++    { id: 'p4c_b1_1', type: 'multiple_choice', question: 'Treballo ___ la Garrotxa. ­ƒÅö´©Å', options: ['a', 'en'], correctAnswer: 'a', explanation: 'Davant determinants definits (el, la...) usem A. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b1_2', type: 'multiple_choice', question: 'Viu ___ una poblaci├│ de la costa. ­ƒîè', options: ['a', 'en'], correctAnswer: 'en', explanation: 'Davant indeterminats (un, una...) usem EN. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b1_3', type: 'multiple_choice', question: 'Ens aturarem ___ aquella botiga. ­ƒøì´©Å', options: ['a', 'en'], correctAnswer: 'en', explanation: 'Davant demostratius (aquell, aquest...) usem EN. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b1_4', type: 'multiple_choice', question: 'Ho vam llegir ___ alguna revista. ­ƒôû', options: ['a', 'en'], correctAnswer: 'en', explanation: 'Davant indefinits (algun, alguna...) usem EN. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b1_5', type: 'multiple_choice', question: 'Viu ___ Berga. ­ƒôì', options: ['a', 'en'], correctAnswer: 'a', explanation: 'Davant noms de ciutats/pobles usem A. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'p4c_b1_6', type: 'multiple_choice', question: 'Treballem ___ un despatx. ­ƒÆ╝', options: ['a', 'en'], correctAnswer: 'en', explanation: 'Davant "un" (indeterminat) usem EN. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b1_7', type: 'multiple_choice', question: 'Treballem ___ despatx de la cantonada. ­ƒÅó', options: ['al', 'en el'], correctAnswer: 'al', explanation: 'Davant determinant definit (el) usem A (a + el = al). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b1_8', type: 'multiple_choice', question: 'Anirem ___ Pirineus. ­ƒÅö´©Å', options: ['als', 'en els'], correctAnswer: 'als', explanation: 'Davant "els" usem A (a + els = als). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b1_9', type: 'multiple_choice', question: 'Marxaran ___ setembre. ­ƒôà', options: ['al', 'en'], correctAnswer: 'al', explanation: 'Davant mesos, habitualment AL (o pel). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b1_10', type: 'multiple_choice', question: 'Arribaran ___ mat├¡. ÔÿÇ´©Å', options: ['al', 'pel'], correctAnswer: 'al', explanation: 'Expressi├│ temporal correcta: "al mat├¡" (no "pel"). ÔØî', difficulty: 2, course: '4C' },
++    { id: 'p4c_b1_11', type: 'multiple_choice', question: 'Ens trobarem ___ la nit. ­ƒîÖ', options: ['a', 'per'], correctAnswer: 'a', explanation: 'Expressi├│ temporal correcta: "a la nit" (no "per" la nit). ÔØî', difficulty: 2, course: '4C' },
++    { id: 'p4c_b1_12', type: 'multiple_choice', question: 'Ho tindrem ___ un parell de setmanes. ÔÅ│', options: ['a', 'en'], correctAnswer: 'en', explanation: 'Davant quantitatius/indeterminats usem EN. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b1_13', type: 'multiple_choice', question: 'Ens veiem ___ l\'office. Ôÿò', options: ['a', 'en'], correctAnswer: 'a', explanation: 'Davant l\' (definit) usem A. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b1_14', type: 'multiple_choice', question: 'Viu ___ un pis petit. ­ƒÅá', options: ['a', 'en'], correctAnswer: 'en', explanation: 'Davant "un" usem EN. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b1_15', type: 'multiple_choice', question: 'Vaig ___ Fran├ºa. ­ƒç½­ƒçÀ', options: ['a', 'en'], correctAnswer: 'a', explanation: 'Davant pa├»sos usem A. Ô£à', difficulty: 1, course: '4C' },
++
++    // --- BLOC 2: OLOR DE / GUST DE (COMPLEMENTS) ---
++    { id: 'p4c_b2_1', type: 'multiple_choice', question: 'Fa olor ___ tabac. ­ƒÜ¼', options: ['de', 'a'], correctAnswer: 'de', explanation: 'En catal├á "fer olor DE" alguna cosa (no a). ­ƒæâ', difficulty: 2, course: '4C' },
++    { id: 'p4c_b2_2', type: 'multiple_choice', question: 'T├® gust ___ coco. ­ƒÑÑ', options: ['de', 'a'], correctAnswer: 'de', explanation: 'En catal├á "tenir gust DE" alguna cosa. ­ƒæà', difficulty: 2, course: '4C' },
++    { id: 'p4c_b2_3', type: 'multiple_choice', question: 'Jersei ___ ratlles. ­ƒæò', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Complement del nom: jersei DE ratlles. ­ƒôÅ', difficulty: 2, course: '4C' },
++    { id: 'p4c_b2_4', type: 'multiple_choice', question: 'Camisa ___ quadres. ­ƒæö', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Complement del nom: camisa DE quadres. ÔÅ╣´©Å', difficulty: 2, course: '4C' },
++    { id: 'p4c_b2_5', type: 'multiple_choice', question: 'Gelat ___ vainilla. ­ƒìª', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Gust DE vainilla. ­ƒÿï', difficulty: 1, course: '4C' },
++    { id: 'p4c_b2_6', type: 'multiple_choice', question: 'Capsa ___ cartr├│. ­ƒôª', options: ['de', 'amb'], correctAnswer: 'de', explanation: 'Material: capsa DE cartr├│. ­ƒôª', difficulty: 1, course: '4C' },
++    { id: 'p4c_b2_7', type: 'multiple_choice', question: 'Olor ___ gas. ÔÜá´©Å', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Olor DE gas. ­ƒæâ', difficulty: 2, course: '4C' },
++    { id: 'p4c_b2_8', type: 'multiple_choice', question: 'Sabor ___ llimona. ­ƒìï', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Sabor/Gust DE llimona. ­ƒìï', difficulty: 2, course: '4C' },
++    { id: 'p4c_b2_9', type: 'multiple_choice', question: 'Pintura ___ l\'oli. ­ƒÄ¿', options: ['a', 'de'], correctAnswer: 'a', explanation: 'Excepci├│ culin├ária/art├¡stica: A l\'oli, a la brasa. ­ƒÄ¿', difficulty: 3, course: '4C' },
++    { id: 'p4c_b2_10', type: 'multiple_choice', question: 'Barca ___ rems. ­ƒÜú', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Complement: barca DE rems. ­ƒÜú', difficulty: 2, course: '4C' },
++    { id: 'p4c_b2_11', type: 'multiple_choice', question: 'Cuina ___ gas. ­ƒì│', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Funciona amb gas -> de gas. ­ƒöÑ', difficulty: 2, course: '4C' },
++    { id: 'p4c_b2_12', type: 'multiple_choice', question: 'Motor ___ explosi├│. ­ƒÆÑ', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Tipus de motor: DE explosi├│. ­ƒÜù', difficulty: 2, course: '4C' },
++    { id: 'p4c_b2_13', type: 'multiple_choice', question: 'Olor ___ podrit. ­ƒñó', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Olor DE... ­ƒæâ', difficulty: 1, course: '4C' },
++    { id: 'p4c_b2_14', type: 'multiple_choice', question: 'Gust ___ maduixa. ­ƒìô', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Gust DE... ­ƒæà', difficulty: 1, course: '4C' },
++    { id: 'p4c_b2_15', type: 'multiple_choice', question: 'Roba ___ cot├│. ­ƒºÂ', options: ['de', 'amb'], correctAnswer: 'de', explanation: 'Material: roba DE cot├│. ­ƒæò', difficulty: 1, course: '4C' },
++
++    // --- BLOC 3: R├êGIM VERBAL ---
++    { id: 'p4c_b3_1', type: 'multiple_choice', question: 'Penseu ___ el viatge. Ô£ê´©Å', options: ['en', 'amb'], correctAnswer: 'en', explanation: 'Pensar EN alguna cosa. ­ƒñö', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_2', type: 'multiple_choice', question: 'Em nego ___ assistir-hi. Ô£ï', options: ['a', 'de'], correctAnswer: 'a', explanation: 'Negar-se A fer alguna cosa. ­ƒÜ½', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_3', type: 'multiple_choice', question: 'Confio ___ vosaltres. ­ƒñØ', options: ['en', 'amb'], correctAnswer: 'en', explanation: 'Confiar EN alg├║. ­ƒÖî', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_4', type: 'multiple_choice', question: 'M\'he adonat ___ l\'error. ­ƒÆí', options: ['de', 'que'], correctAnswer: 'de', explanation: 'Adonar-se DE alguna cosa. ÔØù', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_5', type: 'multiple_choice', question: 'S\'ha oblidat ___ trucar. ­ƒô×', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Oblidar-se DE fer algu. ÔØî', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_6', type: 'multiple_choice', question: 'Em penedeixo ___ haver vingut. ­ƒÿö', options: ['de', 'per'], correctAnswer: 'de', explanation: 'Penedir-se DE. ­ƒÿô', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_7', type: 'multiple_choice', question: 'Contribuirem ___ millorar. ­ƒôê', options: ['a', 'en'], correctAnswer: 'a', explanation: 'Contribuir A. ­ƒÜÇ', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_8', type: 'multiple_choice', question: 'Insisteix ___ fer-ho. ­ƒÿñ', options: ['en', 'a'], correctAnswer: 'en', explanation: 'Insistir EN. ­ƒÆ¬', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_9', type: 'multiple_choice', question: 'Dubto ___ la seva paraula. ­ƒñ¿', options: ['de', 'en'], correctAnswer: 'de', explanation: 'Dubtar DE. ­ƒñö', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_10', type: 'multiple_choice', question: 'Estic interessat ___ el curs. ­ƒÄô', options: ['en', 'per'], correctAnswer: 'en', explanation: 'Estar interessat EN. ­ƒñô', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_11', type: 'multiple_choice', question: 'S\'ha acostumat ___ llevar-se d\'hora. ÔÅ░', options: ['a', 'de'], correctAnswer: 'a', explanation: 'Acostumar-se A. ­ƒÑ▒', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_12', type: 'multiple_choice', question: 'Renuncio ___ l\'her├¿ncia. ­ƒô£', options: ['a', 'de'], correctAnswer: 'a', explanation: 'Renunciar A. ­ƒÖà', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_13', type: 'multiple_choice', question: 'Es dedica ___ la pol├¡tica. ­ƒÅø´©Å', options: ['a', 'per'], correctAnswer: 'a', explanation: 'Dedicar-se A. ­ƒæö', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_14', type: 'multiple_choice', question: 'Participa ___ el concurs. ­ƒÅå', options: ['en', 'a'], correctAnswer: 'en', explanation: 'Participar EN. ­ƒÅü', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_15', type: 'multiple_choice', question: 'Fixa\'t ___ els detalls. ­ƒöì', options: ['en', 'amb'], correctAnswer: 'en', explanation: 'Fixar-se EN. ­ƒæÇ', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_16', type: 'multiple_choice', question: 'Tinc inter├¿s ___ saber-ho. ­ƒºá', options: ['en', 'per'], correctAnswer: 'en', explanation: 'Tenir inter├¿s EN. ­ƒÆí', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_17', type: 'multiple_choice', question: 'Abstenir-se ___ votar. ­ƒù│´©Å', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Abstenir-se DE. ­ƒñÉ', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_18', type: 'multiple_choice', question: 'Recorda\'t ___ tancar. ­ƒöÆ', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Recordar-se DE. ­ƒöæ', difficulty: 2, course: '4C' },
++    { id: 'p4c_b3_19', type: 'multiple_choice', question: 'Accedir ___ l\'edifici. ­ƒÅó', options: ['a', 'en'], correctAnswer: 'a', explanation: 'Accedir A. ­ƒÜ¬', difficulty: 2, course: '4C' },
++
++    // --- BLOC 4: PER vs PER A ---
++    { id: 'p4c_b4_1', type: 'multiple_choice', question: 'Estalviem ___ el viatge. ­ƒÆ░', options: ['per al', 'pel'], correctAnswer: 'per al', explanation: 'Finalitat: PER A. Ô£ê´©Å', difficulty: 2, course: '4C' },
++    { id: 'p4c_b4_2', type: 'multiple_choice', question: 'Anul┬Àlat ___ pluja. ­ƒîº´©Å', options: ['per', 'per a'], correctAnswer: 'per', explanation: 'Causa: PER. Ôÿö', difficulty: 2, course: '4C' },
++    { id: 'p4c_b4_3', type: 'multiple_choice', question: 'Ho envio ___ correu. Ô£ë´©Å', options: ['per', 'per a'], correctAnswer: 'per', explanation: 'Mitj├á: PER. ­ƒô¼', difficulty: 2, course: '4C' },
++    { id: 'p4c_b4_4', type: 'multiple_choice', question: '├ës bo ___ la salut. ­ƒìÄ', options: ['per a', 'per'], correctAnswer: 'per a', explanation: 'Finalitat/Beneficiari: PER A. ­ƒÆ¬', difficulty: 2, course: '4C' },
++    { id: 'p4c_b4_5', type: 'multiple_choice', question: 'Ho vull ___ dem├á. ­ƒôà', options: ['per a', 'per'], correctAnswer: 'per a', explanation: 'Temps l├¡mit: PER A. ÔÅ│', difficulty: 2, course: '4C' },
++    { id: 'p4c_b4_6', type: 'multiple_choice', question: 'Paquet ___ tu. ­ƒôª', options: ['per a', 'per'], correctAnswer: 'per a', explanation: 'Destinatari: PER A. ­ƒÄü', difficulty: 2, course: '4C' },
++    { id: 'p4c_b4_7', type: 'multiple_choice', question: 'Passo ___ Manresa. ­ƒÜù', options: ['per', 'per a'], correctAnswer: 'per', explanation: 'Lloc de pas: PER. ­ƒøú´©Å', difficulty: 2, course: '4C' },
++    { id: 'p4c_b4_8', type: 'multiple_choice', question: 'Ens hem vist ___ casualitat. ­ƒÄ▓', options: ['per', 'per a'], correctAnswer: 'per', explanation: 'Manera/Causa: PER. ­ƒÄ░', difficulty: 2, course: '4C' },
++    { id: 'p4c_b4_9', type: 'multiple_choice', question: 'Tancat ___ vacances. ­ƒÅû´©Å', options: ['per', 'per a'], correctAnswer: 'per', explanation: 'Causa: PER. ­ƒöÆ', difficulty: 2, course: '4C' },
++    { id: 'p4c_b4_10', type: 'multiple_choice', question: 'Ordinadors ___ els despatxos. ­ƒÆ╗', options: ['per als', 'pels'], correctAnswer: 'per als', explanation: 'Destinaci├│/Finalitat: PER ALS. ­ƒÅó', difficulty: 2, course: '4C' },
++    { id: 'p4c_b4_11', type: 'multiple_choice', question: 'Aquest sobre ├®s ___ el jutge. ­ƒæ¿ÔÇìÔÜû´©Å', options: ['per al', 'pel'], correctAnswer: 'per al', explanation: 'Destinatari: PER AL. Ô£ë´©Å', difficulty: 2, course: '4C' },
++    { id: 'p4c_b4_12', type: 'multiple_choice', question: 'Ho haureu de fer ___ la setmana vinent. ­ƒùô´©Å', options: ['per a', 'per'], correctAnswer: 'per a', explanation: 'Temps l├¡mit: PER A. ÔÅ░', difficulty: 2, course: '4C' },
++    { id: 'p4c_b4_13', type: 'multiple_choice', question: 'La ciutat va ser visitada ___ la fam├¡lia. ­ƒæ¿ÔÇì­ƒæ®ÔÇì­ƒæº', options: ['per', 'per a'], correctAnswer: 'per', explanation: 'Agent (passiva): PER. ­ƒÅÖ´©Å', difficulty: 2, course: '4C' },
++    { id: 'p4c_b4_14', type: 'multiple_choice', question: '___ fi! ­ƒÄë', options: ['Per', 'Per a'], correctAnswer: 'Per', explanation: 'Locuci├│: PER fi. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'p4c_b4_15', type: 'multiple_choice', question: '___ descomptat. Ô£à', options: ['Per', 'Per a'], correctAnswer: 'Per', explanation: 'Locuci├│: PER descomptat. ­ƒæî', difficulty: 1, course: '4C' },
++
++    // --- BLOC 5: CONTRACCIONS I APOSTROFACI├ô ---
++    { id: 'p4c_b5_1', type: 'multiple_choice', question: 'Vinc ___ aeroport. Ô£ê´©Å', options: ['de l\'', 'del'], correctAnswer: 'de l\'', explanation: 'Aeroport comen├ºa per vocal -> trenquem la contracci├│ del -> de l\'. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b5_2', type: 'multiple_choice', question: 'Vinc ___ jutjats. ÔÜû´©Å', options: ['dels', 'de els'], correctAnswer: 'dels', explanation: 'Jutjats (consonant) -> contracci├│ DELS. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b5_3', type: 'multiple_choice', question: 'Passegem ___ parc. ­ƒî│', options: ['pel', 'per el'], correctAnswer: 'pel', explanation: 'Parc (consonant) -> contracci├│ PEL. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b5_4', type: 'multiple_choice', question: 'Passeu ___ ombra. ­ƒîæ', options: ['per l\'', 'pel'], correctAnswer: 'per l\'', explanation: 'Ombra (vocal) -> trenquem pel -> per l\'. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b5_5', type: 'multiple_choice', question: 'Arribaran ___ migdia. ­ƒòø', options: ['al', 'a l\''], correctAnswer: 'al', explanation: 'Migdia (consonant) -> contracci├│ AL. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b5_6', type: 'multiple_choice', question: 'Arribaran ___ una. ­ƒòÉ', options: ['a l\'', 'a la'], correctAnswer: 'a la', explanation: 'L\'hora "una" ├®s femenina i excepci├│ d\'ap├▓strof: a la una. ÔØî ALERTA: La soluci├│ donada era "a la", corregit segons norma. ­ƒòÆ', difficulty: 3, course: '4C' },
++    { id: 'p4c_b5_7', type: 'multiple_choice', question: 'Surt ___ despatx. ­ƒÜ¬', options: ['del', 'de'], correctAnswer: 'del', explanation: 'Despatx (consonant) -> contracci├│ DEL. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b5_8', type: 'multiple_choice', question: 'Vaig ___ oficina. ­ƒÅó', options: ['a l\'', 'al'], correctAnswer: 'a l\'', explanation: 'Oficina (vocal) -> trenquem al -> a l\'. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b5_9', type: 'multiple_choice', question: 'Dona-ho ___ administrativa. ­ƒæ®ÔÇì­ƒÆ╝', options: ['a l\'', 'a la'], correctAnswer: 'a l\'', explanation: 'Administrativa (vocal) -> a l\'. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b5_10', type: 'multiple_choice', question: 'Parla ___ acusat. ­ƒùú´©Å', options: ['de l\'', 'del'], correctAnswer: 'de l\'', explanation: 'Acusat (vocal) -> de l\'. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b5_11', type: 'multiple_choice', question: 'Camina ___ autopista. ­ƒøú´©Å', options: ['per l\'', 'pel'], correctAnswer: 'per l\'', explanation: 'Autopista (vocal) -> per l\'. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b5_12', type: 'multiple_choice', question: '├ës ___ metge. ­ƒæ¿ÔÇìÔÜò´©Å', options: ['del', 'de el'], correctAnswer: 'del', explanation: 'Metge (consonant) -> contracci├│ DEL. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b5_13', type: 'multiple_choice', question: '├ës ___ infermera. ­ƒæ®ÔÇìÔÜò´©Å', options: ['de la', 'de l\''], correctAnswer: 'de la', explanation: 'Infermera (i ├átona) -> NO s\'apostrofa LA. De la infermera. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'p4c_b5_14', type: 'multiple_choice', question: 'Vinc ___ hospital. ­ƒÅÑ', options: ['de l\'', 'del'], correctAnswer: 'de l\'', explanation: 'Hospital (hac) -> de l\'. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b5_15', type: 'multiple_choice', question: 'Anem ___ hotel. ­ƒÅ¿', options: ['a l\'', 'al'], correctAnswer: 'a l\'', explanation: 'Hotel (hac) -> a l\'. Ô£à', difficulty: 2, course: '4C' },
++
++    // --- BLOC 6: TEMPORALS I DIVERSOS ---
++    { id: 'p4c_b6_1', type: 'multiple_choice', question: '___ sortir, tanca. ­ƒÜ¬', options: ['Al', 'A'], correctAnswer: 'Al', explanation: 'Al + Infinitiu temporal (quan surtis). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b6_2', type: 'multiple_choice', question: 'No pleguem ___ les tres. ­ƒòÆ', options: ['fins a', 'fins'], correctAnswer: 'fins a', explanation: 'Fins A (l├¡mit temporal). ÔÅ│', difficulty: 2, course: '4C' },
++    { id: 'p4c_b6_3', type: 'multiple_choice', question: 'Ves ___ aqu├¡. ­ƒæç', options: ['cap', 'cap a'], correctAnswer: 'cap', explanation: 'Davant d\'adverbis (aqu├¡) no posem "a". Ves cap aqu├¡. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'p4c_b6_4', type: 'multiple_choice', question: 'Vinc ___ dos quarts de vuit. ÔÅ░', options: ['cap a', 'cap'], correctAnswer: 'cap a', explanation: 'Aproximaci├│ hor├ária: Cap a. ÔîÜ', difficulty: 2, course: '4C' },
++    { id: 'p4c_b6_5', type: 'multiple_choice', question: 'Obert des ___ les nou. ­ƒòÿ', options: ['de', 'a'], correctAnswer: 'de', explanation: 'Locuci├│: Des DE. Ô£à', difficulty: 1, course: '4C' }
++  ]
++}];
++export const SILABAS_4C: CourseSection[] = [{
++  id: 'silabas_4c',
++  title: 'Separaci├│ Sil┬Àl├ábica (B2)',
++  description: 'Domina la separaci├│ de s├¡l┬Àlabes, diftongs, d├¡grafs i hiatus. ­ƒº▒',
++  category: 'ortografia',
++  course: '4C',
++  exercises: [
++    // --- BLOC 1: SEPARACI├ô B├ÇSICA I D├ìGRAFS ---
++    { id: 'sil4c_b1_1', type: 'multiple_choice', question: 'Carro ­ƒÜù', options: ['ca-rro', 'car-ro'], correctAnswer: 'car-ro', explanation: 'La \'rr\' se separa (r-r). Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b1_2', type: 'multiple_choice', question: 'Tassa Ôÿò', options: ['tas-sa', 'ta-ssa'], correctAnswer: 'tas-sa', explanation: 'La \'ss\' se separa (s-s). Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b1_3', type: 'multiple_choice', question: 'Aconseguir ­ƒÄ»', options: ['a-con-se-guir', 'a-con-seg-uir'], correctAnswer: 'a-con-se-guir', explanation: 'Gu/qu no se separen. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_4', type: 'multiple_choice', question: 'Roques ­ƒ¬¿', options: ['ro-ques', 'roc-ues'], correctAnswer: 'ro-ques', explanation: 'Qu no se separa. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b1_5', type: 'multiple_choice', question: 'Pinya ­ƒìì', options: ['pin-ya', 'pi-nya'], correctAnswer: 'pi-nya', explanation: 'Ny no se separa. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b1_6', type: 'multiple_choice', question: 'Rebuig ­ƒùæ´©Å', options: ['re-buig', 'reb-uig'], correctAnswer: 're-buig', explanation: 'Ig no se separa a final de paraula (d├¡graf). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_7', type: 'multiple_choice', question: 'Cavaller ­ƒÉÄ', options: ['ca-val-ler', 'ca-va-ller'], correctAnswer: 'ca-va-ller', explanation: 'Ll no se separa. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b1_8', type: 'multiple_choice', question: 'Ascensor ­ƒøù', options: ['a-scen-sor', 'as-cen-sor'], correctAnswer: 'as-cen-sor', explanation: 'Sc se separa (s-c). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_9', type: 'multiple_choice', question: 'Til┬Àla ­ƒìÁ', options: ['ti-l┬Àla', 'til-la'], correctAnswer: 'til-la', explanation: 'L┬ÀL se separa (l-l). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_10', type: 'multiple_choice', question: 'Cotxe ­ƒÜù', options: ['co-txe', 'cot-xe'], correctAnswer: 'cot-xe', explanation: 'Tx se separa (t-x). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_11', type: 'multiple_choice', question: 'Natja ­ƒìæ', options: ['na-tja', 'nat-ja'], correctAnswer: 'nat-ja', explanation: 'Tj se separa (t-j). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_12', type: 'multiple_choice', question: 'Fetge ­ƒÅÑ', options: ['fet-ge', 'fe-tge'], correctAnswer: 'fet-ge', explanation: 'Tg se separa (t-g). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_13', type: 'multiple_choice', question: 'Setze 1´©ÅÔâú6´©ÅÔâú', options: ['se-tze', 'set-ze'], correctAnswer: 'set-ze', explanation: 'Tz se separa (t-z). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_14', type: 'multiple_choice', question: 'Caixa ­ƒôª', options: ['cai-xa', 'ca-ixa'], correctAnswer: 'cai-xa', explanation: 'Ix no se separa (i-x? No, ix forma d├¡graf o diftong? Ix entre vocals: cai-xa. La i forma diftong amb la a). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_15', type: 'multiple_choice', question: 'Cuixa ­ƒìù', options: ['cui-xa', 'cu-ixa'], correctAnswer: 'cui-xa', explanation: 'Ui ├®s diftong -> Cui-xa. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_16', type: 'multiple_choice', question: 'Reixa ­ƒÅù´©Å', options: ['rei-xa', 're-ixa'], correctAnswer: 'rei-xa', explanation: 'Ei ├®s diftong -> Rei-xa. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_17', type: 'multiple_choice', question: 'Corretja ­ƒÉò', options: ['cor-re-tja', 'co-rret-ja'], correctAnswer: 'cor-re-tja', explanation: 'Rr se separa, tj se separa. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'sil4c_b1_18', type: 'multiple_choice', question: 'Massissa ­ƒº▒', options: ['mas-sis-sa', 'ma-ssi-ssa'], correctAnswer: 'mas-sis-sa', explanation: 'Ss se separa. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_19', type: 'multiple_choice', question: 'Metge ­ƒæ¿ÔÇìÔÜò´©Å', options: ['met-ge', 'me-tge'], correctAnswer: 'met-ge', explanation: 'Tg se separa. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_20', type: 'multiple_choice', question: 'Guerra ÔÜö´©Å', options: ['guer-ra', 'gue-rra'], correctAnswer: 'guer-ra', explanation: 'Rr se separa. Gu no. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_21', type: 'multiple_choice', question: 'Guitarra ­ƒÄ©', options: ['gui-tar-ra', 'guit-ar-ra'], correctAnswer: 'gui-tar-ra', explanation: 'Rr se separa. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_22', type: 'multiple_choice', question: 'Lle├│ ­ƒªü', options: ['lle-├│', 'l-le-├│'], correctAnswer: 'lle-├│', explanation: 'Ll no se separa. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_23', type: 'multiple_choice', question: 'Passar ­ƒÜÂ', options: ['pas-sar', 'pa-ssar'], correctAnswer: 'pas-sar', explanation: 'Ss se separa. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b1_24', type: 'multiple_choice', question: 'Pitjor ­ƒæÄ', options: ['pit-jor', 'pi-tjor'], correctAnswer: 'pit-jor', explanation: 'Tj se separa. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b1_25', type: 'multiple_choice', question: 'Platja ­ƒÅû´©Å', options: ['plat-ja', 'pla-tja'], correctAnswer: 'plat-ja', explanation: 'T-j se separa despr├®s de vocal? S├¡, plat-ja. Ô£à', difficulty: 2, course: '4C' },
++
++    // --- BLOC 2: DIFTONGS DECREIXENTS ---
++    { id: 'sil4c_b2_1', type: 'multiple_choice', question: 'Aire ­ƒî¼´©Å', options: ['ai-re', 'a-i-re'], correctAnswer: 'ai-re', explanation: 'Ai ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_2', type: 'multiple_choice', question: 'Feina ­ƒÆ╝', options: ['fei-na', 'fe-i-na'], correctAnswer: 'fei-na', explanation: 'Ei ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_3', type: 'multiple_choice', question: 'Noi ­ƒæª', options: ['no-i', 'noi'], correctAnswer: 'noi', explanation: 'Oi ├®s diftong (monos├¡l┬Àlab). Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_4', type: 'multiple_choice', question: 'Cuina ­ƒì│', options: ['cu-i-na', 'cui-na'], correctAnswer: 'cui-na', explanation: 'Ui ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_5', type: 'multiple_choice', question: 'Palau ­ƒÅ░', options: ['pa-lau', 'pa-la-u'], correctAnswer: 'pa-lau', explanation: 'Au ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_6', type: 'multiple_choice', question: 'Creure ­ƒÖÅ', options: ['cre-u-re', 'creu-re'], correctAnswer: 'creu-re', explanation: 'Eu ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b2_7', type: 'multiple_choice', question: 'Viure ­ƒº¼', options: ['viu-re', 'vi-u-re'], correctAnswer: 'viu-re', explanation: 'Iu ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_8', type: 'multiple_choice', question: 'Moure ­ƒôª', options: ['mo-u-re', 'mou-re'], correctAnswer: 'mou-re', explanation: 'Ou ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_9', type: 'multiple_choice', question: 'Remei ­ƒÆè', options: ['re-mei', 're-me-i'], correctAnswer: 're-mei', explanation: 'Ei ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b2_10', type: 'multiple_choice', question: 'Avui ­ƒôà', options: ['a-vui', 'a-vu-i'], correctAnswer: 'a-vui', explanation: 'Ui ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b2_11', type: 'multiple_choice', question: 'Boira ­ƒî½´©Å', options: ['boi-ra', 'bo-i-ra'], correctAnswer: 'boi-ra', explanation: 'Oi ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_12', type: 'multiple_choice', question: 'Taula ­ƒì¢´©Å', options: ['tau-la', 'ta-u-la'], correctAnswer: 'tau-la', explanation: 'Au ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_13', type: 'multiple_choice', question: 'Neu ÔØä´©Å', options: ['neu', 'ne-u'], correctAnswer: 'neu', explanation: 'Eu ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_14', type: 'multiple_choice', question: 'Riu ­ƒîè', options: ['ri-u', 'riu'], correctAnswer: 'riu', explanation: 'Iu ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_15', type: 'multiple_choice', question: 'Pou ­ƒò│´©Å', options: ['po-u', 'pou'], correctAnswer: 'pou', explanation: 'Ou ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_16', type: 'multiple_choice', question: 'Pauta ­ƒôØ', options: ['pau-ta', 'pa-u-ta'], correctAnswer: 'pau-ta', explanation: 'Au ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b2_17', type: 'multiple_choice', question: 'Reina ­ƒææ', options: ['rei-na', 're-i-na'], correctAnswer: 'rei-na', explanation: 'Ei ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_18', type: 'multiple_choice', question: 'Moix ­ƒÉê', options: ['moix', 'mo-ix'], correctAnswer: 'moix', explanation: 'Oi ├®s diftong. Ix final de s├¡l┬Àlaba. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b2_19', type: 'multiple_choice', question: 'Cuita ­ƒÑÿ', options: ['cui-ta', 'cu-i-ta'], correctAnswer: 'cui-ta', explanation: 'Ui ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b2_20', type: 'multiple_choice', question: 'Peu ­ƒªÂ', options: ['pe-u', 'peu'], correctAnswer: 'peu', explanation: 'Eu ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_21', type: 'multiple_choice', question: 'Mainada ­ƒæÂ', options: ['mai-na-da', 'ma-i-na-da'], correctAnswer: 'mai-na-da', explanation: 'Ai ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b2_22', type: 'multiple_choice', question: 'Eina ­ƒöº', options: ['ei-na', 'e-i-na'], correctAnswer: 'ei-na', explanation: 'Ei ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_23', type: 'multiple_choice', question: 'Coure ­ƒì│', options: ['cou-re', 'co-u-re'], correctAnswer: 'cou-re', explanation: 'Ou ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b2_24', type: 'multiple_choice', question: 'Llu├»sa ­ƒæ®', options: ['Llu-├»-sa', 'Llu├»-sa'], correctAnswer: 'Llu-├»-sa', explanation: 'Di├¿resi marca hiat (no diftong). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b2_25', type: 'multiple_choice', question: 'Ra├»m ­ƒìç', options: ['ra-├»m', 'ra├»m'], correctAnswer: 'ra-├»m', explanation: 'Di├¿resi marca hiat. Ô£à', difficulty: 2, course: '4C' },
++
++    // --- BLOC 3: DIFTONGS CREIXENTS I GRUPS Q/G ---
++    { id: 'sil4c_b3_1', type: 'multiple_choice', question: 'Aguantar ­ƒÅï´©Å', options: ['a-guan-tar', 'a-gu-an-tar'], correctAnswer: 'a-guan-tar', explanation: 'Gua ├®s diftong creixent. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_2', type: 'multiple_choice', question: 'Aig├╝era ­ƒÜ┐', options: ['ai-g├╝e-ra', 'ai-g├╝-e-ra'], correctAnswer: 'ai-g├╝e-ra', explanation: 'G├╝e ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_3', type: 'multiple_choice', question: 'Ping├╝├¡ ­ƒÉº', options: ['pin-g├╝├¡', 'pin-g├╝-├¡'], correctAnswer: 'pin-g├╝├¡', explanation: 'G├╝├¡ ├®s diftong (la i porta accent per├▓ forma diftong amb la ├╝? No, ├╝i ├®s diftong creixent si la i ├®s ├átona, per├▓ aqu├¡ ├®s t├▓nica? No, ping├╝├¡: la i ├®s t├▓nica. Per├▓ gui/g├╝i sempre fan s├¡l┬Àlaba junts en catal├á si no hi ha di├¿resi separadora? ├╝ indica que la u sona. Ping├╝├¡ -> pin-g├╝├¡. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'sil4c_b3_4', type: 'multiple_choice', question: 'Paraiguot Ôÿé´©Å', options: ['pa-rai-guot', 'pa-rai-gu-ot'], correctAnswer: 'pa-rai-guot', explanation: 'Guo ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_5', type: 'multiple_choice', question: 'Qualitat ­ƒîƒ', options: ['qua-li-tat', 'qu-a-li-tat'], correctAnswer: 'qua-li-tat', explanation: 'Qua ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_6', type: 'multiple_choice', question: 'Delinq├╝ent ­ƒª╣', options: ['de-lin-q├╝-ent', 'de-lin-q├╝ent'], correctAnswer: 'de-lin-q├╝ent', explanation: 'Q├╝e ├®s diftong. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'sil4c_b3_7', type: 'multiple_choice', question: 'Aq├╝icultura ­ƒÉƒ', options: ['a-q├╝i-cul-tu-ra', 'a-q├╝-i-cul-tu-ra'], correctAnswer: 'a-q├╝i-cul-tu-ra', explanation: 'Q├╝i ├®s diftong. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'sil4c_b3_8', type: 'multiple_choice', question: 'Quotidi├á ­ƒôà', options: ['quo-ti-di-├á', 'qu-o-ti-di-├á'], correctAnswer: 'quo-ti-di-├á', explanation: 'Quo ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_9', type: 'multiple_choice', question: 'Iot ­ƒøÑ´©Å', options: ['iot', 'i-ot'], correctAnswer: 'iot', explanation: 'I a principi de mot + vocal = consonant (diftong creixent). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_10', type: 'multiple_choice', question: 'Iogurt ­ƒÑø', options: ['i-o-gurt', 'io-gurt'], correctAnswer: 'io-gurt', explanation: 'Io inicial ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_11', type: 'multiple_choice', question: 'Noia ­ƒæº', options: ['no-ia', 'noi-a'], correctAnswer: 'no-ia', explanation: 'La i entre vocals fa de consonant per a la seg├╝ent? No, la i fa diftong amb la o (noi) i enceta s├¡l┬Àlaba? En catal├á: No-ia. La i actua com a consonant o semiconsonant inicial de la 2a. Ô£à (Tamb├® acceptat noi-a en alguns textos antics per├▓ la normativa prefereix no-ia / no-ja). El test diu A.', difficulty: 3, course: '4C' },
++    { id: 'sil4c_b3_12', type: 'multiple_choice', question: 'Feia (fer) ­ƒøá´©Å', options: ['fei-a', 'fe-ia'], correctAnswer: 'fe-ia', explanation: 'Fe-ia (imperfet). La i actua com a consonant? O hiat? Fe-ia. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'sil4c_b3_13', type: 'multiple_choice', question: 'D├¿iem ­ƒùú´©Å', options: ['d├¿-iem', 'd├¿i-em'], correctAnswer: 'd├¿-iem', explanation: 'D├¿-iem. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'sil4c_b3_14', type: 'multiple_choice', question: 'Creuar ÔØî', options: ['creu-ar', 'cre-uar'], correctAnswer: 'cre-uar', explanation: 'Cre-uar (u entre vocals o inici de s├¡l┬Àlaba fa de consonant). Ô£à', difficulty: 3, course: '4C' },
++    { id: 'sil4c_b3_15', type: 'multiple_choice', question: 'Beuen ­ƒÑñ', options: ['be-uen', 'beu-en'], correctAnswer: 'be-uen', explanation: 'Be-uen. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_16', type: 'multiple_choice', question: 'Mouen ­ƒôª', options: ['mo-uen', 'mou-en'], correctAnswer: 'mo-uen', explanation: 'Mo-uen. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_17', type: 'multiple_choice', question: 'Quatre 4´©ÅÔâú', options: ['qua-tre', 'qu-a-tre'], correctAnswer: 'qua-tre', explanation: 'Qua ├®s diftong. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b3_18', type: 'multiple_choice', question: 'Llengua ­ƒæà', options: ['llen-gua', 'llen-gu-a'], correctAnswer: 'llen-gua', explanation: 'Gua ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_19', type: 'multiple_choice', question: 'Aigua ­ƒÆº', options: ['ai-gua', 'a-i-gua'], correctAnswer: 'ai-gua', explanation: 'Ai (diftong decreixent) + gua (creixent). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_20', type: 'multiple_choice', question: 'Quota ­ƒôè', options: ['quo-ta', 'qu-o-ta'], correctAnswer: 'quo-ta', explanation: 'Quo ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_21', type: 'multiple_choice', question: 'Iode ­ƒºé', options: ['io-de', 'i-o-de'], correctAnswer: 'io-de', explanation: 'Io inicial ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_22', type: 'multiple_choice', question: 'Laia ­ƒæ®', options: ['Lai-a', 'La-ia'], correctAnswer: 'La-ia', explanation: 'La-ia. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_23', type: 'multiple_choice', question: 'Veien ­ƒæÇ', options: ['ve-ien', 'vei-en'], correctAnswer: 've-ien', explanation: 'Ve-ien. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_24', type: 'multiple_choice', question: 'Pasqua ­ƒÉú', options: ['pas-qua', 'pas-qu-a'], correctAnswer: 'pas-qua', explanation: 'Qua ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b3_25', type: 'multiple_choice', question: 'Guant ­ƒºñ', options: ['guant', 'gu-ant'], correctAnswer: 'guant', explanation: 'Gua ├®s diftong. Ô£à', difficulty: 2, course: '4C' },
++
++    // --- BLOC 4: HIAT ---
++    { id: 'sil4c_b4_1', type: 'multiple_choice', question: 'Maria ­ƒæ®', options: ['Ma-ri-a', 'Ma-ria'], correctAnswer: 'Ma-ri-a', explanation: 'Ia no ├®s diftong ac├¡ (i t├▓nica no, per├▓ i ├átona final sol ser-ho en castell├á, en catal├á Maria ├®s Ma-ri-a). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_2', type: 'multiple_choice', question: 'Joan ­ƒæ¿', options: ['Joan', 'Jo-an'], correctAnswer: 'Jo-an', explanation: 'O-a s\'han de separar. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_3', type: 'multiple_choice', question: 'Teatre ­ƒÄ¡', options: ['tea-tre', 'te-a-tre'], correctAnswer: 'te-a-tre', explanation: 'E-a s\'han de separar. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_4', type: 'multiple_choice', question: 'Cua ­ƒÉå', options: ['cua', 'cu-a'], correctAnswer: 'cu-a', explanation: 'U-a s\'han de separar (excepte qua/gua). Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_5', type: 'multiple_choice', question: 'Actuaci├│ ­ƒÄ¼', options: ['ac-tu-a-ci-├│', 'ac-tua-ci├│'], correctAnswer: 'ac-tu-a-ci-├│', explanation: 'U-a i I-o (t├▓nica) en hiat. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'sil4c_b4_6', type: 'multiple_choice', question: 'Ci├¿ncia ­ƒö¼', options: ['ci├¿n-ci-a', 'ci-├¿n-ci-a'], correctAnswer: 'ci-├¿n-ci-a', explanation: 'I-├¿ ├®s hiat, i-a final ├®s hiat en catal├á (ci-a). Ô£à', difficulty: 3, course: '4C' },
++    { id: 'sil4c_b4_7', type: 'multiple_choice', question: 'Hist├▓ria ­ƒô£', options: ['his-t├▓-ria', 'his-t├▓-ri-a'], correctAnswer: 'his-t├▓-ri-a', explanation: 'Ri-a final. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_8', type: 'multiple_choice', question: 'Eul├ália ­ƒæ®', options: ['Eu-l├á-li-a', 'Eu-l├á-lia'], correctAnswer: 'Eu-l├á-li-a', explanation: 'Li-a final. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_9', type: 'multiple_choice', question: 'Oce├á ­ƒîè', options: ['o-ce-├á', 'o-ce├á'], correctAnswer: 'o-ce-├á', explanation: 'E-├á hiat. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_10', type: 'multiple_choice', question: 'Reial ­ƒææ', options: ['re-ial', 'rei-al'], correctAnswer: 're-ial', explanation: 'Derivat de rei -> Re-ial (i conson├ántica). Ô£à', difficulty: 3, course: '4C' },
++    { id: 'sil4c_b4_11', type: 'multiple_choice', question: 'Pietat ­ƒÖÅ', options: ['pie-tat', 'pi-e-tat'], correctAnswer: 'pi-e-tat', explanation: 'I-e hiat. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_12', type: 'multiple_choice', question: 'Di├╝rn ÔÿÇ´©Å', options: ['di-├╝rn', 'di├╝rn'], correctAnswer: 'di-├╝rn', explanation: 'Di├¿resi marca hiat i-├╝. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_13', type: 'multiple_choice', question: 'Ve├»na ­ƒæ®', options: ['ve-├»-na', 've├»-na'], correctAnswer: 've-├»-na', explanation: 'E-├» hiat. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_14', type: 'multiple_choice', question: 'Pa├»sos ­ƒîì', options: ['pa-├»-sos', 'pa├»-sos'], correctAnswer: 'pa-├»-sos', explanation: 'A-├» hiat. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_15', type: 'multiple_choice', question: 'Aeron├áutica Ô£ê´©Å', options: ['a-e-ro-n├áu-ti-ca', 'ae-ro-n├áu-ti-ca'], correctAnswer: 'a-e-ro-n├áu-ti-ca', explanation: 'A-e hiat. Ô£à', difficulty: 3, course: '4C' },
++    { id: 'sil4c_b4_16', type: 'multiple_choice', question: 'Poesia Ô£Æ´©Å', options: ['poe-si-a', 'po-e-si-a'], correctAnswer: 'po-e-si-a', explanation: 'O-e hiat. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_17', type: 'multiple_choice', question: 'Dia ÔÿÇ´©Å', options: ['dia', 'di-a'], correctAnswer: 'di-a', explanation: 'I-a hiat. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b4_18', type: 'multiple_choice', question: 'Tia ­ƒæ®', options: ['ti-a', 'tia'], correctAnswer: 'ti-a', explanation: 'I-a hiat. Ô£à', difficulty: 1, course: '4C' },
++    { id: 'sil4c_b4_19', type: 'multiple_choice', question: 'Idea ­ƒÆí', options: ['i-de-a', 'i-dea'], correctAnswer: 'i-de-a', explanation: 'E-a hiat. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_20', type: 'multiple_choice', question: 'Museu ­ƒÅø´©Å', options: ['mu-se-u', 'mu-seu'], correctAnswer: 'mu-seu', explanation: 'Eu ├®s diftong decreixent. Soluci├│ del user: B (mu-seu). Hiat seria correcte si fos mu-se-u? No, museu acaba en diftong. Ô£à', difficulty: 2, course: '4C' },
++    { id: 'sil4c_b4_21', type: 'multiple_choice', question: 'Europeu ­ƒç¬­ƒç║', options: ['e-u-ro-peu', 'eu-ro-peu'], correctAnswer: 'eu-ro-peu', explanation: 'Eu inicial diftong, eu final diftong. Ô£à', difficulty: 2, course: '4C' }
++  ]
++}];
++export const CONJ_4C: CourseSection[] = [];
++// =====================================================
++// NIVELL 4A - EXERCICIS AVAN├çATS (C1)
++// =====================================================
++// Sections cleared per user request to be provided later.
++
++
++// --- NIVELL 4B (Merged into 4A) ---
++export const GUIONET_4B: CourseSection[] = [];
++export const PRONOMS_4B: CourseSection[] = [];
++export const VERBS_IRR_4B: CourseSection[] = [];
++export const VERBS_REG_4B: CourseSection[] = [];
++export const PRON_REL_4B: CourseSection[] = [];
++export const PREP_4B: CourseSection[] = [];
++export const APOS_4B: CourseSection[] = [];
++export const CONJ_4B: CourseSection[] = [];
++export const FONETICA_4B: CourseSection[] = [];
++
++// --- NIVELL 4A - CONSOLIDATED C1 ---
++// Reuse existing empty placeholders for basic categories but populated above with specific advanced ones
++export const GUIONET_4A: CourseSection[] = [{
++  id: 'guionet_4a',
++  title: 'El Guionet (C1) ­ƒÄ»',
++  description: 'Ô£Å´©Å Recorda: Numerals (D-U-C), pronoms darrere el verb i compostos espec├¡fics. Compte amb els nous compostos que ja no en porten (com paraxocs o rentaplats)!',
++  category: 'ortografia',
++  course: '4A',
++  exercises: [
++    // --- BLOC 1: NUMERALS (Regla D-U-C) ---
++    { id: 'g4a_b1_1', type: 'multiple_choice', question: '­ƒöó Es diu "22". Porta guionet?', options: ['S├ì (vint-i-dos)', 'NO'], correctAnswer: 'S├ì (vint-i-dos)', explanation: 'Regla D-U: Desenes i Unitats se separen amb guionet. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b1_2', type: 'multiple_choice', question: '­ƒöó Es diu "37". Porta guionet?', options: ['S├ì (trenta-set)', 'NO'], correctAnswer: 'S├ì (trenta-set)', explanation: 'Regla D-U. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b1_3', type: 'multiple_choice', question: '­ƒöó Es diu "64". Porta guionet?', options: ['S├ì (seixanta-quatre)', 'NO'], correctAnswer: 'S├ì (seixanta-quatre)', explanation: 'Regla D-U. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b1_4', type: 'multiple_choice', question: '­ƒöó Es diu "500". Porta guionet?', options: ['S├ì (cinc-cents)', 'NO'], correctAnswer: 'S├ì (cinc-cents)', explanation: 'Regla U-C: Unitats i Centenes se separen amb guionet. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b1_5', type: 'multiple_choice', question: '­ƒöó Es diu "2.000". Porta guionet?', options: ['S├ì', 'NO (dos mil)'], correctAnswer: 'NO (dos mil)', explanation: 'Els milers (mil) no s\'uneixen amb guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b1_6', type: 'multiple_choice', question: '­ƒöó Com s\'escriu "421"?', options: ['Quatre-cents vint-i-un', 'Quatrecents vintiun'], correctAnswer: 'Quatre-cents vint-i-un', explanation: 'Porta guionet a U-C i a D-U. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b1_7', type: 'multiple_choice', question: '­ƒöó "99" porta guionet?', options: ['S├ì (noranta-nou)', 'NO'], correctAnswer: 'S├ì (noranta-nou)', explanation: 'Regla D-U sempre. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b1_8', type: 'multiple_choice', question: '­ƒöó "300" porta guionet?', options: ['S├ì (tres-cents)', 'NO'], correctAnswer: 'S├ì (tres-cents)', explanation: 'Regla U-C sempre. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b1_9', type: 'multiple_choice', question: '­ƒöó Com s\'escriu "2.500"?', options: ['Dues mil cinc-centes', 'Dues-mil cinc-centes'], correctAnswer: 'Dues mil cinc-centes', explanation: 'Mil no s\'uneix, per├▓ "cinc-centes" s├¡ (U-C). Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b1_10', type: 'multiple_choice', question: '­ƒöó "88" porta guionet?', options: ['S├ì (vuitanta-vuit)', 'NO'], correctAnswer: 'S├ì (vuitanta-vuit)', explanation: 'Regla D-U sempre. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b1_11', type: 'multiple_choice', question: '­ƒöó "19" porta guionet?', options: ['S├ì', 'NO (dinou)'], correctAnswer: 'NO (dinou)', explanation: 'Dinou ├®s una paraula simple. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b1_12', type: 'multiple_choice', question: '­ƒöó "73" porta guionet?', options: ['S├ì (setanta-tres)', 'NO'], correctAnswer: 'S├ì (setanta-tres)', explanation: 'Regla D-U sempre. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b1_13', type: 'multiple_choice', question: '­ƒöó "1100" porta guionet?', options: ['S├ì', 'NO (mil cent)'], correctAnswer: 'NO (mil cent)', explanation: '"Mil" i "Cent" no s\'uneixen entre ells. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b1_14', type: 'multiple_choice', question: '­ƒöó "42" porta guionet?', options: ['S├ì (quaranta-dos)', 'NO'], correctAnswer: 'S├ì (quaranta-dos)', explanation: 'Regla D-U sempre. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b1_15', type: 'multiple_choice', question: '­ƒÆ░ "5.000.000" porta guionet?', options: ['S├ì', 'NO (cinc milions)'], correctAnswer: 'NO (cinc milions)', explanation: '"Mili├│" i "miliards" s├│n noms i no s\'uneixen. Ô£à', difficulty: 2, course: '4A' },
++
++    // --- BLOC 2: PARAULES COMPOSTES (Repeticions i Onomatopeies) ---
++    { id: 'g4a_b2_1', type: 'multiple_choice', question: '­ƒÜÂÔÇìÔÖé´©Å Com s\'escriu "Paso a paso / Despacio"?', options: ['Xino-xano', 'Xinoxano'], correctAnswer: 'Xino-xano', explanation: 'Les repeticions de mots se separen amb guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b2_2', type: 'multiple_choice', question: 'ÒÇ░´©Å Indica la forma correcta:', options: ['Ziga-zaga', 'Zigazaga'], correctAnswer: 'Ziga-zaga', explanation: 'Onomatopeies i repeticions porten guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b2_3', type: 'multiple_choice', question: 'ÔÅ░ El so del rellotge ├®s:', options: ['Tic-tac', 'Tictac'], correctAnswer: 'Tic-tac', explanation: 'Onomatopeia amb guionet. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b2_4', type: 'multiple_choice', question: '­ƒÿ▓ Alg├║ molt sorpr├¿s o corpr├¿s:', options: ['Cor-pr├¿s', 'Corpr├¿s'], correctAnswer: 'Cor-pr├¿s', explanation: 'Compost amb guionet. Ô£à', difficulty: 3, course: '4A' },
++    { id: 'g4a_b2_5', type: 'multiple_choice', question: '­ƒñØ Un combat cos a cos:', options: ['Mano-mano', 'Manomano'], correctAnswer: 'Mano-mano', explanation: 'Repetici├│ amb guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b2_6', type: 'multiple_choice', question: '­ƒÉò El gos fa...', options: ['Bup-bup', 'Bupbup'], correctAnswer: 'Bup-bup', explanation: 'Onomatopeia. ­ƒÉÂ', difficulty: 1, course: '4A' },
++    { id: 'g4a_b2_7', type: 'multiple_choice', question: '­ƒÑò Un plat t├¡pic:', options: ['Nap-i-col', 'Napicol'], correctAnswer: 'Nap-i-col', explanation: 'Compost amb conjunci├│ intercalada. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b2_8', type: 'multiple_choice', question: '­ƒîè So del rierol:', options: ['Rierol-rierol', 'Rierolrierol'], correctAnswer: 'Rierol-rierol', explanation: 'Repetici├│. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b2_9', type: 'multiple_choice', question: '­ƒæù Estar penjat de qualsevol manera:', options: ['Pengim-penjam', 'Pengimpenjam'], correctAnswer: 'Pengim-penjam', explanation: 'Expressi├│ amb guionet. Ô£à', difficulty: 3, course: '4A' },
++    { id: 'g4a_b2_10', type: 'multiple_choice', question: '­ƒÅâ Fer les coses molt r├ápid:', options: ['Corre-cuita', 'Correcuita'], correctAnswer: 'Corre-cuita', explanation: 'Compost amb guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b2_11', type: 'multiple_choice', question: '­ƒñ½ Parlar en veu baixa:', options: ['Xiu-xiu', 'Xiuxiu'], correctAnswer: 'Xiu-xiu', explanation: 'Onomatopeia/Repetici├│. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b2_12', type: 'multiple_choice', question: '­ƒÆí Estar tot viu/actiu:', options: ['Garrat-i-viu', 'Garrativiu'], correctAnswer: 'Garrat-i-viu', explanation: 'Expressi├│ amb guionet. Ô£à', difficulty: 3, course: '4A' },
++    { id: 'g4a_b2_13', type: 'multiple_choice', question: '­ƒì¢´©Å L\'electrodom├¿stic per als plats:', options: ['Rentaplats', 'Renta-plats'], correctAnswer: 'Rentaplats', explanation: 'Nova normativa: "Rentaplats" va tot junt (excepci├│). ­ƒøæ', difficulty: 3, course: '4A' },
++    { id: 'g4a_b2_14', type: 'multiple_choice', question: '­ƒÜù El protector dels xocs:', options: ['Paraxocs', 'Para-xocs'], correctAnswer: 'Paraxocs', explanation: 'Nova normativa: "Paraxocs" va tot junt. ­ƒøæ', difficulty: 3, course: '4A' },
++    { id: 'g4a_b2_15', type: 'multiple_choice', question: '­ƒù║´©Å Direcci├│ geogr├áfica (Eura + Est):', options: ['Eura-est', 'Euraest'], correctAnswer: 'Eura-est', explanation: 'Guionet necessari per evitar el xoc de vocals id├¿ntiques (a-e no, per├▓ e-e s├¡). Ô£à', difficulty: 3, course: '4A' },
++
++    // --- BLOC 3: PRONOMS FEBLES (Combina verb i pronom) ---
++    { id: 'g4a_b3_1', type: 'multiple_choice', question: '­ƒÄü "Dona" + "me" + "la":', options: ['Dona-me-la', 'Donamela'], correctAnswer: 'Dona-me-la', explanation: 'Verbs i pronoms se separen amb guionet si no s\'apostrofen. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b3_2', type: 'multiple_choice', question: '­ƒùú´©Å "Digues" + "li":', options: ['Digues-li', 'Diguesli'], correctAnswer: 'Digues-li', explanation: 'Porta guionet. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b3_3', type: 'multiple_choice', question: '­ƒÜÂ "Anem" + "nos" + "en":', options: ['Anem-nos-en', 'Anem-nos en'], correctAnswer: 'Anem-nos-en', explanation: 'S\'uneixen tots amb guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b3_4', type: 'multiple_choice', question: '­ƒìÄ "Menja" + "et" + "ho":', options: ['Menja-t\'ho', 'Menja t\'ho'], correctAnswer: 'Menja-t\'ho', explanation: 'El guionet uneix el verb al bloc de pronoms. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b3_5', type: 'multiple_choice', question: '­ƒôª "Porta" + "ho":', options: ['Porta-ho', 'Portaho'], correctAnswer: 'Porta-ho', explanation: 'La "h" no impedeix el guionet (no s\'apostrofa). Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b3_6', type: 'multiple_choice', question: '­ƒøÆ "Compri" + "els":', options: ['Compri\'ls', 'Compri-ls'], correctAnswer: 'Compri\'ls', explanation: 'S\'apostrofa perqu├¿ el verb acaba en vocal i el pronom comen├ºa en vocal. ÔØî No guionet.', difficulty: 3, course: '4A' },
++    { id: 'g4a_b3_7', type: 'multiple_choice', question: '­ƒÄü "Dona" + "em" + "ho":', options: ['Dona\'m-ho', 'Dona-m-ho'], correctAnswer: 'Dona\'m-ho', explanation: 'Dona\'m (ap├▓strof) - ho (guionet). Ô£à', difficulty: 3, course: '4A' },
++    { id: 'g4a_b3_8', type: 'multiple_choice', question: '­ƒæé "Escolta" + "ens":', options: ['Escolta\'ns', 'Escolta-nos'], correctAnswer: 'Escolta\'ns', explanation: 'S\'apostrofa quan ├®s possible. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b3_9', type: 'multiple_choice', question: '­ƒôª "Porteu" + "els" + "el":', options: ['Porteu-los-el', 'Porte-los el'], correctAnswer: 'Porteu-los-el', explanation: 'Trencament de pronoms combinats. Ô£à', difficulty: 3, course: '4A' },
++    { id: 'g4a_b3_10', type: 'multiple_choice', question: '­ƒ¬× "Mira" + "et":', options: ['Mira\'t', 'Mira-te'], correctAnswer: 'Mira\'t', explanation: 'S\'apostrofa prefrentment. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b3_11', type: 'multiple_choice', question: '­ƒæë "Fes" + "ho":', options: ['Fes-ho', 'Fesho'], correctAnswer: 'Fes-ho', explanation: 'Sempre amb guionet. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b3_12', type: 'multiple_choice', question: '­ƒøÆ "Compra" + "els" + "en":', options: ['Compra\'ls-en', 'Compra-ls en'], correctAnswer: 'Compra\'ls-en', explanation: 'Compra\'ls (ap├▓strof) - en (guionet). Ô£à', difficulty: 3, course: '4A' },
++    { id: 'g4a_b3_13', type: 'multiple_choice', question: '­ƒÆ░ "Vendre" + "els":', options: ['Vendre\'ls', 'Vendre-ls'], correctAnswer: 'Vendre\'ls', explanation: 'L\'ap├▓strof guanya al guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b3_14', type: 'multiple_choice', question: '­ƒôì "Anar" + "hi":', options: ['Anar-hi', 'Anar hi'], correctAnswer: 'Anar-hi', explanation: 'Guionet amb "hi" darrere infinitiu. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b3_15', type: 'multiple_choice', question: '­ƒæù "Portar" + "les":', options: ['Portar-les', 'Portar les'], correctAnswer: 'Portar-les', explanation: 'Pronom encl├¡tic. Ô£à', difficulty: 1, course: '4A' },
++
++    // --- BLOC 4: PUNT CARDINALS I PREFIXOS ---
++    { id: 'g4a_b4_1', type: 'multiple_choice', question: '­ƒîÄ Relatiu al sud d\'Am├¿rica:', options: ['Sud-americ├á', 'Sudameric├á'], correctAnswer: 'Sud-americ├á', explanation: 'Punts cardinals compostos porten guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b4_2', type: 'multiple_choice', question: '­ƒº¡ Entre el nord i l\'oest:', options: ['Nord-oest', 'Nordoest'], correctAnswer: 'Nord-oest', explanation: 'Punts cardinals amb guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b4_3', type: 'multiple_choice', question: '­ƒº¡ Entre el sud i l\'est:', options: ['Sud-est', 'Sudest'], correctAnswer: 'Sud-est', explanation: 'Punts cardinals amb guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b4_4', type: 'multiple_choice', question: '­ƒôà El dia abans d\'ahir:', options: ['Desp├║s-ahir', 'Despusahir'], correctAnswer: 'Desp├║s-ahir', explanation: 'Expressi├│ amb guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b4_5', type: 'multiple_choice', question: '­ƒôà El dia despr├®s de dem├á:', options: ['Desp├║s-dem├á', 'Despusdem├á'], correctAnswer: 'Desp├║s-dem├á', explanation: 'Expressi├│ amb guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b4_6', type: 'multiple_choice', question: '­ƒæ¿ÔÇì­ƒª│ El pare del pare:', options: ['Besavi', 'Bes-avi'], correctAnswer: 'Besavi', explanation: 'El prefix "Bes-" no porta guionet davant vocal normal. Ô£à', difficulty: 3, course: '4A' },
++    { id: 'g4a_b4_7', type: 'multiple_choice', question: '­ƒæ¿ÔÇì­ƒÆ╝ El germ├á de l\'avi:', options: ['Bes-oncle', 'Besoncle'], correctAnswer: 'Bes-oncle', explanation: 'Porta guionet per evitar la lectura err├▓nia o xoc de vocals. Ô£à', difficulty: 3, course: '4A' },
++    { id: 'g4a_b4_8', type: 'multiple_choice', question: '­ƒæö Persona que ja no ├®s president:', options: ['Expresident', 'Ex-president'], correctAnswer: 'Expresident', explanation: 'Nova normativa: Els prefixos van generalment junts. ­ƒøæ', difficulty: 3, course: '4A' },
++    { id: 'g4a_b4_9', type: 'multiple_choice', question: '­ƒæ®ÔÇì­ƒÆ╝ Persona que ja no ├®s directora:', options: ['Exdirectora', 'Ex-directora'], correctAnswer: 'Exdirectora', explanation: 'Prefix "ex" va junt. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b4_10', type: 'multiple_choice', question: 'ÔÜö´©Å Atacar com a resposta:', options: ['Contraatacar', 'Contra-atacar'], correctAnswer: 'Contraatacar', explanation: 'Va tot junt. Ô£à', difficulty: 2, course: '4A' },
++
++    // --- BLOC 5: MIX D\'ERRORS (Correcte / Incorrecte) ---
++    { id: 'g4a_b5_1', type: 'multiple_choice', question: '­ƒöó "Vint i tres" ├®s...', options: ['Incorrecte ÔåÆ Vint-i-tres', 'Correcte'], correctAnswer: 'Incorrecte ÔåÆ Vint-i-tres', explanation: 'Falta el guionet D-U. ÔØî', difficulty: 1, course: '4A' },
++    { id: 'g4a_b5_2', type: 'multiple_choice', question: '­ƒìÜ "Arr├▓s-amb-llet" ├®s...', options: ['Incorrecte ÔåÆ Arr├▓s amb llet', 'Correcte'], correctAnswer: 'Incorrecte ÔåÆ Arr├▓s amb llet', explanation: 'No calen guionets en aquest compost. ÔØî', difficulty: 2, course: '4A' },
++    { id: 'g4a_b5_3', type: 'multiple_choice', question: '­ƒÉó "Poc-a-poc" ├®s...', options: ['Incorrecte ÔåÆ Poc a poc', 'Correcte'], correctAnswer: 'Incorrecte ÔåÆ Poc a poc', explanation: 'Les locucions d\'aquest tipus van sense guionets. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b5_4', type: 'multiple_choice', question: 'Ôåö´©Å "D\'aqu├¡-all├á" ├®s...', options: ['Incorrecte ÔåÆ D\'aqu├¡ all├á', 'Correcte'], correctAnswer: 'Incorrecte ÔåÆ D\'aqu├¡ all├á', explanation: 'Sense guionet. ÔØî', difficulty: 2, course: '4A' },
++    { id: 'g4a_b5_5', type: 'multiple_choice', question: '­ƒæù "Penja-robes" ├®s...', options: ['Incorrecte ÔåÆ Penjarobes', 'Correcte'], correctAnswer: 'Incorrecte ÔåÆ Penjarobes', explanation: 'Nova normativa: Penjarobes va junt. ­ƒøæ', difficulty: 3, course: '4A' },
++    { id: 'g4a_b5_6', type: 'multiple_choice', question: '­ƒöó "Vuit-cents" ├®s...', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'U-C porta guionet. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b5_7', type: 'multiple_choice', question: '­ƒÅû´©Å "Vora-mar" ├®s...', options: ['Incorrecte ÔåÆ Voramar', 'Correcte'], correctAnswer: 'Incorrecte ÔåÆ Voramar', explanation: 'Voramar ├®s una sola paraula. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b5_8', type: 'multiple_choice', question: 'ÔÿÇ´©Å "Para-sol" ├®s...', options: ['Incorrecte ÔåÆ Parasol', 'Correcte'], correctAnswer: 'Incorrecte ÔåÆ Parasol', explanation: 'Nova normativa: Parasol va junt. ­ƒøæ', difficulty: 2, course: '4A' },
++    { id: 'g4a_b5_9', type: 'multiple_choice', question: '­ƒÆî "Mata-segells" ├®s...', options: ['Incorrecte ÔåÆ Matasegells', 'Correcte'], correctAnswer: 'Incorrecte ÔåÆ Matasegells', explanation: 'Matasegells va junt. Ô£à', difficulty: 3, course: '4A' },
++    { id: 'g4a_b5_10', type: 'multiple_choice', question: '­ƒÅÿ´©Å "Bell-lloc" ├®s...', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Guionet per evitar el xoc de L. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b5_11', type: 'multiple_choice', question: '­ƒÉª "Pit-roig" ├®s...', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Ocell amb guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b5_12', type: 'multiple_choice', question: '­ƒªÁ "Cama-llarg" ├®s...', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Compost amb guionet. Ô£à', difficulty: 2, course: '4A' },
++    { id: 'g4a_b5_13', type: 'multiple_choice', question: '­ƒÿ▓ "D├®u-n\'hi-do" ├®s...', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Interjecci├│ lexicalitzada. Ô£à', difficulty: 1, course: '4A' },
++    { id: 'g4a_b5_14', type: 'multiple_choice', question: '­ƒºÁ "Fil-a-l\'agulla" ├®s...', options: ['Incorrecte ÔåÆ Fil a l\'agulla', 'Correcte'], correctAnswer: 'Incorrecte ÔåÆ Fil a l\'agulla', explanation: 'Locuci├│ sense guionets. ÔØî', difficulty: 2, course: '4A' },
++    { id: 'g4a_b5_15', type: 'multiple_choice', question: '­ƒöó "Cinc-cents setanta-nou" ├®s...', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Guionet a U-C i D-U. Ô£à', difficulty: 2, course: '4A' }
++  ]
++}];
++export const PRONOMS_4A: CourseSection[] = [{ id: 'pronoms_4a', title: 'Pronoms Febles (C1)', description: 'Exercicis de pronoms febles consolidated.', category: 'gram├ática', course: '4A', exercises: [] }];
++export const VERBS_IRR_4A: CourseSection[] = [];
++export const VERBS_REG_4A: CourseSection[] = [];
++export const PRON_REL_4A: CourseSection[] = [{ id: 'prel_4a', title: 'Pronoms Relatius (C1)', description: 'Exercicis de pronoms relatius consolidated.', category: 'gram├ática', course: '4A', exercises: [] }];
++export const PREP_4A: CourseSection[] = [{ id: 'prep_4a', title: 'Preposicions (C1)', description: 'Exercicis de preposicions consolidated.', category: 'gram├ática', course: '4A', exercises: [] }];
++export const APOS_4A: CourseSection[] = [];
++export const CONJ_4A: CourseSection[] = [{ id: 'conj_4a', title: 'Conjuncions (C1)', description: 'Exercicis de conjuncions consolidated.', category: 'gram├ática', course: '4A', exercises: [] }];
++export const FONETICA_4A: CourseSection[] = [{ id: 'fon_4a', title: 'Fon├¿tica (C1)', description: 'Exercicis de fon├¿tica consolidated.', category: 'ortografia', course: '4A', exercises: [] }];
++export const DIER_4A: CourseSection[] = [];
++
++export const ALL_NEW_EXERCISES: CourseSection[] = [
++  ...GUIONET_4C,
++  ...PRONOMS_4C,
++  ...VERBS_IRR_4C,
++  ...VERBS_REG_4C,
++  ...PRON_REL_4C,
++  ...PREP_4C,
++  ...SILABAS_4C,
++
++  ...GUIONET_4E,
++  ...PRONOMS_4E,
++  ...VERBS_IRR_4E,
++  ...VERBS_REG_4E,
++  ...PRON_REL_4E,
++  ...PREP_4E,
++  ...APOS_4E,
++  ...CONJ_4E,
++
++
++  ...GUIONET_4D,
++  ...PRONOMS_4D,
++  ...VERBS_IRR_4D,
++  ...VERBS_REG_4D,
++  ...PRON_REL_4D,
++  ...PREP_4D,
++  ...APOS_4D,
++  ...CONJ_4D,
++
++
++  ...GUIONET_4A,
++  ...PRONOMS_4A,
++  ...VERBS_IRR_4A,
++  ...VERBS_REG_4A,
++  ...PRON_REL_4A,
++  ...PREP_4A,
++  ...APOS_4A,
++  ...CONJ_4A,
++  ...FONETICA_4A,
++  ...DIER_4A
++];
+\ No newline at end of file

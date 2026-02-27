@@ -9,7 +9,11 @@ import {
 } from "@/components/ui/dialog";
 import { ProfileManagement } from "@/components/profile/ProfileManagement";
 import { UserProfile } from "@/hooks/useAuth";
+<<<<<<< HEAD
 import { LogOut, BookOpen, Home, User, Settings, ChevronDown, Users, Shield } from "lucide-react";
+=======
+import { LogOut, BookOpen, Home, User, Settings, ChevronDown } from "lucide-react";
+>>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -88,6 +92,7 @@ export const Header = ({ user, onLogout, onNavigateToAuth }: HeaderProps) => {
                     </div>
                   </button>
 
+<<<<<<< HEAD
                   {/* Panell Admin - Solo si es admin */}
                   {user?.role === 'admin' && (
                     <button
@@ -122,6 +127,8 @@ export const Header = ({ user, onLogout, onNavigateToAuth }: HeaderProps) => {
                     </button>
                   )}
 
+=======
+>>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
                   {/* Ajustes de Cuenta */}
                   <button
                     onClick={() => {

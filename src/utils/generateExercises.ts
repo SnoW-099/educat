@@ -1,5 +1,9 @@
 import { supabase } from '@/integrations/supabase/client';
+<<<<<<< HEAD
 import { generateBookOrthographyExercises } from '@/features/courses/data/catalanOrthographyData';
+=======
+import { generateBookOrthographyExercises } from './catalanOrthographyData';
+>>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
 import { REVIEW_EXERCISES } from './reviewExercises';
 
 // Function to generate tons of exercises for all levels
