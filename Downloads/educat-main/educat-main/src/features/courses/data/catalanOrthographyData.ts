@@ -28,9 +28,9 @@ export interface OrthographySubsection {
 }
 
 // Import book exercises and additional exercises
-import { CATALAN_ORTHOGRAPHY_BOOK_SECTIONS, BookOrthographyExercise } from './catalanOrthographyBookData';
-import { ADDITIONAL_ORTHOGRAPHY_SECTIONS } from './additionalOrthographyExercises';
-import { ALPHABET_EXERCISES } from './alphabetExercises';
+import { CATALAN_ORTHOGRAPHY_BOOK_SECTIONS, BookOrthographyExercise } from '@/utils/catalanOrthographyBookData';
+import { ADDITIONAL_ORTHOGRAPHY_SECTIONS } from '@/utils/additionalOrthographyExercises';
+import { ALPHABET_EXERCISES } from '@/utils/alphabetExercises';
 
 // Convert book exercises to standard format
 const convertBookExerciseToStandard = (bookExercise: BookOrthographyExercise): OrthographyExercise => ({

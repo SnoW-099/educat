@@ -1,4 +1,4 @@
-import { OrthographyExercise } from './catalanOrthographyData';
+import { OrthographyExercise } from '@/features/courses/data/catalanOrthographyData';
 
 // Exercises for L'ALFABET and LA SÍL·LABA sections
 export const ALPHABET_EXERCISES: OrthographyExercise[] = [

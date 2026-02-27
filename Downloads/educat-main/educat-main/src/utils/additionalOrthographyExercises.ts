@@ -1,4 +1,4 @@
-import { OrthographySection } from './catalanOrthographyData';
+import { OrthographySection } from '@/features/courses/data/catalanOrthographyData';
 
 // Additional orthography exercises following the established patterns
 export const ADDITIONAL_ORTHOGRAPHY_SECTIONS: OrthographySection[] = [
