@@ -14,6 +14,7 @@ import { MODULE_5_EXERCISES } from "@/utils/beginner/module5Data";
 import { MODULE_6_EXERCISES } from "@/utils/beginner/module6Data";
 import { MODULE_7_EXERCISES } from "@/utils/beginner/module7Data";
 import { MODULE_8_EXERCISES } from "@/utils/beginner/module8Data";
+import { MODULE_9_EXERCISES } from "@/utils/beginner/module9Data";
 
 import { useModuleProgress } from "@/hooks/useModuleProgress";
 
@@ -68,7 +69,7 @@ export const BeginnerDashboard = () => {
     const currentZone = zones.find(z => z.id === selectedZone);
 
     const handleModuleClick = (moduleId: string) => {
-        if (moduleId === 'm1' || moduleId === 'm2' || moduleId === 'm3' || moduleId === 'm4' || moduleId === 'm5' || moduleId === 'm6' || moduleId === 'm7' || moduleId === 'm8') {
+        if (moduleId === 'm1' || moduleId === 'm2' || moduleId === 'm3' || moduleId === 'm4' || moduleId === 'm5' || moduleId === 'm6' || moduleId === 'm7' || moduleId === 'm8' || moduleId === 'm9') {
             setActiveModule(moduleId);
         } else {
             // Placeholder for unavailable modules
@@ -172,7 +173,17 @@ export const BeginnerDashboard = () => {
         );
     }
 
-
+    if (activeModule === 'm9') {
+        return (
+            <BeginnerExerciseRunner
+                exercises={MODULE_9_EXERCISES}
+                onExit={() => setActiveModule(null)}
+                currentModuleId="m9"
+                onUpdateProgress={updateProgress}
+                initialIndex={getModuleProgress('m9').lastIndex}
+            />
+        );
+    }
 
     if (selectedZone && currentZone) {
         return (
@@ -202,7 +213,7 @@ export const BeginnerDashboard = () => {
                                 transition-all duration-200 cursor-pointer group 
                                 border-slate-200 dark:border-slate-800 
                                 hover:shadow-md hover:border-primary/20
-                                ${(module.id === 'm1' || module.id === 'm2' || module.id === 'm3' || module.id === 'm4' || module.id === 'm5' || module.id === 'm6' || module.id === 'm7' || module.id === 'm8') ? "opacity-100" : "opacity-60 grayscale-[0.5] hover:grayscale-0"}
+                                ${(module.id === 'm1' || module.id === 'm2' || module.id === 'm3' || module.id === 'm4' || module.id === 'm5' || module.id === 'm6' || module.id === 'm7' || module.id === 'm8' || module.id === 'm9') ? "opacity-100" : "opacity-60 grayscale-[0.5] hover:grayscale-0"}
                             `}
                         >
                             <div className="flex flex-row items-center gap-4 p-5">
@@ -215,9 +226,9 @@ export const BeginnerDashboard = () => {
                                     </h3>
                                     <div className="flex items-center gap-2 mt-1.5">
                                         <CardDescription className="text-xs font-medium">
-                                            {(module.id === 'm1' || module.id === 'm2' || module.id === 'm3' || module.id === 'm4' || module.id === 'm5' || module.id === 'm6' || module.id === 'm7' || module.id === 'm8') ? '10 exercicis disponibles' : 'Pròximament'}
+                                            {(module.id === 'm1' || module.id === 'm2' || module.id === 'm3' || module.id === 'm4' || module.id === 'm5' || module.id === 'm6' || module.id === 'm7' || module.id === 'm8' || module.id === 'm9') ? '10 exercicis disponibles' : 'Pròximament'}
                                         </CardDescription>
-                                        {(module.id === 'm1' || module.id === 'm2' || module.id === 'm3' || module.id === 'm4' || module.id === 'm5' || module.id === 'm6' || module.id === 'm7' || module.id === 'm8') && (
+                                        {(module.id === 'm1' || module.id === 'm2' || module.id === 'm3' || module.id === 'm4' || module.id === 'm5' || module.id === 'm6' || module.id === 'm7' || module.id === 'm8' || module.id === 'm9') && (
                                             <span className="relative flex h-2 w-2">
                                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
