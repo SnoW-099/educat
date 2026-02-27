@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, XCircle, Lightbulb, RotateCcw } from 'lucide-react';
-import { OrthographyExercise as ExerciseType } from '@/utils/catalanOrthographyData';
+import { OrthographyExercise as ExerciseType } from '@/features/courses/data/catalanOrthographyData';
 import { useEasterEgg } from '@/hooks/useEasterEgg';
 import { useToast } from '@/hooks/use-toast';
 

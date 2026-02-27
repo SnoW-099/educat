@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CATALAN_GRAMMAR_SECTIONS, type GrammarSection } from "@/utils/catalanGrammarCategories";
-import { ExerciseModal } from "@/components/exercises/ExerciseModal";
+import { CATALAN_GRAMMAR_SECTIONS, type GrammarSection } from "@/features/courses/data/catalanGrammarCategories";
+import { ExerciseModal } from "@/features/courses/components/exercises/ExerciseModal";
 import { useRouter } from "next/router";
 
 const Exercicis = () => {

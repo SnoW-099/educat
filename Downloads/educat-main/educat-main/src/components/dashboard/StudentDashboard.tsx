@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, Trophy, Target, Users, Newspaper, Zap, TrendingUp, Plus } from "lucide-react";
 
-import { EnhancedOrthographySystem } from "@/components/orthography/EnhancedOrthographySystem";
+import { EnhancedOrthographySystem } from "@/features/courses/components/orthography/EnhancedOrthographySystem";
 import { EnhancedChatInterface } from "@/components/chat/EnhancedChatInterface";
 import { StudentStatistics } from "@/components/dashboard/StudentStatistics";
 import { CatalanTheory } from "@/components/theory/CatalanTheory";
@@ -16,9 +16,9 @@ import { useToast } from "@/hooks/use-toast";
 import { useStudentData } from "@/hooks/useStudentData";
 import { useRealStats } from "@/hooks/useRealStats";
 import { BookLoader } from "@/components/ui/book-loader";
-import { ALL_ORTHOGRAPHY_SECTIONS } from '@/utils/catalanOrthographyData';
+import { ALL_ORTHOGRAPHY_SECTIONS } from '@/features/courses/data/catalanOrthographyData';
 import { cn } from "@/lib/utils";
-import { BeginnerDashboard } from "@/components/beginner/BeginnerDashboard";
+import { BeginnerDashboard } from "@/features/beginner/components/BeginnerDashboard";
 
 interface StudentDashboardProps {
   user: any;

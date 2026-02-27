@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Search, BookOpen, GraduationCap, Hash, Trophy, Filter, Clock, CheckCircle, XCircle } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
-import { getExercisesByCourse, CourseSection } from '@/utils/courseExercises';
+import { getExercisesByCourse, CourseSection } from '@/features/courses/data/courseExercises';
 import { OrthographySection } from './OrthographySection';
 import { ExamModels } from './ExamModels';
 import { OrthographyExercise } from './OrthographyExercise';

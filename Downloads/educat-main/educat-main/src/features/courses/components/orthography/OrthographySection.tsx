@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, BookOpen, CheckCircle, Award } from 'lucide-react';
-import { OrthographySection as SectionType } from '@/utils/catalanOrthographyData';
+import { OrthographySection as SectionType } from '@/features/courses/data/catalanOrthographyData';
 import { XPOrthographyExercise } from './XPOrthographyExercise';
 
 interface OrthographySectionProps {

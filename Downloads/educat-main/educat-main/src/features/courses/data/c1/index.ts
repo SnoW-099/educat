@@ -1,0 +1,21 @@
+// Export all C1 exercises (4A, 4B)
+export { GUIONET_4B } from './GUIONET_4B';
+export { PRONOMS_4B } from './PRONOMS_4B';
+export { VERBS_IRR_4B } from './VERBS_IRR_4B';
+export { VERBS_REG_4B } from './VERBS_REG_4B';
+export { PRON_REL_4B } from './PRON_REL_4B';
+export { PREP_4B } from './PREP_4B';
+export { APOS_4B } from './APOS_4B';
+export { CONJ_4B } from './CONJ_4B';
+export { FONETICA_4B } from './FONETICA_4B';
+export { GUIONET_4A } from './GUIONET_4A';
+export { PRONOMS_4A } from './PRONOMS_4A';
+export { VERBS_IRR_4A } from './VERBS_IRR_4A';
+export { VERBS_REG_4A } from './VERBS_REG_4A';
+export { PRON_REL_4A } from './PRON_REL_4A';
+export { PREP_4A } from './PREP_4A';
+export { APOS_4A } from './APOS_4A';
+export { CONJ_4A } from './CONJ_4A';
+export { DIER_4A } from './DIER_4A';
+export { COURSE_4A_EXERCISES } from './COURSE_4A_EXERCISES';
+export { COURSE_4B_EXERCISES } from './COURSE_4B_EXERCISES';

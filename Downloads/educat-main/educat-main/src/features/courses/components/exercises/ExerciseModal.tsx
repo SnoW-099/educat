@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { CheckCircle, XCircle, RotateCcw, Lightbulb, Eye, BookOpen } from "lucide-react";
-import { type GrammarSection, type Exercise } from "@/utils/catalanGrammarCategories";
+import { type GrammarSection, type Exercise } from "@/features/courses/data/catalanGrammarCategories";
 import { useEasterEgg } from "@/hooks/useEasterEgg";
 import { useAuth } from "@/hooks/useAuth";
 import { TheoryModal } from "@/components/theory/TheoryModal";

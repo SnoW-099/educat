@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, XCircle, Lightbulb, RotateCcw, Volume2 } from 'lucide-react';
-import { OrthographyExercise as ExerciseType } from '@/utils/catalanOrthographyData';
+import { OrthographyExercise as ExerciseType } from '@/features/courses/data/catalanOrthographyData';
 import { useEasterEgg } from '@/hooks/useEasterEgg';
 import { useToast } from '@/hooks/use-toast';
 import { checkAnswerWithNormalization } from '@/utils/textUtils';

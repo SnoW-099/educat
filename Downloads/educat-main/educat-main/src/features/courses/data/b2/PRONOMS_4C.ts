@@ -1,0 +1,107 @@
+import type { CourseSection, CourseExercise } from '../courseExercises';
+
+export const PRONOMS_4C: CourseSection[] = [{
+  id: 'pronoms_4c',
+  title: 'Pronoms Febles (B2)',
+  description: 'Domina els pronoms febles: CD, CI, combinacions i partitius. 🧩',
+  category: 'gramàtica',
+  course: '4C',
+  exercises: [
+    // --- BLOC 1: OBJECTE DIRECTE (CD) ---
+    { id: 'pr4c_b1_1', type: 'multiple_choice', question: 'He comprat el pa. 🥖', options: ['L\'he comprat', 'El he comprat'], correctAnswer: 'L\'he comprat', explanation: 'El (masculí) davant vocal s\'apostrofa a L\'. ✅', difficulty: 1, course: '4C' },
+    { id: 'pr4c_b1_2', type: 'multiple_choice', question: 'Mira la sèrie. 📺', options: ['Mira-la', 'Mira\'l'], correctAnswer: 'Mira-la', explanation: 'Imperatiu + La (femení) = Mira-la. ✅', difficulty: 1, course: '4C' },
+    { id: 'pr4c_b1_3', type: 'multiple_choice', question: 'Porto els nens. 👶', options: ['Els porto', 'Los porto'], correctAnswer: 'Els porto', explanation: 'El plural de "el" és "els". "Los" és incorrecte aquí. ✅', difficulty: 1, course: '4C' },
+    { id: 'pr4c_b1_4', type: 'multiple_choice', question: 'Saluda les veïnes. 👋', options: ['Saluda-les', 'Saluda\'ls'], correctAnswer: 'Saluda-les', explanation: 'Imperatiu + Les (femení plural) = Saluda-les. ✅', difficulty: 1, course: '4C' },
+    { id: 'pr4c_b1_5', type: 'multiple_choice', question: 'Això, no ho vull. 🙅', options: ['ho', 'el'], correctAnswer: 'ho', explanation: 'Això (neutre) se substitueix per HO. ✅', difficulty: 1, course: '4C' },
+    { id: 'pr4c_b1_6', type: 'multiple_choice', question: 'He vist el teu germà. 👁️', options: ['L\'he vist', 'Li he vist'], correctAnswer: 'L\'he vist', explanation: 'Germà és CD (el veig a ell) -> L\'. "Li" seria CI. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b1_7', type: 'multiple_choice', question: 'Compra l\'entrada. 🎟️', options: ['Compra-la', 'Compra-l\''], correctAnswer: 'Compra-la', explanation: 'Entrada és femení -> La. Compra-la. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b1_8', type: 'multiple_choice', question: 'Vull veure la pel·lícula. 🎬', options: ['La vull veure', 'Vull veure-la'], correctAnswer: 'Vull veure-la', explanation: 'Amb perífrasis o infinitius, el pronom pot anar darrere. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b1_9', type: 'multiple_choice', question: 'No diguis que no vindràs. 🤐', options: ['No ho diguis', 'No el diguis'], correctAnswer: 'No ho diguis', explanation: '"Que no vindràs" és una oració subordinada (neutre) -> Ho. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b1_10', type: 'multiple_choice', question: 'Tanca els ulls. 😌', options: ['Tanca\'ls', 'Tanca-les'], correctAnswer: 'Tanca\'ls', explanation: 'Ulls és masculí plural -> Els. Tanca + els = Tanca\'ls. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b1_11', type: 'multiple_choice', question: 'Busco la clau. 🔑', options: ['La busco', 'Ho busco'], correctAnswer: 'La busco', explanation: 'Clau és femení -> La. ✅', difficulty: 1, course: '4C' },
+    { id: 'pr4c_b1_12', type: 'multiple_choice', question: 'Ha dit això? 💬', options: ['L\'ha dit?', 'Ho ha dit?'], correctAnswer: 'Ho ha dit?', explanation: 'Això (neutre) -> Ho. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b1_13', type: 'multiple_choice', question: 'Esperem l\'autobús. 🚌', options: ['L\'esperem', 'El esperem'], correctAnswer: 'L\'esperem', explanation: 'Autobús és masculí -> El. Apostrofat L\'. ✅', difficulty: 1, course: '4C' },
+    { id: 'pr4c_b1_14', type: 'multiple_choice', question: 'Coneixes la Marta? 👩', options: ['La coneixes?', 'En coneixes?'], correctAnswer: 'La coneixes?', explanation: 'Marta (determinada) -> La. ✅', difficulty: 1, course: '4C' },
+    { id: 'pr4c_b1_15', type: 'multiple_choice', question: 'Estudia les lliçons. 📚', options: ['Estudia-les', 'Estudia\'ls'], correctAnswer: 'Estudia-les', explanation: 'Lliçons (femení plural) -> Les. Estudia-les. ✅', difficulty: 2, course: '4C' },
+
+    // --- BLOC 2: PARTITIU 'EN' ---
+    { id: 'pr4c_b2_1', type: 'multiple_choice', question: 'Vols pa? 🥖', options: ['En vols?', 'El vols?'], correctAnswer: 'En vols?', explanation: 'Pa és indeterminat -> En. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b2_2', type: 'multiple_choice', question: 'Tinc tres fills. 👨‍👩‍👦', options: ['En tinc tres', 'Els tinc tres'], correctAnswer: 'En tinc tres', explanation: 'Quantificat (tres) -> En. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b2_3', type: 'multiple_choice', question: 'Vinc de Barcelona. 📍', options: ['En vinc', 'Hi vinc'], correctAnswer: 'En vinc', explanation: 'Origen (de lloc) -> En. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b2_4', type: 'multiple_choice', question: 'Menja molta fruita. 🍎', options: ['En menja molta', 'La menja molta'], correctAnswer: 'En menja molta', explanation: 'Quantificat (molta) -> En. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b2_5', type: 'multiple_choice', question: 'No tinc diners. 💸', options: ['No en tinc', 'No els tinc'], correctAnswer: 'No en tinc', explanation: 'Indeterminat -> En. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b2_6', type: 'multiple_choice', question: 'Parlem de política. 🗣️', options: ['En parlem', 'Hi parlem'], correctAnswer: 'En parlem', explanation: 'Règim verbal amb "de" -> En. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b2_7', type: 'multiple_choice', question: 'Vull un cafè. ☕', options: ['En vull un', 'El vull un'], correctAnswer: 'En vull un', explanation: 'Quantificat (un) -> En. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b2_8', type: 'multiple_choice', question: 'Hi ha gent? 👥', options: ['N\'hi ha?', 'Hi ha?'], correctAnswer: 'N\'hi ha?', explanation: 'Verb haver-hi + CD indeterminat -> N\'hi. ✅', difficulty: 3, course: '4C' },
+    { id: 'pr4c_b2_9', type: 'multiple_choice', question: 'Surt del despatx. 🚪', options: ['Surt-ne', 'Surt-hi'], correctAnswer: 'Surt-ne', explanation: 'Origen (del despatx) -> En. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b2_10', type: 'multiple_choice', question: 'Compra pomes. 🍏', options: ['Compra\'n', 'Compra-les'], correctAnswer: 'Compra\'n', explanation: 'Pomes (indeterminat) -> En. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b2_11', type: 'multiple_choice', question: 'No hi ha cap llibre. 📖', options: ['No n\'hi ha cap', 'No hi ha cap'], correctAnswer: 'No n\'hi ha cap', explanation: 'Haver-hi + "cap" requereix "en" (n\'). ✅', difficulty: 3, course: '4C' },
+    { id: 'pr4c_b2_12', type: 'multiple_choice', question: 'Recorda\'t de mi. 🧠', options: ['Recorda-te\'n', 'Recorda-t\'hi'], correctAnswer: 'Recorda-te\'n', explanation: 'Verb + de -> En. Recorda-te\'n. ✅', difficulty: 3, course: '4C' },
+    { id: 'pr4c_b2_13', type: 'multiple_choice', question: 'Agafa una cadira. 🪑', options: ['Agafa\'n una', 'Agafa-la una'], correctAnswer: 'Agafa\'n una', explanation: 'Una (quantitat) -> En. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b2_14', type: 'multiple_choice', question: 'Parla del projecte. 📊', options: ['Parla\'n', 'Parla-hi'], correctAnswer: 'Parla\'n', explanation: 'Complement amb "de" -> En. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b2_15', type: 'multiple_choice', question: 'Estic content del resultat. 😊', options: ['N\'estic content', 'Hi estic content'], correctAnswer: 'N\'estic content', explanation: 'Complement de l\'adjectiu amb "de" -> En. ✅', difficulty: 3, course: '4C' },
+
+    // --- BLOC 3: LOCATIU/PREPOSICIONAL 'HI' ---
+    { id: 'pr4c_b3_1', type: 'multiple_choice', question: 'Vaig a Roma. 🇮🇹', options: ['Hi vaig', 'En vaig'], correctAnswer: 'Hi vaig', explanation: 'Destí (a...) -> Hi. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b3_2', type: 'multiple_choice', question: 'Sóc al despatx. 🏢', options: ['Hi sóc', 'En sóc'], correctAnswer: 'Hi sóc', explanation: 'Lloc estàtic (a...) -> Hi. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b3_3', type: 'multiple_choice', question: 'Pensa en les vacances. 🏖️', options: ['Pensa-hi', 'Pensa\'n'], correctAnswer: 'Pensa-hi', explanation: 'Pensar EN -> Hi. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b3_4', type: 'multiple_choice', question: 'Viatjo amb tren. 🚆', options: ['Hi viatjo', 'En viatjo'], correctAnswer: 'Hi viatjo', explanation: 'Complement amb "amb" o mode -> Hi. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b3_5', type: 'multiple_choice', question: 'Posa-ho a la taula. 🍽️', options: ['Posa-hi', 'Posa-ho hi'], correctAnswer: 'Posa-hi', explanation: 'Sustituim el lloc: Posa-hi (això). El "ho" sovint s\'absorbeix o es combina. Aquí demana substituir el lloc. ✅', difficulty: 3, course: '4C' },
+    { id: 'pr4c_b3_6', type: 'multiple_choice', question: 'Estic d\'acord. 👍', options: ['Hi estic', 'N\'estic'], correctAnswer: 'Hi estic', explanation: 'Estar d\'acord -> Hi estic. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b3_7', type: 'multiple_choice', question: 'S\'assembla al seu pare. 👨‍👦', options: ['S\'hi assembla', 'Se n\'assembla'], correctAnswer: 'S\'hi assembla', explanation: 'Assemblar-se A algú -> Hi (o LI, però HI és comú i l\'opció aquí). ✅', difficulty: 3, course: '4C' },
+    { id: 'pr4c_b3_8', type: 'multiple_choice', question: 'Jugo a tennis. 🎾', options: ['Hi jugo', 'En jugo'], correctAnswer: 'Hi jugo', explanation: 'Jugar A -> Hi. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b3_9', type: 'multiple_choice', question: 'Confio en tu. 🤝', options: ['Hi confio', 'En confio'], correctAnswer: 'Hi confio', explanation: 'Confiar EN -> Hi. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b3_10', type: 'multiple_choice', question: 'El nen és feliç? 😊', options: ['Ho és?', 'N\'és?'], correctAnswer: 'Ho és?', explanation: 'Atribut (feliç) -> Ho. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b3_11', type: 'multiple_choice', question: 'Participa en el concurs. 🏆', options: ['Participa-hi', 'Participa\'n'], correctAnswer: 'Participa-hi', explanation: 'Participar EN -> Hi. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b3_12', type: 'multiple_choice', question: 'Ves a casa. 🏠', options: ['Ves-hi', 'Ves-en'], correctAnswer: 'Ves-hi', explanation: 'Anar A lloc -> Hi. ✅', difficulty: 1, course: '4C' },
+    { id: 'pr4c_b3_13', type: 'multiple_choice', question: 'Anem pel camí. 🛣️', options: ['Hi anem', 'En anem'], correctAnswer: 'Hi anem', explanation: 'Lloc (per on) -> Hi. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b3_14', type: 'multiple_choice', question: 'M\'hi veig amb cor. ❤️', options: ['M\'hi veig', 'M\'en veig'], correctAnswer: 'M\'hi veig', explanation: 'Veure\'s amb cor (locució) -> Hi. ✅', difficulty: 3, course: '4C' },
+    { id: 'pr4c_b3_15', type: 'multiple_choice', question: 'Queda\'t aquí. 📍', options: ['Queda-t\'hi', 'Queda-te\'n'], correctAnswer: 'Queda-t\'hi', explanation: 'Quedar-se A lloc -> Hi. ✅', difficulty: 2, course: '4C' },
+
+    // --- BLOC 4: INDIRECTE (CI) ---
+    { id: 'pr4c_b4_1', type: 'multiple_choice', question: 'Dona el llibre a la Maria. 👩', options: ['Dona-li', 'Dona-la'], correctAnswer: 'Dona-li', explanation: 'A qui? A ella (singular) -> Li. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b4_2', type: 'multiple_choice', question: 'Explica el conte als nens. 👶👶', options: ['Explica\'ls', 'Explica-lis'], correctAnswer: 'Explica\'ls', explanation: 'A qui? A ells (plural) -> Els. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b4_3', type: 'multiple_choice', question: 'Porto cafè als convidats. ☕', options: ['Els porto cafè', 'Lis porto cafè'], correctAnswer: 'Els porto cafè', explanation: 'CI Plural -> Els. "Lis" no existeix. ❌', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b4_4', type: 'multiple_choice', question: 'Escriu al jutge. ⚖️', options: ['Escriu-li', 'Escriu-lo'], correctAnswer: 'Escriu-li', explanation: 'CI Singular -> Li. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b4_5', type: 'multiple_choice', question: 'Digueu als veïns que baixin. 🗣️', options: ['Digueu-los', 'Digueu-vos'], correctAnswer: 'Digueu-los', explanation: 'CI Plural (imperatiu) -> -los. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b4_6', type: 'multiple_choice', question: 'Regala flors a la seva mare. 💐', options: ['Regala-li', 'Regala-la'], correctAnswer: 'Regala-li', explanation: 'CI Singular -> Li. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b4_7', type: 'multiple_choice', question: 'Telefona al client. 📞', options: ['Telefona-li', 'Telefona\'l'], correctAnswer: 'Telefona-li', explanation: 'Telefonar requereix CI -> Li. ✅', difficulty: 3, course: '4C' },
+    { id: 'pr4c_b4_8', type: 'multiple_choice', question: 'Envia un correu a tots. 📧', options: ['Envia\'ls un correu', 'Envia\'ls-hi un correu'], correctAnswer: 'Envia\'ls un correu', explanation: 'CI Plural -> Els. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b4_9', type: 'multiple_choice', question: 'No li diguis res (a ella). 🤫', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'LI serveix per a masculí i femení. ✅', difficulty: 1, course: '4C' },
+    { id: 'pr4c_b4_10', type: 'multiple_choice', question: 'Pregunta al policia. 👮', options: ['Pregunta-li', 'Pregunta\'l'], correctAnswer: 'Pregunta-li', explanation: 'Preguntar requereix CI -> Li. ✅', difficulty: 2, course: '4C' },
+
+    // --- BLOC 5: COMBINACIONS BINÀRIES ---
+    { id: 'pr4c_b5_1', type: 'multiple_choice', question: 'Em dones el llibre? 📖', options: ['Me\'l dones?', 'Em el dones?'], correctAnswer: 'Me\'l dones?', explanation: 'Em + El = Me\'l. ✅', difficulty: 3, course: '4C' },
+    { id: 'pr4c_b5_2', type: 'multiple_choice', question: 'Dona la poma a ell. 🍎', options: ['Dona-li-la', 'Dona-l\'hi'], correctAnswer: 'Dona-li-la', explanation: 'A la Comunitat Valenciana "Dona-li-la". A Catalunya Central sovint "Dona-l\'hi". Però la normativa admet "Li la". El test diu A. ✅', difficulty: 4, course: '4C' },
+    { id: 'pr4c_b5_3', type: 'multiple_choice', question: 'Porto els papers al cap. 👨‍💼', options: ['Li\'ls porto', 'Els hi porto'], correctAnswer: 'Li\'ls porto', explanation: 'CI (Li) + CD (Els) = Li\'ls. ✅', difficulty: 4, course: '4C' },
+    { id: 'pr4c_b5_4', type: 'multiple_choice', question: 'Explica la història als nens. 📖', options: ['Explica\'ls-la', 'Explica-lis-la'], correctAnswer: 'Explica\'ls-la', explanation: 'Els + La = Els la (Explica\'ls-la). ✅', difficulty: 3, course: '4C' },
+    { id: 'pr4c_b5_5', type: 'multiple_choice', question: 'Vull donar el regal a tu. 🎁', options: ['Te\'l vull donar', 'Vull donar-te\'l'], correctAnswer: 'Te\'l vull donar', explanation: 'Et + El = Te\'l. ✅', difficulty: 3, course: '4C' },
+    { id: 'pr4c_b5_6', type: 'multiple_choice', question: 'Ens porta les maletes. 🧳', options: ['Ens les porta', 'Nos les porta'], correctAnswer: 'Ens les porta', explanation: 'Ens + Les = Ens les. ✅', difficulty: 3, course: '4C' },
+    { id: 'pr4c_b5_7', type: 'multiple_choice', question: 'Dona pa al nen. 🥖', options: ['Dona-li\'n', 'Dona-n\'hi'], correctAnswer: 'Dona-li\'n', explanation: 'Li + En = Li\'n. ✅', difficulty: 4, course: '4C' },
+    { id: 'pr4c_b5_8', type: 'multiple_choice', question: 'Porta les claus a la veïna. 🔑', options: ['Porta-li-les', 'Porta-les-hi'], correctAnswer: 'Porta-li-les', explanation: 'Li + Les = Li les (Porta-li-les). ✅', difficulty: 4, course: '4C' },
+    { id: 'pr4c_b5_9', type: 'multiple_choice', question: 'Treu el cotxe del garatge. 🚗', options: ['Treu-l\'en', 'Treu-lo-hi'], correctAnswer: 'Treu-l\'en', explanation: 'El + En = L\'en (Treu-l\'en). ✅', difficulty: 4, course: '4C' },
+    { id: 'pr4c_b5_10', type: 'multiple_choice', question: 'No et mengis la sopa. 🍜', options: ['No te la mengis', 'No t\'ho mengis'], correctAnswer: 'No te la mengis', explanation: 'Et + La = Te la. ✅', difficulty: 3, course: '4C' },
+    { id: 'pr4c_b5_11', type: 'multiple_choice', question: 'Posa vi a la copa. 🍷', options: ['Posa-n\'hi', 'Posa-li\'n'], correctAnswer: 'Posa-n\'hi', explanation: 'En (vi) + Hi (a la copa) = N\'hi. ✅', difficulty: 4, course: '4C' },
+    { id: 'pr4c_b5_12', type: 'multiple_choice', question: 'Dona el llibre a ells. 📚', options: ['Dona\'ls-el', 'Dona-los-el'], correctAnswer: 'Dona\'ls-el', explanation: 'Els + El = Els el (Dona\'ls-el). ✅', difficulty: 4, course: '4C' },
+    { id: 'pr4c_b5_13', type: 'multiple_choice', question: 'Us deixo els apunts. 📝', options: ['Us els deixo', 'Vos els deixo'], correctAnswer: 'Us els deixo', explanation: 'Us + Els = Us els. ✅', difficulty: 3, course: '4C' },
+    { id: 'pr4c_b5_14', type: 'multiple_choice', question: 'Envia la carta al director. 📨', options: ['Envia-li-la', 'Envia-la-li'], correctAnswer: 'Envia-li-la', explanation: 'Li + La = Li la (Envia-li-la). ✅', difficulty: 4, course: '4C' },
+    { id: 'pr4c_b5_15', type: 'multiple_choice', question: 'No diguis això al pare. 🤐', options: ['No li ho diguis', 'No l\'hi diguis'], correctAnswer: 'No li ho diguis', explanation: 'Li + Ho = Li ho. ✅', difficulty: 4, course: '4C' },
+
+    // --- BLOC 6: APOSTROFACIÓ I GUIONET ---
+    { id: 'pr4c_b6_1', type: 'multiple_choice', question: 'Mira\'m. 👀', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Mira + em -> Mira\'m (acabat en vocal). ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b6_2', type: 'multiple_choice', question: 'L\'agafa. (El llibre) 📕', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'El + agafa -> L\'agafa. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b6_3', type: 'multiple_choice', question: 'La agafa. (La cadira) 🪑', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Incorrecte', explanation: 'Hauria de ser L\'agafa (La s\'apostrofa davant vocal). ❌', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b6_4', type: 'multiple_choice', question: 'Anar-hi. 📍', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Infinitiu + hi -> guionet. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b6_5', type: 'multiple_choice', question: 'Compra\'ls. 💰', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Compra + els -> Compra\'ls. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b6_6', type: 'multiple_choice', question: 'Se\'n va. 🚶', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Se + en -> Se\'n. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b6_7', type: 'multiple_choice', question: 'M\'agrada. ❤️', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Em + agrada -> M\'agrada. ✅', difficulty: 1, course: '4C' },
+    { id: 'pr4c_b6_8', type: 'multiple_choice', question: 'Ajudeu-nos. 🆘', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Ajudeu (vocal àtona/diftong) -> -nos. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b6_9', type: 'multiple_choice', question: 'T\'espero. ⏳', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Et + espero -> T\'espero. ✅', difficulty: 1, course: '4C' },
+    { id: 'pr4c_b6_10', type: 'multiple_choice', question: 'Renta-te. 🚿', options: ['Correcte', 'Incorrecte'], correctAnswer: 'Correcte', explanation: 'Renta + et -> Renta-te. ✅', difficulty: 2, course: '4C' },
+
+    // --- BLOC 7: IMPERATIUS I PROHIBICIONS ---
+    { id: 'pr4c_b7_1', type: 'multiple_choice', question: 'No em miris. 🚫', options: ['No em miris', 'No mira\'m'], correctAnswer: 'No em miris', explanation: 'Prohibició (Subjuntiu): Pronom davant. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b7_2', type: 'multiple_choice', question: 'Dona-m\'ho. 🎁', options: ['Dona-m\'ho', 'Dona-m\'el'], correctAnswer: 'Dona-m\'ho', explanation: 'Imperatiu afirmatiu: Pronom darrere. Neutro -> ho. ✅', difficulty: 2, course: '4C' },
+    { id: 'pr4c_b7_3', type: 'multiple_choice', question: 'No hi vagis. 🛑', options: ['No hi vagis', 'No ves-hi'], correctAnswer: 'No hi vagis', explanation: 'Prohibició: Pronom davant. ✅', difficulty: 2, course: '4C' }
+  ]
+}];

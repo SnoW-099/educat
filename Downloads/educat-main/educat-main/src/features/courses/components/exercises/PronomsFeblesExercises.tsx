@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ChevronRight, RefreshCw, Book, CheckCircle, XCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import { OrthographyExercise } from '@/components/orthography/OrthographyExercise';
+import { OrthographyExercise } from '@/features/courses/components/orthography/OrthographyExercise';
 import { allPronomsFeblesExercises } from '@/utils/pronomsFebles';
 import { insertPronomsFeblesExercises } from '@/utils/exerciseGeneration';
 

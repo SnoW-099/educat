@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { ArrowLeft, Check, X, Trophy, GripVertical, ChevronUp, ChevronDown, Eye } from "lucide-react";
-import { BeginnerExercise } from "@/utils/beginner/module1Data";
+import { BeginnerExercise } from "@/features/beginner/data/module1Data";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";

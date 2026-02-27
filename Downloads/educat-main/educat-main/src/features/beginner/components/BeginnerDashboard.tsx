@@ -5,20 +5,20 @@ import { ArrowLeft, ChevronRight, Type, Music, Quote, MessageSquare, Mic, Hash, 
 import { Card, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { BeginnerExerciseRunner } from "@/components/beginner/BeginnerExerciseRunner";
-import { MODULE_1_EXERCISES } from "@/utils/beginner/module1Data";
-import { MODULE_2_EXERCISES } from "@/utils/beginner/module2Data";
-import { MODULE_3_EXERCISES } from "@/utils/beginner/module3Data";
-import { MODULE_4_EXERCISES } from "@/utils/beginner/module4Data";
-import { MODULE_5_EXERCISES } from "@/utils/beginner/module5Data";
-import { MODULE_6_EXERCISES } from "@/utils/beginner/module6Data";
-import { MODULE_7_EXERCISES } from "@/utils/beginner/module7Data";
-import { MODULE_8_EXERCISES } from "@/utils/beginner/module8Data";
-import { MODULE_9_EXERCISES } from "@/utils/beginner/module9Data";
-import { MODULE_10_EXERCISES } from "@/utils/beginner/module10Data";
-import { MODULE_11_EXERCISES } from "@/utils/beginner/module11Data";
-import { MODULE_12_EXERCISES } from "@/utils/beginner/module12Data";
-import { MODULE_13_EXERCISES } from "@/utils/beginner/module13Data";
+import { BeginnerExerciseRunner } from "@/features/beginner/components/BeginnerExerciseRunner";
+import { MODULE_1_EXERCISES } from "@/features/beginner/data/module1Data";
+import { MODULE_2_EXERCISES } from "@/features/beginner/data/module2Data";
+import { MODULE_3_EXERCISES } from "@/features/beginner/data/module3Data";
+import { MODULE_4_EXERCISES } from "@/features/beginner/data/module4Data";
+import { MODULE_5_EXERCISES } from "@/features/beginner/data/module5Data";
+import { MODULE_6_EXERCISES } from "@/features/beginner/data/module6Data";
+import { MODULE_7_EXERCISES } from "@/features/beginner/data/module7Data";
+import { MODULE_8_EXERCISES } from "@/features/beginner/data/module8Data";
+import { MODULE_9_EXERCISES } from "@/features/beginner/data/module9Data";
+import { MODULE_10_EXERCISES } from "@/features/beginner/data/module10Data";
+import { MODULE_11_EXERCISES } from "@/features/beginner/data/module11Data";
+import { MODULE_12_EXERCISES } from "@/features/beginner/data/module12Data";
+import { MODULE_13_EXERCISES } from "@/features/beginner/data/module13Data";
 
 import { useModuleProgress } from "@/hooks/useModuleProgress";
 

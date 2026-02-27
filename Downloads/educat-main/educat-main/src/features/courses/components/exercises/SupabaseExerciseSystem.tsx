@@ -21,7 +21,7 @@ import { useEasterEgg } from '@/hooks/useEasterEgg';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { playDictationAudio, calculateExerciseScore } from '@/utils/exercises';
-import { AdvancedDictationControls } from '@/components/exercises/AdvancedDictationControls';
+import { AdvancedDictationControls } from '@/features/courses/components/exercises/AdvancedDictationControls';
 import { useToast } from '@/hooks/use-toast';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 
