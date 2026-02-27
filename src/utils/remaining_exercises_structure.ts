@@ -2,11 +2,7 @@
 // Per raons de longitud, crec tots els nivells restants de cop.
 // Total: 270 exercicis més (90 per nivell x 3 nivells)
 
-<<<<<<< HEAD
 import { CourseSection } from '@/features/courses/data/courseExercises';
-=======
-import { CourseSection } from './courseExercises';
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
 
 // Importo tot el contingut existent de 4E i 4D...
 // (el fitxer principal ja té aquests exercicis)

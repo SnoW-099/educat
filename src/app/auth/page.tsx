@@ -14,10 +14,7 @@ export default function Auth() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
-<<<<<<< HEAD
     const [role, setRole] = useState<'student' | 'professor'>('student');
-=======
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
     const [loading, setLoading] = useState(false);
     const { toast } = useToast();
     const router = useRouter();
@@ -89,11 +86,7 @@ export default function Auth() {
                     emailRedirectTo: `${window.location.origin}/auth/callback`,
                     data: {
                         name,
-<<<<<<< HEAD
                         role: role === 'professor' ? 'professor_pending' : 'student',
-=======
-                        role: 'student',
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
                     }
                 }
             });
@@ -335,7 +328,6 @@ export default function Auth() {
                                         </div>
 
                                         <div className="space-y-3">
-<<<<<<< HEAD
                                             <Label className="text-slate-700 dark:text-slate-300 font-bold text-sm ml-1">Sóc...</Label>
                                             <div className="flex gap-3">
                                                 <Button
@@ -360,8 +352,6 @@ export default function Auth() {
                                         </div>
 
                                         <div className="space-y-3">
-=======
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
                                             <Label className="text-slate-700 dark:text-slate-300 font-bold text-sm ml-1">Email</Label>
                                             <Input
                                                 type="email"

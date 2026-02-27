@@ -34,59 +34,63 @@ export const StudentStatistics = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Card className="group relative overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer h-full flex flex-col justify-between">
-          <CardHeader className="pb-2">
+        <Card className="group relative overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm hover:border-blue-500/30 hover:shadow-[0_8px_30px_rgba(59,130,246,0.1)] transition-all duration-300 cursor-pointer h-full flex flex-col justify-between">
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent group-hover:via-blue-500/50 transition-colors duration-500" />
+          <CardHeader className="pb-2 relative z-10">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-md bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-100 dark:border-slate-600">
-                  <BarChart3 className="h-4 w-4" />
+                <div className="p-2.5 rounded-xl bg-blue-50/80 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border border-blue-100/50 dark:border-blue-800/30 group-hover:scale-110 transition-transform duration-300">
+                  <BarChart3 className="h-5 w-5 drop-shadow-sm" />
                 </div>
                 <div>
-                  <CardTitle className="text-sm font-semibold text-slate-800 dark:text-white">El teu Progrés</CardTitle>
-                  <CardDescription className="text-xs text-slate-500 dark:text-slate-400">Visió general</CardDescription>
+                  <CardTitle className="text-base font-bold text-slate-800 dark:text-white">El teu Progrés</CardTitle>
+                  <CardDescription className="text-xs font-medium text-slate-500 dark:text-slate-400 drop-shadow-sm">Visió general</CardDescription>
                 </div>
               </div>
-              <ChevronRight className="h-4 w-4 text-slate-300 group-hover:text-slate-600 transition-colors" />
+              <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-blue-500 transition-all group-hover:translate-x-1 duration-300" />
             </div>
           </CardHeader>
 
-          <CardContent className="space-y-6 pt-2 flex-1 flex flex-col justify-between">
-            <div className="grid grid-cols-3 gap-4 divide-x divide-slate-100 dark:divide-slate-600">
-              <div className="text-center px-2">
-                <div className="text-xl font-bold text-slate-800 dark:text-white">{completedExercises}</div>
-                <p className="text-[10px] uppercase tracking-wider text-slate-400 font-medium mt-1">Exercicis</p>
+          <CardContent className="space-y-6 pt-2 flex-1 flex flex-col justify-between relative z-10">
+            <div className="grid grid-cols-3 gap-4 divide-x divide-slate-200 dark:divide-slate-700 border border-slate-100 dark:border-slate-700/50 bg-slate-50/50 dark:bg-slate-800/50 rounded-xl p-3">
+              <div className="text-center px-1">
+                <div className="text-xl font-black text-slate-800 dark:text-white">{completedExercises}</div>
+                <p className="text-[10px] uppercase font-bold tracking-wider text-slate-500 mt-1">Exercicis</p>
               </div>
 
-              <div className="text-center px-2">
-                <div className="text-xl font-bold text-slate-800 dark:text-white">{accuracy}%</div>
-                <p className="text-[10px] uppercase tracking-wider text-slate-400 font-medium mt-1">Precisió</p>
+              <div className="text-center px-1">
+                <div className="text-xl font-black text-slate-800 dark:text-white">{accuracy}%</div>
+                <p className="text-[10px] uppercase font-bold tracking-wider text-slate-500 mt-1">Precisió</p>
               </div>
 
-              <div className="text-center px-2">
-                <div className="text-xl font-bold text-slate-800 dark:text-white">{xpPoints}</div>
-                <p className="text-[10px] uppercase tracking-wider text-slate-400 font-medium mt-1">XP</p>
+              <div className="text-center px-1">
+                <div className="text-xl font-black text-slate-800 dark:text-white">{xpPoints}</div>
+                <p className="text-[10px] uppercase font-bold tracking-wider text-slate-500 mt-1">XP</p>
               </div>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2.5 bg-transparent pl-1">
               <div className="flex items-center justify-between text-xs">
-                <span className="font-medium text-slate-600 dark:text-slate-300">Progrés diari</span>
-                <span className="text-slate-500">{Math.round(exerciseProgress)}%</span>
+                <span className="font-semibold text-slate-700 dark:text-slate-300">Progrés diari</span>
+                <span className="font-bold text-blue-600 dark:text-blue-400">{Math.round(exerciseProgress)}%</span>
               </div>
-              <div className="h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+              <div className="h-2 bg-slate-100 dark:bg-slate-700/50 rounded-full overflow-hidden border border-slate-200/50 dark:border-slate-800/50 shadow-inner">
                 <div
-                  className="h-full bg-slate-800 rounded-full transition-all duration-500 ease-out"
+                  className="h-full bg-blue-500 rounded-full transition-all duration-700 ease-out shadow-sm"
                   style={{ width: `${exerciseProgress}%` }}
                 />
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-2 border-t border-slate-50 dark:border-slate-700">
+            <div className="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-700 pl-1 mt-auto">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                <span className="text-[10px] font-medium text-slate-500 uppercase tracking-wide">Actiu</span>
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Actiu</span>
               </div>
-              <span className="text-[10px] font-medium text-slate-400">
+              <span className="text-[11px] font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-700/50 px-2 py-0.5 rounded-full border border-slate-200/50 dark:border-slate-600/50">
                 {orthographyCompleted} ortografia
               </span>
             </div>

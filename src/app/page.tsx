@@ -20,7 +20,6 @@ export default function Index() {
     useEffect(() => {
         if (!loading) {
             if (user && profile) {
-<<<<<<< HEAD
                 if (profile.role === 'admin') {
                     router.replace("/admin");
                 } else if (profile.role === 'professor') {
@@ -30,9 +29,6 @@ export default function Index() {
                 } else {
                     router.replace("/studentdashboard");
                 }
-=======
-                router.replace("/studentdashboard");
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
             } else {
                 router.replace("/home");
             }

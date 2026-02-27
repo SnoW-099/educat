@@ -94,63 +94,64 @@ export const StreakWidget = ({ userId }: StreakWidgetProps) => {
 
     return (
         <Card
-            className={`relative overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 h-full flex flex-col`}
+            className={`group relative overflow-hidden cursor-pointer flex flex-col transition-all duration-500 hover:shadow-lg dark:hover:shadow-[0_8px_30px_rgba(249,115,22,0.1)] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-orange-400 dark:hover:border-orange-500/50 h-full`}
             onMouseEnter={() => setIsFlaming(true)}
             onMouseLeave={() => setIsFlaming(false)}
         >
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent group-hover:via-orange-500/50 transition-colors duration-500" />
+            
             {/* Glow effect for high streaks */}
             {streak >= 7 && (
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 animate-pulse" />
             )}
 
             <div className="p-6 relative z-10 flex flex-col h-full justify-between">
                 <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
                         {/* Flame icon with animation */}
-                        <div className="relative">
+                        <div className="relative p-2.5 rounded-xl bg-orange-50/80 dark:bg-orange-900/20 border border-orange-100/50 dark:border-orange-800/30 group-hover:scale-110 transition-transform duration-300">
                             <Flame
-                                className={`h-10 w-10 transition-all duration-300 ${getFlameColor()} ${isFlaming && streak > 0 ? 'animate-bounce' : ''}`}
+                                className={`h-6 w-6 transition-all duration-300 ${getFlameColor()} ${isFlaming && streak > 0 ? 'animate-bounce' : ''}`}
                                 style={{
-                                    filter: streak > 0 ? 'drop-shadow(0 0 12px currentColor)' : 'none'
+                                    filter: streak > 0 ? 'drop-shadow(0 0 8px currentColor)' : 'none'
                                 }}
                             />
                             {streak > 0 && (
-                                <div className="absolute -top-1 -right-1 bg-slate-900 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-lg">
+                                <div className="absolute -top-2 -right-2 bg-foreground text-background text-[10px] font-black rounded-full h-5 w-5 flex items-center justify-center shadow-lg border-2 border-background">
                                     {streak}
                                 </div>
                             )}
                         </div>
 
                         <div>
-                            <p className="text-lg font-bold text-slate-900 dark:text-white">
+                            <p className="text-base font-bold text-foreground drop-shadow-sm">
                                 {streak > 0 ? `${streak} ${streak === 1 ? 'dia' : 'dies'}` : 'Sense ratxa'}
                             </p>
-                            <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                            <p className="text-xs text-muted-foreground font-medium drop-shadow-sm">
                                 {getStreakMessage()}
                             </p>
                         </div>
                     </div>
 
                     {/* Status indicator */}
-                    <div className={`px-2 py-1 rounded-full text-xs font-semibold ${todayCompleted
-                        ? 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400'
-                        : 'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-400'
+                    <div className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider ${todayCompleted
+                        ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400'
+                        : 'bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400'
                         }`}>
                         {todayCompleted ? '✓ Avui' : 'Pendent'}
                     </div>
                 </div>
 
-
                 {/* Stats row */}
                 {longestStreak > 0 && (
-                    <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-200/50 dark:border-slate-600">
-                        <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
-                            <TrendingUp className="w-3 h-3" />
-                            <span>Millor: <strong className="text-slate-700 dark:text-slate-200">{longestStreak} dies</strong></span>
+                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/40 pl-1">
+                        <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
+                            <TrendingUp className="w-4 h-4 text-orange-400" />
+                            <span>Millor: <strong className="text-foreground">{longestStreak} dies</strong></span>
                         </div>
                         {streak >= longestStreak && streak > 1 && (
-                            <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-semibold">
-                                🏆 Rècord!
+                            <span className="text-[10px] bg-amber-500/10 border border-amber-500/20 text-amber-600 px-2 py-0.5 rounded-md font-bold uppercase tracking-wider">
+                                🏆 Rècord
                             </span>
                         )}
                     </div>

@@ -275,34 +275,40 @@ export const EnhancedOrthographySystem = ({
 
           {/* B2 Card */}
           <Card
-            className="cursor-pointer bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl hover:shadow-blue-100/50 dark:hover:shadow-blue-900/30 hover:-translate-y-1 transition-all duration-300 ease-out group"
+            className="group relative overflow-hidden cursor-pointer flex flex-col hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-500 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
             onClick={() => setCourseFilter('B2')}
           >
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl mx-auto mb-5 flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-800/50 group-hover:scale-110 transition-all duration-300">
-                <BookOpen className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-blue-500/40 to-transparent group-hover:via-blue-500 transition-colors duration-500" />
+            
+            <CardContent className="p-10 text-center relative z-10 flex flex-col items-center">
+              <div className="w-20 h-20 bg-blue-50/80 dark:bg-blue-900/30 backdrop-blur-md rounded-2xl shadow-sm border border-blue-100/50 dark:border-blue-800/30 mb-6 flex items-center justify-center group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500 ease-out">
+                <BookOpen className="w-10 h-10 text-blue-600 dark:text-blue-400 drop-shadow-sm" />
               </div>
-              <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">B2</h3>
-              <p className="text-slate-500 dark:text-slate-400 mb-6">780+ exercicis</p>
-              <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-200 dark:hover:shadow-blue-900/50">
-                Començar
+              <h3 className="text-4xl font-extrabold tracking-tight text-slate-800 dark:text-white mb-3">B2</h3>
+              <p className="text-slate-500 dark:text-slate-400 font-medium mb-8 bg-blue-50/50 dark:bg-slate-700/50 px-4 py-1.5 rounded-full text-sm drop-shadow-sm">780+ exercicis</p>
+              <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/20 transition-all duration-300 group-hover:shadow-blue-500/40 text-base">
+                Començar B2
               </Button>
             </CardContent>
           </Card>
 
           {/* C1 Card */}
           <Card
-            className="cursor-pointer bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl hover:shadow-blue-100/50 dark:hover:shadow-blue-900/30 hover:-translate-y-1 transition-all duration-300 ease-out group"
+            className="group relative overflow-hidden cursor-pointer flex flex-col hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-500 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] dark:hover:shadow-[0_20px_40px_rgba(79,70,229,0.15)] bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
             onClick={() => setCourseFilter('C1')}
           >
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl mx-auto mb-5 flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-800/50 group-hover:scale-110 transition-all duration-300">
-                <GraduationCap className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-indigo-500/40 to-transparent group-hover:via-indigo-500 transition-colors duration-500" />
+            
+            <CardContent className="p-10 text-center relative z-10 flex flex-col items-center">
+              <div className="w-20 h-20 bg-indigo-50/80 dark:bg-indigo-900/30 backdrop-blur-md rounded-2xl shadow-sm border border-indigo-100/50 dark:border-indigo-800/30 mb-6 flex items-center justify-center group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500 ease-out">
+                <GraduationCap className="w-10 h-10 text-indigo-600 dark:text-indigo-400 drop-shadow-sm" />
               </div>
-              <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">C1</h3>
-              <p className="text-slate-500 dark:text-slate-400 mb-6">+750 exercicis</p>
-              <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-200 dark:hover:shadow-blue-900/50">
-                Començar
+              <h3 className="text-4xl font-extrabold tracking-tight text-slate-800 dark:text-white mb-3">C1</h3>
+              <p className="text-slate-500 dark:text-slate-400 font-medium mb-8 bg-indigo-50/50 dark:bg-slate-700/50 px-4 py-1.5 rounded-full text-sm drop-shadow-sm">+750 exercicis</p>
+              <Button className="w-full h-12 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg shadow-indigo-500/20 transition-all duration-300 group-hover:shadow-indigo-500/40 text-base">
+                Començar C1
               </Button>
             </CardContent>
           </Card>
@@ -431,19 +437,29 @@ export const EnhancedOrthographySystem = ({
             return (
               <Card
                 key={section.id}
-                className="group card-premium cursor-pointer animate-scale-in glow-on-hover text-slate-900 dark:text-white bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700"
+                className="group relative overflow-hidden cursor-pointer flex flex-col transition-all duration-500 hover:shadow-lg dark:hover:shadow-[0_8px_30px_rgba(59,130,246,0.1)] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500/50"
                 onClick={() => setSelectedSection(section)}
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <CardHeader className="space-y-3">
-                  <div className="flex items-start justify-between gap-2">
-                    <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors leading-tight">
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent group-hover:via-blue-500/50 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <CardHeader className="space-y-4 relative z-10 pb-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <CardTitle className="text-xl font-bold text-slate-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-tight">
                       {section.title}
                     </CardTitle>
+                    <div className="p-2 rounded-xl bg-slate-50 dark:bg-slate-700/50 text-slate-400 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/30 group-hover:text-blue-500 transition-all duration-300">
+                      <ChevronRight className="w-4 h-4" />
+                    </div>
                   </div>
 
                   <div className="flex gap-2 flex-wrap">
-                    <Badge variant="outline" className={getCategoryBadgeStyle(section.category)}>
+                    <Badge variant="outline" className="bg-slate-100/50 dark:bg-slate-700/30 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-600/50 font-semibold tracking-wide flex items-center gap-1.5 px-2.5 py-0.5 shadow-sm">
+                      {(() => {
+                        const Icon = getCategoryIcon(section.category);
+                        return <Icon className="w-3 h-3 text-blue-500 opacity-80" />;
+                      })()}
                       {getCategoryLabel(section.category)}
                     </Badge>
                   </div>
@@ -453,15 +469,16 @@ export const EnhancedOrthographySystem = ({
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent>
-                  <div className="space-y-4">
+                <CardContent className="mt-auto relative z-10 pt-0">
+                  <div className="pt-4 border-t border-slate-100 dark:border-slate-700/50 space-y-4">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-slate-500 dark:text-slate-500 font-medium">
+                      <span className="text-slate-500 font-medium flex items-center gap-1.5">
+                        <BookOpen className="w-3.5 h-3.5 text-slate-400" />
                         {section.exercises.length} exercicis
                       </span>
                       {completedCount > 0 && (
-                        <span className="text-emerald-600 font-bold flex items-center gap-1.5">
-                          <CheckCircle className="h-4 w-4" />
+                        <span className="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1.5 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-100 dark:border-emerald-500/20 text-xs tracking-wider uppercase">
+                          <CheckCircle className="h-3 w-3" />
                           {completedCount}/{section.exercises.length}
                         </span>
                       )}
@@ -469,22 +486,22 @@ export const EnhancedOrthographySystem = ({
 
                     {progressPercentage > 0 && (
                       <div className="space-y-2">
-                        <div className="h-2.5 bg-slate-200 dark:bg-slate-600 rounded-full overflow-hidden">
+                        <div className="h-2 bg-slate-100 dark:bg-slate-700/50 rounded-full overflow-hidden border border-slate-200/50 dark:border-slate-800/50 shadow-inner">
                           <div
-                            className="h-full bg-slate-900 dark:bg-blue-500 transition-all duration-500"
+                            className={`h-full rounded-full transition-all duration-1000 ease-out shadow-sm ${progressPercentage === 100 ? 'bg-emerald-500' : 'bg-blue-500'}`}
                             style={{ width: `${progressPercentage}%` }}
                           />
                         </div>
-                        <div className="flex justify-between items-center text-xs">
-                          <span className="text-slate-500 dark:text-slate-400 font-medium">Progrés</span>
-                          <span className="font-bold">{progressPercentage}%</span>
+                        <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider">
+                          <span className="text-slate-400">Progrés</span>
+                          <span className={`${progressPercentage === 100 ? 'text-emerald-600 dark:text-emerald-400' : 'text-blue-600 dark:text-blue-400'}`}>{progressPercentage}%</span>
                         </div>
                       </div>
                     )}
 
                     {progressPercentage === 100 && (
-                      <div className="flex items-center justify-center gap-2 text-emerald-700 text-sm font-bold p-3 bg-emerald-50 rounded-lg border border-emerald-200">
-                        <Trophy className="h-5 w-5" />
+                      <div className="flex items-center justify-center gap-2 text-emerald-700 dark:text-emerald-400 text-sm font-bold p-2.5 bg-emerald-50 dark:bg-emerald-500/10 rounded-xl border border-emerald-200 dark:border-emerald-500/20 shadow-sm">
+                        <Trophy className="h-4 w-4" />
                         <span>Completat!</span>
                       </div>
                     )}

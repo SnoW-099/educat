@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, BookOpen, CheckCircle, Award, ChevronLeft, ArrowRight } from 'lucide-react';
+import { ChevronRight, BookOpen, CheckCircle, Award, ChevronLeft, ArrowRight, GraduationCap, Hash } from 'lucide-react';
 import { OrthographySection as SectionType } from '@/features/courses/data/catalanOrthographyData';
 import { XPOrthographyExercise } from './XPOrthographyExercise';
 
@@ -61,6 +61,15 @@ export const OrthographySection = ({
     }
   };
 
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'ortografia': return BookOpen;
+      case 'morfosintaxi': return GraduationCap;
+      case 'lexic': return Hash;
+      default: return BookOpen;
+    }
+  };
+
   const getCategoryLabel = (category: string) => {
     switch (category) {
       case 'ortografia': return 'Ortografia';
@@ -72,51 +81,58 @@ export const OrthographySection = ({
 
   if (!showExercises) {
     return (
-      <Card className="group hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden relative border-none bg-white/5 backdrop-blur-md border border-white/10"
+      <Card className="group hover:shadow-lg dark:hover:shadow-[0_8px_30px_rgba(59,130,246,0.1)] transition-all duration-300 cursor-pointer overflow-hidden relative border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-blue-400 dark:hover:border-blue-500/50"
         onClick={() => setShowExercises(true)}>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-        <CardHeader>
+        <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent group-hover:via-blue-500/50 transition-colors duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <CardHeader className="pb-4">
           <div className="flex items-center justify-between relative z-10">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <CardTitle className="text-xl group-hover:text-primary transition-colors text-white">
+                <CardTitle className="text-xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-slate-800 dark:text-white leading-tight">
                   {section.title}
                 </CardTitle>
-                <Badge className={`${getCategoryColor(section.category)} border-none`}>
+                <Badge className={`${getCategoryColor(section.category)} border-none shadow-sm px-2.5 py-0.5 text-xs font-semibold tracking-wide flex items-center gap-1`}>
+                  {(() => {
+                    const Icon = getCategoryIcon(section.category);
+                    return <Icon className="w-3 h-3 opacity-80" />;
+                  })()}
                   {getCategoryLabel(section.category)}
                 </Badge>
               </div>
-              <CardDescription className="text-sm leading-relaxed text-slate-400">
+              <CardDescription className="text-sm leading-relaxed text-slate-500 dark:text-slate-400 line-clamp-2">
                 {section.description}
               </CardDescription>
             </div>
-            <ChevronRight className="h-6 w-6 text-slate-500 group-hover:text-primary transition-colors" />
+            <div className="p-2 rounded-xl bg-slate-50 dark:bg-slate-700/50 text-slate-400 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/30 group-hover:text-blue-500 transition-all duration-300 ml-4 flex-shrink-0">
+              <ChevronRight className="h-5 w-5" />
+            </div>
           </div>
         </CardHeader>
 
-        <CardContent className="relative z-10">
-          <div className="space-y-4">
+        <CardContent className="relative z-10 pt-0">
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-700/50 space-y-4">
             <div className="flex items-center justify-between text-sm">
-              <div className="flex items-center gap-2 text-slate-400">
-                <BookOpen className="h-4 w-4" />
+              <div className="flex items-center gap-1.5 text-slate-500 font-medium">
+                <BookOpen className="h-4 w-4 text-slate-400" />
                 <span>{section.exercises.length} exercicis</span>
               </div>
               {completedCount > 0 && (
-                <div className="flex items-center gap-2 text-green-400 font-bold">
-                  <CheckCircle className="h-4 w-4" />
-                  <span>{completedCount}/{section.exercises.length} completats</span>
+                <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-100 dark:border-emerald-500/20 text-xs tracking-wider uppercase">
+                  <CheckCircle className="h-3.5 w-3.5" />
+                  <span>{completedCount}/{section.exercises.length}</span>
                 </div>
               )}
             </div>
 
             {progressPercentage > 0 && (
               <div className="space-y-2">
-                <div className="flex justify-between items-center text-[10px] uppercase tracking-widest text-slate-500 font-bold">
-                  <span>Progrés</span>
-                  <span>{progressPercentage}%</span>
+                <div className="h-2 w-full bg-slate-100 dark:bg-slate-700/50 rounded-full overflow-hidden border border-slate-200/50 dark:border-slate-800/50 shadow-inner">
+                  <div className={`h-full rounded-full transition-all duration-1000 ease-out shadow-sm ${progressPercentage === 100 ? 'bg-emerald-500' : 'bg-blue-500'}`} style={{ width: `${progressPercentage}%` }} />
                 </div>
-                <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                  <div className="h-full bg-primary transition-all duration-500" style={{ width: `${progressPercentage}%` }} />
+                <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider">
+                  <span className="text-slate-400">Progrés</span>
+                  <span className={`${progressPercentage === 100 ? 'text-emerald-600 dark:text-emerald-400' : 'text-blue-600 dark:text-blue-400'}`}>{progressPercentage}%</span>
                 </div>
               </div>
             )}

@@ -164,29 +164,31 @@ export const DailyWordGame = () => {
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-                <Card className="group relative overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer h-full flex flex-col justify-between">
-                    {/* Background Gradient */}
-                    <div className={`absolute inset-0 transition-colors ${isCompleted ? 'bg-gradient-to-br from-amber-50 to-orange-50/50 dark:from-amber-900/20 dark:to-orange-900/10' : 'bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-800 group-hover:from-blue-50/50 dark:group-hover:from-blue-900/20 group-hover:to-white dark:group-hover:to-slate-800'}`} />
+                <Card className="group relative overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm hover:border-blue-500/30 hover:shadow-lg dark:hover:shadow-[0_8px_30px_rgba(59,130,246,0.1)] transition-all duration-500 cursor-pointer h-full flex flex-col justify-between">
+                    {/* Background Glow */}
+                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent group-hover:via-blue-500/50 transition-colors duration-500" />
+                    
+                    <div className={`absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100 ${isCompleted ? 'bg-gradient-to-br from-amber-500/5 to-orange-500/5' : 'bg-gradient-to-br from-blue-500/5 to-indigo-500/5'}`} />
 
-                    <CardContent className="p-6 relative flex flex-col items-center justify-center h-full text-center space-y-4">
-                        <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 ${isCompleted ? 'bg-amber-100 dark:bg-amber-900/50 scale-110' : 'bg-blue-100/50 dark:bg-blue-900/30 group-hover:scale-110 group-hover:bg-blue-100 dark:group-hover:bg-blue-800/50'}`}>
+                    <CardContent className="p-6 relative z-10 flex flex-col items-center justify-center h-full text-center space-y-4">
+                        <div className={`relative p-3 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out border ${isCompleted ? 'bg-amber-50/80 dark:bg-amber-900/20 border-amber-200/50 dark:border-amber-800/30 scale-110' : 'bg-blue-50/80 dark:bg-blue-900/20 border-blue-100/50 dark:border-blue-800/30 group-hover:scale-110 group-hover:-translate-y-1'}`}>
                             {isCompleted ? (
-                                <Trophy className="w-8 h-8 text-amber-500 animate-pulse" />
+                                <Trophy className="w-8 h-8 text-amber-500 animate-pulse drop-shadow-sm" />
                             ) : (
                                 <div className="grid grid-cols-2 gap-1 rotate-45 scale-75">
-                                    <div className="w-6 h-6 bg-blue-500 rounded-md"></div>
-                                    <div className="w-6 h-6 bg-blue-300 rounded-md"></div>
-                                    <div className="w-6 h-6 bg-blue-300 rounded-md"></div>
-                                    <div className="w-6 h-6 bg-slate-200 rounded-md"></div>
+                                    <div className="w-6 h-6 bg-blue-500 rounded-md shadow-sm"></div>
+                                    <div className="w-6 h-6 bg-blue-400/80 rounded-md shadow-sm"></div>
+                                    <div className="w-6 h-6 bg-blue-400/80 rounded-md shadow-sm"></div>
+                                    <div className="w-6 h-6 bg-blue-200 dark:bg-blue-800/50 rounded-md shadow-sm"></div>
                                 </div>
                             )}
                         </div>
 
                         <div>
-                            <h3 className={`text-xl font-bold mb-1 ${isCompleted ? 'text-amber-700 dark:text-amber-400' : 'text-slate-800 dark:text-white'}`}>
+                            <h3 className={`text-xl font-extrabold tracking-tight mb-1 drop-shadow-sm ${isCompleted ? 'text-amber-600 dark:text-amber-400' : 'text-foreground'}`}>
                                 {isCompleted ? 'Completat!' : 'Paraulògic'}
                             </h3>
-                            <p className={`text-sm font-medium ${isCompleted ? 'text-amber-600/80 dark:text-amber-400/80' : 'text-slate-500 dark:text-slate-400'}`}>
+                            <p className="text-sm font-medium text-muted-foreground drop-shadow-sm">
                                 {isCompleted ? (
                                     <span>Torna demà per més reptes</span>
                                 ) : (
@@ -197,17 +199,17 @@ export const DailyWordGame = () => {
 
                         {/* Mini progress bar or Streak Badge */}
                         {isCompleted ? (
-                            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/60 border border-amber-200/50 rounded-full shadow-sm">
-                                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                                <span className="text-xs font-bold text-amber-700">Ratxa: {paraulogicStreak} dies</span>
+                            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-md shadow-sm mt-2">
+                                <Sparkles className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
+                                <span className="text-[11px] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider">Ratxa: {paraulogicStreak} dies</span>
                             </div>
                         ) : (
-                            <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
-                                <div className="h-full bg-blue-500 transition-all duration-500" style={{ width: `${progressPerc}%` }} />
+                            <div className="w-full h-2 bg-secondary/50 rounded-full overflow-hidden border border-border/20 shadow-inner mt-2">
+                                <div className="h-full bg-blue-500 transition-all duration-700 ease-out shadow-sm" style={{ width: `${progressPerc}%` }} />
                             </div>
                         )}
 
-                        <Button variant="ghost" className={`${isCompleted ? 'text-amber-600 hover:bg-amber-100' : 'text-blue-600 group-hover:bg-blue-50'} font-semibold`}>
+                        <Button variant="ghost" className={`mt-2 font-bold transition-all duration-300 ${isCompleted ? 'text-amber-600 hover:bg-amber-500/10 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300' : 'text-primary hover:bg-primary/10 hover:text-primary dark:hover:text-primary/80 group-hover:bg-primary/5'}`}>
                             {isCompleted ? 'Veure resum' : 'Jugar ara'} <Play className="w-4 h-4 ml-2 fill-current" />
                         </Button>
                     </CardContent>

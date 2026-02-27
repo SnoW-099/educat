@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
-<<<<<<< HEAD
 export const useEasterEgg = (userRole: string) => {
-=======
-export const useEasterEgg = (userRole: 'professor' | 'student') => {
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
   const [showAnswers, setShowAnswers] = useState(false);
   const [multipleAnswers, setMultipleAnswers] = useState<string[]>([]);
   const { toast } = useToast();
