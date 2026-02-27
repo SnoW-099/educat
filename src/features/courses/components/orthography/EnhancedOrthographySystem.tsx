@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
@@ -6,7 +6,7 @@ import { Progress } from '@/components/ui/progress';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Search, BookOpen, GraduationCap, Hash, Trophy, Filter, Clock, CheckCircle, XCircle, ChevronRight, TrendingUp } from 'lucide-react';
+import { Search, BookOpen, GraduationCap, Hash, Trophy, Filter, Clock, CheckCircle, XCircle } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { getExercisesByCourse, CourseSection } from '@/features/courses/data/courseExercises';
 import { OrthographySection } from './OrthographySection';
@@ -36,24 +36,11 @@ export const EnhancedOrthographySystem = ({
   const [sortBy, setSortBy] = useState<'title' | 'progress' | 'difficulty'>('title');
   const [courseFilter, setCourseFilter] = useState<'B2' | 'C1' | ''>('');
   const [userProgress, setUserProgress] = useState<Map<string, Set<string>>>(new Map());
-  const searchInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
   const { showAnswers, generateAlternativeAnswers } = useEasterEgg(userRole);
 
   // Use the new real stats hook
   const { recordExercise } = useRealStats(userId || 'guest');
-
-  // Ctrl+K to search
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.code === 'KeyK') && courseFilter) {
-        e.preventDefault();
-        searchInputRef.current?.focus();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [courseFilter]);
 
   // Load user progress from localStorage
   useEffect(() => {
@@ -313,102 +300,69 @@ export const EnhancedOrthographySystem = ({
 
   return (
     <div className="space-y-6">
-      {/* Premium Course Explorer Header */}
-      <div className="relative space-y-8 animate-in fade-in slide-in-from-top-4 duration-700">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-2">
-          <div className="flex items-center gap-4 group">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setCourseFilter('')}
-              className="px-3 h-10 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 text-slate-600 dark:text-slate-400 font-black tracking-tight transition-all active:scale-95 group/back"
-            >
-              <ChevronRight className="w-4 h-4 mr-1 rotate-180 group-hover/back:-translate-x-1 transition-transform" />
-              <span>Canviar</span>
-            </Button>
-            
-            <div className="h-10 px-4 flex items-center gap-3 bg-primary/10 dark:bg-primary/20 border border-primary/20 rounded-xl backdrop-blur-sm">
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <span className="text-xs font-black uppercase tracking-widest text-primary">
-                Curs: <span className="text-sm font-black text-slate-900 dark:text-white mr-1">{courseFilter}</span>
-              </span>
-            </div>
-          </div>
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setCourseFilter('')}
+          >
+            ← Canviar
+          </Button>
+          <span className="text-sm font-mono text-muted-foreground">
+            Curs: <span className="text-foreground font-semibold">{courseFilter}</span>
+          </span>
         </div>
+      </div>
 
-        {/* Global Control Bar */}
-        <div className="p-2 sm:p-3 bg-white/50 dark:bg-slate-900/40 backdrop-blur-2xl border border-slate-200 dark:border-white/5 rounded-[2rem] shadow-2xl space-y-3 sm:space-y-4">
-          {/* Search Row */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-primary/5 rounded-2xl opacity-0 group-focus-within:opacity-100 transition-opacity" />
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400 group-focus-within:text-primary transition-colors duration-300" />
-            <Input
-              ref={searchInputRef}
-              placeholder="Cerca un tema o secció..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="h-14 sm:h-16 pl-12 pr-6 bg-slate-50 dark:bg-black/20 border-slate-100 dark:border-white/5 rounded-2xl font-bold dark:text-white dark:placeholder:text-slate-600 focus:ring-2 focus:ring-primary/20 transition-all text-base"
-            />
-          </div>
+      {/* Filters and Search */}
+      <div className="space-y-4">
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input
+            placeholder="Cerca seccions..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="pl-10"
+          />
+        </div>
+        <div className="flex flex-wrap items-center gap-4">
+          <Tabs value={activeCategory} onValueChange={(value) => setActiveCategory(value as any)}>
+            <TabsList>
+              <TabsTrigger value="all">Totes</TabsTrigger>
+              <TabsTrigger value="ortografia">Ortografia</TabsTrigger>
+              <TabsTrigger value="gramàtica">Gramàtica</TabsTrigger>
+              <TabsTrigger value="lectura">Lectura</TabsTrigger>
+              <TabsTrigger value="escriptura">Escriptura</TabsTrigger>
+              <TabsTrigger value="vocabulari">Vocabulari</TabsTrigger>
+            </TabsList>
+          </Tabs>
 
-          {/* Filters Row */}
-          <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-3">
-            <Tabs 
-              value={activeCategory} 
-              onValueChange={(value) => setActiveCategory(value as any)}
-              className="flex-1"
-            >
-              <TabsList className="w-full flex h-auto p-1 bg-slate-100/80 dark:bg-white/5 rounded-xl border border-transparent dark:border-white/10 overflow-x-auto no-scrollbar justify-start sm:justify-center">
-                {[
-                  { id: 'all', label: 'Totes' },
-                  { id: 'ortografia', label: 'Ortografia' },
-                  { id: 'gramàtica', label: 'Gramàtica' },
-                  { id: 'lectura', label: 'Lectura' },
-                  { id: 'escriptura', label: 'Escriptura' },
-                  { id: 'vocabulari', label: 'Vocabulari' }
-                ].map(cat => (
-                  <TabsTrigger 
-                    key={cat.id} 
-                    value={cat.id}
-                    className="flex-1 min-w-fit px-4 py-2 text-[10px] sm:text-xs font-black uppercase tracking-tighter rounded-lg data-[state=active]:bg-white dark:data-[state=active]:bg-primary dark:data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm transition-all"
-                  >
-                    {cat.label}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </Tabs>
+          <div className="flex gap-2">
+            <Select value={difficultyFilter} onValueChange={(value) => setDifficultyFilter(value as any)}>
+              <SelectTrigger className="w-32">
+                <SelectValue placeholder="Dificultat" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Totes</SelectItem>
+                <SelectItem value="1">Fàcil</SelectItem>
+                <SelectItem value="2">Normal</SelectItem>
+                <SelectItem value="3">Difícil</SelectItem>
+                <SelectItem value="4">Master</SelectItem>
+              </SelectContent>
+            </Select>
 
-            <div className="flex gap-2">
-              <Select value={difficultyFilter} onValueChange={(value) => setDifficultyFilter(value as any)}>
-                <SelectTrigger className="h-11 sm:h-12 w-full lg:w-36 bg-slate-100 dark:bg-white/5 border-transparent dark:border-white/5 rounded-xl font-black text-[10px] uppercase tracking-tighter">
-                  <div className="flex items-center gap-2">
-                    <Filter className="w-3 h-3 text-primary" />
-                    <SelectValue placeholder="Dificultat" />
-                  </div>
-                </SelectTrigger>
-                <SelectContent className="rounded-xl border-white/5 bg-slate-900/95 backdrop-blur-xl">
-                  <SelectItem value="all">Totes</SelectItem>
-                  <SelectItem value="1">Fàcil</SelectItem>
-                  <SelectItem value="2">Normal</SelectItem>
-                  <SelectItem value="3">Difícil</SelectItem>
-                  <SelectItem value="4">Master</SelectItem>
-                </SelectContent>
-              </Select>
-
-              <Select value={sortBy} onValueChange={(value) => setSortBy(value as any)}>
-                <SelectTrigger className="h-11 sm:h-12 w-full lg:w-36 bg-slate-100 dark:bg-white/5 border-transparent dark:border-white/5 rounded-xl font-black text-[10px] uppercase tracking-tighter">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="w-3 h-3 text-indigo-500" />
-                    <SelectValue placeholder="Ordenar" />
-                  </div>
-                </SelectTrigger>
-                <SelectContent className="rounded-xl border-white/5 bg-slate-900/95 backdrop-blur-xl">
-                  <SelectItem value="title">Títol</SelectItem>
-                  <SelectItem value="difficulty">Dificultat</SelectItem>
-                  <SelectItem value="progress">Progrés</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+            <Select value={sortBy} onValueChange={(value) => setSortBy(value as any)}>
+              <SelectTrigger className="w-32">
+                <SelectValue placeholder="Ordenar per" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="title">Títol</SelectItem>
+                <SelectItem value="difficulty">Dificultat</SelectItem>
+                <SelectItem value="progress">Progrés</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
         </div>
       </div>

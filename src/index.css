@@ -1,9 +1,5 @@
 /* Import professional fonts */
-<<<<<<< HEAD
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
-=======
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
 
 @tailwind base;
 @tailwind components;
@@ -68,45 +64,6 @@
     --warning-foreground: 0 0% 10%;
 
     /* Gradientes Modernos con acento azul */
-<<<<<<< HEAD
-    --gradient-primary: linear-gradient(
-      135deg,
-      hsl(210 100% 50%),
-      hsl(210 100% 45%)
-    );
-    --gradient-card: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.4)
-    );
-    --gradient-hero: linear-gradient(
-      180deg,
-      hsl(0 0% 100%) 0%,
-      hsl(210 100% 98%) 100%
-    );
-    --gradient-accent: linear-gradient(
-      135deg,
-      hsl(210 100% 96%),
-      hsl(210 100% 98%)
-    );
-    --gradient-surface: hsl(210 100% 99%);
-    --gradient-subtle: linear-gradient(
-      180deg,
-      hsl(0 0% 100%),
-      hsl(210 100% 99%)
-    );
-
-    /* Sombras - Más suaves y naturales */
-    --shadow-minimal: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-card:
-      0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-    --shadow-hover:
-      0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
-    --shadow-focus:
-      0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(210 100% 50% / 0.2);
-    --shadow-elevation:
-      0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
-=======
     --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%), hsl(210 100% 45%));
     --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
     --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 100% 98%) 100%);
@@ -120,7 +77,6 @@
     --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
     --shadow-focus: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(210 100% 50% / 0.2);
     --shadow-elevation: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
 
     /* Bordes redondeados sutiles */
     --radius: 0.75rem;
@@ -191,45 +147,6 @@
     --warning-foreground: 0 0% 10%;
 
     /* Gradientes Modernos para modo oscuro */
-<<<<<<< HEAD
-    --gradient-primary: linear-gradient(
-      135deg,
-      hsl(210 100% 50%),
-      hsl(210 100% 45%)
-    );
-    --gradient-card: linear-gradient(
-      180deg,
-      rgba(10, 10, 10, 0.8),
-      rgba(20, 20, 20, 0.4)
-    );
-    --gradient-hero: linear-gradient(
-      180deg,
-      hsl(0 0% 3.9%) 0%,
-      hsl(210 100% 8%) 100%
-    );
-    --gradient-accent: linear-gradient(
-      135deg,
-      hsl(210 100% 8%),
-      hsl(210 100% 12%)
-    );
-    --gradient-surface: hsl(210 100% 6%);
-    --gradient-subtle: linear-gradient(
-      180deg,
-      hsl(0 0% 3.9%),
-      hsl(210 100% 6%)
-    );
-
-    /* Sombras - Más intensas para modo oscuro */
-    --shadow-minimal: 0 1px 2px 0 rgb(0 0 0 / 0.25);
-    --shadow-card:
-      0 4px 6px -1px rgb(0 0 0 / 0.25), 0 2px 4px -2px rgb(0 0 0 / 0.25);
-    --shadow-hover:
-      0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
-    --shadow-focus:
-      0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(210 100% 50% / 0.3);
-    --shadow-elevation:
-      0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
-=======
     --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%), hsl(210 100% 45%));
     --gradient-card: linear-gradient(180deg, rgba(10, 10, 10, 0.8), rgba(20, 20, 20, 0.4));
     --gradient-hero: linear-gradient(180deg, hsl(0 0% 3.9%) 0%, hsl(210 100% 8%) 100%);
@@ -243,7 +160,6 @@
     --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
     --shadow-focus: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(210 100% 50% / 0.3);
     --shadow-elevation: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
 
     /* Sidebar */
     --sidebar-background: 0 0% 3.9%;
@@ -289,17 +205,7 @@
 
   body {
     @apply bg-background text-foreground;
-<<<<<<< HEAD
-    font-family:
-      "Inter",
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      sans-serif;
-=======
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
     font-feature-settings: "ss01", "ss02", "cv01", "cv03";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -312,20 +218,12 @@
   kbd,
   pre,
   .font-mono {
-<<<<<<< HEAD
-    font-family:
-      "JetBrains Mono", "SF Mono", Monaco, "Cascadia Code", monospace;
-=======
     font-family: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace;
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
   }
 }
 
 @layer utilities {
-<<<<<<< HEAD
-=======
 
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
   /* Simplified utilities */
   .text-balance {
     text-wrap: balance;
@@ -360,10 +258,7 @@
 }
 
 @keyframes float-Snowflake {
-<<<<<<< HEAD
-=======
 
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
   0%,
   100% {
     transform: translateX(-50%) translateY(0) rotate(0deg);
@@ -401,10 +296,7 @@
 }
 
 @keyframes dot-bounce {
-<<<<<<< HEAD
-=======
 
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
   0%,
   100% {
     transform: translateY(0);
@@ -482,26 +374,3 @@
   animation: card-entrance 0.5s ease-out 0.3s forwards;
   opacity: 0;
 }
-<<<<<<< HEAD
-
-/* Particle animation for success feedback */
-@keyframes success-particle {
-  0% {
-    transform: translate(-50%, -50%) scale(0) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1) rotate(15deg);
-  }
-  100% {
-    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y) + 60px)) scale(0.2) rotate(var(--rotate, 180deg));
-    opacity: 0;
-  }
-}
-
-.animate-success-particle {
-  animation: success-particle 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-=======
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc

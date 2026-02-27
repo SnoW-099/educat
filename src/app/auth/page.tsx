@@ -14,10 +14,6 @@ export default function Auth() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
-<<<<<<< HEAD
-    const [role, setRole] = useState<'student' | 'professor'>('student');
-=======
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
     const [loading, setLoading] = useState(false);
     const { toast } = useToast();
     const router = useRouter();
@@ -89,11 +85,7 @@ export default function Auth() {
                     emailRedirectTo: `${window.location.origin}/auth/callback`,
                     data: {
                         name,
-<<<<<<< HEAD
-                        role: role === 'professor' ? 'professor_pending' : 'student',
-=======
                         role: 'student',
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
                     }
                 }
             });
@@ -335,33 +327,6 @@ export default function Auth() {
                                         </div>
 
                                         <div className="space-y-3">
-<<<<<<< HEAD
-                                            <Label className="text-slate-700 dark:text-slate-300 font-bold text-sm ml-1">Sóc...</Label>
-                                            <div className="flex gap-3">
-                                                <Button
-                                                    type="button"
-                                                    variant={role === 'student' ? 'default' : 'outline'}
-                                                    onClick={() => setRole('student')}
-                                                    className={role === 'student' ? "flex-1 rounded-2xl h-12 bg-blue-600" : "flex-1 rounded-2xl h-12"}
-                                                >
-                                                    <User className="w-4 h-4 mr-2" />
-                                                    Estudiant
-                                                </Button>
-                                                <Button
-                                                    type="button"
-                                                    variant={role === 'professor' ? 'default' : 'outline'}
-                                                    onClick={() => setRole('professor')}
-                                                    className={role === 'professor' ? "flex-1 rounded-2xl h-12 bg-indigo-600" : "flex-1 rounded-2xl h-12"}
-                                                >
-                                                    <GraduationCap className="w-4 h-4 mr-2" />
-                                                    Professor
-                                                </Button>
-                                            </div>
-                                        </div>
-
-                                        <div className="space-y-3">
-=======
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
                                             <Label className="text-slate-700 dark:text-slate-300 font-bold text-sm ml-1">Email</Label>
                                             <Input
                                                 type="email"

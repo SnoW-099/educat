@@ -171,29 +171,14 @@ export const useRealStats = (userId?: string) => {
         if (!lastDate || lastDate !== today) {
             if (!lastDate) {
                 currentStreak = 1;
-<<<<<<< HEAD
-                console.log('Streak system: Initialized streak to 1');
-=======
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
             } else {
                 const daysDiff = getDaysDifference(lastDate, today);
                 if (daysDiff === 1) {
                     currentStreak = (prev.currentStreak || 0) + 1;
-<<<<<<< HEAD
-                    console.log(`Streak system: Incrementing streak to ${currentStreak}`);
-                } else if (daysDiff > 1) {
-                    currentStreak = 1;
-                    console.log('Streak system: Streak was broken, resetting to 1');
-                }
-            }
-        } else {
-            console.log(`Streak system: Already active today. Current streak: ${currentStreak}`);
-=======
                 } else if (daysDiff > 1) {
                     currentStreak = 1;
                 }
             }
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
         }
 
         const longestStreak = Math.max(currentStreak, prev.longestStreak || 0);

@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import { useAuthContext } from '@/components/auth/AuthProvider';
-
-export type { UserProfile } from '@/components/auth/AuthProvider';
-
-export const useAuth = () => {
-  return useAuthContext();
-=======
 import { useState, useEffect } from 'react';
 import { User, Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
@@ -177,5 +169,4 @@ export const useAuth = () => {
     signOut,
     refreshProfile
   };
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
 };

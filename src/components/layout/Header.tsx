@@ -9,11 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { ProfileManagement } from "@/components/profile/ProfileManagement";
 import { UserProfile } from "@/hooks/useAuth";
-<<<<<<< HEAD
-import { LogOut, BookOpen, Home, User, Settings, ChevronDown, Users, Shield } from "lucide-react";
-=======
 import { LogOut, BookOpen, Home, User, Settings, ChevronDown } from "lucide-react";
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -92,43 +88,6 @@ export const Header = ({ user, onLogout, onNavigateToAuth }: HeaderProps) => {
                     </div>
                   </button>
 
-<<<<<<< HEAD
-                  {/* Panell Admin - Solo si es admin */}
-                  {user?.role === 'admin' && (
-                    <button
-                      onClick={() => {
-                        window.location.href = '/admin';
-                        setIsMenuOpen(false);
-                      }}
-                      className="w-full flex items-center gap-3 px-3 py-2.5 rounded-md hover:bg-indigo-600/10 dark:hover:bg-indigo-600/20 transition-colors text-left border-l-2 border-indigo-600"
-                    >
-                      <Shield className="h-4 w-4 text-indigo-600" />
-                      <div>
-                        <div className="text-sm font-medium text-indigo-600">Panell Admin</div>
-                        <div className="text-xs text-slate-500 dark:text-slate-400">Verificació de professors</div>
-                      </div>
-                    </button>
-                  )}
-
-                  {/* Menú Professor - Solo si es profesor */}
-                  {user?.role === 'professor' && (
-                    <button
-                      onClick={() => {
-                        window.location.href = '/professordashboard';
-                        setIsMenuOpen(false);
-                      }}
-                      className="w-full flex items-center gap-3 px-3 py-2.5 rounded-md hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors text-left border-l-2 border-primary"
-                    >
-                      <Users className="h-4 w-4 text-primary" />
-                      <div>
-                        <div className="text-sm font-medium text-primary">Menú Professor</div>
-                        <div className="text-xs text-slate-500 dark:text-slate-400">Gestió de classes</div>
-                      </div>
-                    </button>
-                  )}
-
-=======
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
                   {/* Ajustes de Cuenta */}
                   <button
                     onClick={() => {

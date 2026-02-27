@@ -666,33 +666,12 @@ export const BeginnerExerciseRunner = ({ exercises, onExit, currentModuleId, onU
                                         Continuar
                                     </Button>
                                 ) : (
-                                    <Button 
-                                        onClick={() => {
-                                            setFeedback('idle');
-                                            // RESHUFFLE on retry (Fixes "buga" where retry didn't reset positions)
-                                            if (currentExercise.type === 'order') {
-                                                const shuffled = [...currentExercise.data].sort(() => Math.random() - 0.5);
-                                                setUserOrder(shuffled);
-                                            } else if (currentExercise.type === 'match' && currentExercise.pairs) {
-                                                const rights = currentExercise.pairs.map(p => p.right);
-                                                const shuffledRights = [...rights].sort(() => Math.random() - 0.5);
-                                                setUserOrder(shuffledRights);
-                                                setMatches({});
-                                            } else if (currentExercise.type === 'fill_gap') {
-                                                const options = [...currentExercise.data].sort(() => Math.random() - 0.5);
-                                                setUserOrder(options);
-                                                setMatches({});
-                                            } else if (currentExercise.type === 'classify') {
-                                                const items = [...currentExercise.data].sort(() => Math.random() - 0.5);
-                                                setUserOrder(items);
-                                                setMatches({});
-                                            } else {
-                                                setSelectedAnswer(null);
-                                            }
-                                        }} 
-                                        variant="outline" 
-                                        className="w-full mt-4 border-red-200 text-red-700 hover:bg-red-50 dark:border-red-800 dark:text-red-300 dark:hover:bg-red-900/20 h-12"
-                                    >
+                                    <Button onClick={() => {
+                                        setFeedback('idle');
+                                        if (currentExercise.type === 'match' || currentExercise.type === 'fill_gap') {
+                                            setMatches({});
+                                        }
+                                    }} variant="outline" className="w-full mt-4 border-red-200 text-red-700 hover:bg-red-50 dark:border-red-800 dark:text-red-300 dark:hover:bg-red-900/20 h-12">
                                         Ho tornaré a provar
                                     </Button>
                                 )}

@@ -32,13 +32,6 @@ export default function StudentDashboard() {
         if (!loading && minTimeElapsed) {
             if (!user || !profile) {
                 router.replace("/auth");
-<<<<<<< HEAD
-            } else if (profile.role === 'professor') {
-                router.replace("/professordashboard");
-            } else if (profile.role === 'professor_pending') {
-                router.replace("/professorpending");
-=======
->>>>>>> 281e5f277d1a22fe983bb2f49ab903edb50397dc
             }
         }
     }, [user, profile, loading, router, minTimeElapsed]);
